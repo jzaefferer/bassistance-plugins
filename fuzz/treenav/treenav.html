@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html>
+<head>
+	<title>jQuery Plugin: Accordion</title>
+	
+	<script type="text/javascript" src="../../jquery/dist/jquery.js"></script>
+	<script type="text/javascript">
+	// TODO make it work correctly, see: http://icant.co.uk/sandbox/bonzaimenu/
+	$(document).ready(function() {
+		$('#nav').attr('class', 'dyn').click(function(event) {
+			event.preventDefault();
+			var target = $(event.target);
+			var ul = $(target).parent().find("ul");
+			if(ul.size() && target.is("a")) {
+				ul.toggle();
+				$(target).parent().attr('class', $(target).css('display') == 'block' ? 'open' : 'parent');
+			}
+		});
+	});
+	</script>
+	
+	<link rel="Stylesheet" media="screen" href="treenav.css" />
+</head>
+<body>
+
+<ul id="nav">
+	<li><h3>Menu Example</h3></li>
+	<li class="parent"><a href="#">Item 1</a>
+		<ul>
+			<li><a href="#">Item 1_1</a></li>
+			<li class="parent"><a href="#">Item 1_2</a>
+
+				<ul>
+					<li><a href="#">Item 1_2_1</a></li>
+					<li><a href="#">Item 1_2_2</a></li>
+					<li><a href="#">Item 1_2_3</a></li>
+					<li><a href="#">Item 1_2_4</a></li>
+				</ul>
+			</li>
+
+			<li><a href="#">Item 1_3</a></li>
+			<li><a href="#">Item 1_4</a></li>
+			<li><a href="#">Item 1_5</a></li>
+		</ul>
+	</li>
+	<li><a href="#">Item 2</a></li>
+	<li class="parent"><a href="#">Item 3</a>
+
+		<ul>
+			<li><a href="#">Item 2_1</a></li>
+			<li><a href="#">Item 2_2</a></li>
+			<li><a href="#">Item 2_3</a></li>
+			<li><a href="#">Item 2_4</a></li>
+			<li><a href="#">Item 2_5</a></li>
+
+		</ul>
+	</li>
+	<li><a href="#">Item 4</a></li>
+</ul>
+
+</body>
+</html>

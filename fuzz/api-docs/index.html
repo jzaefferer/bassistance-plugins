@@ -1,0 +1,4698 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN""http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+<META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>jQuery 1.1.2 API Browser </title>
+<link rel="stylesheet" href="style/screen.css" media="screen,projector">
+<link rel="stylesheet" href="style/print.css" media="print">
+<script type="text/javascript" src="js/browser.pack.js"></script><script type="text/javascript" src="js/doc.js"></script>
+</head>
+<body>
+<h1>
+<a href="http://jquery.com"><img src="style/images/jquery_logo.gif" alt="jQuery Logo"></a>
+</h1>
+<div id="header">1.1.2 API Browser <span>(<a href="jquery-api-browser.zip">Download</a>)</span>
+</div>
+<div id="content">
+<div id="nav">
+<h2>Navigation</h2>
+<ul class="tabs-nav">
+<li>
+<a href="#navCat">Category</a>
+</li>
+<li>
+<a href="#navAlpha">Alphabetical</a>
+</li>
+</ul>
+<div class="navsub" id="navCat">
+<h3>Categorized</h3>
+<div class="treecontrol">
+<a href="#">Collapse All</a><a href="#">Expand All</a><a href="#">Toggle All</a>
+</div>
+<ul>
+<li>Core<ul>
+<li>
+<a href="#String">$(<span class="arg-type tooltip">String</span>)</a>
+</li>
+<li>
+<a href="#ElementArrayElement">$(<span class="arg-type tooltip">Element|Array&lt;Element&gt;</span>)</a>
+</li>
+<li>
+<a href="#Function">$(<span class="arg-type tooltip">Function</span>)</a>
+</li>
+<li>
+<a href="#StringElementjQuery">$(<span class="arg-type tooltip">String</span>, <span class="arg-type tooltip">Element|jQuery</span>)</a>
+</li>
+<li>
+<a href="#eachFunction">each(<span class="arg-type tooltip">Function</span>)</a>
+</li>
+<li>
+<a href="#eqNumber">eq(<span class="arg-type tooltip">Number</span>)</a>
+</li>
+<li>
+<a href="#extendObject">$.extend(<span class="arg-type tooltip">Object</span>)</a>
+</li>
+<li>
+<a href="#get">get()</a>
+</li>
+<li>
+<a href="#getNumber">get(<span class="arg-type tooltip">Number</span>)</a>
+</li>
+<li>
+<a href="#gtNumber">gt(<span class="arg-type tooltip">Number</span>)</a>
+</li>
+<li>
+<a href="#indexElement">index(<span class="arg-type tooltip">Element</span>)</a>
+</li>
+<li>
+<a href="#length">length</a>
+</li>
+<li>
+<a href="#ltNumber">lt(<span class="arg-type tooltip">Number</span>)</a>
+</li>
+<li>
+<a href="#noConflict">$.noConflict()</a>
+</li>
+<li>
+<a href="#size">size()</a>
+</li>
+</ul>
+</li>
+<li>DOM<ul></ul>
+<ul>
+<li>Attributes<ul>
+<li>
+<a href="#addClassString">addClass(<span class="arg-type tooltip">String</span>)</a>
+</li>
+<li>
+<a href="#attrString">attr(<span class="arg-type tooltip">String</span>)</a>
+</li>
+<li>
+<a href="#attrMap">attr(<span class="arg-type tooltip">Map</span>)</a>
+</li>
+<li>
+<a href="#attrStringObject">attr(<span class="arg-type tooltip">String</span>, <span class="arg-type tooltip">Object</span>)</a>
+</li>
+<li>
+<a href="#attrStringFunction">attr(<span class="arg-type tooltip">String</span>, <span class="arg-type tooltip">Function</span>)</a>
+</li>
+<li>
+<a href="#html">html()</a>
+</li>
+<li>
+<a href="#htmlString">html(<span class="arg-type tooltip">String</span>)</a>
+</li>
+<li>
+<a href="#removeAttrString">removeAttr(<span class="arg-type tooltip">String</span>)</a>
+</li>
+<li>
+<a href="#removeClassString">removeClass(<span class="arg-type tooltip">String</span>)</a>
+</li>
+<li>
+<a href="#text">text()</a>
+</li>
+<li>
+<a href="#textString">text(<span class="arg-type tooltip">String</span>)</a>
+</li>
+<li>
+<a href="#toggleClassString">toggleClass(<span class="arg-type tooltip">String</span>)</a>
+</li>
+<li>
+<a href="#val">val()</a>
+</li>
+<li>
+<a href="#valString">val(<span class="arg-type tooltip">String</span>)</a>
+</li>
+</ul>
+</li>
+<li>Manipulation<ul>
+<li>
+<a href="#afterContent">after(<span class="arg-type tooltip">&lt;Content&gt;</span>)</a>
+</li>
+<li>
+<a href="#appendContent">append(<span class="arg-type tooltip">&lt;Content&gt;</span>)</a>
+</li>
+<li>
+<a href="#appendToContent">appendTo(<span class="arg-type tooltip">&lt;Content&gt;</span>)</a>
+</li>
+<li>
+<a href="#beforeContent">before(<span class="arg-type tooltip">&lt;Content&gt;</span>)</a>
+</li>
+<li>
+<a href="#cloneBoolean">clone(<span class="arg-type tooltip">Boolean</span>)</a>
+</li>
+<li>
+<a href="#empty">empty()</a>
+</li>
+<li>
+<a href="#insertAfterContent">insertAfter(<span class="arg-type tooltip">&lt;Content&gt;</span>)</a>
+</li>
+<li>
+<a href="#insertBeforeContent">insertBefore(<span class="arg-type tooltip">&lt;Content&gt;</span>)</a>
+</li>
+<li>
+<a href="#prependContent">prepend(<span class="arg-type tooltip">&lt;Content&gt;</span>)</a>
+</li>
+<li>
+<a href="#prependToContent">prependTo(<span class="arg-type tooltip">&lt;Content&gt;</span>)</a>
+</li>
+<li>
+<a href="#removeString">remove(<span class="arg-type tooltip">String</span>)</a>
+</li>
+<li>
+<a href="#wrapString">wrap(<span class="arg-type tooltip">String</span>)</a>
+</li>
+<li>
+<a href="#wrapElement">wrap(<span class="arg-type tooltip">Element</span>)</a>
+</li>
+</ul>
+</li>
+<li>Traversing<ul>
+<li>
+<a href="#addString">add(<span class="arg-type tooltip">String</span>)</a>
+</li>
+<li>
+<a href="#addString">add(<span class="arg-type tooltip">String</span>)</a>
+</li>
+<li>
+<a href="#addElementArrayElement">add(<span class="arg-type tooltip">Element|Array&lt;Element&gt;</span>)</a>
+</li>
+<li>
+<a href="#childrenString">children(<span class="arg-type tooltip">String</span>)</a>
+</li>
+<li>
+<a href="#containsString">contains(<span class="arg-type tooltip">String</span>)</a>
+</li>
+<li>
+<a href="#end">end()</a>
+</li>
+<li>
+<a href="#filterString">filter(<span class="arg-type tooltip">String</span>)</a>
+</li>
+<li>
+<a href="#filterFunction">filter(<span class="arg-type tooltip">Function</span>)</a>
+</li>
+<li>
+<a href="#findString">find(<span class="arg-type tooltip">String</span>)</a>
+</li>
+<li>
+<a href="#isString">is(<span class="arg-type tooltip">String</span>)</a>
+</li>
+<li>
+<a href="#nextString">next(<span class="arg-type tooltip">String</span>)</a>
+</li>
+<li>
+<a href="#notElement">not(<span class="arg-type tooltip">Element</span>)</a>
+</li>
+<li>
+<a href="#notString">not(<span class="arg-type tooltip">String</span>)</a>
+</li>
+<li>
+<a href="#notjQuery">not(<span class="arg-type tooltip">jQuery</span>)</a>
+</li>
+<li>
+<a href="#parentString">parent(<span class="arg-type tooltip">String</span>)</a>
+</li>
+<li>
+<a href="#parentsString">parents(<span class="arg-type tooltip">String</span>)</a>
+</li>
+<li>
+<a href="#prevString">prev(<span class="arg-type tooltip">String</span>)</a>
+</li>
+<li>
+<a href="#siblingsString">siblings(<span class="arg-type tooltip">String</span>)</a>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>CSS<ul>
+<li>
+<a href="#cssString">css(<span class="arg-type tooltip">String</span>)</a>
+</li>
+<li>
+<a href="#cssMap">css(<span class="arg-type tooltip">Map</span>)</a>
+</li>
+<li>
+<a href="#cssStringStringNumber">css(<span class="arg-type tooltip">String</span>, <span class="arg-type tooltip">String|Number</span>)</a>
+</li>
+<li>
+<a href="#height">height()</a>
+</li>
+<li>
+<a href="#heightStringNumber">height(<span class="arg-type tooltip">String|Number</span>)</a>
+</li>
+<li>
+<a href="#width">width()</a>
+</li>
+<li>
+<a href="#widthStringNumber">width(<span class="arg-type tooltip">String|Number</span>)</a>
+</li>
+</ul>
+</li>
+<li>JavaScript<ul>
+<li>
+<a href="#browser">$.browser</a>
+</li>
+<li>
+<a href="#eachObjectFunction">$.each(<span class="arg-type tooltip">Object</span>, <span class="arg-type tooltip">Function</span>)</a>
+</li>
+<li>
+<a href="#extendObjectObjectObject">$.extend(<span class="arg-type tooltip">Object</span>, <span class="arg-type tooltip">Object</span>, <span class="arg-type tooltip">Object</span>)</a>
+</li>
+<li>
+<a href="#grepArrayFunctionBoolean">$.grep(<span class="arg-type tooltip">Array</span>, <span class="arg-type tooltip">Function</span>, <span class="arg-type tooltip">Boolean</span>)</a>
+</li>
+<li>
+<a href="#mapArrayFunction">$.map(<span class="arg-type tooltip">Array</span>, <span class="arg-type tooltip">Function</span>)</a>
+</li>
+<li>
+<a href="#mergeArrayArray">$.merge(<span class="arg-type tooltip">Array</span>, <span class="arg-type tooltip">Array</span>)</a>
+</li>
+<li>
+<a href="#trimString">$.trim(<span class="arg-type tooltip">String</span>)</a>
+</li>
+</ul>
+</li>
+<li>Events<ul>
+<li>
+<a href="#bindStringObjectFunction">bind(<span class="arg-type tooltip">String</span>, <span class="arg-type tooltip">Object</span>, <span class="arg-type tooltip">Function</span>)</a>
+</li>
+<li>
+<a href="#blur">blur()</a>
+</li>
+<li>
+<a href="#blurFunction">blur(<span class="arg-type tooltip">Function</span>)</a>
+</li>
+<li>
+<a href="#changeFunction">change(<span class="arg-type tooltip">Function</span>)</a>
+</li>
+<li>
+<a href="#click">click()</a>
+</li>
+<li>
+<a href="#clickFunction">click(<span class="arg-type tooltip">Function</span>)</a>
+</li>
+<li>
+<a href="#dblclickFunction">dblclick(<span class="arg-type tooltip">Function</span>)</a>
+</li>
+<li>
+<a href="#errorFunction">error(<span class="arg-type tooltip">Function</span>)</a>
+</li>
+<li>
+<a href="#focus">focus()</a>
+</li>
+<li>
+<a href="#focusFunction">focus(<span class="arg-type tooltip">Function</span>)</a>
+</li>
+<li>
+<a href="#hoverFunctionFunction">hover(<span class="arg-type tooltip">Function</span>, <span class="arg-type tooltip">Function</span>)</a>
+</li>
+<li>
+<a href="#keydownFunction">keydown(<span class="arg-type tooltip">Function</span>)</a>
+</li>
+<li>
+<a href="#keypressFunction">keypress(<span class="arg-type tooltip">Function</span>)</a>
+</li>
+<li>
+<a href="#keyupFunction">keyup(<span class="arg-type tooltip">Function</span>)</a>
+</li>
+<li>
+<a href="#loadFunction">load(<span class="arg-type tooltip">Function</span>)</a>
+</li>
+<li>
+<a href="#mousedownFunction">mousedown(<span class="arg-type tooltip">Function</span>)</a>
+</li>
+<li>
+<a href="#mousemoveFunction">mousemove(<span class="arg-type tooltip">Function</span>)</a>
+</li>
+<li>
+<a href="#mouseoutFunction">mouseout(<span class="arg-type tooltip">Function</span>)</a>
+</li>
+<li>
+<a href="#mouseoverFunction">mouseover(<span class="arg-type tooltip">Function</span>)</a>
+</li>
+<li>
+<a href="#mouseupFunction">mouseup(<span class="arg-type tooltip">Function</span>)</a>
+</li>
+<li>
+<a href="#oneStringObjectFunction">one(<span class="arg-type tooltip">String</span>, <span class="arg-type tooltip">Object</span>, <span class="arg-type tooltip">Function</span>)</a>
+</li>
+<li>
+<a href="#readyFunction">ready(<span class="arg-type tooltip">Function</span>)</a>
+</li>
+<li>
+<a href="#resizeFunction">resize(<span class="arg-type tooltip">Function</span>)</a>
+</li>
+<li>
+<a href="#scrollFunction">scroll(<span class="arg-type tooltip">Function</span>)</a>
+</li>
+<li>
+<a href="#select">select()</a>
+</li>
+<li>
+<a href="#selectFunction">select(<span class="arg-type tooltip">Function</span>)</a>
+</li>
+<li>
+<a href="#submit">submit()</a>
+</li>
+<li>
+<a href="#submitFunction">submit(<span class="arg-type tooltip">Function</span>)</a>
+</li>
+<li>
+<a href="#toggleFunctionFunction">toggle(<span class="arg-type tooltip">Function</span>, <span class="arg-type tooltip">Function</span>)</a>
+</li>
+<li>
+<a href="#triggerStringArray">trigger(<span class="arg-type tooltip">String</span>, <span class="arg-type tooltip">Array</span>)</a>
+</li>
+<li>
+<a href="#unbindStringFunction">unbind(<span class="arg-type tooltip">String</span>, <span class="arg-type tooltip">Function</span>)</a>
+</li>
+<li>
+<a href="#unloadFunction">unload(<span class="arg-type tooltip">Function</span>)</a>
+</li>
+</ul>
+</li>
+<li>Effects<ul>
+<li>
+<a href="#animateHashStringNumberStringFunction">animate(<span class="arg-type tooltip">Hash</span>, <span class="arg-type tooltip">String|Number</span>, <span class="arg-type tooltip">String</span>, <span class="arg-type tooltip">Function</span>)</a>
+</li>
+<li>
+<a href="#fadeInStringNumberFunction">fadeIn(<span class="arg-type tooltip">String|Number</span>, <span class="arg-type tooltip">Function</span>)</a>
+</li>
+<li>
+<a href="#fadeOutStringNumberFunction">fadeOut(<span class="arg-type tooltip">String|Number</span>, <span class="arg-type tooltip">Function</span>)</a>
+</li>
+<li>
+<a href="#fadeToStringNumberNumberFunction">fadeTo(<span class="arg-type tooltip">String|Number</span>, <span class="arg-type tooltip">Number</span>, <span class="arg-type tooltip">Function</span>)</a>
+</li>
+<li>
+<a href="#hide">hide()</a>
+</li>
+<li>
+<a href="#hideStringNumberFunction">hide(<span class="arg-type tooltip">String|Number</span>, <span class="arg-type tooltip">Function</span>)</a>
+</li>
+<li>
+<a href="#show">show()</a>
+</li>
+<li>
+<a href="#showStringNumberFunction">show(<span class="arg-type tooltip">String|Number</span>, <span class="arg-type tooltip">Function</span>)</a>
+</li>
+<li>
+<a href="#slideDownStringNumberFunction">slideDown(<span class="arg-type tooltip">String|Number</span>, <span class="arg-type tooltip">Function</span>)</a>
+</li>
+<li>
+<a href="#slideToggleStringNumberFunction">slideToggle(<span class="arg-type tooltip">String|Number</span>, <span class="arg-type tooltip">Function</span>)</a>
+</li>
+<li>
+<a href="#slideUpStringNumberFunction">slideUp(<span class="arg-type tooltip">String|Number</span>, <span class="arg-type tooltip">Function</span>)</a>
+</li>
+<li>
+<a href="#toggle">toggle()</a>
+</li>
+</ul>
+</li>
+<li>Ajax<ul>
+<li>
+<a href="#ajaxMap">$.ajax(<span class="arg-type tooltip">Map</span>)</a>
+</li>
+<li>
+<a href="#ajaxCompleteFunction">ajaxComplete(<span class="arg-type tooltip">Function</span>)</a>
+</li>
+<li>
+<a href="#ajaxErrorFunction">ajaxError(<span class="arg-type tooltip">Function</span>)</a>
+</li>
+<li>
+<a href="#ajaxSendFunction">ajaxSend(<span class="arg-type tooltip">Function</span>)</a>
+</li>
+<li>
+<a href="#ajaxSetupMap">$.ajaxSetup(<span class="arg-type tooltip">Map</span>)</a>
+</li>
+<li>
+<a href="#ajaxStartFunction">ajaxStart(<span class="arg-type tooltip">Function</span>)</a>
+</li>
+<li>
+<a href="#ajaxStopFunction">ajaxStop(<span class="arg-type tooltip">Function</span>)</a>
+</li>
+<li>
+<a href="#ajaxSuccessFunction">ajaxSuccess(<span class="arg-type tooltip">Function</span>)</a>
+</li>
+<li>
+<a href="#ajaxTimeoutNumber">$.ajaxTimeout(<span class="arg-type tooltip">Number</span>)</a>
+</li>
+<li>
+<a href="#getStringMapFunction">$.get(<span class="arg-type tooltip">String</span>, <span class="arg-type tooltip">Map</span>, <span class="arg-type tooltip">Function</span>)</a>
+</li>
+<li>
+<a href="#getIfModifiedStringMapFunction">$.getIfModified(<span class="arg-type tooltip">String</span>, <span class="arg-type tooltip">Map</span>, <span class="arg-type tooltip">Function</span>)</a>
+</li>
+<li>
+<a href="#getJSONStringMapFunction">$.getJSON(<span class="arg-type tooltip">String</span>, <span class="arg-type tooltip">Map</span>, <span class="arg-type tooltip">Function</span>)</a>
+</li>
+<li>
+<a href="#getScriptStringFunction">$.getScript(<span class="arg-type tooltip">String</span>, <span class="arg-type tooltip">Function</span>)</a>
+</li>
+<li>
+<a href="#loadStringObjectFunction">load(<span class="arg-type tooltip">String</span>, <span class="arg-type tooltip">Object</span>, <span class="arg-type tooltip">Function</span>)</a>
+</li>
+<li>
+<a href="#loadIfModifiedStringMapFunction">loadIfModified(<span class="arg-type tooltip">String</span>, <span class="arg-type tooltip">Map</span>, <span class="arg-type tooltip">Function</span>)</a>
+</li>
+<li>
+<a href="#postStringMapFunction">$.post(<span class="arg-type tooltip">String</span>, <span class="arg-type tooltip">Map</span>, <span class="arg-type tooltip">Function</span>)</a>
+</li>
+<li>
+<a href="#serialize">serialize()</a>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="navsub" id="navAlpha">
+<h3>Alphabetic</h3>
+<div class="treecontrol">
+<a href="#">Collapse All</a><a href="#">Expand All</a><a href="#">Toggle All</a>
+</div>
+<ul>
+<li>
+<a href="#String">$(<span class="arg-type tooltip">String</span>)</a>
+</li>
+<li>
+<a href="#ElementArrayElement">$(<span class="arg-type tooltip">Element|Array&lt;Element&gt;</span>)</a>
+</li>
+<li>
+<a href="#Function">$(<span class="arg-type tooltip">Function</span>)</a>
+</li>
+<li>
+<a href="#StringElementjQuery">$(<span class="arg-type tooltip">String</span>, <span class="arg-type tooltip">Element|jQuery</span>)</a>
+</li>
+<li>
+<a href="#addString">add(<span class="arg-type tooltip">String</span>)</a>
+</li>
+<li>
+<a href="#addString">add(<span class="arg-type tooltip">String</span>)</a>
+</li>
+<li>
+<a href="#addElementArrayElement">add(<span class="arg-type tooltip">Element|Array&lt;Element&gt;</span>)</a>
+</li>
+<li>
+<a href="#addClassString">addClass(<span class="arg-type tooltip">String</span>)</a>
+</li>
+<li>
+<a href="#afterContent">after(<span class="arg-type tooltip">&lt;Content&gt;</span>)</a>
+</li>
+<li>
+<a href="#ajaxMap">$.ajax(<span class="arg-type tooltip">Map</span>)</a>
+</li>
+<li>
+<a href="#ajaxCompleteFunction">ajaxComplete(<span class="arg-type tooltip">Function</span>)</a>
+</li>
+<li>
+<a href="#ajaxErrorFunction">ajaxError(<span class="arg-type tooltip">Function</span>)</a>
+</li>
+<li>
+<a href="#ajaxSendFunction">ajaxSend(<span class="arg-type tooltip">Function</span>)</a>
+</li>
+<li>
+<a href="#ajaxSetupMap">$.ajaxSetup(<span class="arg-type tooltip">Map</span>)</a>
+</li>
+<li>
+<a href="#ajaxStartFunction">ajaxStart(<span class="arg-type tooltip">Function</span>)</a>
+</li>
+<li>
+<a href="#ajaxStopFunction">ajaxStop(<span class="arg-type tooltip">Function</span>)</a>
+</li>
+<li>
+<a href="#ajaxSuccessFunction">ajaxSuccess(<span class="arg-type tooltip">Function</span>)</a>
+</li>
+<li>
+<a href="#ajaxTimeoutNumber">$.ajaxTimeout(<span class="arg-type tooltip">Number</span>)</a>
+</li>
+<li>
+<a href="#animateHashStringNumberStringFunction">animate(<span class="arg-type tooltip">Hash</span>, <span class="arg-type tooltip">String|Number</span>, <span class="arg-type tooltip">String</span>, <span class="arg-type tooltip">Function</span>)</a>
+</li>
+<li>
+<a href="#appendContent">append(<span class="arg-type tooltip">&lt;Content&gt;</span>)</a>
+</li>
+<li>
+<a href="#appendToContent">appendTo(<span class="arg-type tooltip">&lt;Content&gt;</span>)</a>
+</li>
+<li>
+<a href="#attrString">attr(<span class="arg-type tooltip">String</span>)</a>
+</li>
+<li>
+<a href="#attrMap">attr(<span class="arg-type tooltip">Map</span>)</a>
+</li>
+<li>
+<a href="#attrStringObject">attr(<span class="arg-type tooltip">String</span>, <span class="arg-type tooltip">Object</span>)</a>
+</li>
+<li>
+<a href="#attrStringFunction">attr(<span class="arg-type tooltip">String</span>, <span class="arg-type tooltip">Function</span>)</a>
+</li>
+<li>
+<a href="#beforeContent">before(<span class="arg-type tooltip">&lt;Content&gt;</span>)</a>
+</li>
+<li>
+<a href="#bindStringObjectFunction">bind(<span class="arg-type tooltip">String</span>, <span class="arg-type tooltip">Object</span>, <span class="arg-type tooltip">Function</span>)</a>
+</li>
+<li>
+<a href="#blur">blur()</a>
+</li>
+<li>
+<a href="#blurFunction">blur(<span class="arg-type tooltip">Function</span>)</a>
+</li>
+<li>
+<a href="#browser">$.browser</a>
+</li>
+<li>
+<a href="#changeFunction">change(<span class="arg-type tooltip">Function</span>)</a>
+</li>
+<li>
+<a href="#childrenString">children(<span class="arg-type tooltip">String</span>)</a>
+</li>
+<li>
+<a href="#click">click()</a>
+</li>
+<li>
+<a href="#clickFunction">click(<span class="arg-type tooltip">Function</span>)</a>
+</li>
+<li>
+<a href="#cloneBoolean">clone(<span class="arg-type tooltip">Boolean</span>)</a>
+</li>
+<li>
+<a href="#containsString">contains(<span class="arg-type tooltip">String</span>)</a>
+</li>
+<li>
+<a href="#cssString">css(<span class="arg-type tooltip">String</span>)</a>
+</li>
+<li>
+<a href="#cssMap">css(<span class="arg-type tooltip">Map</span>)</a>
+</li>
+<li>
+<a href="#cssStringStringNumber">css(<span class="arg-type tooltip">String</span>, <span class="arg-type tooltip">String|Number</span>)</a>
+</li>
+<li>
+<a href="#dblclickFunction">dblclick(<span class="arg-type tooltip">Function</span>)</a>
+</li>
+<li>
+<a href="#eachFunction">each(<span class="arg-type tooltip">Function</span>)</a>
+</li>
+<li>
+<a href="#eachObjectFunction">$.each(<span class="arg-type tooltip">Object</span>, <span class="arg-type tooltip">Function</span>)</a>
+</li>
+<li>
+<a href="#empty">empty()</a>
+</li>
+<li>
+<a href="#end">end()</a>
+</li>
+<li>
+<a href="#eqNumber">eq(<span class="arg-type tooltip">Number</span>)</a>
+</li>
+<li>
+<a href="#errorFunction">error(<span class="arg-type tooltip">Function</span>)</a>
+</li>
+<li>
+<a href="#extendObject">$.extend(<span class="arg-type tooltip">Object</span>)</a>
+</li>
+<li>
+<a href="#extendObjectObjectObject">$.extend(<span class="arg-type tooltip">Object</span>, <span class="arg-type tooltip">Object</span>, <span class="arg-type tooltip">Object</span>)</a>
+</li>
+<li>
+<a href="#fadeInStringNumberFunction">fadeIn(<span class="arg-type tooltip">String|Number</span>, <span class="arg-type tooltip">Function</span>)</a>
+</li>
+<li>
+<a href="#fadeOutStringNumberFunction">fadeOut(<span class="arg-type tooltip">String|Number</span>, <span class="arg-type tooltip">Function</span>)</a>
+</li>
+<li>
+<a href="#fadeToStringNumberNumberFunction">fadeTo(<span class="arg-type tooltip">String|Number</span>, <span class="arg-type tooltip">Number</span>, <span class="arg-type tooltip">Function</span>)</a>
+</li>
+<li>
+<a href="#filterString">filter(<span class="arg-type tooltip">String</span>)</a>
+</li>
+<li>
+<a href="#filterFunction">filter(<span class="arg-type tooltip">Function</span>)</a>
+</li>
+<li>
+<a href="#findString">find(<span class="arg-type tooltip">String</span>)</a>
+</li>
+<li>
+<a href="#focus">focus()</a>
+</li>
+<li>
+<a href="#focusFunction">focus(<span class="arg-type tooltip">Function</span>)</a>
+</li>
+<li>
+<a href="#get">get()</a>
+</li>
+<li>
+<a href="#getNumber">get(<span class="arg-type tooltip">Number</span>)</a>
+</li>
+<li>
+<a href="#getStringMapFunction">$.get(<span class="arg-type tooltip">String</span>, <span class="arg-type tooltip">Map</span>, <span class="arg-type tooltip">Function</span>)</a>
+</li>
+<li>
+<a href="#getIfModifiedStringMapFunction">$.getIfModified(<span class="arg-type tooltip">String</span>, <span class="arg-type tooltip">Map</span>, <span class="arg-type tooltip">Function</span>)</a>
+</li>
+<li>
+<a href="#getJSONStringMapFunction">$.getJSON(<span class="arg-type tooltip">String</span>, <span class="arg-type tooltip">Map</span>, <span class="arg-type tooltip">Function</span>)</a>
+</li>
+<li>
+<a href="#getScriptStringFunction">$.getScript(<span class="arg-type tooltip">String</span>, <span class="arg-type tooltip">Function</span>)</a>
+</li>
+<li>
+<a href="#grepArrayFunctionBoolean">$.grep(<span class="arg-type tooltip">Array</span>, <span class="arg-type tooltip">Function</span>, <span class="arg-type tooltip">Boolean</span>)</a>
+</li>
+<li>
+<a href="#gtNumber">gt(<span class="arg-type tooltip">Number</span>)</a>
+</li>
+<li>
+<a href="#height">height()</a>
+</li>
+<li>
+<a href="#heightStringNumber">height(<span class="arg-type tooltip">String|Number</span>)</a>
+</li>
+<li>
+<a href="#hide">hide()</a>
+</li>
+<li>
+<a href="#hideStringNumberFunction">hide(<span class="arg-type tooltip">String|Number</span>, <span class="arg-type tooltip">Function</span>)</a>
+</li>
+<li>
+<a href="#hoverFunctionFunction">hover(<span class="arg-type tooltip">Function</span>, <span class="arg-type tooltip">Function</span>)</a>
+</li>
+<li>
+<a href="#html">html()</a>
+</li>
+<li>
+<a href="#htmlString">html(<span class="arg-type tooltip">String</span>)</a>
+</li>
+<li>
+<a href="#indexElement">index(<span class="arg-type tooltip">Element</span>)</a>
+</li>
+<li>
+<a href="#insertAfterContent">insertAfter(<span class="arg-type tooltip">&lt;Content&gt;</span>)</a>
+</li>
+<li>
+<a href="#insertBeforeContent">insertBefore(<span class="arg-type tooltip">&lt;Content&gt;</span>)</a>
+</li>
+<li>
+<a href="#isString">is(<span class="arg-type tooltip">String</span>)</a>
+</li>
+<li>
+<a href="#keydownFunction">keydown(<span class="arg-type tooltip">Function</span>)</a>
+</li>
+<li>
+<a href="#keypressFunction">keypress(<span class="arg-type tooltip">Function</span>)</a>
+</li>
+<li>
+<a href="#keyupFunction">keyup(<span class="arg-type tooltip">Function</span>)</a>
+</li>
+<li>
+<a href="#length">length</a>
+</li>
+<li>
+<a href="#loadFunction">load(<span class="arg-type tooltip">Function</span>)</a>
+</li>
+<li>
+<a href="#loadStringObjectFunction">load(<span class="arg-type tooltip">String</span>, <span class="arg-type tooltip">Object</span>, <span class="arg-type tooltip">Function</span>)</a>
+</li>
+<li>
+<a href="#loadIfModifiedStringMapFunction">loadIfModified(<span class="arg-type tooltip">String</span>, <span class="arg-type tooltip">Map</span>, <span class="arg-type tooltip">Function</span>)</a>
+</li>
+<li>
+<a href="#ltNumber">lt(<span class="arg-type tooltip">Number</span>)</a>
+</li>
+<li>
+<a href="#mapArrayFunction">$.map(<span class="arg-type tooltip">Array</span>, <span class="arg-type tooltip">Function</span>)</a>
+</li>
+<li>
+<a href="#mergeArrayArray">$.merge(<span class="arg-type tooltip">Array</span>, <span class="arg-type tooltip">Array</span>)</a>
+</li>
+<li>
+<a href="#mousedownFunction">mousedown(<span class="arg-type tooltip">Function</span>)</a>
+</li>
+<li>
+<a href="#mousemoveFunction">mousemove(<span class="arg-type tooltip">Function</span>)</a>
+</li>
+<li>
+<a href="#mouseoutFunction">mouseout(<span class="arg-type tooltip">Function</span>)</a>
+</li>
+<li>
+<a href="#mouseoverFunction">mouseover(<span class="arg-type tooltip">Function</span>)</a>
+</li>
+<li>
+<a href="#mouseupFunction">mouseup(<span class="arg-type tooltip">Function</span>)</a>
+</li>
+<li>
+<a href="#nextString">next(<span class="arg-type tooltip">String</span>)</a>
+</li>
+<li>
+<a href="#noConflict">$.noConflict()</a>
+</li>
+<li>
+<a href="#notElement">not(<span class="arg-type tooltip">Element</span>)</a>
+</li>
+<li>
+<a href="#notString">not(<span class="arg-type tooltip">String</span>)</a>
+</li>
+<li>
+<a href="#notjQuery">not(<span class="arg-type tooltip">jQuery</span>)</a>
+</li>
+<li>
+<a href="#oneStringObjectFunction">one(<span class="arg-type tooltip">String</span>, <span class="arg-type tooltip">Object</span>, <span class="arg-type tooltip">Function</span>)</a>
+</li>
+<li>
+<a href="#parentString">parent(<span class="arg-type tooltip">String</span>)</a>
+</li>
+<li>
+<a href="#parentsString">parents(<span class="arg-type tooltip">String</span>)</a>
+</li>
+<li>
+<a href="#postStringMapFunction">$.post(<span class="arg-type tooltip">String</span>, <span class="arg-type tooltip">Map</span>, <span class="arg-type tooltip">Function</span>)</a>
+</li>
+<li>
+<a href="#prependContent">prepend(<span class="arg-type tooltip">&lt;Content&gt;</span>)</a>
+</li>
+<li>
+<a href="#prependToContent">prependTo(<span class="arg-type tooltip">&lt;Content&gt;</span>)</a>
+</li>
+<li>
+<a href="#prevString">prev(<span class="arg-type tooltip">String</span>)</a>
+</li>
+<li>
+<a href="#readyFunction">ready(<span class="arg-type tooltip">Function</span>)</a>
+</li>
+<li>
+<a href="#removeString">remove(<span class="arg-type tooltip">String</span>)</a>
+</li>
+<li>
+<a href="#removeAttrString">removeAttr(<span class="arg-type tooltip">String</span>)</a>
+</li>
+<li>
+<a href="#removeClassString">removeClass(<span class="arg-type tooltip">String</span>)</a>
+</li>
+<li>
+<a href="#resizeFunction">resize(<span class="arg-type tooltip">Function</span>)</a>
+</li>
+<li>
+<a href="#scrollFunction">scroll(<span class="arg-type tooltip">Function</span>)</a>
+</li>
+<li>
+<a href="#select">select()</a>
+</li>
+<li>
+<a href="#selectFunction">select(<span class="arg-type tooltip">Function</span>)</a>
+</li>
+<li>
+<a href="#serialize">serialize()</a>
+</li>
+<li>
+<a href="#show">show()</a>
+</li>
+<li>
+<a href="#showStringNumberFunction">show(<span class="arg-type tooltip">String|Number</span>, <span class="arg-type tooltip">Function</span>)</a>
+</li>
+<li>
+<a href="#siblingsString">siblings(<span class="arg-type tooltip">String</span>)</a>
+</li>
+<li>
+<a href="#size">size()</a>
+</li>
+<li>
+<a href="#slideDownStringNumberFunction">slideDown(<span class="arg-type tooltip">String|Number</span>, <span class="arg-type tooltip">Function</span>)</a>
+</li>
+<li>
+<a href="#slideToggleStringNumberFunction">slideToggle(<span class="arg-type tooltip">String|Number</span>, <span class="arg-type tooltip">Function</span>)</a>
+</li>
+<li>
+<a href="#slideUpStringNumberFunction">slideUp(<span class="arg-type tooltip">String|Number</span>, <span class="arg-type tooltip">Function</span>)</a>
+</li>
+<li>
+<a href="#submit">submit()</a>
+</li>
+<li>
+<a href="#submitFunction">submit(<span class="arg-type tooltip">Function</span>)</a>
+</li>
+<li>
+<a href="#text">text()</a>
+</li>
+<li>
+<a href="#textString">text(<span class="arg-type tooltip">String</span>)</a>
+</li>
+<li>
+<a href="#toggle">toggle()</a>
+</li>
+<li>
+<a href="#toggleFunctionFunction">toggle(<span class="arg-type tooltip">Function</span>, <span class="arg-type tooltip">Function</span>)</a>
+</li>
+<li>
+<a href="#toggleClassString">toggleClass(<span class="arg-type tooltip">String</span>)</a>
+</li>
+<li>
+<a href="#triggerStringArray">trigger(<span class="arg-type tooltip">String</span>, <span class="arg-type tooltip">Array</span>)</a>
+</li>
+<li>
+<a href="#trimString">$.trim(<span class="arg-type tooltip">String</span>)</a>
+</li>
+<li>
+<a href="#unbindStringFunction">unbind(<span class="arg-type tooltip">String</span>, <span class="arg-type tooltip">Function</span>)</a>
+</li>
+<li>
+<a href="#unloadFunction">unload(<span class="arg-type tooltip">Function</span>)</a>
+</li>
+<li>
+<a href="#val">val()</a>
+</li>
+<li>
+<a href="#valString">val(<span class="arg-type tooltip">String</span>)</a>
+</li>
+<li>
+<a href="#width">width()</a>
+</li>
+<li>
+<a href="#widthStringNumber">width(<span class="arg-type tooltip">String|Number</span>)</a>
+</li>
+<li>
+<a href="#wrapString">wrap(<span class="arg-type tooltip">String</span>)</a>
+</li>
+<li>
+<a href="#wrapElement">wrap(<span class="arg-type tooltip">Element</span>)</a>
+</li>
+</ul>
+</div>
+</div>
+<ul id="docs">
+<li id="String">
+<span class="fn"><a class="name" href="#String">$</a>( <span class="arg-type tooltip" title="A string of characters.">String</span> <span class="arg-name tooltip" title="A string of HTML to create on the fly.">html</span> ) returns <span class="type"><span class="tooltip" title="A jQuery object.">jQuery</span></span></span>
+<div class="more">
+<div class="desc">Create DOM elements on-the-fly from the provided String of raw HTML.</div>
+<div class="example">
+<h3>Example:</h3>
+<p>Creates a div element (and all of its contents) dynamically, 
+and appends it to the body element. Internally, an
+element is created and its innerHTML property set to the given markup.
+It is therefore both quite flexible and limited.</p>
+<pre>
+<code class="javascript">$("&lt;div&gt;&lt;p&gt;Hello&lt;/p&gt;&lt;/div&gt;").appendTo("body")</code>
+</pre>
+</div>
+</div>
+</li>
+<li id="ElementArrayElement">
+<span class="fn"><a class="name" href="#ElementArrayElement">$</a>( <span class="arg-type tooltip" title="One or more DOM Elements (a single one or an array).">Element|Array&lt;Element&gt;</span> <span class="arg-name tooltip" title="DOM element(s) to be encapsulated by a jQuery object.">elems</span> ) returns <span class="type"><span class="tooltip" title="A jQuery object.">jQuery</span></span></span>
+<div class="more">
+<div class="desc">Wrap jQuery functionality around a single or multiple DOM Element(s).<br>
+<br>This function also accepts XML Documents and Window objects
+as valid arguments (even though they are not DOM Elements).</div>
+<div class="example">
+<h3>Example:</h3>
+<p>Sets the background color of the page to black.</p>
+<pre>
+<code class="javascript">$(document.body).css( "background", "black" );</code>
+</pre>
+</div>
+<div class="example">
+<h3>Example:</h3>
+<p>Hides all the input elements within a form</p>
+<pre>
+<code class="javascript">$( myForm.elements ).hide()</code>
+</pre>
+</div>
+</div>
+</li>
+<li id="Function">
+<span class="fn"><a class="name" href="#Function">$</a>( <span class="arg-type tooltip" title="A reference to a Javascript function.">Function</span> <span class="arg-name tooltip" title="The function to execute when the DOM is ready.">fn</span> ) returns <span class="type"><span class="tooltip" title="A jQuery object.">jQuery</span></span></span>
+<div class="more">
+<div class="desc">A shorthand for $(document).ready(), allowing you to bind a function
+to be executed when the DOM document has finished loading. This function
+behaves just like $(document).ready(), in that it should be used to wrap
+other $() operations on your page that depend on the DOM being ready to be
+operated on. While this function is, technically, chainable - there really
+isn't much use for chaining against it.<br>
+<br>You can have as many $(document).ready events on your page as you like.<br>
+<br>See ready(Function) for details about the ready event.</div>
+<div class="example">
+<h3>Example:</h3>
+<p>Executes the function when the DOM is ready to be used.</p>
+<pre>
+<code class="javascript">$(function(){
+  // Document is ready
+});</code>
+</pre>
+</div>
+<div class="example">
+<h3>Example:</h3>
+<p>Uses both the shortcut for $(document).ready() and the argument
+to write failsafe jQuery code using the $ alias, without relying on the
+global alias.</p>
+<pre>
+<code class="javascript">jQuery(function($) {
+  // Your code using failsafe $ alias here...
+});</code>
+</pre>
+</div>
+</div>
+</li>
+<li id="StringElementjQuery">
+<span class="fn"><a class="name" href="#StringElementjQuery">$</a>( <span class="arg-type tooltip" title="A string of characters.">String</span> <span class="arg-name tooltip" title="An expression to search with">expr</span>, <span class="arg-type tooltip" title="">Element|jQuery</span> <span class="arg-name tooltip" title="(optional) A DOM Element, Document or jQuery to use as context">context</span> ) returns <span class="type"><span class="tooltip" title="A jQuery object.">jQuery</span></span></span>
+<div class="more">
+<div class="desc">This function accepts a string containing a CSS or
+basic XPath selector which is then used to match a set of elements.<br>
+<br>The core functionality of jQuery centers around this function.
+Everything in jQuery is based upon this, or uses this in some way.
+The most basic use of this function is to pass in an expression
+(usually consisting of CSS or XPath), which then finds all matching
+elements.<br>
+<br>By default, if no context is specified, $() looks for DOM elements within the context of the
+current HTML document. If you do specify a context, such as a DOM
+element or jQuery object, the expression will be matched against
+the contents of that context.<br>
+<br>See [[DOM/Traversing/Selectors]] for the allowed CSS/XPath syntax for expressions.</div>
+<div class="example">
+<h3>Example:</h3>
+<p>Finds all p elements that are children of a div element.</p>
+<pre>
+<code class="javascript">$("div &gt; p")</code>
+</pre>
+<h4>HTML:</h4>
+<pre>
+<code class="html">&lt;p&gt;one&lt;/p&gt; &lt;div&gt;&lt;p&gt;two&lt;/p&gt;&lt;/div&gt; &lt;p&gt;three&lt;/p&gt;</code>
+</pre>
+<h4>Result:</h4>
+<pre>
+<code class="html">[ &lt;p&gt;two&lt;/p&gt; ]</code>
+</pre>
+</div>
+<div class="example">
+<h3>Example:</h3>
+<p>Searches for all inputs of type radio within the first form in the document</p>
+<pre>
+<code class="javascript">$("input:radio", document.forms[0])</code>
+</pre>
+</div>
+<div class="example">
+<h3>Example:</h3>
+<p>This finds all div elements within the specified XML document.</p>
+<pre>
+<code class="javascript">$("div", xml.responseXML)</code>
+</pre>
+</div>
+</div>
+</li>
+<li id="addString">
+<span class="fn"><a class="name" href="#addString">add</a>( <span class="arg-type tooltip" title="A string of characters.">String</span> <span class="arg-name tooltip" title="An expression whose matched elements are added">expr</span> ) returns <span class="type"><span class="tooltip" title="A jQuery object.">jQuery</span></span></span>
+<div class="more">
+<div class="desc">Adds more elements, matched by the given expression,
+to the set of matched elements.</div>
+<div class="example">
+<h3>Example:</h3>
+<p>Compare the above result to the result of &lt;code&gt;$('p')&lt;/code&gt;,
+which would just result in &lt;code&gt;&lt;nowiki&gt;[ &lt;p&gt;Hello&lt;/p&gt; ]&lt;/nowiki&gt;&lt;/code&gt;.
+Using add(), matched elements of &lt;code&gt;$('span')&lt;/code&gt; are simply
+added to the returned jQuery-object.</p>
+<pre>
+<code class="javascript">$("p").add("span")</code>
+</pre>
+<h4>HTML:</h4>
+<pre>
+<code class="html">(HTML) &lt;p&gt;Hello&lt;/p&gt;&lt;span&gt;Hello Again&lt;/span&gt;</code>
+</pre>
+<h4>Result:</h4>
+<pre>
+<code class="html">(jQuery object matching 2 elements) [ &lt;p&gt;Hello&lt;/p&gt;, &lt;span&gt;Hello Again&lt;/span&gt; ]</code>
+</pre>
+</div>
+</div>
+</li>
+<li id="addString">
+<span class="fn"><a class="name" href="#addString">add</a>( <span class="arg-type tooltip" title="A string of characters.">String</span> <span class="arg-name tooltip" title="A string of HTML to create on the fly.">html</span> ) returns <span class="type"><span class="tooltip" title="A jQuery object.">jQuery</span></span></span>
+<div class="more">
+<div class="desc">Adds more elements, created on the fly, to the set of
+matched elements.</div>
+<div class="example">
+<h3>Example:</h3>
+<pre>
+<code class="javascript">$("p").add("&lt;span&gt;Again&lt;/span&gt;")</code>
+</pre>
+<h4>HTML:</h4>
+<pre>
+<code class="html">&lt;p&gt;Hello&lt;/p&gt;</code>
+</pre>
+<h4>Result:</h4>
+<pre>
+<code class="html">[ &lt;p&gt;Hello&lt;/p&gt;, &lt;span&gt;Again&lt;/span&gt; ]</code>
+</pre>
+</div>
+</div>
+</li>
+<li id="addElementArrayElement">
+<span class="fn"><a class="name" href="#addElementArrayElement">add</a>( <span class="arg-type tooltip" title="One or more DOM Elements (a single one or an array).">Element|Array&lt;Element&gt;</span> <span class="arg-name tooltip" title="One or more Elements to add">elements</span> ) returns <span class="type"><span class="tooltip" title="A jQuery object.">jQuery</span></span></span>
+<div class="more">
+<div class="desc">Adds one or more Elements to the set of matched elements.</div>
+<div class="example">
+<h3>Example:</h3>
+<pre>
+<code class="javascript">$("p").add( document.getElementById("a") )</code>
+</pre>
+<h4>HTML:</h4>
+<pre>
+<code class="html">&lt;p&gt;Hello&lt;/p&gt;&lt;p&gt;&lt;span id="a"&gt;Hello Again&lt;/span&gt;&lt;/p&gt;</code>
+</pre>
+<h4>Result:</h4>
+<pre>
+<code class="html">[ &lt;p&gt;Hello&lt;/p&gt;, &lt;span id="a"&gt;Hello Again&lt;/span&gt; ]</code>
+</pre>
+</div>
+<div class="example">
+<h3>Example:</h3>
+<pre>
+<code class="javascript">$("p").add( document.forms[0].elements )</code>
+</pre>
+<h4>HTML:</h4>
+<pre>
+<code class="html">&lt;p&gt;Hello&lt;/p&gt;&lt;p&gt;&lt;form&gt;&lt;input/&gt;&lt;button/&gt;&lt;/form&gt;</code>
+</pre>
+<h4>Result:</h4>
+<pre>
+<code class="html">[ &lt;p&gt;Hello&lt;/p&gt;, &lt;input/&gt;, &lt;button/&gt; ]</code>
+</pre>
+</div>
+</div>
+</li>
+<li id="addClassString">
+<span class="fn"><a class="name" href="#addClassString">addClass</a>( <span class="arg-type tooltip" title="A string of characters.">String</span> <span class="arg-name tooltip" title="One or more CSS classes to add to the elements">class</span> ) returns <span class="type"><span class="tooltip" title="A jQuery object.">jQuery</span></span></span>
+<div class="more">
+<div class="desc">Adds the specified class(es) to each of the set of matched elements.</div>
+<div class="example">
+<h3>Example:</h3>
+<pre>
+<code class="javascript">$("p").addClass("selected")</code>
+</pre>
+<h4>HTML:</h4>
+<pre>
+<code class="html">&lt;p&gt;Hello&lt;/p&gt;</code>
+</pre>
+<h4>Result:</h4>
+<pre>
+<code class="html">[ &lt;p class="selected"&gt;Hello&lt;/p&gt; ]</code>
+</pre>
+</div>
+<div class="example">
+<h3>Example:</h3>
+<pre>
+<code class="javascript">$("p").addClass("selected highlight")</code>
+</pre>
+<h4>HTML:</h4>
+<pre>
+<code class="html">&lt;p&gt;Hello&lt;/p&gt;</code>
+</pre>
+<h4>Result:</h4>
+<pre>
+<code class="html">[ &lt;p class="selected highlight"&gt;Hello&lt;/p&gt; ]</code>
+</pre>
+</div>
+</div>
+</li>
+<li id="afterContent">
+<span class="fn"><a class="name" href="#afterContent">after</a>( <span class="arg-type tooltip" title="A String (to generate HTML on-the-fly), a DOM Element, an Array of DOM Elements or a jQuery object.">&lt;Content&gt;</span> <span class="arg-name tooltip" title="Content to insert after each target.">content</span> ) returns <span class="type"><span class="tooltip" title="A jQuery object.">jQuery</span></span></span>
+<div class="more">
+<div class="desc">Insert content after each of the matched elements.</div>
+<div class="example">
+<h3>Example:</h3>
+<p>Inserts some HTML after all paragraphs.</p>
+<pre>
+<code class="javascript">$("p").after("&lt;b&gt;Hello&lt;/b&gt;");</code>
+</pre>
+<h4>HTML:</h4>
+<pre>
+<code class="html">&lt;p&gt;I would like to say: &lt;/p&gt;</code>
+</pre>
+<h4>Result:</h4>
+<pre>
+<code class="html">&lt;p&gt;I would like to say: &lt;/p&gt;&lt;b&gt;Hello&lt;/b&gt;</code>
+</pre>
+</div>
+<div class="example">
+<h3>Example:</h3>
+<p>Inserts an Element after all paragraphs.</p>
+<pre>
+<code class="javascript">$("p").after( $("#foo")[0] );</code>
+</pre>
+<h4>HTML:</h4>
+<pre>
+<code class="html">&lt;b id="foo"&gt;Hello&lt;/b&gt;&lt;p&gt;I would like to say: &lt;/p&gt;</code>
+</pre>
+<h4>Result:</h4>
+<pre>
+<code class="html">&lt;p&gt;I would like to say: &lt;/p&gt;&lt;b id="foo"&gt;Hello&lt;/b&gt;</code>
+</pre>
+</div>
+<div class="example">
+<h3>Example:</h3>
+<p>Inserts a jQuery object (similar to an Array of DOM Elements) after all paragraphs.</p>
+<pre>
+<code class="javascript">$("p").after( $("b") );</code>
+</pre>
+<h4>HTML:</h4>
+<pre>
+<code class="html">&lt;b&gt;Hello&lt;/b&gt;&lt;p&gt;I would like to say: &lt;/p&gt;</code>
+</pre>
+<h4>Result:</h4>
+<pre>
+<code class="html">&lt;p&gt;I would like to say: &lt;/p&gt;&lt;b&gt;Hello&lt;/b&gt;</code>
+</pre>
+</div>
+</div>
+</li>
+<li id="ajaxMap">
+<span class="fn"><a class="name" href="#ajaxMap">$.ajax</a>( <span class="arg-type tooltip" title="A Javascript object that contains key/value pairs in the form of properties and values.">Map</span> <span class="arg-name tooltip" title="Key/value pairs to initialize the request with.">properties</span> ) returns <span class="type"><span class="tooltip" title="An XMLHttpRequest object (referencing a HTTP request).">XMLHttpRequest</span></span></span>
+<div class="more">
+<div class="desc">Load a remote page using an HTTP request.<br>
+<br>This is jQuery's low-level AJAX implementation. See $.get, $.post etc. for
+higher-level abstractions that are often easier to understand and use,
+but don't offer as much functionality (such as error callbacks).<br>
+<br>$.ajax() returns the XMLHttpRequest that it creates. In most cases you won't
+need that object to manipulate directly, but it is available if you need to
+abort the request manually.<br>
+<br>'''Note:''' If you specify the dataType option described below, make sure
+the server sends the correct MIME type in the response (eg. xml as "text/xml").
+Sending the wrong MIME type can lead to unexpected problems in your script.
+See [[Specifying the Data Type for AJAX Requests]] for more information.<br>
+<br>Supported datatypes are (see dataType option):<br>
+<br>"xml": Returns a XML document that can be processed via jQuery.<br>
+<br>"html": Returns HTML as plain text, included script tags are evaluated.<br>
+<br>"script": Evaluates the response as Javascript and returns it as plain text.<br>
+<br>"json": Evaluates the response as JSON and returns a Javascript Object<br>
+<br>$.ajax() takes one argument, an object of key/value pairs, that are
+used to initalize and handle the request. These are all the key/values that can
+be used:<br>
+<br>(String) url - The URL to request.<br>
+<br>(String) type - The type of request to make ("POST" or "GET"), default is "GET".<br>
+<br>(String) dataType - The type of data that you're expecting back from
+the server. No default: If the server sends xml, the responseXML, otherwise
+the responseText is passed to the success callback.<br>
+<br>(Boolean) ifModified - Allow the request to be successful only if the
+response has changed since the last request. This is done by checking the
+Last-Modified header. Default value is false, ignoring the header.<br>
+<br>(Number) timeout - Local timeout to override global timeout, eg. to give a
+single request a longer timeout while all others timeout after 1 second.
+See $.ajaxTimeout() for global timeouts.<br>
+<br>(Boolean) global - Whether to trigger global AJAX event handlers for
+this request, default is true. Set to false to prevent that global handlers
+like ajaxStart or ajaxStop are triggered.<br>
+<br>(Function) error - A function to be called if the request fails. The
+function gets passed tree arguments: The XMLHttpRequest object, a
+string describing the type of error that occurred and an optional
+exception object, if one occured.<br>
+<br>(Function) success - A function to be called if the request succeeds. The
+function gets passed one argument: The data returned from the server,
+formatted according to the 'dataType' parameter.<br>
+<br>(Function) complete - A function to be called when the request finishes. The
+function gets passed two arguments: The XMLHttpRequest object and a
+string describing the type of success of the request.<br>
+<br>(Object|String) data - Data to be sent to the server. Converted to a query
+string, if not already a string. Is appended to the url for GET-requests.
+See processData option to prevent this automatic processing.<br>
+<br>(String) contentType - When sending data to the server, use this content-type.
+Default is "application/x-www-form-urlencoded", which is fine for most cases.<br>
+<br>(Boolean) processData - By default, data passed in to the data option as an object
+other as string will be processed and transformed into a query string, fitting to
+the default content-type "application/x-www-form-urlencoded". If you want to send
+DOMDocuments, set this option to false.<br>
+<br>(Boolean) async - By default, all requests are sent asynchronous (set to true).
+If you need synchronous requests, set this option to false.<br>
+<br>(Function) beforeSend - A pre-callback to set custom headers etc., the
+XMLHttpRequest is passed as the only argument.</div>
+<div class="example">
+<h3>Example:</h3>
+<p>Load and execute a JavaScript file.</p>
+<pre>
+<code class="javascript">$.ajax({
+  type: "GET",
+  url: "test.js",
+  dataType: "script"
+})</code>
+</pre>
+</div>
+<div class="example">
+<h3>Example:</h3>
+<p>Save some data to the server and notify the user once its complete.</p>
+<pre>
+<code class="javascript">$.ajax({
+  type: "POST",
+  url: "some.php",
+  data: "name=John&amp;location=Boston",
+  success: function(msg){
+    alert( "Data Saved: " + msg );
+  }
+});</code>
+</pre>
+</div>
+<div class="example">
+<h3>Example:</h3>
+<p>Loads data synchronously. Blocks the browser while the requests is active.
+It is better to block user interaction by other means when synchronization is
+necessary.</p>
+<pre>
+<code class="javascript">var html = $.ajax({
+ url: "some.php",
+ async: false
+}).responseText;</code>
+</pre>
+</div>
+<div class="example">
+<h3>Example:</h3>
+<p>Sends an xml document as data to the server. By setting the processData
+option to false, the automatic conversion of data to strings is prevented.</p>
+<pre>
+<code class="javascript">var xmlDocument = [create xml document];
+$.ajax({
+  url: "page.php",
+  processData: false,
+  data: xmlDocument,
+  success: handleResponse
+});</code>
+</pre>
+</div>
+</div>
+</li>
+<li id="ajaxCompleteFunction">
+<span class="fn"><a class="name" href="#ajaxCompleteFunction">ajaxComplete</a>( <span class="arg-type tooltip" title="A reference to a Javascript function.">Function</span> <span class="arg-name tooltip" title="The function to execute.">callback</span> ) returns <span class="type"><span class="tooltip" title="A jQuery object.">jQuery</span></span></span>
+<div class="more">
+<div class="desc">Attach a function to be executed whenever an AJAX request completes.<br>
+<br>The XMLHttpRequest and settings used for that request are passed
+as arguments to the callback.</div>
+<div class="example">
+<h3>Example:</h3>
+<p>Show a message when an AJAX request completes.</p>
+<pre>
+<code class="javascript">$("#msg").ajaxComplete(function(request, settings){
+  $(this).append("&lt;li&gt;Request Complete.&lt;/li&gt;");
+});</code>
+</pre>
+</div>
+</div>
+</li>
+<li id="ajaxErrorFunction">
+<span class="fn"><a class="name" href="#ajaxErrorFunction">ajaxError</a>( <span class="arg-type tooltip" title="A reference to a Javascript function.">Function</span> <span class="arg-name tooltip" title="The function to execute.">callback</span> ) returns <span class="type"><span class="tooltip" title="A jQuery object.">jQuery</span></span></span>
+<div class="more">
+<div class="desc">Attach a function to be executed whenever an AJAX request fails.<br>
+<br>The XMLHttpRequest and settings used for that request are passed
+as arguments to the callback. A third argument, an exception object,
+is passed if an exception occured while processing the request.</div>
+<div class="example">
+<h3>Example:</h3>
+<p>Show a message when an AJAX request fails.</p>
+<pre>
+<code class="javascript">$("#msg").ajaxError(function(request, settings){
+  $(this).append("&lt;li&gt;Error requesting page " + settings.url + "&lt;/li&gt;");
+});</code>
+</pre>
+</div>
+</div>
+</li>
+<li id="ajaxSendFunction">
+<span class="fn"><a class="name" href="#ajaxSendFunction">ajaxSend</a>( <span class="arg-type tooltip" title="A reference to a Javascript function.">Function</span> <span class="arg-name tooltip" title="The function to execute.">callback</span> ) returns <span class="type"><span class="tooltip" title="A jQuery object.">jQuery</span></span></span>
+<div class="more">
+<div class="desc">Attach a function to be executed before an AJAX request is sent.<br>
+<br>The XMLHttpRequest and settings used for that request are passed
+as arguments to the callback.</div>
+<div class="example">
+<h3>Example:</h3>
+<p>Show a message before an AJAX request is sent.</p>
+<pre>
+<code class="javascript">$("#msg").ajaxSend(function(request, settings){
+  $(this).append("&lt;li&gt;Starting request at " + settings.url + "&lt;/li&gt;");
+});</code>
+</pre>
+</div>
+</div>
+</li>
+<li id="ajaxSetupMap">
+<span class="fn"><a class="name" href="#ajaxSetupMap">$.ajaxSetup</a>( <span class="arg-type tooltip" title="A Javascript object that contains key/value pairs in the form of properties and values.">Map</span> <span class="arg-name tooltip" title="Key/value pairs to use for all AJAX requests">settings</span> ) returns <span class="type"><span class="tooltip" title="">undefined</span></span></span>
+<div class="more">
+<div class="desc">Setup global settings for AJAX requests.<br>
+<br>See $.ajax for a description of all available options.</div>
+<div class="example">
+<h3>Example:</h3>
+<p>Sets the defaults for AJAX requests to the url "/xmlhttp/",
+disables global handlers and uses POST instead of GET. The following
+AJAX requests then sends some data without having to set anything else.</p>
+<pre>
+<code class="javascript">$.ajaxSetup( {
+  url: "/xmlhttp/",
+  global: false,
+  type: "POST"
+} );
+$.ajax({ data: myData });</code>
+</pre>
+</div>
+</div>
+</li>
+<li id="ajaxStartFunction">
+<span class="fn"><a class="name" href="#ajaxStartFunction">ajaxStart</a>( <span class="arg-type tooltip" title="A reference to a Javascript function.">Function</span> <span class="arg-name tooltip" title="The function to execute.">callback</span> ) returns <span class="type"><span class="tooltip" title="A jQuery object.">jQuery</span></span></span>
+<div class="more">
+<div class="desc">Attach a function to be executed whenever an AJAX request begins
+and there is none already active.</div>
+<div class="example">
+<h3>Example:</h3>
+<p>Show a loading message whenever an AJAX request starts
+(and none is already active).</p>
+<pre>
+<code class="javascript">$("#loading").ajaxStart(function(){
+  $(this).show();
+});</code>
+</pre>
+</div>
+</div>
+</li>
+<li id="ajaxStopFunction">
+<span class="fn"><a class="name" href="#ajaxStopFunction">ajaxStop</a>( <span class="arg-type tooltip" title="A reference to a Javascript function.">Function</span> <span class="arg-name tooltip" title="The function to execute.">callback</span> ) returns <span class="type"><span class="tooltip" title="A jQuery object.">jQuery</span></span></span>
+<div class="more">
+<div class="desc">Attach a function to be executed whenever all AJAX requests have ended.</div>
+<div class="example">
+<h3>Example:</h3>
+<p>Hide a loading message after all the AJAX requests have stopped.</p>
+<pre>
+<code class="javascript">$("#loading").ajaxStop(function(){
+  $(this).hide();
+});</code>
+</pre>
+</div>
+</div>
+</li>
+<li id="ajaxSuccessFunction">
+<span class="fn"><a class="name" href="#ajaxSuccessFunction">ajaxSuccess</a>( <span class="arg-type tooltip" title="A reference to a Javascript function.">Function</span> <span class="arg-name tooltip" title="The function to execute.">callback</span> ) returns <span class="type"><span class="tooltip" title="A jQuery object.">jQuery</span></span></span>
+<div class="more">
+<div class="desc">Attach a function to be executed whenever an AJAX request completes
+successfully.<br>
+<br>The XMLHttpRequest and settings used for that request are passed
+as arguments to the callback.</div>
+<div class="example">
+<h3>Example:</h3>
+<p>Show a message when an AJAX request completes successfully.</p>
+<pre>
+<code class="javascript">$("#msg").ajaxSuccess(function(request, settings){
+  $(this).append("&lt;li&gt;Successful Request!&lt;/li&gt;");
+});</code>
+</pre>
+</div>
+</div>
+</li>
+<li id="ajaxTimeoutNumber">
+<span class="fn"><a class="name" href="#ajaxTimeoutNumber">$.ajaxTimeout</a>( <span class="arg-type tooltip" title="A valid numeric.">Number</span> <span class="arg-name tooltip" title="How long before an AJAX request times out.">time</span> ) returns <span class="type"><span class="tooltip" title="">undefined</span></span></span>
+<div class="more">
+<div class="desc">Set the timeout of all AJAX requests to a specific amount of time.
+This will make all future AJAX requests timeout after a specified amount
+of time.<br>
+<br>Set to null or 0 to disable timeouts (default).<br>
+<br>You can manually abort requests with the XMLHttpRequest's (returned by
+all ajax functions) abort() method.<br>
+<br>Deprecated. Use $.ajaxSetup instead.</div>
+<div class="example">
+<h3>Example:</h3>
+<p>Make all AJAX requests timeout after 5 seconds.</p>
+<pre>
+<code class="javascript">$.ajaxTimeout( 5000 );</code>
+</pre>
+</div>
+</div>
+</li>
+<li id="animateHashStringNumberStringFunction">
+<span class="fn"><a class="name" href="#animateHashStringNumberStringFunction">animate</a>( <span class="arg-type tooltip" title="">Hash</span> <span class="arg-name tooltip" title="A set of style attributes that you wish to animate, and to what end.">params</span>, <span class="arg-type tooltip" title="A string of characters or a number.">String|Number</span> <span class="arg-name tooltip" title="(optional) A string representing one of the three predefined speeds (&quot;slow&quot;, &quot;normal&quot;, or &quot;fast&quot;) or the number of milliseconds to run the animation (e.g. 1000).">speed</span>, <span class="arg-type tooltip" title="A string of characters.">String</span> <span class="arg-name tooltip" title="(optional) The name of the easing effect that you want to use (Plugin Required).">easing</span>, <span class="arg-type tooltip" title="A reference to a Javascript function.">Function</span> <span class="arg-name tooltip" title="(optional) A function to be executed whenever the animation completes.">callback</span> ) returns <span class="type"><span class="tooltip" title="A jQuery object.">jQuery</span></span></span>
+<div class="more">
+<div class="desc">A function for making your own, custom animations. The key aspect of
+this function is the object of style properties that will be animated,
+and to what end. Each key within the object represents a style property
+that will also be animated (for example: "height", "top", or "opacity").<br>
+<br>Note that properties should be specified using camel case
+eg. marginLeft instead of margin-left.<br>
+<br>The value associated with the key represents to what end the property
+will be animated. If a number is provided as the value, then the style
+property will be transitioned from its current state to that new number.
+Otherwise if the string "hide", "show", or "toggle" is provided, a default
+animation will be constructed for that property.</div>
+<div class="example">
+<h3>Example:</h3>
+<pre>
+<code class="javascript">$("p").animate({
+  height: 'toggle', opacity: 'toggle'
+}, "slow");</code>
+</pre>
+</div>
+<div class="example">
+<h3>Example:</h3>
+<pre>
+<code class="javascript">$("p").animate({
+  left: 50, opacity: 'show'
+}, 500);</code>
+</pre>
+</div>
+<div class="example">
+<h3>Example:</h3>
+<p>An example of using an 'easing' function to provide a different style of animation. This will only work if you have a plugin that provides this easing function (Only 'linear' is provided by default, with jQuery).</p>
+<pre>
+<code class="javascript">$("p").animate({
+  opacity: 'show'
+}, "slow", "easein");</code>
+</pre>
+</div>
+</div>
+</li>
+<li id="appendContent">
+<span class="fn"><a class="name" href="#appendContent">append</a>( <span class="arg-type tooltip" title="A String (to generate HTML on-the-fly), a DOM Element, an Array of DOM Elements or a jQuery object.">&lt;Content&gt;</span> <span class="arg-name tooltip" title="Content to append to the target">content</span> ) returns <span class="type"><span class="tooltip" title="A jQuery object.">jQuery</span></span></span>
+<div class="more">
+<div class="desc">Append content to the inside of every matched element.<br>
+<br>This operation is similar to doing an appendChild to all the
+specified elements, adding them into the document.</div>
+<div class="example">
+<h3>Example:</h3>
+<p>Appends some HTML to all paragraphs.</p>
+<pre>
+<code class="javascript">$("p").append("&lt;b&gt;Hello&lt;/b&gt;");</code>
+</pre>
+<h4>HTML:</h4>
+<pre>
+<code class="html">&lt;p&gt;I would like to say: &lt;/p&gt;</code>
+</pre>
+<h4>Result:</h4>
+<pre>
+<code class="html">&lt;p&gt;I would like to say: &lt;b&gt;Hello&lt;/b&gt;&lt;/p&gt;</code>
+</pre>
+</div>
+<div class="example">
+<h3>Example:</h3>
+<p>Appends an Element to all paragraphs.</p>
+<pre>
+<code class="javascript">$("p").append( $("#foo")[0] );</code>
+</pre>
+<h4>HTML:</h4>
+<pre>
+<code class="html">&lt;p&gt;I would like to say: &lt;/p&gt;&lt;b id="foo"&gt;Hello&lt;/b&gt;</code>
+</pre>
+<h4>Result:</h4>
+<pre>
+<code class="html">&lt;p&gt;I would like to say: &lt;b id="foo"&gt;Hello&lt;/b&gt;&lt;/p&gt;</code>
+</pre>
+</div>
+<div class="example">
+<h3>Example:</h3>
+<p>Appends a jQuery object (similar to an Array of DOM Elements) to all paragraphs.</p>
+<pre>
+<code class="javascript">$("p").append( $("b") );</code>
+</pre>
+<h4>HTML:</h4>
+<pre>
+<code class="html">&lt;p&gt;I would like to say: &lt;/p&gt;&lt;b&gt;Hello&lt;/b&gt;</code>
+</pre>
+<h4>Result:</h4>
+<pre>
+<code class="html">&lt;p&gt;I would like to say: &lt;b&gt;Hello&lt;/b&gt;&lt;/p&gt;</code>
+</pre>
+</div>
+</div>
+</li>
+<li id="appendToContent">
+<span class="fn"><a class="name" href="#appendToContent">appendTo</a>( <span class="arg-type tooltip" title="A String (to generate HTML on-the-fly), a DOM Element, an Array of DOM Elements or a jQuery object.">&lt;Content&gt;</span> <span class="arg-name tooltip" title="Content to append to the selected element to.">content</span> ) returns <span class="type"><span class="tooltip" title="A jQuery object.">jQuery</span></span></span>
+<div class="more">
+<div class="desc">Append all of the matched elements to another, specified, set of elements.
+This operation is, essentially, the reverse of doing a regular
+$(A).append(B), in that instead of appending B to A, you're appending
+A to B.</div>
+<div class="example">
+<h3>Example:</h3>
+<p>Appends all paragraphs to the element with the ID "foo"</p>
+<pre>
+<code class="javascript">$("p").appendTo("#foo");</code>
+</pre>
+<h4>HTML:</h4>
+<pre>
+<code class="html">&lt;p&gt;I would like to say: &lt;/p&gt;&lt;div id="foo"&gt;&lt;/div&gt;</code>
+</pre>
+<h4>Result:</h4>
+<pre>
+<code class="html">&lt;div id="foo"&gt;&lt;p&gt;I would like to say: &lt;/p&gt;&lt;/div&gt;</code>
+</pre>
+</div>
+</div>
+</li>
+<li id="attrString">
+<span class="fn"><a class="name" href="#attrString">attr</a>( <span class="arg-type tooltip" title="A string of characters.">String</span> <span class="arg-name tooltip" title="The name of the property to access.">name</span> ) returns <span class="type"><span class="tooltip" title="A simple Javascript object..">Object</span></span></span>
+<div class="more">
+<div class="desc">Access a property on the first matched element.
+This method makes it easy to retrieve a property value
+from the first matched element.<br>
+<br>If the element does not have an attribute with such a
+name, undefined is returned.</div>
+<div class="example">
+<h3>Example:</h3>
+<p>Returns the src attribute from the first image in the document.</p>
+<pre>
+<code class="javascript">$("img").attr("src");</code>
+</pre>
+<h4>HTML:</h4>
+<pre>
+<code class="html">&lt;img src="test.jpg"/&gt;</code>
+</pre>
+<h4>Result:</h4>
+<pre>
+<code class="html">test.jpg</code>
+</pre>
+</div>
+</div>
+</li>
+<li id="attrMap">
+<span class="fn"><a class="name" href="#attrMap">attr</a>( <span class="arg-type tooltip" title="A Javascript object that contains key/value pairs in the form of properties and values.">Map</span> <span class="arg-name tooltip" title="Key/value pairs to set as object properties.">properties</span> ) returns <span class="type"><span class="tooltip" title="A jQuery object.">jQuery</span></span></span>
+<div class="more">
+<div class="desc">Set a key/value object as properties to all matched elements.<br>
+<br>This serves as the best way to set a large number of properties
+on all matched elements.</div>
+<div class="example">
+<h3>Example:</h3>
+<p>Sets src and alt attributes to all images.</p>
+<pre>
+<code class="javascript">$("img").attr({ src: "test.jpg", alt: "Test Image" });</code>
+</pre>
+<h4>HTML:</h4>
+<pre>
+<code class="html">&lt;img/&gt;</code>
+</pre>
+<h4>Result:</h4>
+<pre>
+<code class="html">&lt;img src="test.jpg" alt="Test Image"/&gt;</code>
+</pre>
+</div>
+</div>
+</li>
+<li id="attrStringObject">
+<span class="fn"><a class="name" href="#attrStringObject">attr</a>( <span class="arg-type tooltip" title="A string of characters.">String</span> <span class="arg-name tooltip" title="The name of the property to set.">key</span>, <span class="arg-type tooltip" title="A simple Javascript object..">Object</span> <span class="arg-name tooltip" title="The value to set the property to.">value</span> ) returns <span class="type"><span class="tooltip" title="A jQuery object.">jQuery</span></span></span>
+<div class="more">
+<div class="desc">Set a single property to a value, on all matched elements.<br>
+<br>Note that you can't set the name property of input elements in IE.
+Use $(html) or .append(html) or .html(html) to create elements
+on the fly including the name property.</div>
+<div class="example">
+<h3>Example:</h3>
+<p>Sets src attribute to all images.</p>
+<pre>
+<code class="javascript">$("img").attr("src","test.jpg");</code>
+</pre>
+<h4>HTML:</h4>
+<pre>
+<code class="html">&lt;img/&gt;</code>
+</pre>
+<h4>Result:</h4>
+<pre>
+<code class="html">&lt;img src="test.jpg"/&gt;</code>
+</pre>
+</div>
+</div>
+</li>
+<li id="attrStringFunction">
+<span class="fn"><a class="name" href="#attrStringFunction">attr</a>( <span class="arg-type tooltip" title="A string of characters.">String</span> <span class="arg-name tooltip" title="The name of the property to set.">key</span>, <span class="arg-type tooltip" title="A reference to a Javascript function.">Function</span> <span class="arg-name tooltip" title="A function returning the value to set. Scope: Current element, argument: Index of current element">value</span> ) returns <span class="type"><span class="tooltip" title="A jQuery object.">jQuery</span></span></span>
+<div class="more">
+<div class="desc">Set a single property to a computed value, on all matched elements.<br>
+<br>Instead of supplying a string value as described
+[[DOM/Attributes#attr.28_key.2C_value_.29|above]],
+a function is provided that computes the value.</div>
+<div class="example">
+<h3>Example:</h3>
+<p>Sets title attribute from src attribute.</p>
+<pre>
+<code class="javascript">$("img").attr("title", function() { return this.src });</code>
+</pre>
+<h4>HTML:</h4>
+<pre>
+<code class="html">&lt;img src="test.jpg" /&gt;</code>
+</pre>
+<h4>Result:</h4>
+<pre>
+<code class="html">&lt;img src="test.jpg" title="test.jpg" /&gt;</code>
+</pre>
+</div>
+<div class="example">
+<h3>Example:</h3>
+<p>Enumerate title attribute.</p>
+<pre>
+<code class="javascript">$("img").attr("title", function(index) { return this.title + (i + 1); });</code>
+</pre>
+<h4>HTML:</h4>
+<pre>
+<code class="html">&lt;img title="pic" /&gt;&lt;img title="pic" /&gt;&lt;img title="pic" /&gt;</code>
+</pre>
+<h4>Result:</h4>
+<pre>
+<code class="html">&lt;img title="pic1" /&gt;&lt;img title="pic2" /&gt;&lt;img title="pic3" /&gt;</code>
+</pre>
+</div>
+</div>
+</li>
+<li id="beforeContent">
+<span class="fn"><a class="name" href="#beforeContent">before</a>( <span class="arg-type tooltip" title="A String (to generate HTML on-the-fly), a DOM Element, an Array of DOM Elements or a jQuery object.">&lt;Content&gt;</span> <span class="arg-name tooltip" title="Content to insert before each target.">content</span> ) returns <span class="type"><span class="tooltip" title="A jQuery object.">jQuery</span></span></span>
+<div class="more">
+<div class="desc">Insert content before each of the matched elements.</div>
+<div class="example">
+<h3>Example:</h3>
+<p>Inserts some HTML before all paragraphs.</p>
+<pre>
+<code class="javascript">$("p").before("&lt;b&gt;Hello&lt;/b&gt;");</code>
+</pre>
+<h4>HTML:</h4>
+<pre>
+<code class="html">&lt;p&gt;I would like to say: &lt;/p&gt;</code>
+</pre>
+<h4>Result:</h4>
+<pre>
+<code class="html">&lt;b&gt;Hello&lt;/b&gt;&lt;p&gt;I would like to say: &lt;/p&gt;</code>
+</pre>
+</div>
+<div class="example">
+<h3>Example:</h3>
+<p>Inserts an Element before all paragraphs.</p>
+<pre>
+<code class="javascript">$("p").before( $("#foo")[0] );</code>
+</pre>
+<h4>HTML:</h4>
+<pre>
+<code class="html">&lt;p&gt;I would like to say: &lt;/p&gt;&lt;b id="foo"&gt;Hello&lt;/b&gt;</code>
+</pre>
+<h4>Result:</h4>
+<pre>
+<code class="html">&lt;b id="foo"&gt;Hello&lt;/b&gt;&lt;p&gt;I would like to say: &lt;/p&gt;</code>
+</pre>
+</div>
+<div class="example">
+<h3>Example:</h3>
+<p>Inserts a jQuery object (similar to an Array of DOM Elements) before all paragraphs.</p>
+<pre>
+<code class="javascript">$("p").before( $("b") );</code>
+</pre>
+<h4>HTML:</h4>
+<pre>
+<code class="html">&lt;p&gt;I would like to say: &lt;/p&gt;&lt;b&gt;Hello&lt;/b&gt;</code>
+</pre>
+<h4>Result:</h4>
+<pre>
+<code class="html">&lt;b&gt;Hello&lt;/b&gt;&lt;p&gt;I would like to say: &lt;/p&gt;</code>
+</pre>
+</div>
+</div>
+</li>
+<li id="bindStringObjectFunction">
+<span class="fn"><a class="name" href="#bindStringObjectFunction">bind</a>( <span class="arg-type tooltip" title="A string of characters.">String</span> <span class="arg-name tooltip" title="An event type">type</span>, <span class="arg-type tooltip" title="A simple Javascript object..">Object</span> <span class="arg-name tooltip" title="(optional) Additional data passed to the event handler as event.data">data</span>, <span class="arg-type tooltip" title="A reference to a Javascript function.">Function</span> <span class="arg-name tooltip" title="A function to bind to the event on each of the set of matched elements">fn</span> ) returns <span class="type"><span class="tooltip" title="A jQuery object.">jQuery</span></span></span>
+<div class="more">
+<div class="desc">Binds a handler to a particular event (like click) for each matched element.
+The event handler is passed an event object that you can use to prevent
+default behaviour. To stop both default action and event bubbling, your handler
+has to return false.<br>
+<br>In most cases, you can define your event handlers as anonymous functions
+(see first example). In cases where that is not possible, you can pass additional
+data as the second parameter (and the handler function as the third), see 
+second example.</div>
+<div class="example">
+<h3>Example:</h3>
+<pre>
+<code class="javascript">$("p").bind("click", function(){
+  alert( $(this).text() );
+});</code>
+</pre>
+<h4>HTML:</h4>
+<pre>
+<code class="html">&lt;p&gt;Hello&lt;/p&gt;</code>
+</pre>
+<h4>Result:</h4>
+<pre>
+<code class="html">alert("Hello")</code>
+</pre>
+</div>
+<div class="example">
+<h3>Example:</h3>
+<p>Pass some additional data to the event handler.</p>
+<pre>
+<code class="javascript">function handler(event) {
+  alert(event.data.foo);
+}
+$("p").bind("click", {foo: "bar"}, handler)</code>
+</pre>
+<h4>Result:</h4>
+<pre>
+<code class="html">alert("bar")</code>
+</pre>
+</div>
+<div class="example">
+<h3>Example:</h3>
+<p>Cancel a default action and prevent it from bubbling by returning false
+from your function.</p>
+<pre>
+<code class="javascript">$("form").bind("submit", function() { return false; })</code>
+</pre>
+</div>
+<div class="example">
+<h3>Example:</h3>
+<p>Cancel only the default action by using the preventDefault method.</p>
+<pre>
+<code class="javascript">$("form").bind("submit", function(event){
+  event.preventDefault();
+});</code>
+</pre>
+</div>
+<div class="example">
+<h3>Example:</h3>
+<p>Stop only an event from bubbling by using the stopPropagation method.</p>
+<pre>
+<code class="javascript">$("form").bind("submit", function(event){
+  event.stopPropagation();
+});</code>
+</pre>
+</div>
+</div>
+</li>
+<li id="blur">
+<span class="fn"><a class="name" href="#blur">blur</a>(  ) returns <span class="type"><span class="tooltip" title="A jQuery object.">jQuery</span></span></span>
+<div class="more">
+<div class="desc">Trigger the blur event of each matched element. This causes all of the functions
+that have been bound to that blur event to be executed, and calls the browser's
+default blur action on the matching element(s). This default action can be prevented
+by returning false from one of the functions bound to the blur event.<br>
+<br>Note: This does not execute the blur method of the underlying elements! If you need to
+blur an element via code, you have to use the DOM method, eg. $("#myinput")[0].blur();</div>
+<div class="example">
+<h3>Example:</h3>
+<pre>
+<code class="javascript">$("p").blur();</code>
+</pre>
+<h4>HTML:</h4>
+<pre>
+<code class="html">&lt;p onblur="alert('Hello');"&gt;Hello&lt;/p&gt;</code>
+</pre>
+<h4>Result:</h4>
+<pre>
+<code class="html">alert('Hello');</code>
+</pre>
+</div>
+</div>
+</li>
+<li id="blurFunction">
+<span class="fn"><a class="name" href="#blurFunction">blur</a>( <span class="arg-type tooltip" title="A reference to a Javascript function.">Function</span> <span class="arg-name tooltip" title="A function to bind to the blur event on each of the matched elements.">fn</span> ) returns <span class="type"><span class="tooltip" title="A jQuery object.">jQuery</span></span></span>
+<div class="more">
+<div class="desc">Bind a function to the blur event of each matched element.</div>
+<div class="example">
+<h3>Example:</h3>
+<pre>
+<code class="javascript">$("p").blur( function() { alert("Hello"); } );</code>
+</pre>
+<h4>HTML:</h4>
+<pre>
+<code class="html">&lt;p&gt;Hello&lt;/p&gt;</code>
+</pre>
+<h4>Result:</h4>
+<pre>
+<code class="html">&lt;p onblur="alert('Hello');"&gt;Hello&lt;/p&gt;</code>
+</pre>
+</div>
+</div>
+</li>
+<li id="browser">
+<span class="fn"><a class="name" href="#browser">$.browser</a> returns <span class="type"><span class="tooltip" title="true or false.">Boolean</span></span></span>
+<div class="more">
+<div class="desc">Contains flags for the useragent, read from navigator.userAgent.
+Available flags are: safari, opera, msie, mozilla<br>
+<br>This property is available before the DOM is ready, therefore you can
+use it to add ready events only for certain browsers.<br>
+<br>There are situations where object detections is not reliable enough, in that
+cases it makes sense to use browser detection. Simply try to avoid both!<br>
+<br>A combination of browser and object detection yields quite reliable results.</div>
+<div class="example">
+<h3>Example:</h3>
+<p>Returns true if the current useragent is some version of microsoft's internet explorer</p>
+<pre>
+<code class="javascript">$.browser.msie</code>
+</pre>
+</div>
+<div class="example">
+<h3>Example:</h3>
+<p>Alerts "this is safari!" only for safari browsers</p>
+<pre>
+<code class="javascript">if($.browser.safari) { $( function() { alert("this is safari!"); } ); }</code>
+</pre>
+</div>
+</div>
+</li>
+<li id="changeFunction">
+<span class="fn"><a class="name" href="#changeFunction">change</a>( <span class="arg-type tooltip" title="A reference to a Javascript function.">Function</span> <span class="arg-name tooltip" title="A function to bind to the change event on each of the matched elements.">fn</span> ) returns <span class="type"><span class="tooltip" title="A jQuery object.">jQuery</span></span></span>
+<div class="more">
+<div class="desc">Bind a function to the change event of each matched element.</div>
+<div class="example">
+<h3>Example:</h3>
+<pre>
+<code class="javascript">$("p").change( function() { alert("Hello"); } );</code>
+</pre>
+<h4>HTML:</h4>
+<pre>
+<code class="html">&lt;p&gt;Hello&lt;/p&gt;</code>
+</pre>
+<h4>Result:</h4>
+<pre>
+<code class="html">&lt;p onchange="alert('Hello');"&gt;Hello&lt;/p&gt;</code>
+</pre>
+</div>
+</div>
+</li>
+<li id="childrenString">
+<span class="fn"><a class="name" href="#childrenString">children</a>( <span class="arg-type tooltip" title="A string of characters.">String</span> <span class="arg-name tooltip" title="(optional) An expression to filter the child Elements with">expr</span> ) returns <span class="type"><span class="tooltip" title="A jQuery object.">jQuery</span></span></span>
+<div class="more">
+<div class="desc">Get a set of elements containing all of the unique children of each of the
+matched set of elements.<br>
+<br>This set can be filtered with an optional expression that will cause
+only elements matching the selector to be collected.</div>
+<div class="example">
+<h3>Example:</h3>
+<p>Find all children of each div.</p>
+<pre>
+<code class="javascript">$("div").children()</code>
+</pre>
+<h4>HTML:</h4>
+<pre>
+<code class="html">&lt;p&gt;Hello&lt;/p&gt;&lt;div&gt;&lt;span&gt;Hello Again&lt;/span&gt;&lt;/div&gt;&lt;p&gt;And Again&lt;/p&gt;</code>
+</pre>
+<h4>Result:</h4>
+<pre>
+<code class="html">[ &lt;span&gt;Hello Again&lt;/span&gt; ]</code>
+</pre>
+</div>
+<div class="example">
+<h3>Example:</h3>
+<p>Find all children with a class "selected" of each div.</p>
+<pre>
+<code class="javascript">$("div").children(".selected")</code>
+</pre>
+<h4>HTML:</h4>
+<pre>
+<code class="html">&lt;div&gt;&lt;span&gt;Hello&lt;/span&gt;&lt;p class="selected"&gt;Hello Again&lt;/p&gt;&lt;p&gt;And Again&lt;/p&gt;&lt;/div&gt;</code>
+</pre>
+<h4>Result:</h4>
+<pre>
+<code class="html">[ &lt;p class="selected"&gt;Hello Again&lt;/p&gt; ]</code>
+</pre>
+</div>
+</div>
+</li>
+<li id="click">
+<span class="fn"><a class="name" href="#click">click</a>(  ) returns <span class="type"><span class="tooltip" title="A jQuery object.">jQuery</span></span></span>
+<div class="more">
+<div class="desc">Trigger the click event of each matched element. This causes all of the functions
+that have been bound to thet click event to be executed.</div>
+<div class="example">
+<h3>Example:</h3>
+<pre>
+<code class="javascript">$("p").click();</code>
+</pre>
+<h4>HTML:</h4>
+<pre>
+<code class="html">&lt;p onclick="alert('Hello');"&gt;Hello&lt;/p&gt;</code>
+</pre>
+<h4>Result:</h4>
+<pre>
+<code class="html">alert('Hello');</code>
+</pre>
+</div>
+</div>
+</li>
+<li id="clickFunction">
+<span class="fn"><a class="name" href="#clickFunction">click</a>( <span class="arg-type tooltip" title="A reference to a Javascript function.">Function</span> <span class="arg-name tooltip" title="A function to bind to the click event on each of the matched elements.">fn</span> ) returns <span class="type"><span class="tooltip" title="A jQuery object.">jQuery</span></span></span>
+<div class="more">
+<div class="desc">Bind a function to the click event of each matched element.</div>
+<div class="example">
+<h3>Example:</h3>
+<pre>
+<code class="javascript">$("p").click( function() { alert("Hello"); } );</code>
+</pre>
+<h4>HTML:</h4>
+<pre>
+<code class="html">&lt;p&gt;Hello&lt;/p&gt;</code>
+</pre>
+<h4>Result:</h4>
+<pre>
+<code class="html">&lt;p onclick="alert('Hello');"&gt;Hello&lt;/p&gt;</code>
+</pre>
+</div>
+</div>
+</li>
+<li id="cloneBoolean">
+<span class="fn"><a class="name" href="#cloneBoolean">clone</a>( <span class="arg-type tooltip" title="true or false.">Boolean</span> <span class="arg-name tooltip" title="(Optional) Set to false if you don't want to clone all descendant nodes, in addition to the element itself.">deep</span> ) returns <span class="type"><span class="tooltip" title="A jQuery object.">jQuery</span></span></span>
+<div class="more">
+<div class="desc">Clone matched DOM Elements and select the clones. <br>
+<br>This is useful for moving copies of the elements to another
+location in the DOM.</div>
+<div class="example">
+<h3>Example:</h3>
+<p>Clones all b elements (and selects the clones) and prepends them to all paragraphs.</p>
+<pre>
+<code class="javascript">$("b").clone().prependTo("p");</code>
+</pre>
+<h4>HTML:</h4>
+<pre>
+<code class="html">&lt;b&gt;Hello&lt;/b&gt;&lt;p&gt;, how are you?&lt;/p&gt;</code>
+</pre>
+<h4>Result:</h4>
+<pre>
+<code class="html">&lt;b&gt;Hello&lt;/b&gt;&lt;p&gt;&lt;b&gt;Hello&lt;/b&gt;, how are you?&lt;/p&gt;</code>
+</pre>
+</div>
+</div>
+</li>
+<li id="containsString">
+<span class="fn"><a class="name" href="#containsString">contains</a>( <span class="arg-type tooltip" title="A string of characters.">String</span> <span class="arg-name tooltip" title="The string that will be contained within the text of an element.">str</span> ) returns <span class="type"><span class="tooltip" title="A jQuery object.">jQuery</span></span></span>
+<div class="more">
+<div class="desc">Filter the set of elements to those that contain the specified text.</div>
+<div class="example">
+<h3>Example:</h3>
+<pre>
+<code class="javascript">$("p").contains("test")</code>
+</pre>
+<h4>HTML:</h4>
+<pre>
+<code class="html">&lt;p&gt;This is just a test.&lt;/p&gt;&lt;p&gt;So is this&lt;/p&gt;</code>
+</pre>
+<h4>Result:</h4>
+<pre>
+<code class="html">[ &lt;p&gt;This is just a test.&lt;/p&gt; ]</code>
+</pre>
+</div>
+</div>
+</li>
+<li id="cssString">
+<span class="fn"><a class="name" href="#cssString">css</a>( <span class="arg-type tooltip" title="A string of characters.">String</span> <span class="arg-name tooltip" title="The name of the property to access.">name</span> ) returns <span class="type"><span class="tooltip" title="A string of characters.">String</span></span></span>
+<div class="more">
+<div class="desc">Access a style property on the first matched element.
+This method makes it easy to retrieve a style property value
+from the first matched element.</div>
+<div class="example">
+<h3>Example:</h3>
+<p>Retrieves the color style of the first paragraph</p>
+<pre>
+<code class="javascript">$("p").css("color");</code>
+</pre>
+<h4>HTML:</h4>
+<pre>
+<code class="html">&lt;p style="color:red;"&gt;Test Paragraph.&lt;/p&gt;</code>
+</pre>
+<h4>Result:</h4>
+<pre>
+<code class="html">"red"</code>
+</pre>
+</div>
+<div class="example">
+<h3>Example:</h3>
+<p>Retrieves the font-weight style of the first paragraph.</p>
+<pre>
+<code class="javascript">$("p").css("font-weight");</code>
+</pre>
+<h4>HTML:</h4>
+<pre>
+<code class="html">&lt;p style="font-weight: bold;"&gt;Test Paragraph.&lt;/p&gt;</code>
+</pre>
+<h4>Result:</h4>
+<pre>
+<code class="html">"bold"</code>
+</pre>
+</div>
+</div>
+</li>
+<li id="cssMap">
+<span class="fn"><a class="name" href="#cssMap">css</a>( <span class="arg-type tooltip" title="A Javascript object that contains key/value pairs in the form of properties and values.">Map</span> <span class="arg-name tooltip" title="Key/value pairs to set as style properties.">properties</span> ) returns <span class="type"><span class="tooltip" title="A jQuery object.">jQuery</span></span></span>
+<div class="more">
+<div class="desc">Set a key/value object as style properties to all matched elements.<br>
+<br>This serves as the best way to set a large number of style properties
+on all matched elements.</div>
+<div class="example">
+<h3>Example:</h3>
+<p>Sets color and background styles to all p elements.</p>
+<pre>
+<code class="javascript">$("p").css({ color: "red", background: "blue" });</code>
+</pre>
+<h4>HTML:</h4>
+<pre>
+<code class="html">&lt;p&gt;Test Paragraph.&lt;/p&gt;</code>
+</pre>
+<h4>Result:</h4>
+<pre>
+<code class="html">&lt;p style="color:red; background:blue;"&gt;Test Paragraph.&lt;/p&gt;</code>
+</pre>
+</div>
+</div>
+</li>
+<li id="cssStringStringNumber">
+<span class="fn"><a class="name" href="#cssStringStringNumber">css</a>( <span class="arg-type tooltip" title="A string of characters.">String</span> <span class="arg-name tooltip" title="The name of the property to set.">key</span>, <span class="arg-type tooltip" title="A string of characters or a number.">String|Number</span> <span class="arg-name tooltip" title="The value to set the property to.">value</span> ) returns <span class="type"><span class="tooltip" title="A jQuery object.">jQuery</span></span></span>
+<div class="more">
+<div class="desc">Set a single style property to a value, on all matched elements.
+If a number is provided, it is automatically converted into a pixel value.</div>
+<div class="example">
+<h3>Example:</h3>
+<p>Changes the color of all paragraphs to red</p>
+<pre>
+<code class="javascript">$("p").css("color","red");</code>
+</pre>
+<h4>HTML:</h4>
+<pre>
+<code class="html">&lt;p&gt;Test Paragraph.&lt;/p&gt;</code>
+</pre>
+<h4>Result:</h4>
+<pre>
+<code class="html">&lt;p style="color:red;"&gt;Test Paragraph.&lt;/p&gt;</code>
+</pre>
+</div>
+<div class="example">
+<h3>Example:</h3>
+<p>Changes the left of all paragraphs to "30px"</p>
+<pre>
+<code class="javascript">$("p").css("left",30);</code>
+</pre>
+<h4>HTML:</h4>
+<pre>
+<code class="html">&lt;p&gt;Test Paragraph.&lt;/p&gt;</code>
+</pre>
+<h4>Result:</h4>
+<pre>
+<code class="html">&lt;p style="left:30px;"&gt;Test Paragraph.&lt;/p&gt;</code>
+</pre>
+</div>
+</div>
+</li>
+<li id="dblclickFunction">
+<span class="fn"><a class="name" href="#dblclickFunction">dblclick</a>( <span class="arg-type tooltip" title="A reference to a Javascript function.">Function</span> <span class="arg-name tooltip" title="A function to bind to the dblclick event on each of the matched elements.">fn</span> ) returns <span class="type"><span class="tooltip" title="A jQuery object.">jQuery</span></span></span>
+<div class="more">
+<div class="desc">Bind a function to the dblclick event of each matched element.</div>
+<div class="example">
+<h3>Example:</h3>
+<pre>
+<code class="javascript">$("p").dblclick( function() { alert("Hello"); } );</code>
+</pre>
+<h4>HTML:</h4>
+<pre>
+<code class="html">&lt;p&gt;Hello&lt;/p&gt;</code>
+</pre>
+<h4>Result:</h4>
+<pre>
+<code class="html">&lt;p ondblclick="alert('Hello');"&gt;Hello&lt;/p&gt;</code>
+</pre>
+</div>
+</div>
+</li>
+<li id="eachFunction">
+<span class="fn"><a class="name" href="#eachFunction">each</a>( <span class="arg-type tooltip" title="A reference to a Javascript function.">Function</span> <span class="arg-name tooltip" title="A function to execute">fn</span> ) returns <span class="type"><span class="tooltip" title="A jQuery object.">jQuery</span></span></span>
+<div class="more">
+<div class="desc">Execute a function within the context of every matched element.
+This means that every time the passed-in function is executed
+(which is once for every element matched) the 'this' keyword
+points to the specific DOM element.<br>
+<br>Additionally, the function, when executed, is passed a single
+argument representing the position of the element in the matched
+set (integer, zero-index).</div>
+<div class="example">
+<h3>Example:</h3>
+<p>Iterates over two images and sets their src property</p>
+<pre>
+<code class="javascript">$("img").each(function(i){
+  this.src = "test" + i + ".jpg";
+});</code>
+</pre>
+<h4>HTML:</h4>
+<pre>
+<code class="html">&lt;img/&gt;&lt;img/&gt;</code>
+</pre>
+<h4>Result:</h4>
+<pre>
+<code class="html">&lt;img src="test0.jpg"/&gt;&lt;img src="test1.jpg"/&gt;</code>
+</pre>
+</div>
+</div>
+</li>
+<li id="eachObjectFunction">
+<span class="fn"><a class="name" href="#eachObjectFunction">$.each</a>( <span class="arg-type tooltip" title="A simple Javascript object..">Object</span> <span class="arg-name tooltip" title="The object, or array, to iterate over.">obj</span>, <span class="arg-type tooltip" title="A reference to a Javascript function.">Function</span> <span class="arg-name tooltip" title="The function that will be executed on every object.">fn</span> ) returns <span class="type"><span class="tooltip" title="A simple Javascript object..">Object</span></span></span>
+<div class="more">
+<div class="desc">A generic iterator function, which can be used to seamlessly
+iterate over both objects and arrays. This function is not the same
+as $().each() - which is used to iterate, exclusively, over a jQuery
+object. This function can be used to iterate over anything.<br>
+<br>The callback has two arguments:the key (objects) or index (arrays) as first
+the first, and the value as the second.</div>
+<div class="example">
+<h3>Example:</h3>
+<p>This is an example of iterating over the items in an array,
+accessing both the current item and its index.</p>
+<pre>
+<code class="javascript">$.each( [0,1,2], function(i, n){
+  alert( "Item #" + i + ": " + n );
+});</code>
+</pre>
+</div>
+<div class="example">
+<h3>Example:</h3>
+<p>This is an example of iterating over the properties in an
+Object, accessing both the current item and its key.</p>
+<pre>
+<code class="javascript">$.each( { name: "John", lang: "JS" }, function(i, n){
+  alert( "Name: " + i + ", Value: " + n );
+});</code>
+</pre>
+</div>
+</div>
+</li>
+<li id="empty">
+<span class="fn"><a class="name" href="#empty">empty</a>(  ) returns <span class="type"><span class="tooltip" title="A jQuery object.">jQuery</span></span></span>
+<div class="more">
+<div class="desc">Removes all child nodes from the set of matched elements.</div>
+<div class="example">
+<h3>Example:</h3>
+<pre>
+<code class="javascript">$("p").empty()</code>
+</pre>
+<h4>HTML:</h4>
+<pre>
+<code class="html">&lt;p&gt;Hello, &lt;span&gt;Person&lt;/span&gt; &lt;a href="#"&gt;and person&lt;/a&gt;&lt;/p&gt;</code>
+</pre>
+<h4>Result:</h4>
+<pre>
+<code class="html">[ &lt;p&gt;&lt;/p&gt; ]</code>
+</pre>
+</div>
+</div>
+</li>
+<li id="end">
+<span class="fn"><a class="name" href="#end">end</a>(  ) returns <span class="type"><span class="tooltip" title="A jQuery object.">jQuery</span></span></span>
+<div class="more">
+<div class="desc">Revert the most recent 'destructive' operation, changing the set of matched elements
+to its previous state (right before the destructive operation).<br>
+<br>If there was no destructive operation before, an empty set is returned.<br>
+<br>A 'destructive' operation is any operation that changes the set of
+matched jQuery elements. These functions are: &lt;code&gt;add&lt;/code&gt;,
+&lt;code&gt;children&lt;/code&gt;, &lt;code&gt;clone&lt;/code&gt;, &lt;code&gt;filter&lt;/code&gt;,
+&lt;code&gt;find&lt;/code&gt;, &lt;code&gt;not&lt;/code&gt;, &lt;code&gt;next&lt;/code&gt;,
+&lt;code&gt;parent&lt;/code&gt;, &lt;code&gt;parents&lt;/code&gt;, &lt;code&gt;prev&lt;/code&gt; and &lt;code&gt;siblings&lt;/code&gt;.</div>
+<div class="example">
+<h3>Example:</h3>
+<p>Selects all paragraphs, finds span elements inside these, and reverts the
+selection back to the paragraphs.</p>
+<pre>
+<code class="javascript">$("p").find("span").end();</code>
+</pre>
+<h4>HTML:</h4>
+<pre>
+<code class="html">&lt;p&gt;&lt;span&gt;Hello&lt;/span&gt;, how are you?&lt;/p&gt;</code>
+</pre>
+<h4>Result:</h4>
+<pre>
+<code class="html">[ &lt;p&gt;...&lt;/p&gt; ]</code>
+</pre>
+</div>
+</div>
+</li>
+<li id="eqNumber">
+<span class="fn"><a class="name" href="#eqNumber">eq</a>( <span class="arg-type tooltip" title="A valid numeric.">Number</span> <span class="arg-name tooltip" title="The index of the element that you wish to limit to.">pos</span> ) returns <span class="type"><span class="tooltip" title="A jQuery object.">jQuery</span></span></span>
+<div class="more">
+<div class="desc">Reduce the set of matched elements to a single element.
+The position of the element in the set of matched elements
+starts at 0 and goes to length - 1.</div>
+<div class="example">
+<h3>Example:</h3>
+<pre>
+<code class="javascript">$("p").eq(1)</code>
+</pre>
+<h4>HTML:</h4>
+<pre>
+<code class="html">&lt;p&gt;This is just a test.&lt;/p&gt;&lt;p&gt;So is this&lt;/p&gt;</code>
+</pre>
+<h4>Result:</h4>
+<pre>
+<code class="html">[ &lt;p&gt;So is this&lt;/p&gt; ]</code>
+</pre>
+</div>
+</div>
+</li>
+<li id="errorFunction">
+<span class="fn"><a class="name" href="#errorFunction">error</a>( <span class="arg-type tooltip" title="A reference to a Javascript function.">Function</span> <span class="arg-name tooltip" title="A function to bind to the error event on each of the matched elements.">fn</span> ) returns <span class="type"><span class="tooltip" title="A jQuery object.">jQuery</span></span></span>
+<div class="more">
+<div class="desc">Bind a function to the error event of each matched element.</div>
+<div class="example">
+<h3>Example:</h3>
+<pre>
+<code class="javascript">$("p").error( function() { alert("Hello"); } );</code>
+</pre>
+<h4>HTML:</h4>
+<pre>
+<code class="html">&lt;p&gt;Hello&lt;/p&gt;</code>
+</pre>
+<h4>Result:</h4>
+<pre>
+<code class="html">&lt;p onerror="alert('Hello');"&gt;Hello&lt;/p&gt;</code>
+</pre>
+</div>
+</div>
+</li>
+<li id="extendObject">
+<span class="fn"><a class="name" href="#extendObject">$.extend</a>( <span class="arg-type tooltip" title="A simple Javascript object..">Object</span> <span class="arg-name tooltip" title="The object that will be merged into the jQuery object">prop</span> ) returns <span class="type"><span class="tooltip" title="A simple Javascript object..">Object</span></span></span>
+<div class="more">
+<div class="desc">Extends the jQuery object itself. Can be used to add functions into
+the jQuery namespace and to [[Plugins/Authoring|add plugin methods]] (plugins).</div>
+<div class="example">
+<h3>Example:</h3>
+<p>Adds two plugin methods.</p>
+<pre>
+<code class="javascript">jQuery.fn.extend({
+  check: function() {
+    return this.each(function() { this.checked = true; });
+  },
+  uncheck: function() {
+    return this.each(function() { this.checked = false; });
+  }
+});
+$("input[@type=checkbox]").check();
+$("input[@type=radio]").uncheck();</code>
+</pre>
+</div>
+<div class="example">
+<h3>Example:</h3>
+<p>Adds two functions into the jQuery namespace</p>
+<pre>
+<code class="javascript">jQuery.extend({
+  min: function(a, b) { return a &lt; b ? a : b; },
+  max: function(a, b) { return a &gt; b ? a : b; }
+});</code>
+</pre>
+</div>
+</div>
+</li>
+<li id="extendObjectObjectObject">
+<span class="fn"><a class="name" href="#extendObjectObjectObject">$.extend</a>( <span class="arg-type tooltip" title="A simple Javascript object..">Object</span> <span class="arg-name tooltip" title="The object to extend">target</span>, <span class="arg-type tooltip" title="A simple Javascript object..">Object</span> <span class="arg-name tooltip" title="The object that will be merged into the first.">prop1</span>, <span class="arg-type tooltip" title="A simple Javascript object..">Object</span> <span class="arg-name tooltip" title="(optional) More objects to merge into the first">propN</span> ) returns <span class="type"><span class="tooltip" title="A simple Javascript object..">Object</span></span></span>
+<div class="more">
+<div class="desc">Extend one object with one or more others, returning the original,
+modified, object. This is a great utility for simple inheritance.</div>
+<div class="example">
+<h3>Example:</h3>
+<p>Merge settings and options, modifying settings</p>
+<pre>
+<code class="javascript">var settings = { validate: false, limit: 5, name: "foo" };
+var options = { validate: true, name: "bar" };
+jQuery.extend(settings, options);</code>
+</pre>
+<h4>Result:</h4>
+<pre>
+<code class="html">settings == { validate: true, limit: 5, name: "bar" }</code>
+</pre>
+</div>
+<div class="example">
+<h3>Example:</h3>
+<p>Merge defaults and options, without modifying the defaults</p>
+<pre>
+<code class="javascript">var defaults = { validate: false, limit: 5, name: "foo" };
+var options = { validate: true, name: "bar" };
+var settings = jQuery.extend({}, defaults, options);</code>
+</pre>
+<h4>Result:</h4>
+<pre>
+<code class="html">settings == { validate: true, limit: 5, name: "bar" }</code>
+</pre>
+</div>
+</div>
+</li>
+<li id="fadeInStringNumberFunction">
+<span class="fn"><a class="name" href="#fadeInStringNumberFunction">fadeIn</a>( <span class="arg-type tooltip" title="A string of characters or a number.">String|Number</span> <span class="arg-name tooltip" title="(optional) A string representing one of the three predefined speeds (&quot;slow&quot;, &quot;normal&quot;, or &quot;fast&quot;) or the number of milliseconds to run the animation (e.g. 1000).">speed</span>, <span class="arg-type tooltip" title="A reference to a Javascript function.">Function</span> <span class="arg-name tooltip" title="(optional) A function to be executed whenever the animation completes.">callback</span> ) returns <span class="type"><span class="tooltip" title="A jQuery object.">jQuery</span></span></span>
+<div class="more">
+<div class="desc">Fade in all matched elements by adjusting their opacity and firing an
+optional callback after completion.<br>
+<br>Only the opacity is adjusted for this animation, meaning that
+all of the matched elements should already have some form of height
+and width associated with them.</div>
+<div class="example">
+<h3>Example:</h3>
+<pre>
+<code class="javascript">$("p").fadeIn("slow");</code>
+</pre>
+</div>
+<div class="example">
+<h3>Example:</h3>
+<pre>
+<code class="javascript">$("p").fadeIn("slow",function(){
+  alert("Animation Done.");
+});</code>
+</pre>
+</div>
+</div>
+</li>
+<li id="fadeOutStringNumberFunction">
+<span class="fn"><a class="name" href="#fadeOutStringNumberFunction">fadeOut</a>( <span class="arg-type tooltip" title="A string of characters or a number.">String|Number</span> <span class="arg-name tooltip" title="(optional) A string representing one of the three predefined speeds (&quot;slow&quot;, &quot;normal&quot;, or &quot;fast&quot;) or the number of milliseconds to run the animation (e.g. 1000).">speed</span>, <span class="arg-type tooltip" title="A reference to a Javascript function.">Function</span> <span class="arg-name tooltip" title="(optional) A function to be executed whenever the animation completes.">callback</span> ) returns <span class="type"><span class="tooltip" title="A jQuery object.">jQuery</span></span></span>
+<div class="more">
+<div class="desc">Fade out all matched elements by adjusting their opacity and firing an
+optional callback after completion.<br>
+<br>Only the opacity is adjusted for this animation, meaning that
+all of the matched elements should already have some form of height
+and width associated with them.</div>
+<div class="example">
+<h3>Example:</h3>
+<pre>
+<code class="javascript">$("p").fadeOut("slow");</code>
+</pre>
+</div>
+<div class="example">
+<h3>Example:</h3>
+<pre>
+<code class="javascript">$("p").fadeOut("slow",function(){
+  alert("Animation Done.");
+});</code>
+</pre>
+</div>
+</div>
+</li>
+<li id="fadeToStringNumberNumberFunction">
+<span class="fn"><a class="name" href="#fadeToStringNumberNumberFunction">fadeTo</a>( <span class="arg-type tooltip" title="A string of characters or a number.">String|Number</span> <span class="arg-name tooltip" title="A string representing one of the three predefined speeds (&quot;slow&quot;, &quot;normal&quot;, or &quot;fast&quot;) or the number of milliseconds to run the animation (e.g. 1000).">speed</span>, <span class="arg-type tooltip" title="A valid numeric.">Number</span> <span class="arg-name tooltip" title="The opacity to fade to (a number from 0 to 1).">opacity</span>, <span class="arg-type tooltip" title="A reference to a Javascript function.">Function</span> <span class="arg-name tooltip" title="(optional) A function to be executed whenever the animation completes.">callback</span> ) returns <span class="type"><span class="tooltip" title="A jQuery object.">jQuery</span></span></span>
+<div class="more">
+<div class="desc">Fade the opacity of all matched elements to a specified opacity and firing an
+optional callback after completion.<br>
+<br>Only the opacity is adjusted for this animation, meaning that
+all of the matched elements should already have some form of height
+and width associated with them.</div>
+<div class="example">
+<h3>Example:</h3>
+<pre>
+<code class="javascript">$("p").fadeTo("slow", 0.5);</code>
+</pre>
+</div>
+<div class="example">
+<h3>Example:</h3>
+<pre>
+<code class="javascript">$("p").fadeTo("slow", 0.5, function(){
+  alert("Animation Done.");
+});</code>
+</pre>
+</div>
+</div>
+</li>
+<li id="filterString">
+<span class="fn"><a class="name" href="#filterString">filter</a>( <span class="arg-type tooltip" title="A string of characters.">String</span> <span class="arg-name tooltip" title="Expression(s) to search with.">expression</span> ) returns <span class="type"><span class="tooltip" title="A jQuery object.">jQuery</span></span></span>
+<div class="more">
+<div class="desc">Removes all elements from the set of matched elements that do not
+match the specified expression(s). This method is used to narrow down
+the results of a search.<br>
+<br>Provide a comma-separated list of expressions to apply multiple filters at once.</div>
+<div class="example">
+<h3>Example:</h3>
+<p>Selects all paragraphs and removes those without a class "selected".</p>
+<pre>
+<code class="javascript">$("p").filter(".selected")</code>
+</pre>
+<h4>HTML:</h4>
+<pre>
+<code class="html">&lt;p class="selected"&gt;Hello&lt;/p&gt;&lt;p&gt;How are you?&lt;/p&gt;</code>
+</pre>
+<h4>Result:</h4>
+<pre>
+<code class="html">[ &lt;p class="selected"&gt;Hello&lt;/p&gt; ]</code>
+</pre>
+</div>
+<div class="example">
+<h3>Example:</h3>
+<p>Selects all paragraphs and removes those without class "selected" and being the first one.</p>
+<pre>
+<code class="javascript">$("p").filter(".selected, :first")</code>
+</pre>
+<h4>HTML:</h4>
+<pre>
+<code class="html">&lt;p&gt;Hello&lt;/p&gt;&lt;p&gt;Hello Again&lt;/p&gt;&lt;p class="selected"&gt;And Again&lt;/p&gt;</code>
+</pre>
+<h4>Result:</h4>
+<pre>
+<code class="html">[ &lt;p&gt;Hello&lt;/p&gt;, &lt;p class="selected"&gt;And Again&lt;/p&gt; ]</code>
+</pre>
+</div>
+</div>
+</li>
+<li id="filterFunction">
+<span class="fn"><a class="name" href="#filterFunction">filter</a>( <span class="arg-type tooltip" title="A reference to a Javascript function.">Function</span> <span class="arg-name tooltip" title="A function to use for filtering">filter</span> ) returns <span class="type"><span class="tooltip" title="A jQuery object.">jQuery</span></span></span>
+<div class="more">
+<div class="desc">Removes all elements from the set of matched elements that do not
+pass the specified filter. This method is used to narrow down
+the results of a search.</div>
+<div class="example">
+<h3>Example:</h3>
+<p>Remove all elements that have a child ol element</p>
+<pre>
+<code class="javascript">$("p").filter(function(index) {
+  return $("ol", this).length == 0;
+})</code>
+</pre>
+<h4>HTML:</h4>
+<pre>
+<code class="html">&lt;p&gt;&lt;ol&gt;&lt;li&gt;Hello&lt;/li&gt;&lt;/ol&gt;&lt;/p&gt;&lt;p&gt;How are you?&lt;/p&gt;</code>
+</pre>
+<h4>Result:</h4>
+<pre>
+<code class="html">[ &lt;p&gt;How are you?&lt;/p&gt; ]</code>
+</pre>
+</div>
+</div>
+</li>
+<li id="findString">
+<span class="fn"><a class="name" href="#findString">find</a>( <span class="arg-type tooltip" title="A string of characters.">String</span> <span class="arg-name tooltip" title="An expression to search with.">expr</span> ) returns <span class="type"><span class="tooltip" title="A jQuery object.">jQuery</span></span></span>
+<div class="more">
+<div class="desc">Searches for all elements that match the specified expression.
+This method is a good way to find additional descendant
+elements with which to process.<br>
+<br>All searching is done using a jQuery expression. The expression can be
+written using CSS 1-3 Selector syntax, or basic XPath.</div>
+<div class="example">
+<h3>Example:</h3>
+<p>Starts with all paragraphs and searches for descendant span
+elements, same as $("p span")</p>
+<pre>
+<code class="javascript">$("p").find("span");</code>
+</pre>
+<h4>HTML:</h4>
+<pre>
+<code class="html">&lt;p&gt;&lt;span&gt;Hello&lt;/span&gt;, how are you?&lt;/p&gt;</code>
+</pre>
+<h4>Result:</h4>
+<pre>
+<code class="html">[ &lt;span&gt;Hello&lt;/span&gt; ]</code>
+</pre>
+</div>
+</div>
+</li>
+<li id="focus">
+<span class="fn"><a class="name" href="#focus">focus</a>(  ) returns <span class="type"><span class="tooltip" title="A jQuery object.">jQuery</span></span></span>
+<div class="more">
+<div class="desc">Trigger the focus event of each matched element. This causes all of the functions
+that have been bound to thet focus event to be executed.<br>
+<br>Note: This does not execute the focus method of the underlying elements! If you need to
+focus an element via code, you have to use the DOM method, eg. $("#myinput")[0].focus();</div>
+<div class="example">
+<h3>Example:</h3>
+<pre>
+<code class="javascript">$("p").focus();</code>
+</pre>
+<h4>HTML:</h4>
+<pre>
+<code class="html">&lt;p onfocus="alert('Hello');"&gt;Hello&lt;/p&gt;</code>
+</pre>
+<h4>Result:</h4>
+<pre>
+<code class="html">alert('Hello');</code>
+</pre>
+</div>
+</div>
+</li>
+<li id="focusFunction">
+<span class="fn"><a class="name" href="#focusFunction">focus</a>( <span class="arg-type tooltip" title="A reference to a Javascript function.">Function</span> <span class="arg-name tooltip" title="A function to bind to the focus event on each of the matched elements.">fn</span> ) returns <span class="type"><span class="tooltip" title="A jQuery object.">jQuery</span></span></span>
+<div class="more">
+<div class="desc">Bind a function to the focus event of each matched element.</div>
+<div class="example">
+<h3>Example:</h3>
+<pre>
+<code class="javascript">$("p").focus( function() { alert("Hello"); } );</code>
+</pre>
+<h4>HTML:</h4>
+<pre>
+<code class="html">&lt;p&gt;Hello&lt;/p&gt;</code>
+</pre>
+<h4>Result:</h4>
+<pre>
+<code class="html">&lt;p onfocus="alert('Hello');"&gt;Hello&lt;/p&gt;</code>
+</pre>
+</div>
+</div>
+</li>
+<li id="get">
+<span class="fn"><a class="name" href="#get">get</a>(  ) returns <span class="type"><span class="tooltip" title="An Array of DOM Elements.">Array&lt;Element&gt;</span></span></span>
+<div class="more">
+<div class="desc">Access all matched DOM elements. This serves as a backwards-compatible
+way of accessing all matched elements (other than the jQuery object
+itself, which is, in fact, an array of elements).<br>
+<br>It is useful if you need to operate on the DOM elements themselves instead of using built-in jQuery functions.</div>
+<div class="example">
+<h3>Example:</h3>
+<p>Selects all images in the document and returns the DOM Elements as an Array</p>
+<pre>
+<code class="javascript">$("img").get();</code>
+</pre>
+<h4>HTML:</h4>
+<pre>
+<code class="html">&lt;img src="test1.jpg"/&gt; &lt;img src="test2.jpg"/&gt;</code>
+</pre>
+<h4>Result:</h4>
+<pre>
+<code class="html">[ &lt;img src="test1.jpg"/&gt; &lt;img src="test2.jpg"/&gt; ]</code>
+</pre>
+</div>
+</div>
+</li>
+<li id="getNumber">
+<span class="fn"><a class="name" href="#getNumber">get</a>( <span class="arg-type tooltip" title="A valid numeric.">Number</span> <span class="arg-name tooltip" title="Access the element in the Nth position.">num</span> ) returns <span class="type"><span class="tooltip" title="The Javascript object representation of a DOM Element.">Element</span></span></span>
+<div class="more">
+<div class="desc">Access a single matched DOM element at a specified index in the matched set.
+This allows you to extract the actual DOM element and operate on it
+directly without necessarily using jQuery functionality on it.</div>
+<div class="example">
+<h3>Example:</h3>
+<p>Selects all images in the document and returns the first one</p>
+<pre>
+<code class="javascript">$("img").get(0);</code>
+</pre>
+<h4>HTML:</h4>
+<pre>
+<code class="html">&lt;img src="test1.jpg"/&gt; &lt;img src="test2.jpg"/&gt;</code>
+</pre>
+<h4>Result:</h4>
+<pre>
+<code class="html">&lt;img src="test1.jpg"/&gt;</code>
+</pre>
+</div>
+</div>
+</li>
+<li id="getStringMapFunction">
+<span class="fn"><a class="name" href="#getStringMapFunction">$.get</a>( <span class="arg-type tooltip" title="A string of characters.">String</span> <span class="arg-name tooltip" title="The URL of the page to load.">url</span>, <span class="arg-type tooltip" title="A Javascript object that contains key/value pairs in the form of properties and values.">Map</span> <span class="arg-name tooltip" title="(optional) Key/value pairs that will be sent to the server.">params</span>, <span class="arg-type tooltip" title="A reference to a Javascript function.">Function</span> <span class="arg-name tooltip" title="(optional) A function to be executed whenever the data is loaded successfully.">callback</span> ) returns <span class="type"><span class="tooltip" title="An XMLHttpRequest object (referencing a HTTP request).">XMLHttpRequest</span></span></span>
+<div class="more">
+<div class="desc">Load a remote page using an HTTP GET request.<br>
+<br>This is an easy way to send a simple GET request to a server
+without having to use the more complex $.ajax function. It
+allows a single callback function to be specified that will
+be executed when the request is complete (and only if the response
+has a successful response code). If you need to have both error
+and success callbacks, you may want to use $.ajax.</div>
+<div class="example">
+<h3>Example:</h3>
+<pre>
+<code class="javascript">$.get("test.cgi");</code>
+</pre>
+</div>
+<div class="example">
+<h3>Example:</h3>
+<pre>
+<code class="javascript">$.get("test.cgi", { name: "John", time: "2pm" } );</code>
+</pre>
+</div>
+<div class="example">
+<h3>Example:</h3>
+<pre>
+<code class="javascript">$.get("test.cgi", function(data){
+  alert("Data Loaded: " + data);
+});</code>
+</pre>
+</div>
+<div class="example">
+<h3>Example:</h3>
+<pre>
+<code class="javascript">$.get("test.cgi",
+  { name: "John", time: "2pm" },
+  function(data){
+    alert("Data Loaded: " + data);
+  }
+);</code>
+</pre>
+</div>
+</div>
+</li>
+<li id="getIfModifiedStringMapFunction">
+<span class="fn"><a class="name" href="#getIfModifiedStringMapFunction">$.getIfModified</a>( <span class="arg-type tooltip" title="A string of characters.">String</span> <span class="arg-name tooltip" title="The URL of the page to load.">url</span>, <span class="arg-type tooltip" title="A Javascript object that contains key/value pairs in the form of properties and values.">Map</span> <span class="arg-name tooltip" title="(optional) Key/value pairs that will be sent to the server.">params</span>, <span class="arg-type tooltip" title="A reference to a Javascript function.">Function</span> <span class="arg-name tooltip" title="(optional) A function to be executed whenever the data is loaded successfully.">callback</span> ) returns <span class="type"><span class="tooltip" title="An XMLHttpRequest object (referencing a HTTP request).">XMLHttpRequest</span></span></span>
+<div class="more">
+<div class="desc">Load a remote page using an HTTP GET request, only if it hasn't
+been modified since it was last retrieved.</div>
+<div class="example">
+<h3>Example:</h3>
+<pre>
+<code class="javascript">$.getIfModified("test.html");</code>
+</pre>
+</div>
+<div class="example">
+<h3>Example:</h3>
+<pre>
+<code class="javascript">$.getIfModified("test.html", { name: "John", time: "2pm" } );</code>
+</pre>
+</div>
+<div class="example">
+<h3>Example:</h3>
+<pre>
+<code class="javascript">$.getIfModified("test.cgi", function(data){
+  alert("Data Loaded: " + data);
+});</code>
+</pre>
+</div>
+<div class="example">
+<h3>Example:</h3>
+<pre>
+<code class="javascript">$.getifModified("test.cgi",
+  { name: "John", time: "2pm" },
+  function(data){
+    alert("Data Loaded: " + data);
+  }
+);</code>
+</pre>
+</div>
+</div>
+</li>
+<li id="getJSONStringMapFunction">
+<span class="fn"><a class="name" href="#getJSONStringMapFunction">$.getJSON</a>( <span class="arg-type tooltip" title="A string of characters.">String</span> <span class="arg-name tooltip" title="The URL of the page to load.">url</span>, <span class="arg-type tooltip" title="A Javascript object that contains key/value pairs in the form of properties and values.">Map</span> <span class="arg-name tooltip" title="(optional) Key/value pairs that will be sent to the server.">params</span>, <span class="arg-type tooltip" title="A reference to a Javascript function.">Function</span> <span class="arg-name tooltip" title="A function to be executed whenever the data is loaded successfully.">callback</span> ) returns <span class="type"><span class="tooltip" title="An XMLHttpRequest object (referencing a HTTP request).">XMLHttpRequest</span></span></span>
+<div class="more">
+<div class="desc">Load JSON data using an HTTP GET request.</div>
+<div class="example">
+<h3>Example:</h3>
+<pre>
+<code class="javascript">$.getJSON("test.js", function(json){
+  alert("JSON Data: " + json.users[3].name);
+});</code>
+</pre>
+</div>
+<div class="example">
+<h3>Example:</h3>
+<pre>
+<code class="javascript">$.getJSON("test.js",
+  { name: "John", time: "2pm" },
+  function(json){
+    alert("JSON Data: " + json.users[3].name);
+  }
+);</code>
+</pre>
+</div>
+</div>
+</li>
+<li id="getScriptStringFunction">
+<span class="fn"><a class="name" href="#getScriptStringFunction">$.getScript</a>( <span class="arg-type tooltip" title="A string of characters.">String</span> <span class="arg-name tooltip" title="The URL of the page to load.">url</span>, <span class="arg-type tooltip" title="A reference to a Javascript function.">Function</span> <span class="arg-name tooltip" title="(optional) A function to be executed whenever the data is loaded successfully.">callback</span> ) returns <span class="type"><span class="tooltip" title="An XMLHttpRequest object (referencing a HTTP request).">XMLHttpRequest</span></span></span>
+<div class="more">
+<div class="desc">Loads, and executes, a remote JavaScript file using an HTTP GET request.<br>
+<br>Warning: Safari &lt;= 2.0.x is unable to evaluate scripts in a global
+context synchronously. If you load functions via getScript, make sure
+to call them after a delay.</div>
+<div class="example">
+<h3>Example:</h3>
+<pre>
+<code class="javascript">$.getScript("test.js");</code>
+</pre>
+</div>
+<div class="example">
+<h3>Example:</h3>
+<pre>
+<code class="javascript">$.getScript("test.js", function(){
+  alert("Script loaded and executed.");
+});</code>
+</pre>
+</div>
+</div>
+</li>
+<li id="grepArrayFunctionBoolean">
+<span class="fn"><a class="name" href="#grepArrayFunctionBoolean">$.grep</a>( <span class="arg-type tooltip" title="">Array</span> <span class="arg-name tooltip" title="The Array to find items in.">array</span>, <span class="arg-type tooltip" title="A reference to a Javascript function.">Function</span> <span class="arg-name tooltip" title="The function to process each item against.">fn</span>, <span class="arg-type tooltip" title="true or false.">Boolean</span> <span class="arg-name tooltip" title="Invert the selection - select the opposite of the function.">inv</span> ) returns <span class="type"><span class="tooltip" title="">Array</span></span></span>
+<div class="more">
+<div class="desc">Filter items out of an array, by using a filter function.<br>
+<br>The specified function will be passed two arguments: The
+current array item and the index of the item in the array. The
+function must return 'true' to keep the item in the array, 
+false to remove it.</div>
+<div class="example">
+<h3>Example:</h3>
+<pre>
+<code class="javascript">$.grep( [0,1,2], function(i){
+  return i &gt; 0;
+});</code>
+</pre>
+<h4>Result:</h4>
+<pre>
+<code class="html">[1, 2]</code>
+</pre>
+</div>
+</div>
+</li>
+<li id="gtNumber">
+<span class="fn"><a class="name" href="#gtNumber">gt</a>( <span class="arg-type tooltip" title="A valid numeric.">Number</span> <span class="arg-name tooltip" title="Reduce the set to all elements after this position.">pos</span> ) returns <span class="type"><span class="tooltip" title="A jQuery object.">jQuery</span></span></span>
+<div class="more">
+<div class="desc">Reduce the set of matched elements to all elements after a given position.
+The position of the element in the set of matched elements
+starts at 0 and goes to length - 1.</div>
+<div class="example">
+<h3>Example:</h3>
+<pre>
+<code class="javascript">$("p").gt(0)</code>
+</pre>
+<h4>HTML:</h4>
+<pre>
+<code class="html">&lt;p&gt;This is just a test.&lt;/p&gt;&lt;p&gt;So is this&lt;/p&gt;</code>
+</pre>
+<h4>Result:</h4>
+<pre>
+<code class="html">[ &lt;p&gt;So is this&lt;/p&gt; ]</code>
+</pre>
+</div>
+</div>
+</li>
+<li id="height">
+<span class="fn"><a class="name" href="#height">height</a>(  ) returns <span class="type"><span class="tooltip" title="A string of characters.">String</span></span></span>
+<div class="more">
+<div class="desc">Get the current computed, pixel, height of the first matched element.</div>
+<div class="example">
+<h3>Example:</h3>
+<pre>
+<code class="javascript">$("p").height();</code>
+</pre>
+<h4>HTML:</h4>
+<pre>
+<code class="html">&lt;p&gt;This is just a test.&lt;/p&gt;</code>
+</pre>
+<h4>Result:</h4>
+<pre>
+<code class="html">300</code>
+</pre>
+</div>
+</div>
+</li>
+<li id="heightStringNumber">
+<span class="fn"><a class="name" href="#heightStringNumber">height</a>( <span class="arg-type tooltip" title="A string of characters or a number.">String|Number</span> <span class="arg-name tooltip" title="Set the CSS property to the specified value.">val</span> ) returns <span class="type"><span class="tooltip" title="A jQuery object.">jQuery</span></span></span>
+<div class="more">
+<div class="desc">Set the CSS height of every matched element. If no explicit unit
+was specified (like 'em' or '%') then "px" is added to the width.</div>
+<div class="example">
+<h3>Example:</h3>
+<pre>
+<code class="javascript">$("p").height(20);</code>
+</pre>
+<h4>HTML:</h4>
+<pre>
+<code class="html">&lt;p&gt;This is just a test.&lt;/p&gt;</code>
+</pre>
+<h4>Result:</h4>
+<pre>
+<code class="html">&lt;p style="height:20px;"&gt;This is just a test.&lt;/p&gt;</code>
+</pre>
+</div>
+<div class="example">
+<h3>Example:</h3>
+<pre>
+<code class="javascript">$("p").height("20em");</code>
+</pre>
+<h4>HTML:</h4>
+<pre>
+<code class="html">&lt;p&gt;This is just a test.&lt;/p&gt;</code>
+</pre>
+<h4>Result:</h4>
+<pre>
+<code class="html">&lt;p style="height:20em;"&gt;This is just a test.&lt;/p&gt;</code>
+</pre>
+</div>
+</div>
+</li>
+<li id="hide">
+<span class="fn"><a class="name" href="#hide">hide</a>(  ) returns <span class="type"><span class="tooltip" title="A jQuery object.">jQuery</span></span></span>
+<div class="more">
+<div class="desc">Hides each of the set of matched elements if they are shown.</div>
+<div class="example">
+<h3>Example:</h3>
+<pre>
+<code class="javascript">$("p").hide()</code>
+</pre>
+<h4>HTML:</h4>
+<pre>
+<code class="html">&lt;p&gt;Hello&lt;/p&gt;</code>
+</pre>
+<h4>Result:</h4>
+<pre>
+<code class="html">[ &lt;p style="display: none"&gt;Hello&lt;/p&gt; ]</code>
+</pre>
+</div>
+</div>
+</li>
+<li id="hideStringNumberFunction">
+<span class="fn"><a class="name" href="#hideStringNumberFunction">hide</a>( <span class="arg-type tooltip" title="A string of characters or a number.">String|Number</span> <span class="arg-name tooltip" title="A string representing one of the three predefined speeds (&quot;slow&quot;, &quot;normal&quot;, or &quot;fast&quot;) or the number of milliseconds to run the animation (e.g. 1000).">speed</span>, <span class="arg-type tooltip" title="A reference to a Javascript function.">Function</span> <span class="arg-name tooltip" title="(optional) A function to be executed whenever the animation completes.">callback</span> ) returns <span class="type"><span class="tooltip" title="A jQuery object.">jQuery</span></span></span>
+<div class="more">
+<div class="desc">Hide all matched elements using a graceful animation and firing an
+optional callback after completion.<br>
+<br>The height, width, and opacity of each of the matched elements 
+are changed dynamically according to the specified speed.</div>
+<div class="example">
+<h3>Example:</h3>
+<pre>
+<code class="javascript">$("p").hide("slow");</code>
+</pre>
+</div>
+<div class="example">
+<h3>Example:</h3>
+<pre>
+<code class="javascript">$("p").hide("slow",function(){
+  alert("Animation Done.");
+});</code>
+</pre>
+</div>
+</div>
+</li>
+<li id="hoverFunctionFunction">
+<span class="fn"><a class="name" href="#hoverFunctionFunction">hover</a>( <span class="arg-type tooltip" title="A reference to a Javascript function.">Function</span> <span class="arg-name tooltip" title="The function to fire whenever the mouse is moved over a matched element.">over</span>, <span class="arg-type tooltip" title="A reference to a Javascript function.">Function</span> <span class="arg-name tooltip" title="The function to fire whenever the mouse is moved off of a matched element.">out</span> ) returns <span class="type"><span class="tooltip" title="A jQuery object.">jQuery</span></span></span>
+<div class="more">
+<div class="desc">A method for simulating hovering (moving the mouse on, and off,
+an object). This is a custom method which provides an 'in' to a 
+frequent task.<br>
+<br>Whenever the mouse cursor is moved over a matched 
+element, the first specified function is fired. Whenever the mouse 
+moves off of the element, the second specified function fires. 
+Additionally, checks are in place to see if the mouse is still within 
+the specified element itself (for example, an image inside of a div), 
+and if it is, it will continue to 'hover', and not move out 
+(a common error in using a mouseout event handler).</div>
+<div class="example">
+<h3>Example:</h3>
+<pre>
+<code class="javascript">$("p").hover(function(){
+  $(this).addClass("hover");
+},function(){
+  $(this).removeClass("hover");
+});</code>
+</pre>
+</div>
+</div>
+</li>
+<li id="html">
+<span class="fn"><a class="name" href="#html">html</a>(  ) returns <span class="type"><span class="tooltip" title="A string of characters.">String</span></span></span>
+<div class="more">
+<div class="desc">Get the html contents of the first matched element.
+This property is not available on XML documents.</div>
+<div class="example">
+<h3>Example:</h3>
+<pre>
+<code class="javascript">$("div").html();</code>
+</pre>
+<h4>HTML:</h4>
+<pre>
+<code class="html">&lt;div&gt;&lt;input/&gt;&lt;/div&gt;</code>
+</pre>
+<h4>Result:</h4>
+<pre>
+<code class="html">&lt;input/&gt;</code>
+</pre>
+</div>
+</div>
+</li>
+<li id="htmlString">
+<span class="fn"><a class="name" href="#htmlString">html</a>( <span class="arg-type tooltip" title="A string of characters.">String</span> <span class="arg-name tooltip" title="Set the html contents to the specified value.">val</span> ) returns <span class="type"><span class="tooltip" title="A jQuery object.">jQuery</span></span></span>
+<div class="more">
+<div class="desc">Set the html contents of every matched element.
+This property is not available on XML documents.</div>
+<div class="example">
+<h3>Example:</h3>
+<pre>
+<code class="javascript">$("div").html("&lt;b&gt;new stuff&lt;/b&gt;");</code>
+</pre>
+<h4>HTML:</h4>
+<pre>
+<code class="html">&lt;div&gt;&lt;input/&gt;&lt;/div&gt;</code>
+</pre>
+<h4>Result:</h4>
+<pre>
+<code class="html">&lt;div&gt;&lt;b&gt;new stuff&lt;/b&gt;&lt;/div&gt;</code>
+</pre>
+</div>
+</div>
+</li>
+<li id="indexElement">
+<span class="fn"><a class="name" href="#indexElement">index</a>( <span class="arg-type tooltip" title="The Javascript object representation of a DOM Element.">Element</span> <span class="arg-name tooltip" title="Object to search for">subject</span> ) returns <span class="type"><span class="tooltip" title="A valid numeric.">Number</span></span></span>
+<div class="more">
+<div class="desc">Searches every matched element for the object and returns
+the index of the element, if found, starting with zero. 
+Returns -1 if the object wasn't found.</div>
+<div class="example">
+<h3>Example:</h3>
+<p>Returns the index for the element with ID foobar</p>
+<pre>
+<code class="javascript">$("*").index( $('#foobar')[0] )</code>
+</pre>
+<h4>HTML:</h4>
+<pre>
+<code class="html">&lt;div id="foobar"&gt;&lt;b&gt;&lt;/b&gt;&lt;span id="foo"&gt;&lt;/span&gt;&lt;/div&gt;</code>
+</pre>
+<h4>Result:</h4>
+<pre>
+<code class="html">0</code>
+</pre>
+</div>
+<div class="example">
+<h3>Example:</h3>
+<p>Returns the index for the element with ID foo within another element</p>
+<pre>
+<code class="javascript">$("*").index( $('#foo')[0] )</code>
+</pre>
+<h4>HTML:</h4>
+<pre>
+<code class="html">&lt;div id="foobar"&gt;&lt;b&gt;&lt;/b&gt;&lt;span id="foo"&gt;&lt;/span&gt;&lt;/div&gt;</code>
+</pre>
+<h4>Result:</h4>
+<pre>
+<code class="html">2</code>
+</pre>
+</div>
+<div class="example">
+<h3>Example:</h3>
+<p>Returns -1, as there is no element with ID bar</p>
+<pre>
+<code class="javascript">$("*").index( $('#bar')[0] )</code>
+</pre>
+<h4>HTML:</h4>
+<pre>
+<code class="html">&lt;div id="foobar"&gt;&lt;b&gt;&lt;/b&gt;&lt;span id="foo"&gt;&lt;/span&gt;&lt;/div&gt;</code>
+</pre>
+<h4>Result:</h4>
+<pre>
+<code class="html">-1</code>
+</pre>
+</div>
+</div>
+</li>
+<li id="insertAfterContent">
+<span class="fn"><a class="name" href="#insertAfterContent">insertAfter</a>( <span class="arg-type tooltip" title="A String (to generate HTML on-the-fly), a DOM Element, an Array of DOM Elements or a jQuery object.">&lt;Content&gt;</span> <span class="arg-name tooltip" title="Content to insert the selected element after.">content</span> ) returns <span class="type"><span class="tooltip" title="A jQuery object.">jQuery</span></span></span>
+<div class="more">
+<div class="desc">Insert all of the matched elements after another, specified, set of elements.
+This operation is, essentially, the reverse of doing a regular
+$(A).after(B), in that instead of inserting B after A, you're inserting
+A after B.</div>
+<div class="example">
+<h3>Example:</h3>
+<p>Same as $("#foo").after("p")</p>
+<pre>
+<code class="javascript">$("p").insertAfter("#foo");</code>
+</pre>
+<h4>HTML:</h4>
+<pre>
+<code class="html">&lt;p&gt;I would like to say: &lt;/p&gt;&lt;div id="foo"&gt;Hello&lt;/div&gt;</code>
+</pre>
+<h4>Result:</h4>
+<pre>
+<code class="html">&lt;div id="foo"&gt;Hello&lt;/div&gt;&lt;p&gt;I would like to say: &lt;/p&gt;</code>
+</pre>
+</div>
+</div>
+</li>
+<li id="insertBeforeContent">
+<span class="fn"><a class="name" href="#insertBeforeContent">insertBefore</a>( <span class="arg-type tooltip" title="A String (to generate HTML on-the-fly), a DOM Element, an Array of DOM Elements or a jQuery object.">&lt;Content&gt;</span> <span class="arg-name tooltip" title="Content to insert the selected element before.">content</span> ) returns <span class="type"><span class="tooltip" title="A jQuery object.">jQuery</span></span></span>
+<div class="more">
+<div class="desc">Insert all of the matched elements before another, specified, set of elements.
+This operation is, essentially, the reverse of doing a regular
+$(A).before(B), in that instead of inserting B before A, you're inserting
+A before B.</div>
+<div class="example">
+<h3>Example:</h3>
+<p>Same as $("#foo").before("p")</p>
+<pre>
+<code class="javascript">$("p").insertBefore("#foo");</code>
+</pre>
+<h4>HTML:</h4>
+<pre>
+<code class="html">&lt;div id="foo"&gt;Hello&lt;/div&gt;&lt;p&gt;I would like to say: &lt;/p&gt;</code>
+</pre>
+<h4>Result:</h4>
+<pre>
+<code class="html">&lt;p&gt;I would like to say: &lt;/p&gt;&lt;div id="foo"&gt;Hello&lt;/div&gt;</code>
+</pre>
+</div>
+</div>
+</li>
+<li id="isString">
+<span class="fn"><a class="name" href="#isString">is</a>( <span class="arg-type tooltip" title="A string of characters.">String</span> <span class="arg-name tooltip" title="The expression with which to filter">expr</span> ) returns <span class="type"><span class="tooltip" title="true or false.">Boolean</span></span></span>
+<div class="more">
+<div class="desc">Checks the current selection against an expression and returns true,
+if at least one element of the selection fits the given expression.<br>
+<br>Does return false, if no element fits or the expression is not valid.<br>
+<br>filter(String) is used internally, therefore all rules that apply there
+apply here, too.</div>
+<div class="example">
+<h3>Example:</h3>
+<p>Returns true, because the parent of the input is a form element</p>
+<pre>
+<code class="javascript">$("input[@type='checkbox']").parent().is("form")</code>
+</pre>
+<h4>HTML:</h4>
+<pre>
+<code class="html">&lt;form&gt;&lt;input type="checkbox" /&gt;&lt;/form&gt;</code>
+</pre>
+<h4>Result:</h4>
+<pre>
+<code class="html">true</code>
+</pre>
+</div>
+<div class="example">
+<h3>Example:</h3>
+<p>Returns false, because the parent of the input is a p element</p>
+<pre>
+<code class="javascript">$("input[@type='checkbox']").parent().is("form")</code>
+</pre>
+<h4>HTML:</h4>
+<pre>
+<code class="html">&lt;form&gt;&lt;p&gt;&lt;input type="checkbox" /&gt;&lt;/p&gt;&lt;/form&gt;</code>
+</pre>
+<h4>Result:</h4>
+<pre>
+<code class="html">false</code>
+</pre>
+</div>
+</div>
+</li>
+<li id="keydownFunction">
+<span class="fn"><a class="name" href="#keydownFunction">keydown</a>( <span class="arg-type tooltip" title="A reference to a Javascript function.">Function</span> <span class="arg-name tooltip" title="A function to bind to the keydown event on each of the matched elements.">fn</span> ) returns <span class="type"><span class="tooltip" title="A jQuery object.">jQuery</span></span></span>
+<div class="more">
+<div class="desc">Bind a function to the keydown event of each matched element.</div>
+<div class="example">
+<h3>Example:</h3>
+<pre>
+<code class="javascript">$("p").keydown( function() { alert("Hello"); } );</code>
+</pre>
+<h4>HTML:</h4>
+<pre>
+<code class="html">&lt;p&gt;Hello&lt;/p&gt;</code>
+</pre>
+<h4>Result:</h4>
+<pre>
+<code class="html">&lt;p onkeydown="alert('Hello');"&gt;Hello&lt;/p&gt;</code>
+</pre>
+</div>
+</div>
+</li>
+<li id="keypressFunction">
+<span class="fn"><a class="name" href="#keypressFunction">keypress</a>( <span class="arg-type tooltip" title="A reference to a Javascript function.">Function</span> <span class="arg-name tooltip" title="A function to bind to the keypress event on each of the matched elements.">fn</span> ) returns <span class="type"><span class="tooltip" title="A jQuery object.">jQuery</span></span></span>
+<div class="more">
+<div class="desc">Bind a function to the keypress event of each matched element.</div>
+<div class="example">
+<h3>Example:</h3>
+<pre>
+<code class="javascript">$("p").keypress( function() { alert("Hello"); } );</code>
+</pre>
+<h4>HTML:</h4>
+<pre>
+<code class="html">&lt;p&gt;Hello&lt;/p&gt;</code>
+</pre>
+<h4>Result:</h4>
+<pre>
+<code class="html">&lt;p onkeypress="alert('Hello');"&gt;Hello&lt;/p&gt;</code>
+</pre>
+</div>
+</div>
+</li>
+<li id="keyupFunction">
+<span class="fn"><a class="name" href="#keyupFunction">keyup</a>( <span class="arg-type tooltip" title="A reference to a Javascript function.">Function</span> <span class="arg-name tooltip" title="A function to bind to the keyup event on each of the matched elements.">fn</span> ) returns <span class="type"><span class="tooltip" title="A jQuery object.">jQuery</span></span></span>
+<div class="more">
+<div class="desc">Bind a function to the keyup event of each matched element.</div>
+<div class="example">
+<h3>Example:</h3>
+<pre>
+<code class="javascript">$("p").keyup( function() { alert("Hello"); } );</code>
+</pre>
+<h4>HTML:</h4>
+<pre>
+<code class="html">&lt;p&gt;Hello&lt;/p&gt;</code>
+</pre>
+<h4>Result:</h4>
+<pre>
+<code class="html">&lt;p onkeyup="alert('Hello');"&gt;Hello&lt;/p&gt;</code>
+</pre>
+</div>
+</div>
+</li>
+<li id="length">
+<span class="fn"><a class="name" href="#length">length</a> returns <span class="type"><span class="tooltip" title="A valid numeric.">Number</span></span></span>
+<div class="more">
+<div class="desc">The number of elements currently matched. The size function will return the same value.</div>
+<div class="example">
+<h3>Example:</h3>
+<pre>
+<code class="javascript">$("img").length;</code>
+</pre>
+<h4>HTML:</h4>
+<pre>
+<code class="html">&lt;img src="test1.jpg"/&gt; &lt;img src="test2.jpg"/&gt;</code>
+</pre>
+<h4>Result:</h4>
+<pre>
+<code class="html">2</code>
+</pre>
+</div>
+</div>
+</li>
+<li id="loadFunction">
+<span class="fn"><a class="name" href="#loadFunction">load</a>( <span class="arg-type tooltip" title="A reference to a Javascript function.">Function</span> <span class="arg-name tooltip" title="A function to bind to the load event on each of the matched elements.">fn</span> ) returns <span class="type"><span class="tooltip" title="A jQuery object.">jQuery</span></span></span>
+<div class="more">
+<div class="desc">Bind a function to the load event of each matched element.</div>
+<div class="example">
+<h3>Example:</h3>
+<pre>
+<code class="javascript">$("p").load( function() { alert("Hello"); } );</code>
+</pre>
+<h4>HTML:</h4>
+<pre>
+<code class="html">&lt;p&gt;Hello&lt;/p&gt;</code>
+</pre>
+<h4>Result:</h4>
+<pre>
+<code class="html">&lt;p onload="alert('Hello');"&gt;Hello&lt;/p&gt;</code>
+</pre>
+</div>
+</div>
+</li>
+<li id="loadStringObjectFunction">
+<span class="fn"><a class="name" href="#loadStringObjectFunction">load</a>( <span class="arg-type tooltip" title="A string of characters.">String</span> <span class="arg-name tooltip" title="The URL of the HTML file to load.">url</span>, <span class="arg-type tooltip" title="A simple Javascript object..">Object</span> <span class="arg-name tooltip" title="(optional) A set of key/value pairs that will be sent as data to the server.">params</span>, <span class="arg-type tooltip" title="A reference to a Javascript function.">Function</span> <span class="arg-name tooltip" title="(optional) A function to be executed whenever the data is loaded (parameters: responseText, status and response itself).">callback</span> ) returns <span class="type"><span class="tooltip" title="A jQuery object.">jQuery</span></span></span>
+<div class="more">
+<div class="desc">Load HTML from a remote file and inject it into the DOM.<br>
+<br>Note: Avoid to use this to load scripts, instead use $.getScript.
+IE strips script tags when there aren't any other characters in front of it.</div>
+<div class="example">
+<h3>Example:</h3>
+<pre>
+<code class="javascript">$("#feeds").load("feeds.html");</code>
+</pre>
+<h4>HTML:</h4>
+<pre>
+<code class="html">&lt;div id="feeds"&gt;&lt;/div&gt;</code>
+</pre>
+<h4>Result:</h4>
+<pre>
+<code class="html">&lt;div id="feeds"&gt;&lt;b&gt;45&lt;/b&gt; feeds found.&lt;/div&gt;</code>
+</pre>
+</div>
+<div class="example">
+<h3>Example:</h3>
+<p>Same as above, but with an additional parameter
+and a callback that is executed when the data was loaded.</p>
+<pre>
+<code class="javascript">$("#feeds").load("feeds.html",
+  {limit: 25},
+  function() { alert("The last 25 entries in the feed have been loaded"); }
+);</code>
+</pre>
+</div>
+</div>
+</li>
+<li id="loadIfModifiedStringMapFunction">
+<span class="fn"><a class="name" href="#loadIfModifiedStringMapFunction">loadIfModified</a>( <span class="arg-type tooltip" title="A string of characters.">String</span> <span class="arg-name tooltip" title="The URL of the HTML file to load.">url</span>, <span class="arg-type tooltip" title="A Javascript object that contains key/value pairs in the form of properties and values.">Map</span> <span class="arg-name tooltip" title="(optional) Key/value pairs that will be sent to the server.">params</span>, <span class="arg-type tooltip" title="A reference to a Javascript function.">Function</span> <span class="arg-name tooltip" title="(optional) A function to be executed whenever the data is loaded (parameters: responseText, status and response itself).">callback</span> ) returns <span class="type"><span class="tooltip" title="A jQuery object.">jQuery</span></span></span>
+<div class="more">
+<div class="desc">Load HTML from a remote file and inject it into the DOM, only if it's
+been modified by the server.</div>
+<div class="example">
+<h3>Example:</h3>
+<pre>
+<code class="javascript">$("#feeds").loadIfModified("feeds.html");</code>
+</pre>
+<h4>HTML:</h4>
+<pre>
+<code class="html">&lt;div id="feeds"&gt;&lt;/div&gt;</code>
+</pre>
+<h4>Result:</h4>
+<pre>
+<code class="html">&lt;div id="feeds"&gt;&lt;b&gt;45&lt;/b&gt; feeds found.&lt;/div&gt;</code>
+</pre>
+</div>
+</div>
+</li>
+<li id="ltNumber">
+<span class="fn"><a class="name" href="#ltNumber">lt</a>( <span class="arg-type tooltip" title="A valid numeric.">Number</span> <span class="arg-name tooltip" title="Reduce the set to all elements below this position.">pos</span> ) returns <span class="type"><span class="tooltip" title="A jQuery object.">jQuery</span></span></span>
+<div class="more">
+<div class="desc">Reduce the set of matched elements to all elements before a given position.
+The position of the element in the set of matched elements
+starts at 0 and goes to length - 1.</div>
+<div class="example">
+<h3>Example:</h3>
+<pre>
+<code class="javascript">$("p").lt(1)</code>
+</pre>
+<h4>HTML:</h4>
+<pre>
+<code class="html">&lt;p&gt;This is just a test.&lt;/p&gt;&lt;p&gt;So is this&lt;/p&gt;</code>
+</pre>
+<h4>Result:</h4>
+<pre>
+<code class="html">[ &lt;p&gt;This is just a test.&lt;/p&gt; ]</code>
+</pre>
+</div>
+</div>
+</li>
+<li id="mapArrayFunction">
+<span class="fn"><a class="name" href="#mapArrayFunction">$.map</a>( <span class="arg-type tooltip" title="">Array</span> <span class="arg-name tooltip" title="The Array to translate.">array</span>, <span class="arg-type tooltip" title="A reference to a Javascript function.">Function</span> <span class="arg-name tooltip" title="The function to process each item against.">fn</span> ) returns <span class="type"><span class="tooltip" title="">Array</span></span></span>
+<div class="more">
+<div class="desc">Translate all items in an array to another array of items.<br>
+<br>The translation function that is provided to this method is 
+called for each item in the array and is passed one argument: 
+The item to be translated.<br>
+<br>The function can then return the translated value, 'null'
+(to remove the item), or  an array of values - which will
+be flattened into the full array.</div>
+<div class="example">
+<h3>Example:</h3>
+<p>Maps the original array to a new one and adds 4 to each value.</p>
+<pre>
+<code class="javascript">$.map( [0,1,2], function(i){
+  return i + 4;
+});</code>
+</pre>
+<h4>Result:</h4>
+<pre>
+<code class="html">[4, 5, 6]</code>
+</pre>
+</div>
+<div class="example">
+<h3>Example:</h3>
+<p>Maps the original array to a new one and adds 1 to each
+value if it is bigger then zero, otherwise it's removed-</p>
+<pre>
+<code class="javascript">$.map( [0,1,2], function(i){
+  return i &gt; 0 ? i + 1 : null;
+});</code>
+</pre>
+<h4>Result:</h4>
+<pre>
+<code class="html">[2, 3]</code>
+</pre>
+</div>
+<div class="example">
+<h3>Example:</h3>
+<p>Maps the original array to a new one, each element is added
+with it's original value and the value plus one.</p>
+<pre>
+<code class="javascript">$.map( [0,1,2], function(i){
+  return [ i, i + 1 ];
+});</code>
+</pre>
+<h4>Result:</h4>
+<pre>
+<code class="html">[0, 1, 1, 2, 2, 3]</code>
+</pre>
+</div>
+</div>
+</li>
+<li id="mergeArrayArray">
+<span class="fn"><a class="name" href="#mergeArrayArray">$.merge</a>( <span class="arg-type tooltip" title="">Array</span> <span class="arg-name tooltip" title="The first array to merge, the unique elements of second added.">first</span>, <span class="arg-type tooltip" title="">Array</span> <span class="arg-name tooltip" title="The second array to merge into the first, unaltered.">second</span> ) returns <span class="type"><span class="tooltip" title="">Array</span></span></span>
+<div class="more">
+<div class="desc">Merge two arrays together, removing all duplicates.<br>
+<br>The result is the altered first argument with
+the unique elements from the second array added.</div>
+<div class="example">
+<h3>Example:</h3>
+<p>Merges two arrays, removing the duplicate 2</p>
+<pre>
+<code class="javascript">$.merge( [0,1,2], [2,3,4] )</code>
+</pre>
+<h4>Result:</h4>
+<pre>
+<code class="html">[0,1,2,3,4]</code>
+</pre>
+</div>
+<div class="example">
+<h3>Example:</h3>
+<p>Merges two arrays, removing the duplicates 3 and 2</p>
+<pre>
+<code class="javascript">var array = [3,2,1];
+$.merge( array, [4,3,2] )</code>
+</pre>
+<h4>Result:</h4>
+<pre>
+<code class="html">array == [3,2,1,4]</code>
+</pre>
+</div>
+</div>
+</li>
+<li id="mousedownFunction">
+<span class="fn"><a class="name" href="#mousedownFunction">mousedown</a>( <span class="arg-type tooltip" title="A reference to a Javascript function.">Function</span> <span class="arg-name tooltip" title="A function to bind to the mousedown event on each of the matched elements.">fn</span> ) returns <span class="type"><span class="tooltip" title="A jQuery object.">jQuery</span></span></span>
+<div class="more">
+<div class="desc">Bind a function to the mousedown event of each matched element.</div>
+<div class="example">
+<h3>Example:</h3>
+<pre>
+<code class="javascript">$("p").mousedown( function() { alert("Hello"); } );</code>
+</pre>
+<h4>HTML:</h4>
+<pre>
+<code class="html">&lt;p&gt;Hello&lt;/p&gt;</code>
+</pre>
+<h4>Result:</h4>
+<pre>
+<code class="html">&lt;p onmousedown="alert('Hello');"&gt;Hello&lt;/p&gt;</code>
+</pre>
+</div>
+</div>
+</li>
+<li id="mousemoveFunction">
+<span class="fn"><a class="name" href="#mousemoveFunction">mousemove</a>( <span class="arg-type tooltip" title="A reference to a Javascript function.">Function</span> <span class="arg-name tooltip" title="A function to bind to the mousemove event on each of the matched elements.">fn</span> ) returns <span class="type"><span class="tooltip" title="A jQuery object.">jQuery</span></span></span>
+<div class="more">
+<div class="desc">Bind a function to the mousemove event of each matched element.</div>
+<div class="example">
+<h3>Example:</h3>
+<pre>
+<code class="javascript">$("p").mousemove( function() { alert("Hello"); } );</code>
+</pre>
+<h4>HTML:</h4>
+<pre>
+<code class="html">&lt;p&gt;Hello&lt;/p&gt;</code>
+</pre>
+<h4>Result:</h4>
+<pre>
+<code class="html">&lt;p onmousemove="alert('Hello');"&gt;Hello&lt;/p&gt;</code>
+</pre>
+</div>
+</div>
+</li>
+<li id="mouseoutFunction">
+<span class="fn"><a class="name" href="#mouseoutFunction">mouseout</a>( <span class="arg-type tooltip" title="A reference to a Javascript function.">Function</span> <span class="arg-name tooltip" title="A function to bind to the mouseout event on each of the matched elements.">fn</span> ) returns <span class="type"><span class="tooltip" title="A jQuery object.">jQuery</span></span></span>
+<div class="more">
+<div class="desc">Bind a function to the mouseout event of each matched element.</div>
+<div class="example">
+<h3>Example:</h3>
+<pre>
+<code class="javascript">$("p").mouseout( function() { alert("Hello"); } );</code>
+</pre>
+<h4>HTML:</h4>
+<pre>
+<code class="html">&lt;p&gt;Hello&lt;/p&gt;</code>
+</pre>
+<h4>Result:</h4>
+<pre>
+<code class="html">&lt;p onmouseout="alert('Hello');"&gt;Hello&lt;/p&gt;</code>
+</pre>
+</div>
+</div>
+</li>
+<li id="mouseoverFunction">
+<span class="fn"><a class="name" href="#mouseoverFunction">mouseover</a>( <span class="arg-type tooltip" title="A reference to a Javascript function.">Function</span> <span class="arg-name tooltip" title="A function to bind to the mousedown event on each of the matched elements.">fn</span> ) returns <span class="type"><span class="tooltip" title="A jQuery object.">jQuery</span></span></span>
+<div class="more">
+<div class="desc">Bind a function to the mouseover event of each matched element.</div>
+<div class="example">
+<h3>Example:</h3>
+<pre>
+<code class="javascript">$("p").mouseover( function() { alert("Hello"); } );</code>
+</pre>
+<h4>HTML:</h4>
+<pre>
+<code class="html">&lt;p&gt;Hello&lt;/p&gt;</code>
+</pre>
+<h4>Result:</h4>
+<pre>
+<code class="html">&lt;p onmouseover="alert('Hello');"&gt;Hello&lt;/p&gt;</code>
+</pre>
+</div>
+</div>
+</li>
+<li id="mouseupFunction">
+<span class="fn"><a class="name" href="#mouseupFunction">mouseup</a>( <span class="arg-type tooltip" title="A reference to a Javascript function.">Function</span> <span class="arg-name tooltip" title="A function to bind to the mouseup event on each of the matched elements.">fn</span> ) returns <span class="type"><span class="tooltip" title="A jQuery object.">jQuery</span></span></span>
+<div class="more">
+<div class="desc">Bind a function to the mouseup event of each matched element.</div>
+<div class="example">
+<h3>Example:</h3>
+<pre>
+<code class="javascript">$("p").mouseup( function() { alert("Hello"); } );</code>
+</pre>
+<h4>HTML:</h4>
+<pre>
+<code class="html">&lt;p&gt;Hello&lt;/p&gt;</code>
+</pre>
+<h4>Result:</h4>
+<pre>
+<code class="html">&lt;p onmouseup="alert('Hello');"&gt;Hello&lt;/p&gt;</code>
+</pre>
+</div>
+</div>
+</li>
+<li id="nextString">
+<span class="fn"><a class="name" href="#nextString">next</a>( <span class="arg-type tooltip" title="A string of characters.">String</span> <span class="arg-name tooltip" title="(optional) An expression to filter the next Elements with">expr</span> ) returns <span class="type"><span class="tooltip" title="A jQuery object.">jQuery</span></span></span>
+<div class="more">
+<div class="desc">Get a set of elements containing the unique next siblings of each of the
+matched set of elements.<br>
+<br>It only returns the very next sibling for each element, not all
+next siblings.<br>
+<br>You may provide an optional expression to filter the match.</div>
+<div class="example">
+<h3>Example:</h3>
+<p>Find the very next sibling of each paragraph.</p>
+<pre>
+<code class="javascript">$("p").next()</code>
+</pre>
+<h4>HTML:</h4>
+<pre>
+<code class="html">&lt;p&gt;Hello&lt;/p&gt;&lt;p&gt;Hello Again&lt;/p&gt;&lt;div&gt;&lt;span&gt;And Again&lt;/span&gt;&lt;/div&gt;</code>
+</pre>
+<h4>Result:</h4>
+<pre>
+<code class="html">[ &lt;p&gt;Hello Again&lt;/p&gt;, &lt;div&gt;&lt;span&gt;And Again&lt;/span&gt;&lt;/div&gt; ]</code>
+</pre>
+</div>
+<div class="example">
+<h3>Example:</h3>
+<p>Find the very next sibling of each paragraph that has a class "selected".</p>
+<pre>
+<code class="javascript">$("p").next(".selected")</code>
+</pre>
+<h4>HTML:</h4>
+<pre>
+<code class="html">&lt;p&gt;Hello&lt;/p&gt;&lt;p class="selected"&gt;Hello Again&lt;/p&gt;&lt;div&gt;&lt;span&gt;And Again&lt;/span&gt;&lt;/div&gt;</code>
+</pre>
+<h4>Result:</h4>
+<pre>
+<code class="html">[ &lt;p class="selected"&gt;Hello Again&lt;/p&gt; ]</code>
+</pre>
+</div>
+</div>
+</li>
+<li id="noConflict">
+<span class="fn"><a class="name" href="#noConflict">$.noConflict</a>(  ) returns <span class="type"><span class="tooltip" title="">undefined</span></span></span>
+<div class="more">
+<div class="desc">Run this function to give control of the $ variable back
+to whichever library first implemented it. This helps to make 
+sure that jQuery doesn't conflict with the $ object
+of other libraries.<br>
+<br>By using this function, you will only be able to access jQuery
+using the 'jQuery' variable. For example, where you used to do
+$("div p"), you now must do jQuery("div p").</div>
+<div class="example">
+<h3>Example:</h3>
+<p>Maps the original object that was referenced by $ back to $</p>
+<pre>
+<code class="javascript">jQuery.noConflict();
+// Do something with jQuery
+jQuery("div p").hide();
+// Do something with another library's $()
+$("content").style.display = 'none';</code>
+</pre>
+</div>
+<div class="example">
+<h3>Example:</h3>
+<p>Reverts the $ alias and then creates and executes a
+function to provide the $ as a jQuery alias inside the functions
+scope. Inside the function the original $ object is not available.
+This works well for most plugins that don't rely on any other library.</p>
+<pre>
+<code class="javascript">jQuery.noConflict();
+(function($) { 
+  $(function() {
+    // more code using $ as alias to jQuery
+  });
+})(jQuery);
+// other code using $ as an alias to the other library</code>
+</pre>
+</div>
+</div>
+</li>
+<li id="notElement">
+<span class="fn"><a class="name" href="#notElement">not</a>( <span class="arg-type tooltip" title="The Javascript object representation of a DOM Element.">Element</span> <span class="arg-name tooltip" title="An element to remove from the set">el</span> ) returns <span class="type"><span class="tooltip" title="A jQuery object.">jQuery</span></span></span>
+<div class="more">
+<div class="desc">Removes the specified Element from the set of matched elements. This
+method is used to remove a single Element from a jQuery object.</div>
+<div class="example">
+<h3>Example:</h3>
+<p>Removes the element with the ID "selected" from the set of all paragraphs.</p>
+<pre>
+<code class="javascript">$("p").not( $("#selected")[0] )</code>
+</pre>
+<h4>HTML:</h4>
+<pre>
+<code class="html">&lt;p&gt;Hello&lt;/p&gt;&lt;p id="selected"&gt;Hello Again&lt;/p&gt;</code>
+</pre>
+<h4>Result:</h4>
+<pre>
+<code class="html">[ &lt;p&gt;Hello&lt;/p&gt; ]</code>
+</pre>
+</div>
+</div>
+</li>
+<li id="notString">
+<span class="fn"><a class="name" href="#notString">not</a>( <span class="arg-type tooltip" title="A string of characters.">String</span> <span class="arg-name tooltip" title="An expression with which to remove matching elements">expr</span> ) returns <span class="type"><span class="tooltip" title="A jQuery object.">jQuery</span></span></span>
+<div class="more">
+<div class="desc">Removes elements matching the specified expression from the set
+of matched elements. This method is used to remove one or more
+elements from a jQuery object.</div>
+<div class="example">
+<h3>Example:</h3>
+<p>Removes the element with the ID "selected" from the set of all paragraphs.</p>
+<pre>
+<code class="javascript">$("p").not("#selected")</code>
+</pre>
+<h4>HTML:</h4>
+<pre>
+<code class="html">&lt;p&gt;Hello&lt;/p&gt;&lt;p id="selected"&gt;Hello Again&lt;/p&gt;</code>
+</pre>
+<h4>Result:</h4>
+<pre>
+<code class="html">[ &lt;p&gt;Hello&lt;/p&gt; ]</code>
+</pre>
+</div>
+</div>
+</li>
+<li id="notjQuery">
+<span class="fn"><a class="name" href="#notjQuery">not</a>( <span class="arg-type tooltip" title="A jQuery object.">jQuery</span> <span class="arg-name tooltip" title="A set of elements to remove from the jQuery set of matched elements.">elems</span> ) returns <span class="type"><span class="tooltip" title="A jQuery object.">jQuery</span></span></span>
+<div class="more">
+<div class="desc">Removes any elements inside the array of elements from the set
+of matched elements. This method is used to remove one or more
+elements from a jQuery object.<br>
+<br>Please note: the expression cannot use a reference to the
+element name. See the two examples below.</div>
+<div class="example">
+<h3>Example:</h3>
+<p>Removes all elements that match "div p.selected" from the total set of all paragraphs.</p>
+<pre>
+<code class="javascript">$("p").not( $("div p.selected") )</code>
+</pre>
+<h4>HTML:</h4>
+<pre>
+<code class="html">&lt;div&gt;&lt;p&gt;Hello&lt;/p&gt;&lt;p class="selected"&gt;Hello Again&lt;/p&gt;&lt;/div&gt;</code>
+</pre>
+<h4>Result:</h4>
+<pre>
+<code class="html">[ &lt;p&gt;Hello&lt;/p&gt; ]</code>
+</pre>
+</div>
+</div>
+</li>
+<li id="oneStringObjectFunction">
+<span class="fn"><a class="name" href="#oneStringObjectFunction">one</a>( <span class="arg-type tooltip" title="A string of characters.">String</span> <span class="arg-name tooltip" title="An event type">type</span>, <span class="arg-type tooltip" title="A simple Javascript object..">Object</span> <span class="arg-name tooltip" title="(optional) Additional data passed to the event handler as event.data">data</span>, <span class="arg-type tooltip" title="A reference to a Javascript function.">Function</span> <span class="arg-name tooltip" title="A function to bind to the event on each of the set of matched elements">fn</span> ) returns <span class="type"><span class="tooltip" title="A jQuery object.">jQuery</span></span></span>
+<div class="more">
+<div class="desc">Binds a handler to a particular event (like click) for each matched element.
+The handler is executed only once for each element. Otherwise, the same rules
+as described in bind() apply.
+	 The event handler is passed an event object that you can use to prevent
+default behaviour. To stop both default action and event bubbling, your handler
+has to return false.<br>
+<br>In most cases, you can define your event handlers as anonymous functions
+(see first example). In cases where that is not possible, you can pass additional
+data as the second paramter (and the handler function as the third), see 
+second example.</div>
+<div class="example">
+<h3>Example:</h3>
+<pre>
+<code class="javascript">$("p").one("click", function(){
+  alert( $(this).text() );
+});</code>
+</pre>
+<h4>HTML:</h4>
+<pre>
+<code class="html">&lt;p&gt;Hello&lt;/p&gt;</code>
+</pre>
+<h4>Result:</h4>
+<pre>
+<code class="html">alert("Hello")</code>
+</pre>
+</div>
+</div>
+</li>
+<li id="parentString">
+<span class="fn"><a class="name" href="#parentString">parent</a>( <span class="arg-type tooltip" title="A string of characters.">String</span> <span class="arg-name tooltip" title="(optional) An expression to filter the parents with">expr</span> ) returns <span class="type"><span class="tooltip" title="A jQuery object.">jQuery</span></span></span>
+<div class="more">
+<div class="desc">Get a set of elements containing the unique parents of the matched
+set of elements.<br>
+<br>You may use an optional expression to filter the set of parent elements that will match.</div>
+<div class="example">
+<h3>Example:</h3>
+<p>Find the parent element of each paragraph.</p>
+<pre>
+<code class="javascript">$("p").parent()</code>
+</pre>
+<h4>HTML:</h4>
+<pre>
+<code class="html">&lt;div&gt;&lt;p&gt;Hello&lt;/p&gt;&lt;p&gt;Hello&lt;/p&gt;&lt;/div&gt;</code>
+</pre>
+<h4>Result:</h4>
+<pre>
+<code class="html">[ &lt;div&gt;&lt;p&gt;Hello&lt;/p&gt;&lt;p&gt;Hello&lt;/p&gt;&lt;/div&gt; ]</code>
+</pre>
+</div>
+<div class="example">
+<h3>Example:</h3>
+<p>Find the parent element of each paragraph with a class "selected".</p>
+<pre>
+<code class="javascript">$("p").parent(".selected")</code>
+</pre>
+<h4>HTML:</h4>
+<pre>
+<code class="html">&lt;div&gt;&lt;p&gt;Hello&lt;/p&gt;&lt;/div&gt;&lt;div class="selected"&gt;&lt;p&gt;Hello Again&lt;/p&gt;&lt;/div&gt;</code>
+</pre>
+<h4>Result:</h4>
+<pre>
+<code class="html">[ &lt;div class="selected"&gt;&lt;p&gt;Hello Again&lt;/p&gt;&lt;/div&gt; ]</code>
+</pre>
+</div>
+</div>
+</li>
+<li id="parentsString">
+<span class="fn"><a class="name" href="#parentsString">parents</a>( <span class="arg-type tooltip" title="A string of characters.">String</span> <span class="arg-name tooltip" title="(optional) An expression to filter the ancestors with">expr</span> ) returns <span class="type"><span class="tooltip" title="A jQuery object.">jQuery</span></span></span>
+<div class="more">
+<div class="desc">Get a set of elements containing the unique ancestors of the matched
+set of elements (except for the root element).<br>
+<br>The matched elements can be filtered with an optional expression.</div>
+<div class="example">
+<h3>Example:</h3>
+<p>Find all parent elements of each span.</p>
+<pre>
+<code class="javascript">$("span").parents()</code>
+</pre>
+<h4>HTML:</h4>
+<pre>
+<code class="html">&lt;html&gt;&lt;body&gt;&lt;div&gt;&lt;p&gt;&lt;span&gt;Hello&lt;/span&gt;&lt;/p&gt;&lt;span&gt;Hello Again&lt;/span&gt;&lt;/div&gt;&lt;/body&gt;&lt;/html&gt;</code>
+</pre>
+<h4>Result:</h4>
+<pre>
+<code class="html">[ &lt;body&gt;...&lt;/body&gt;, &lt;div&gt;...&lt;/div&gt;, &lt;p&gt;&lt;span&gt;Hello&lt;/span&gt;&lt;/p&gt; ]</code>
+</pre>
+</div>
+<div class="example">
+<h3>Example:</h3>
+<p>Find all parent elements of each span that is a paragraph.</p>
+<pre>
+<code class="javascript">$("span").parents("p")</code>
+</pre>
+<h4>HTML:</h4>
+<pre>
+<code class="html">&lt;html&gt;&lt;body&gt;&lt;div&gt;&lt;p&gt;&lt;span&gt;Hello&lt;/span&gt;&lt;/p&gt;&lt;span&gt;Hello Again&lt;/span&gt;&lt;/div&gt;&lt;/body&gt;&lt;/html&gt;</code>
+</pre>
+<h4>Result:</h4>
+<pre>
+<code class="html">[ &lt;p&gt;&lt;span&gt;Hello&lt;/span&gt;&lt;/p&gt; ]</code>
+</pre>
+</div>
+</div>
+</li>
+<li id="postStringMapFunction">
+<span class="fn"><a class="name" href="#postStringMapFunction">$.post</a>( <span class="arg-type tooltip" title="A string of characters.">String</span> <span class="arg-name tooltip" title="The URL of the page to load.">url</span>, <span class="arg-type tooltip" title="A Javascript object that contains key/value pairs in the form of properties and values.">Map</span> <span class="arg-name tooltip" title="(optional) Key/value pairs that will be sent to the server.">params</span>, <span class="arg-type tooltip" title="A reference to a Javascript function.">Function</span> <span class="arg-name tooltip" title="(optional) A function to be executed whenever the data is loaded successfully.">callback</span> ) returns <span class="type"><span class="tooltip" title="An XMLHttpRequest object (referencing a HTTP request).">XMLHttpRequest</span></span></span>
+<div class="more">
+<div class="desc">Load a remote page using an HTTP POST request.</div>
+<div class="example">
+<h3>Example:</h3>
+<pre>
+<code class="javascript">$.post("test.cgi");</code>
+</pre>
+</div>
+<div class="example">
+<h3>Example:</h3>
+<pre>
+<code class="javascript">$.post("test.cgi", { name: "John", time: "2pm" } );</code>
+</pre>
+</div>
+<div class="example">
+<h3>Example:</h3>
+<pre>
+<code class="javascript">$.post("test.cgi", function(data){
+  alert("Data Loaded: " + data);
+});</code>
+</pre>
+</div>
+<div class="example">
+<h3>Example:</h3>
+<pre>
+<code class="javascript">$.post("test.cgi",
+  { name: "John", time: "2pm" },
+  function(data){
+    alert("Data Loaded: " + data);
+  }
+);</code>
+</pre>
+</div>
+</div>
+</li>
+<li id="prependContent">
+<span class="fn"><a class="name" href="#prependContent">prepend</a>( <span class="arg-type tooltip" title="A String (to generate HTML on-the-fly), a DOM Element, an Array of DOM Elements or a jQuery object.">&lt;Content&gt;</span> <span class="arg-name tooltip" title="Content to prepend to the target.">content</span> ) returns <span class="type"><span class="tooltip" title="A jQuery object.">jQuery</span></span></span>
+<div class="more">
+<div class="desc">Prepend content to the inside of every matched element.<br>
+<br>This operation is the best way to insert elements
+inside, at the beginning, of all matched elements.</div>
+<div class="example">
+<h3>Example:</h3>
+<p>Prepends some HTML to all paragraphs.</p>
+<pre>
+<code class="javascript">$("p").prepend("&lt;b&gt;Hello&lt;/b&gt;");</code>
+</pre>
+<h4>HTML:</h4>
+<pre>
+<code class="html">&lt;p&gt;I would like to say: &lt;/p&gt;</code>
+</pre>
+<h4>Result:</h4>
+<pre>
+<code class="html">&lt;p&gt;&lt;b&gt;Hello&lt;/b&gt;I would like to say: &lt;/p&gt;</code>
+</pre>
+</div>
+<div class="example">
+<h3>Example:</h3>
+<p>Prepends an Element to all paragraphs.</p>
+<pre>
+<code class="javascript">$("p").prepend( $("#foo")[0] );</code>
+</pre>
+<h4>HTML:</h4>
+<pre>
+<code class="html">&lt;p&gt;I would like to say: &lt;/p&gt;&lt;b id="foo"&gt;Hello&lt;/b&gt;</code>
+</pre>
+<h4>Result:</h4>
+<pre>
+<code class="html">&lt;p&gt;&lt;b id="foo"&gt;Hello&lt;/b&gt;I would like to say: &lt;/p&gt;</code>
+</pre>
+</div>
+<div class="example">
+<h3>Example:</h3>
+<p>Prepends a jQuery object (similar to an Array of DOM Elements) to all paragraphs.</p>
+<pre>
+<code class="javascript">$("p").prepend( $("b") );</code>
+</pre>
+<h4>HTML:</h4>
+<pre>
+<code class="html">&lt;p&gt;I would like to say: &lt;/p&gt;&lt;b&gt;Hello&lt;/b&gt;</code>
+</pre>
+<h4>Result:</h4>
+<pre>
+<code class="html">&lt;p&gt;&lt;b&gt;Hello&lt;/b&gt;I would like to say: &lt;/p&gt;</code>
+</pre>
+</div>
+</div>
+</li>
+<li id="prependToContent">
+<span class="fn"><a class="name" href="#prependToContent">prependTo</a>( <span class="arg-type tooltip" title="A String (to generate HTML on-the-fly), a DOM Element, an Array of DOM Elements or a jQuery object.">&lt;Content&gt;</span> <span class="arg-name tooltip" title="Content to prepend to the selected element to.">content</span> ) returns <span class="type"><span class="tooltip" title="A jQuery object.">jQuery</span></span></span>
+<div class="more">
+<div class="desc">Prepend all of the matched elements to another, specified, set of elements.
+This operation is, essentially, the reverse of doing a regular
+$(A).prepend(B), in that instead of prepending B to A, you're prepending
+A to B.</div>
+<div class="example">
+<h3>Example:</h3>
+<p>Prepends all paragraphs to the element with the ID "foo"</p>
+<pre>
+<code class="javascript">$("p").prependTo("#foo");</code>
+</pre>
+<h4>HTML:</h4>
+<pre>
+<code class="html">&lt;p&gt;I would like to say: &lt;/p&gt;&lt;div id="foo"&gt;&lt;b&gt;Hello&lt;/b&gt;&lt;/div&gt;</code>
+</pre>
+<h4>Result:</h4>
+<pre>
+<code class="html">&lt;div id="foo"&gt;&lt;p&gt;I would like to say: &lt;/p&gt;&lt;b&gt;Hello&lt;/b&gt;&lt;/div&gt;</code>
+</pre>
+</div>
+</div>
+</li>
+<li id="prevString">
+<span class="fn"><a class="name" href="#prevString">prev</a>( <span class="arg-type tooltip" title="A string of characters.">String</span> <span class="arg-name tooltip" title="(optional) An expression to filter the previous Elements with">expr</span> ) returns <span class="type"><span class="tooltip" title="A jQuery object.">jQuery</span></span></span>
+<div class="more">
+<div class="desc">Get a set of elements containing the unique previous siblings of each of the
+matched set of elements.<br>
+<br>Use an optional expression to filter the matched set.<br>
+<br>	Only the immediately previous sibling is returned, not all previous siblings.</div>
+<div class="example">
+<h3>Example:</h3>
+<p>Find the very previous sibling of each paragraph.</p>
+<pre>
+<code class="javascript">$("p").prev()</code>
+</pre>
+<h4>HTML:</h4>
+<pre>
+<code class="html">&lt;p&gt;Hello&lt;/p&gt;&lt;div&gt;&lt;span&gt;Hello Again&lt;/span&gt;&lt;/div&gt;&lt;p&gt;And Again&lt;/p&gt;</code>
+</pre>
+<h4>Result:</h4>
+<pre>
+<code class="html">[ &lt;div&gt;&lt;span&gt;Hello Again&lt;/span&gt;&lt;/div&gt; ]</code>
+</pre>
+</div>
+<div class="example">
+<h3>Example:</h3>
+<p>Find the very previous sibling of each paragraph that has a class "selected".</p>
+<pre>
+<code class="javascript">$("p").prev(".selected")</code>
+</pre>
+<h4>HTML:</h4>
+<pre>
+<code class="html">&lt;div&gt;&lt;span&gt;Hello&lt;/span&gt;&lt;/div&gt;&lt;p class="selected"&gt;Hello Again&lt;/p&gt;&lt;p&gt;And Again&lt;/p&gt;</code>
+</pre>
+<h4>Result:</h4>
+<pre>
+<code class="html">[ &lt;div&gt;&lt;span&gt;Hello&lt;/span&gt;&lt;/div&gt; ]</code>
+</pre>
+</div>
+</div>
+</li>
+<li id="readyFunction">
+<span class="fn"><a class="name" href="#readyFunction">ready</a>( <span class="arg-type tooltip" title="A reference to a Javascript function.">Function</span> <span class="arg-name tooltip" title="The function to be executed when the DOM is ready.">fn</span> ) returns <span class="type"><span class="tooltip" title="A jQuery object.">jQuery</span></span></span>
+<div class="more">
+<div class="desc">Bind a function to be executed whenever the DOM is ready to be
+traversed and manipulated. This is probably the most important 
+function included in the event module, as it can greatly improve
+the response times of your web applications.<br>
+<br>In a nutshell, this is a solid replacement for using window.onload, 
+and attaching a function to that. By using this method, your bound function 
+will be called the instant the DOM is ready to be read and manipulated, 
+which is when what 99.99% of all JavaScript code needs to run.<br>
+<br>There is one argument passed to the ready event handler: A reference to
+the jQuery function. You can name that argument whatever you like, and
+can therefore stick with the $ alias without risk of naming collisions.<br>
+<br>Please ensure you have no code in your &lt;body&gt; onload event handler, 
+otherwise $(document).ready() may not fire.<br>
+<br>You can have as many $(document).ready events on your page as you like.
+The functions are then executed in the order they were added.</div>
+<div class="example">
+<h3>Example:</h3>
+<pre>
+<code class="javascript">$(document).ready(function(){ Your code here... });</code>
+</pre>
+</div>
+<div class="example">
+<h3>Example:</h3>
+<p>Uses both the [[Core#.24.28_fn_.29|shortcut]] for $(document).ready() and the argument
+to write failsafe jQuery code using the $ alias, without relying on the
+global alias.</p>
+<pre>
+<code class="javascript">jQuery(function($) {
+  // Your code using failsafe $ alias here...
+});</code>
+</pre>
+</div>
+</div>
+</li>
+<li id="removeString">
+<span class="fn"><a class="name" href="#removeString">remove</a>( <span class="arg-type tooltip" title="A string of characters.">String</span> <span class="arg-name tooltip" title="(optional) A jQuery expression to filter elements by.">expr</span> ) returns <span class="type"><span class="tooltip" title="A jQuery object.">jQuery</span></span></span>
+<div class="more">
+<div class="desc">Removes all matched elements from the DOM. This does NOT remove them from the
+jQuery object, allowing you to use the matched elements further.<br>
+<br>Can be filtered with an optional expressions.</div>
+<div class="example">
+<h3>Example:</h3>
+<pre>
+<code class="javascript">$("p").remove();</code>
+</pre>
+<h4>HTML:</h4>
+<pre>
+<code class="html">&lt;p&gt;Hello&lt;/p&gt; how are &lt;p&gt;you?&lt;/p&gt;</code>
+</pre>
+<h4>Result:</h4>
+<pre>
+<code class="html">how are</code>
+</pre>
+</div>
+<div class="example">
+<h3>Example:</h3>
+<pre>
+<code class="javascript">$("p").remove(".hello");</code>
+</pre>
+<h4>HTML:</h4>
+<pre>
+<code class="html">&lt;p class="hello"&gt;Hello&lt;/p&gt; how are &lt;p&gt;you?&lt;/p&gt;</code>
+</pre>
+<h4>Result:</h4>
+<pre>
+<code class="html">how are &lt;p&gt;you?&lt;/p&gt;</code>
+</pre>
+</div>
+</div>
+</li>
+<li id="removeAttrString">
+<span class="fn"><a class="name" href="#removeAttrString">removeAttr</a>( <span class="arg-type tooltip" title="A string of characters.">String</span> <span class="arg-name tooltip" title="The name of the attribute to remove.">name</span> ) returns <span class="type"><span class="tooltip" title="A jQuery object.">jQuery</span></span></span>
+<div class="more">
+<div class="desc">Remove an attribute from each of the matched elements.</div>
+<div class="example">
+<h3>Example:</h3>
+<pre>
+<code class="javascript">$("input").removeAttr("disabled")</code>
+</pre>
+<h4>HTML:</h4>
+<pre>
+<code class="html">&lt;input disabled="disabled"/&gt;</code>
+</pre>
+<h4>Result:</h4>
+<pre>
+<code class="html">&lt;input/&gt;</code>
+</pre>
+</div>
+</div>
+</li>
+<li id="removeClassString">
+<span class="fn"><a class="name" href="#removeClassString">removeClass</a>( <span class="arg-type tooltip" title="A string of characters.">String</span> <span class="arg-name tooltip" title="(optional) One or more CSS classes to remove from the elements">class</span> ) returns <span class="type"><span class="tooltip" title="A jQuery object.">jQuery</span></span></span>
+<div class="more">
+<div class="desc">Removes all or the specified class(es) from the set of matched elements.</div>
+<div class="example">
+<h3>Example:</h3>
+<pre>
+<code class="javascript">$("p").removeClass()</code>
+</pre>
+<h4>HTML:</h4>
+<pre>
+<code class="html">&lt;p class="selected"&gt;Hello&lt;/p&gt;</code>
+</pre>
+<h4>Result:</h4>
+<pre>
+<code class="html">[ &lt;p&gt;Hello&lt;/p&gt; ]</code>
+</pre>
+</div>
+<div class="example">
+<h3>Example:</h3>
+<pre>
+<code class="javascript">$("p").removeClass("selected")</code>
+</pre>
+<h4>HTML:</h4>
+<pre>
+<code class="html">&lt;p class="selected first"&gt;Hello&lt;/p&gt;</code>
+</pre>
+<h4>Result:</h4>
+<pre>
+<code class="html">[ &lt;p class="first"&gt;Hello&lt;/p&gt; ]</code>
+</pre>
+</div>
+<div class="example">
+<h3>Example:</h3>
+<pre>
+<code class="javascript">$("p").removeClass("selected highlight")</code>
+</pre>
+<h4>HTML:</h4>
+<pre>
+<code class="html">&lt;p class="highlight selected first"&gt;Hello&lt;/p&gt;</code>
+</pre>
+<h4>Result:</h4>
+<pre>
+<code class="html">[ &lt;p class="first"&gt;Hello&lt;/p&gt; ]</code>
+</pre>
+</div>
+</div>
+</li>
+<li id="resizeFunction">
+<span class="fn"><a class="name" href="#resizeFunction">resize</a>( <span class="arg-type tooltip" title="A reference to a Javascript function.">Function</span> <span class="arg-name tooltip" title="A function to bind to the resize event on each of the matched elements.">fn</span> ) returns <span class="type"><span class="tooltip" title="A jQuery object.">jQuery</span></span></span>
+<div class="more">
+<div class="desc">Bind a function to the resize event of each matched element.</div>
+<div class="example">
+<h3>Example:</h3>
+<pre>
+<code class="javascript">$("p").resize( function() { alert("Hello"); } );</code>
+</pre>
+<h4>HTML:</h4>
+<pre>
+<code class="html">&lt;p&gt;Hello&lt;/p&gt;</code>
+</pre>
+<h4>Result:</h4>
+<pre>
+<code class="html">&lt;p onresize="alert('Hello');"&gt;Hello&lt;/p&gt;</code>
+</pre>
+</div>
+</div>
+</li>
+<li id="scrollFunction">
+<span class="fn"><a class="name" href="#scrollFunction">scroll</a>( <span class="arg-type tooltip" title="A reference to a Javascript function.">Function</span> <span class="arg-name tooltip" title="A function to bind to the scroll event on each of the matched elements.">fn</span> ) returns <span class="type"><span class="tooltip" title="A jQuery object.">jQuery</span></span></span>
+<div class="more">
+<div class="desc">Bind a function to the scroll event of each matched element.</div>
+<div class="example">
+<h3>Example:</h3>
+<pre>
+<code class="javascript">$("p").scroll( function() { alert("Hello"); } );</code>
+</pre>
+<h4>HTML:</h4>
+<pre>
+<code class="html">&lt;p&gt;Hello&lt;/p&gt;</code>
+</pre>
+<h4>Result:</h4>
+<pre>
+<code class="html">&lt;p onscroll="alert('Hello');"&gt;Hello&lt;/p&gt;</code>
+</pre>
+</div>
+</div>
+</li>
+<li id="select">
+<span class="fn"><a class="name" href="#select">select</a>(  ) returns <span class="type"><span class="tooltip" title="A jQuery object.">jQuery</span></span></span>
+<div class="more">
+<div class="desc">Trigger the select event of each matched element. This causes all of the functions
+that have been bound to that select event to be executed, and calls the browser's
+default select action on the matching element(s). This default action can be prevented
+by returning false from one of the functions bound to the select event.</div>
+<div class="example">
+<h3>Example:</h3>
+<pre>
+<code class="javascript">$("p").select();</code>
+</pre>
+<h4>HTML:</h4>
+<pre>
+<code class="html">&lt;p onselect="alert('Hello');"&gt;Hello&lt;/p&gt;</code>
+</pre>
+<h4>Result:</h4>
+<pre>
+<code class="html">alert('Hello');</code>
+</pre>
+</div>
+</div>
+</li>
+<li id="selectFunction">
+<span class="fn"><a class="name" href="#selectFunction">select</a>( <span class="arg-type tooltip" title="A reference to a Javascript function.">Function</span> <span class="arg-name tooltip" title="A function to bind to the select event on each of the matched elements.">fn</span> ) returns <span class="type"><span class="tooltip" title="A jQuery object.">jQuery</span></span></span>
+<div class="more">
+<div class="desc">Bind a function to the select event of each matched element.</div>
+<div class="example">
+<h3>Example:</h3>
+<pre>
+<code class="javascript">$("p").select( function() { alert("Hello"); } );</code>
+</pre>
+<h4>HTML:</h4>
+<pre>
+<code class="html">&lt;p&gt;Hello&lt;/p&gt;</code>
+</pre>
+<h4>Result:</h4>
+<pre>
+<code class="html">&lt;p onselect="alert('Hello');"&gt;Hello&lt;/p&gt;</code>
+</pre>
+</div>
+</div>
+</li>
+<li id="serialize">
+<span class="fn"><a class="name" href="#serialize">serialize</a>(  ) returns <span class="type"><span class="tooltip" title="A string of characters.">String</span></span></span>
+<div class="more">
+<div class="desc">Serializes a set of input elements into a string of data.
+This will serialize all given elements.<br>
+<br>A serialization similar to the form submit of a browser is
+provided by the [http://www.malsup.com/jquery/form/ Form Plugin].
+It also takes multiple-selects 
+into account, while this method recognizes only a single option.</div>
+<div class="example">
+<h3>Example:</h3>
+<p>Serialize a selection of input elements to a string</p>
+<pre>
+<code class="javascript">$("input[@type=text]").serialize();</code>
+</pre>
+<h4>HTML:</h4>
+<pre>
+<code class="html">&lt;input type='text' name='name' value='John'/&gt;
+&lt;input type='text' name='location' value='Boston'/&gt;</code>
+</pre>
+</div>
+</div>
+</li>
+<li id="show">
+<span class="fn"><a class="name" href="#show">show</a>(  ) returns <span class="type"><span class="tooltip" title="A jQuery object.">jQuery</span></span></span>
+<div class="more">
+<div class="desc">Displays each of the set of matched elements if they are hidden.</div>
+<div class="example">
+<h3>Example:</h3>
+<pre>
+<code class="javascript">$("p").show()</code>
+</pre>
+<h4>HTML:</h4>
+<pre>
+<code class="html">&lt;p style="display: none"&gt;Hello&lt;/p&gt;</code>
+</pre>
+<h4>Result:</h4>
+<pre>
+<code class="html">[ &lt;p style="display: block"&gt;Hello&lt;/p&gt; ]</code>
+</pre>
+</div>
+</div>
+</li>
+<li id="showStringNumberFunction">
+<span class="fn"><a class="name" href="#showStringNumberFunction">show</a>( <span class="arg-type tooltip" title="A string of characters or a number.">String|Number</span> <span class="arg-name tooltip" title="A string representing one of the three predefined speeds (&quot;slow&quot;, &quot;normal&quot;, or &quot;fast&quot;) or the number of milliseconds to run the animation (e.g. 1000).">speed</span>, <span class="arg-type tooltip" title="A reference to a Javascript function.">Function</span> <span class="arg-name tooltip" title="(optional) A function to be executed whenever the animation completes.">callback</span> ) returns <span class="type"><span class="tooltip" title="A jQuery object.">jQuery</span></span></span>
+<div class="more">
+<div class="desc">Show all matched elements using a graceful animation and firing an
+optional callback after completion.<br>
+<br>The height, width, and opacity of each of the matched elements 
+are changed dynamically according to the specified speed.</div>
+<div class="example">
+<h3>Example:</h3>
+<pre>
+<code class="javascript">$("p").show("slow");</code>
+</pre>
+</div>
+<div class="example">
+<h3>Example:</h3>
+<pre>
+<code class="javascript">$("p").show("slow",function(){
+  alert("Animation Done.");
+});</code>
+</pre>
+</div>
+</div>
+</li>
+<li id="siblingsString">
+<span class="fn"><a class="name" href="#siblingsString">siblings</a>( <span class="arg-type tooltip" title="A string of characters.">String</span> <span class="arg-name tooltip" title="(optional) An expression to filter the sibling Elements with">expr</span> ) returns <span class="type"><span class="tooltip" title="A jQuery object.">jQuery</span></span></span>
+<div class="more">
+<div class="desc">Get a set of elements containing all of the unique siblings of each of the
+matched set of elements.<br>
+<br>Can be filtered with an optional expressions.</div>
+<div class="example">
+<h3>Example:</h3>
+<p>Find all siblings of each div.</p>
+<pre>
+<code class="javascript">$("div").siblings()</code>
+</pre>
+<h4>HTML:</h4>
+<pre>
+<code class="html">&lt;p&gt;Hello&lt;/p&gt;&lt;div&gt;&lt;span&gt;Hello Again&lt;/span&gt;&lt;/div&gt;&lt;p&gt;And Again&lt;/p&gt;</code>
+</pre>
+<h4>Result:</h4>
+<pre>
+<code class="html">[ &lt;p&gt;Hello&lt;/p&gt;, &lt;p&gt;And Again&lt;/p&gt; ]</code>
+</pre>
+</div>
+<div class="example">
+<h3>Example:</h3>
+<p>Find all siblings with a class "selected" of each div.</p>
+<pre>
+<code class="javascript">$("div").siblings(".selected")</code>
+</pre>
+<h4>HTML:</h4>
+<pre>
+<code class="html">&lt;div&gt;&lt;span&gt;Hello&lt;/span&gt;&lt;/div&gt;&lt;p class="selected"&gt;Hello Again&lt;/p&gt;&lt;p&gt;And Again&lt;/p&gt;</code>
+</pre>
+<h4>Result:</h4>
+<pre>
+<code class="html">[ &lt;p class="selected"&gt;Hello Again&lt;/p&gt; ]</code>
+</pre>
+</div>
+</div>
+</li>
+<li id="size">
+<span class="fn"><a class="name" href="#size">size</a>(  ) returns <span class="type"><span class="tooltip" title="A valid numeric.">Number</span></span></span>
+<div class="more">
+<div class="desc">Get the number of elements currently matched. This returns the same
+number as the 'length' property of the jQuery object.</div>
+<div class="example">
+<h3>Example:</h3>
+<pre>
+<code class="javascript">$("img").size();</code>
+</pre>
+<h4>HTML:</h4>
+<pre>
+<code class="html">&lt;img src="test1.jpg"/&gt; &lt;img src="test2.jpg"/&gt;</code>
+</pre>
+<h4>Result:</h4>
+<pre>
+<code class="html">2</code>
+</pre>
+</div>
+</div>
+</li>
+<li id="slideDownStringNumberFunction">
+<span class="fn"><a class="name" href="#slideDownStringNumberFunction">slideDown</a>( <span class="arg-type tooltip" title="A string of characters or a number.">String|Number</span> <span class="arg-name tooltip" title="(optional) A string representing one of the three predefined speeds (&quot;slow&quot;, &quot;normal&quot;, or &quot;fast&quot;) or the number of milliseconds to run the animation (e.g. 1000).">speed</span>, <span class="arg-type tooltip" title="A reference to a Javascript function.">Function</span> <span class="arg-name tooltip" title="(optional) A function to be executed whenever the animation completes.">callback</span> ) returns <span class="type"><span class="tooltip" title="A jQuery object.">jQuery</span></span></span>
+<div class="more">
+<div class="desc">Reveal all matched elements by adjusting their height and firing an
+optional callback after completion.<br>
+<br>Only the height is adjusted for this animation, causing all matched
+elements to be revealed in a "sliding" manner.</div>
+<div class="example">
+<h3>Example:</h3>
+<pre>
+<code class="javascript">$("p").slideDown("slow");</code>
+</pre>
+</div>
+<div class="example">
+<h3>Example:</h3>
+<pre>
+<code class="javascript">$("p").slideDown("slow",function(){
+  alert("Animation Done.");
+});</code>
+</pre>
+</div>
+</div>
+</li>
+<li id="slideToggleStringNumberFunction">
+<span class="fn"><a class="name" href="#slideToggleStringNumberFunction">slideToggle</a>( <span class="arg-type tooltip" title="A string of characters or a number.">String|Number</span> <span class="arg-name tooltip" title="(optional) A string representing one of the three predefined speeds (&quot;slow&quot;, &quot;normal&quot;, or &quot;fast&quot;) or the number of milliseconds to run the animation (e.g. 1000).">speed</span>, <span class="arg-type tooltip" title="A reference to a Javascript function.">Function</span> <span class="arg-name tooltip" title="(optional) A function to be executed whenever the animation completes.">callback</span> ) returns <span class="type"><span class="tooltip" title="A jQuery object.">jQuery</span></span></span>
+<div class="more">
+<div class="desc">Toggle the visibility of all matched elements by adjusting their height and firing an
+optional callback after completion.<br>
+<br>Only the height is adjusted for this animation, causing all matched
+elements to be hidden in a "sliding" manner.</div>
+<div class="example">
+<h3>Example:</h3>
+<pre>
+<code class="javascript">$("p").slideToggle("slow");</code>
+</pre>
+</div>
+<div class="example">
+<h3>Example:</h3>
+<pre>
+<code class="javascript">$("p").slideToggle("slow",function(){
+  alert("Animation Done.");
+});</code>
+</pre>
+</div>
+</div>
+</li>
+<li id="slideUpStringNumberFunction">
+<span class="fn"><a class="name" href="#slideUpStringNumberFunction">slideUp</a>( <span class="arg-type tooltip" title="A string of characters or a number.">String|Number</span> <span class="arg-name tooltip" title="(optional) A string representing one of the three predefined speeds (&quot;slow&quot;, &quot;normal&quot;, or &quot;fast&quot;) or the number of milliseconds to run the animation (e.g. 1000).">speed</span>, <span class="arg-type tooltip" title="A reference to a Javascript function.">Function</span> <span class="arg-name tooltip" title="(optional) A function to be executed whenever the animation completes.">callback</span> ) returns <span class="type"><span class="tooltip" title="A jQuery object.">jQuery</span></span></span>
+<div class="more">
+<div class="desc">Hide all matched elements by adjusting their height and firing an
+optional callback after completion.<br>
+<br>Only the height is adjusted for this animation, causing all matched
+elements to be hidden in a "sliding" manner.</div>
+<div class="example">
+<h3>Example:</h3>
+<pre>
+<code class="javascript">$("p").slideUp("slow");</code>
+</pre>
+</div>
+<div class="example">
+<h3>Example:</h3>
+<pre>
+<code class="javascript">$("p").slideUp("slow",function(){
+  alert("Animation Done.");
+});</code>
+</pre>
+</div>
+</div>
+</li>
+<li id="submit">
+<span class="fn"><a class="name" href="#submit">submit</a>(  ) returns <span class="type"><span class="tooltip" title="A jQuery object.">jQuery</span></span></span>
+<div class="more">
+<div class="desc">Trigger the submit event of each matched element. This causes all of the functions
+that have been bound to that submit event to be executed, and calls the browser's
+default submit action on the matching element(s). This default action can be prevented
+by returning false from one of the functions bound to the submit event.<br>
+<br>Note: This does not execute the submit method of the form element! If you need to
+submit the form via code, you have to use the DOM method, eg. $("form")[0].submit();</div>
+<div class="example">
+<h3>Example:</h3>
+<p>Triggers all submit events registered to the matched form(s), and submits them.</p>
+<pre>
+<code class="javascript">$("form").submit();</code>
+</pre>
+</div>
+</div>
+</li>
+<li id="submitFunction">
+<span class="fn"><a class="name" href="#submitFunction">submit</a>( <span class="arg-type tooltip" title="A reference to a Javascript function.">Function</span> <span class="arg-name tooltip" title="A function to bind to the submit event on each of the matched elements.">fn</span> ) returns <span class="type"><span class="tooltip" title="A jQuery object.">jQuery</span></span></span>
+<div class="more">
+<div class="desc">Bind a function to the submit event of each matched element.</div>
+<div class="example">
+<h3>Example:</h3>
+<p>Prevents the form submission when the input has no value entered.</p>
+<pre>
+<code class="javascript">$("#myform").submit( function() {
+  return $("input", this).val().length &gt; 0;
+} );</code>
+</pre>
+<h4>HTML:</h4>
+<pre>
+<code class="html">&lt;form id="myform"&gt;&lt;input /&gt;&lt;/form&gt;</code>
+</pre>
+</div>
+</div>
+</li>
+<li id="text">
+<span class="fn"><a class="name" href="#text">text</a>(  ) returns <span class="type"><span class="tooltip" title="A string of characters.">String</span></span></span>
+<div class="more">
+<div class="desc">Get the text contents of all matched elements. The result is
+a string that contains the combined text contents of all matched
+elements. This method works on both HTML and XML documents.</div>
+<div class="example">
+<h3>Example:</h3>
+<p>Gets the concatenated text of all paragraphs</p>
+<pre>
+<code class="javascript">$("p").text();</code>
+</pre>
+<h4>HTML:</h4>
+<pre>
+<code class="html">&lt;p&gt;&lt;b&gt;Test&lt;/b&gt; Paragraph.&lt;/p&gt;&lt;p&gt;Paraparagraph&lt;/p&gt;</code>
+</pre>
+<h4>Result:</h4>
+<pre>
+<code class="html">Test Paragraph.Paraparagraph</code>
+</pre>
+</div>
+</div>
+</li>
+<li id="textString">
+<span class="fn"><a class="name" href="#textString">text</a>( <span class="arg-type tooltip" title="A string of characters.">String</span> <span class="arg-name tooltip" title="The text value to set the contents of the element to.">val</span> ) returns <span class="type"><span class="tooltip" title="A string of characters.">String</span></span></span>
+<div class="more">
+<div class="desc">Set the text contents of all matched elements.<br>
+<br>Similar to html(), but escapes HTML (replace "&lt;" and "&gt;" with their
+HTML entities).</div>
+<div class="example">
+<h3>Example:</h3>
+<p>Sets the text of all paragraphs.</p>
+<pre>
+<code class="javascript">$("p").text("&lt;b&gt;Some&lt;/b&gt; new text.");</code>
+</pre>
+<h4>HTML:</h4>
+<pre>
+<code class="html">&lt;p&gt;Test Paragraph.&lt;/p&gt;</code>
+</pre>
+<h4>Result:</h4>
+<pre>
+<code class="html">&lt;p&gt;&amp;lt;b&amp;gt;Some&amp;lt;/b&amp;gt; new text.&lt;/p&gt;</code>
+</pre>
+</div>
+<div class="example">
+<h3>Example:</h3>
+<p>Sets the text of all paragraphs.</p>
+<pre>
+<code class="javascript">$("p").text("&lt;b&gt;Some&lt;/b&gt; new text.", true);</code>
+</pre>
+<h4>HTML:</h4>
+<pre>
+<code class="html">&lt;p&gt;Test Paragraph.&lt;/p&gt;</code>
+</pre>
+<h4>Result:</h4>
+<pre>
+<code class="html">&lt;p&gt;Some new text.&lt;/p&gt;</code>
+</pre>
+</div>
+</div>
+</li>
+<li id="toggle">
+<span class="fn"><a class="name" href="#toggle">toggle</a>(  ) returns <span class="type"><span class="tooltip" title="A jQuery object.">jQuery</span></span></span>
+<div class="more">
+<div class="desc">Toggles each of the set of matched elements. If they are shown,
+toggle makes them hidden. If they are hidden, toggle
+makes them shown.</div>
+<div class="example">
+<h3>Example:</h3>
+<pre>
+<code class="javascript">$("p").toggle()</code>
+</pre>
+<h4>HTML:</h4>
+<pre>
+<code class="html">&lt;p&gt;Hello&lt;/p&gt;&lt;p style="display: none"&gt;Hello Again&lt;/p&gt;</code>
+</pre>
+<h4>Result:</h4>
+<pre>
+<code class="html">[ &lt;p style="display: none"&gt;Hello&lt;/p&gt;, &lt;p style="display: block"&gt;Hello Again&lt;/p&gt; ]</code>
+</pre>
+</div>
+</div>
+</li>
+<li id="toggleFunctionFunction">
+<span class="fn"><a class="name" href="#toggleFunctionFunction">toggle</a>( <span class="arg-type tooltip" title="A reference to a Javascript function.">Function</span> <span class="arg-name tooltip" title="The function to execute on every even click.">even</span>, <span class="arg-type tooltip" title="A reference to a Javascript function.">Function</span> <span class="arg-name tooltip" title="The function to execute on every odd click.">odd</span> ) returns <span class="type"><span class="tooltip" title="A jQuery object.">jQuery</span></span></span>
+<div class="more">
+<div class="desc">Toggle between two function calls every other click.
+Whenever a matched element is clicked, the first specified function 
+is fired, when clicked again, the second is fired. All subsequent 
+clicks continue to rotate through the two functions.<br>
+<br>Use unbind("click") to remove.</div>
+<div class="example">
+<h3>Example:</h3>
+<pre>
+<code class="javascript">$("p").toggle(function(){
+  $(this).addClass("selected");
+},function(){
+  $(this).removeClass("selected");
+});</code>
+</pre>
+</div>
+</div>
+</li>
+<li id="toggleClassString">
+<span class="fn"><a class="name" href="#toggleClassString">toggleClass</a>( <span class="arg-type tooltip" title="A string of characters.">String</span> <span class="arg-name tooltip" title="A CSS class with which to toggle the elements">class</span> ) returns <span class="type"><span class="tooltip" title="A jQuery object.">jQuery</span></span></span>
+<div class="more">
+<div class="desc">Adds the specified class if it is not present, removes it if it is
+present.</div>
+<div class="example">
+<h3>Example:</h3>
+<pre>
+<code class="javascript">$("p").toggleClass("selected")</code>
+</pre>
+<h4>HTML:</h4>
+<pre>
+<code class="html">&lt;p&gt;Hello&lt;/p&gt;&lt;p class="selected"&gt;Hello Again&lt;/p&gt;</code>
+</pre>
+<h4>Result:</h4>
+<pre>
+<code class="html">[ &lt;p class="selected"&gt;Hello&lt;/p&gt;, &lt;p&gt;Hello Again&lt;/p&gt; ]</code>
+</pre>
+</div>
+</div>
+</li>
+<li id="triggerStringArray">
+<span class="fn"><a class="name" href="#triggerStringArray">trigger</a>( <span class="arg-type tooltip" title="A string of characters.">String</span> <span class="arg-name tooltip" title="An event type to trigger.">type</span>, <span class="arg-type tooltip" title="">Array</span> <span class="arg-name tooltip" title="(optional) Additional data to pass as arguments (after the event object) to the event handler">data</span> ) returns <span class="type"><span class="tooltip" title="A jQuery object.">jQuery</span></span></span>
+<div class="more">
+<div class="desc">Trigger a type of event on every matched element. This will also cause
+the default action of the browser with the same name (if one exists)
+to be executed. For example, passing 'submit' to the trigger()
+function will also cause the browser to submit the form. This
+default action can be prevented by returning false from one of
+the functions bound to the event.<br>
+<br>You can also trigger custom events registered with bind.</div>
+<div class="example">
+<h3>Example:</h3>
+<pre>
+<code class="javascript">$("p").trigger("click")</code>
+</pre>
+<h4>HTML:</h4>
+<pre>
+<code class="html">&lt;p click="alert('hello')"&gt;Hello&lt;/p&gt;</code>
+</pre>
+<h4>Result:</h4>
+<pre>
+<code class="html">alert('hello')</code>
+</pre>
+</div>
+<div class="example">
+<h3>Example:</h3>
+<p>Example of how to pass arbitrary data to an event</p>
+<pre>
+<code class="javascript">$("p").click(function(event, a, b) {
+  // when a normal click fires, a and b are undefined
+  // for a trigger like below a refers too "foo" and b refers to "bar"
+}).trigger("click", ["foo", "bar"]);</code>
+</pre>
+</div>
+<div class="example">
+<h3>Example:</h3>
+<pre>
+<code class="javascript">$("p").bind("myEvent",function(event,message1,message2) {
+	alert(message1 + ' ' + message2);
+});
+$("p").trigger("myEvent",["Hello","World"]);</code>
+</pre>
+<h4>Result:</h4>
+<pre>
+<code class="html">alert('Hello World') // One for each paragraph</code>
+</pre>
+</div>
+</div>
+</li>
+<li id="trimString">
+<span class="fn"><a class="name" href="#trimString">$.trim</a>( <span class="arg-type tooltip" title="A string of characters.">String</span> <span class="arg-name tooltip" title="The string to trim.">str</span> ) returns <span class="type"><span class="tooltip" title="A string of characters.">String</span></span></span>
+<div class="more">
+<div class="desc">Remove the whitespace from the beginning and end of a string.</div>
+<div class="example">
+<h3>Example:</h3>
+<pre>
+<code class="javascript">$.trim("  hello, how are you?  ");</code>
+</pre>
+<h4>Result:</h4>
+<pre>
+<code class="html">"hello, how are you?"</code>
+</pre>
+</div>
+</div>
+</li>
+<li id="unbindStringFunction">
+<span class="fn"><a class="name" href="#unbindStringFunction">unbind</a>( <span class="arg-type tooltip" title="A string of characters.">String</span> <span class="arg-name tooltip" title="(optional) An event type">type</span>, <span class="arg-type tooltip" title="A reference to a Javascript function.">Function</span> <span class="arg-name tooltip" title="(optional) A function to unbind from the event on each of the set of matched elements">fn</span> ) returns <span class="type"><span class="tooltip" title="A jQuery object.">jQuery</span></span></span>
+<div class="more">
+<div class="desc">The opposite of bind, removes a bound event from each of the matched
+elements.<br>
+<br>Without any arguments, all bound events are removed.<br>
+<br>If the type is provided, all bound events of that type are removed.<br>
+<br>If the function that was passed to bind is provided as the second argument,
+only that specific event handler is removed.</div>
+<div class="example">
+<h3>Example:</h3>
+<pre>
+<code class="javascript">$("p").unbind()</code>
+</pre>
+<h4>HTML:</h4>
+<pre>
+<code class="html">&lt;p onclick="alert('Hello');"&gt;Hello&lt;/p&gt;</code>
+</pre>
+<h4>Result:</h4>
+<pre>
+<code class="html">[ &lt;p&gt;Hello&lt;/p&gt; ]</code>
+</pre>
+</div>
+<div class="example">
+<h3>Example:</h3>
+<pre>
+<code class="javascript">$("p").unbind( "click" )</code>
+</pre>
+<h4>HTML:</h4>
+<pre>
+<code class="html">&lt;p onclick="alert('Hello');"&gt;Hello&lt;/p&gt;</code>
+</pre>
+<h4>Result:</h4>
+<pre>
+<code class="html">[ &lt;p&gt;Hello&lt;/p&gt; ]</code>
+</pre>
+</div>
+<div class="example">
+<h3>Example:</h3>
+<pre>
+<code class="javascript">$("p").unbind( "click", function() { alert("Hello"); } )</code>
+</pre>
+<h4>HTML:</h4>
+<pre>
+<code class="html">&lt;p onclick="alert('Hello');"&gt;Hello&lt;/p&gt;</code>
+</pre>
+<h4>Result:</h4>
+<pre>
+<code class="html">[ &lt;p&gt;Hello&lt;/p&gt; ]</code>
+</pre>
+</div>
+</div>
+</li>
+<li id="unloadFunction">
+<span class="fn"><a class="name" href="#unloadFunction">unload</a>( <span class="arg-type tooltip" title="A reference to a Javascript function.">Function</span> <span class="arg-name tooltip" title="A function to bind to the unload event on each of the matched elements.">fn</span> ) returns <span class="type"><span class="tooltip" title="A jQuery object.">jQuery</span></span></span>
+<div class="more">
+<div class="desc">Bind a function to the unload event of each matched element.</div>
+<div class="example">
+<h3>Example:</h3>
+<pre>
+<code class="javascript">$("p").unload( function() { alert("Hello"); } );</code>
+</pre>
+<h4>HTML:</h4>
+<pre>
+<code class="html">&lt;p&gt;Hello&lt;/p&gt;</code>
+</pre>
+<h4>Result:</h4>
+<pre>
+<code class="html">&lt;p onunload="alert('Hello');"&gt;Hello&lt;/p&gt;</code>
+</pre>
+</div>
+</div>
+</li>
+<li id="val">
+<span class="fn"><a class="name" href="#val">val</a>(  ) returns <span class="type"><span class="tooltip" title="A string of characters.">String</span></span></span>
+<div class="more">
+<div class="desc">Get the content of the value attribute of the first matched element.<br>
+<br>Use caution when relying on this function to check the value of
+multiple-select elements and checkboxes in a form. While it will
+still work as intended, it may not accurately represent the value
+the server will receive because these elements may send an array
+of values. For more robust handling of field values, see the
+[http://www.malsup.com/jquery/form/#fields fieldValue function of the Form Plugin].</div>
+<div class="example">
+<h3>Example:</h3>
+<pre>
+<code class="javascript">$("input").val();</code>
+</pre>
+<h4>HTML:</h4>
+<pre>
+<code class="html">&lt;input type="text" value="some text"/&gt;</code>
+</pre>
+<h4>Result:</h4>
+<pre>
+<code class="html">"some text"</code>
+</pre>
+</div>
+</div>
+</li>
+<li id="valString">
+<span class="fn"><a class="name" href="#valString">val</a>( <span class="arg-type tooltip" title="A string of characters.">String</span> <span class="arg-name tooltip" title="Set the property to the specified value.">val</span> ) returns <span class="type"><span class="tooltip" title="A jQuery object.">jQuery</span></span></span>
+<div class="more">
+<div class="desc">	Set the value attribute of every matched element.</div>
+<div class="example">
+<h3>Example:</h3>
+<pre>
+<code class="javascript">$("input").val("test");</code>
+</pre>
+<h4>HTML:</h4>
+<pre>
+<code class="html">&lt;input type="text" value="some text"/&gt;</code>
+</pre>
+<h4>Result:</h4>
+<pre>
+<code class="html">&lt;input type="text" value="test"/&gt;</code>
+</pre>
+</div>
+</div>
+</li>
+<li id="width">
+<span class="fn"><a class="name" href="#width">width</a>(  ) returns <span class="type"><span class="tooltip" title="A string of characters.">String</span></span></span>
+<div class="more">
+<div class="desc">Get the current computed, pixel, width of the first matched element.</div>
+<div class="example">
+<h3>Example:</h3>
+<pre>
+<code class="javascript">$("p").width();</code>
+</pre>
+<h4>HTML:</h4>
+<pre>
+<code class="html">&lt;p&gt;This is just a test.&lt;/p&gt;</code>
+</pre>
+<h4>Result:</h4>
+<pre>
+<code class="html">300</code>
+</pre>
+</div>
+</div>
+</li>
+<li id="widthStringNumber">
+<span class="fn"><a class="name" href="#widthStringNumber">width</a>( <span class="arg-type tooltip" title="A string of characters or a number.">String|Number</span> <span class="arg-name tooltip" title="Set the CSS property to the specified value.">val</span> ) returns <span class="type"><span class="tooltip" title="A jQuery object.">jQuery</span></span></span>
+<div class="more">
+<div class="desc">Set the CSS width of every matched element. If no explicit unit
+was specified (like 'em' or '%') then "px" is added to the width.</div>
+<div class="example">
+<h3>Example:</h3>
+<pre>
+<code class="javascript">$("p").width(20);</code>
+</pre>
+<h4>HTML:</h4>
+<pre>
+<code class="html">&lt;p&gt;This is just a test.&lt;/p&gt;</code>
+</pre>
+<h4>Result:</h4>
+<pre>
+<code class="html">&lt;p style="width:20px;"&gt;This is just a test.&lt;/p&gt;</code>
+</pre>
+</div>
+<div class="example">
+<h3>Example:</h3>
+<pre>
+<code class="javascript">$("p").width("20em");</code>
+</pre>
+<h4>HTML:</h4>
+<pre>
+<code class="html">&lt;p&gt;This is just a test.&lt;/p&gt;</code>
+</pre>
+<h4>Result:</h4>
+<pre>
+<code class="html">&lt;p style="width:20em;"&gt;This is just a test.&lt;/p&gt;</code>
+</pre>
+</div>
+</div>
+</li>
+<li id="wrapString">
+<span class="fn"><a class="name" href="#wrapString">wrap</a>( <span class="arg-type tooltip" title="A string of characters.">String</span> <span class="arg-name tooltip" title="A string of HTML, that will be created on the fly and wrapped around the target.">html</span> ) returns <span class="type"><span class="tooltip" title="A jQuery object.">jQuery</span></span></span>
+<div class="more">
+<div class="desc">Wrap all matched elements with a structure of other elements.
+This wrapping process is most useful for injecting additional
+stucture into a document, without ruining the original semantic
+qualities of a document.<br>
+<br>This works by going through the first element
+provided (which is generated, on the fly, from the provided HTML)
+and finds the deepest ancestor element within its
+structure - it is that element that will en-wrap everything else.<br>
+<br>This does not work with elements that contain text. Any necessary text
+must be added after the wrapping is done.</div>
+<div class="example">
+<h3>Example:</h3>
+<pre>
+<code class="javascript">$("p").wrap("&lt;div class='wrap'&gt;&lt;/div&gt;");</code>
+</pre>
+<h4>HTML:</h4>
+<pre>
+<code class="html">&lt;p&gt;Test Paragraph.&lt;/p&gt;</code>
+</pre>
+<h4>Result:</h4>
+<pre>
+<code class="html">&lt;div class='wrap'&gt;&lt;p&gt;Test Paragraph.&lt;/p&gt;&lt;/div&gt;</code>
+</pre>
+</div>
+</div>
+</li>
+<li id="wrapElement">
+<span class="fn"><a class="name" href="#wrapElement">wrap</a>( <span class="arg-type tooltip" title="The Javascript object representation of a DOM Element.">Element</span> <span class="arg-name tooltip" title="A DOM element that will be wrapped around the target.">elem</span> ) returns <span class="type"><span class="tooltip" title="A jQuery object.">jQuery</span></span></span>
+<div class="more">
+<div class="desc">Wrap all matched elements with a structure of other elements.
+This wrapping process is most useful for injecting additional
+stucture into a document, without ruining the original semantic
+qualities of a document.<br>
+<br>This works by going through the first element
+provided and finding the deepest ancestor element within its
+structure - it is that element that will en-wrap everything else.<br>
+<br>This does not work with elements that contain text. Any necessary text
+must be added after the wrapping is done.</div>
+<div class="example">
+<h3>Example:</h3>
+<pre>
+<code class="javascript">$("p").wrap( document.getElementById('content') );</code>
+</pre>
+<h4>HTML:</h4>
+<pre>
+<code class="html">&lt;p&gt;Test Paragraph.&lt;/p&gt;&lt;div id="content"&gt;&lt;/div&gt;</code>
+</pre>
+<h4>Result:</h4>
+<pre>
+<code class="html">&lt;div id="content"&gt;&lt;p&gt;Test Paragraph.&lt;/p&gt;&lt;/div&gt;</code>
+</pre>
+</div>
+</div>
+</li>
+</ul>
+</div>
+</body>
+</html>

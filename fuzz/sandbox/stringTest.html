@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+<title>Tests for String-Extensions</title>
+
+<link rel="stylesheet" type="text/css" media="screen" href="css/screen.css" />
+<script src="jquery.pack.js" type="text/javascript"></script>
+<script src="ilogger.js" type="text/javascript"></script>
+<script src="testCase.js" type="text/javascript"></script>
+<script src="string.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+$(function() {
+	$.iLogger.build();
+	
+	test("trim()", function() {
+		assertEquals("", "".trim(), "Expected no modification");
+		assertEquals("", " ".trim(), "Expected removal of single whitespace");
+		assertEquals("", "   ".trim(), "Expected removal of multiple whitespace");
+		assertEquals("peter", "peter".trim(), "Expected no modification");
+		assertEquals("peter", " peter".trim(), "Expected trim at start");
+		assertEquals("peter", "peter ".trim(), "Expected trim at end");
+		assertEquals("peter", " peter ".trim(), "Expected trim at start and end");
+		assertEquals("peter", "      peter           ".trim(), "Expected lots of trim at start and end");
+		assertEquals("pet er", "pet er".trim(), "Expected no modification");
+		assertEquals("pet er", " pet er".trim(), "Expected trim at start");
+		assertEquals("pet er", "pet er ".trim(), "Expected trim at end");
+		assertEquals("pet er", " pet er ".trim(), "Expected trim at start and end");
+		assertEquals("pet er", "      pet er           ".trim(), "Expected lots of trim at start and end");
+		assertEquals("p  et er", "p  et er".trim(), "Expected no modification");
+		assertEquals("p  et er", " p  et er".trim(), "Expected trim at start");
+		assertEquals("p  et er", "p  et er ".trim(), "Expected trim at end");
+		assertEquals("p  et er", " p  et er ".trim(), "Expected trim at start and end");
+		assertEquals("p  et er", "      p  et er           ".trim(), "Expected lots of trim at start and end");
+		assertEquals("Hello Boys and Girls!", " Hello Boys and Girls!   ".trim(), "Check example");
+	});
+	
+	test("camelize()", function() {
+		assertEquals( "", "".camelize(), "Expected no modification" );
+		assertEquals( "peter", "peter".camelize(), "Expected no modification" );
+		assertEquals( "Peter", "Peter".camelize(), "Expected no modification" );
+		assertEquals( "peterPeter", "peter-peter".camelize(), "Expected a single modification" );
+		assertEquals( "peterPeter", "peter_peter".camelize(), "Expected a single modification" );
+		assertEquals( "peterPeterPeter", "peter-peter-peter".camelize(), "Expected multiple modifications" );
+		assertEquals( "peterPeterPeter", "peter_peter_peter".camelize(), "Expected multiple modifications" );
+		assertEquals( "fontWeight", "font-weight".camelize(), "Check first example" );
+		assertEquals( "borderWidthBottom", "border_width_bottom".camelize(), "Check second example" );
+		assertEquals( "borderWidthBottom", "border_width-bottom".camelize(), "Check third example" );
+	});
+	
+	test("startsWith(prefix)", function() {
+		assertTrue( "peter".startsWith("p") );
+		assertTrue( "peter".startsWith("pet") );
+		assertTrue( "peter".startsWith("pete") );
+		assertTrue( "peter".startsWith("peter") );
+		assertFalse( "peter".startsWith("xst") );
+		assertFalse( "peter".startsWith("petr") );
+		assertTrue( "/%$/".startsWith("/") );
+		assertTrue( "/%$/".startsWith("/%") );
+		assertFalse( "/%$/".startsWith("/$") );
+		assertTrue( "/%$/".startsWith("") );
+		assertTrue( "".startsWith("") );
+	});
+	
+	test("startsWith(prefix, offset)", function() {
+		assertTrue( "peter".startsWith("e", 1) );
+		assertTrue( "peter".startsWith("et", 1) );
+		assertTrue( "peter".startsWith("ete", 1) );
+		assertTrue( "peter".startsWith("eter", 1) );
+		assertTrue( "peter".startsWith("t", 2) );
+		assertTrue( "peter".startsWith("te", 2) );
+		assertTrue( "peter".startsWith("ter", 2) );
+		assertFalse( "peter".startsWith("p", 1) );
+		assertFalse( "peter".startsWith("pe", 1) );
+		assertFalse( "peter".startsWith("e", 2) );
+		assertFalse( "peter".startsWith("et", 2) );
+		assertFalse( "peter".startsWith("pe", -1) );
+		assertTrue( "peter".startsWith("r", 4) );
+		assertFalse( "peter".startsWith("r", 5) );
+		assertTrue( "/%$/".startsWith("%", 1) );
+		assertTrue( "/%$/".startsWith("%$", 1) );
+		assertTrue( "/%$/".startsWith("$/", 2) );
+		assertFalse( "/%$/".startsWith("%$\"", 1) );
+		assertTrue( "/%$/".startsWith("", 0) );
+		assertTrue( "".startsWith("", 0) );
+	});
+	
+	test("endsWith(suffix)", function() {
+		assertTrue( "peter".endsWith("r") );
+		assertTrue( "peter".endsWith("er") );
+		assertTrue( "peter".endsWith("ter") );
+		assertTrue( "peter".endsWith("eter") );
+		assertTrue( "peter".endsWith("peter") );
+		assertFalse( "peter".endsWith("x") );
+		assertFalse( "peter".endsWith("xer") );
+		assertFalse( "peter".endsWith("pter") );
+		assertTrue( "/%$/".endsWith("/") );
+		assertTrue( "/%$/".endsWith("$/") );
+		assertFalse( "/%$/".endsWith("%/") );
+		assertTrue( "/%$/".endsWith("") );
+		assertTrue( "".endsWith("") );
+	});
+	
+	test("isDigit()", function() {
+		assertTrue( "123".isDigit() );
+		assertTrue( "1".isDigit() );
+		assertTrue( "2".isDigit() );
+		assertTrue( "8".isDigit() );
+		assertTrue( "9".isDigit() );
+		assertFalse( "a".isDigit() );
+		assertFalse( "a1".isDigit() );
+		assertFalse( "1a".isDigit() );
+		assertFalse( "1a1".isDigit() );
+		assertFalse( " a1".isDigit() );
+		assertFalse( " 1 ".isDigit() );
+		assertFalse( "1 ".isDigit() );
+		assertFalse( " 1".isDigit() );
+		assertTrue( " 123 ".trim().isDigit() );
+		assertFalse( " 1 23 ".trim().isDigit() );
+	});
+	
+	test("isLower()", function() {
+		assertTrue( "abc".isLower() );
+		assertTrue( "a".isLower() );
+		assertTrue( "z".isLower() );
+		assertFalse( "A".isLower() );
+		assertFalse( "Z".isLower() );
+		assertFalse( "ABC".isLower() );
+		assertFalse( " A-F".isLower() );
+		assertFalse( " a ".isLower() );
+		assertFalse( " a b c".isLower() );
+	});
+	
+	test("isUpper()", function() {
+		assertTrue( "ABC".isUpper() );
+		assertTrue( "A".isUpper() );
+		assertTrue( "Z".isUpper() );
+		assertFalse( "abc".isUpper() );
+		assertFalse( "a".isUpper() );
+		assertFalse( "z".isUpper() );
+		assertFalse( " Z ".isUpper() );
+		assertFalse( "Z-A".isUpper() );
+		assertFalse( " Z A B ".isUpper() );
+	});
+	
+	test("isAlpha()", function() {
+		assertTrue( "abc".isAlpha() );
+		assertTrue( "a".isAlpha() );
+		assertTrue( "z".isAlpha() );
+		assertTrue( "ABC".isAlpha() );
+		assertTrue( "A".isAlpha() );
+		assertTrue( "Z".isAlpha() );
+		assertTrue( "AaBbCc".isAlpha() );
+		assertTrue( "AaBbCc".isAlpha() );
+		assertFalse( " Z ".isAlpha() );
+		assertFalse( "Z-A".isAlpha() );
+		assertFalse( " Z A B ".isAlpha() );
+	});
+	
+	test("isAlphaNum()", function() {
+		assertTrue( "abc".isAlphaNum() );
+		assertTrue( "a".isAlphaNum() );
+		assertTrue( "z".isAlphaNum() );
+		assertTrue( "ABC".isAlphaNum() );
+		assertTrue( "A".isAlphaNum() );
+		assertTrue( "Z".isAlphaNum() );
+		assertTrue( "AaBbCc".isAlphaNum() );
+		assertTrue( "AaBbCc".isAlphaNum() );
+		assertTrue( "123".isAlphaNum() );
+		assertTrue( "1".isAlphaNum() );
+		assertTrue( "2".isAlphaNum() );
+		assertTrue( "8".isAlphaNum() );
+		assertTrue( "9".isAlphaNum() );
+		assertTrue( "a".isAlphaNum() );
+		assertTrue( "a1".isAlphaNum() );
+		assertTrue( "1a".isAlphaNum() );
+		assertTrue( "1a1".isAlphaNum() );
+		assertFalse( " a1".isAlphaNum() );
+		assertFalse( " 1 ".isAlphaNum() );
+		assertFalse( "1 ".isAlphaNum() );
+		assertFalse( " 1".isAlphaNum() );
+		assertTrue( " 123 ".trim().isAlphaNum() );
+		assertFalse( " 1 23 ".trim().isAlphaNum() );
+	});
+});
+</script>
+
+</head>
+<body>
+File to be tested: <a href="string.js">string.js</a> Packed version: <a href="string.pack.js">string.pack.js</a>
+</body>
+</html>

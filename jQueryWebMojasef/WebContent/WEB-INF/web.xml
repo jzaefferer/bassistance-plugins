@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app id="WebApp_ID" version="2.4"
+	xmlns="http://java.sun.com/xml/ns/j2ee"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee http://java.sun.com/xml/ns/j2ee/web-app_2_4.xsd">
+	<display-name>jQueryWeb</display-name>
+
+<!-- 
+	<servlet>
+		<servlet-name>jQuery</servlet-name>
+		<servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>jQuery</servlet-name>
+		<url-pattern>/jquery</url-pattern>
+	</servlet-mapping>
+	
+	<servlet-mapping>
+		<servlet-name>jQuery</servlet-name>
+		<url-pattern>/page/*</url-pattern>
+	</servlet-mapping>
+
+	<welcome-file-list>
+		<welcome-file>jquery</welcome-file>
+	</welcome-file-list>
+ -->
+ 
+ 	<servlet>
+ 		<servlet-name>mojQuery</servlet-name>
+ 		<servlet-class>org.stringtree.mojasef.servlet.MojasefServlet</servlet-class>
+ 	</servlet>
+ 	
+ 	<servlet-mapping>
+		<servlet-name>mojQuery</servlet-name>
+		<url-pattern>/mojasef</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>mojQuery</servlet-name>
+		<url-pattern>/mojasef/*</url-pattern>
+	</servlet-mapping>
+
+	<welcome-file-list>
+		<welcome-file>mojasef</welcome-file>
+	</welcome-file-list>
+
+</web-app>

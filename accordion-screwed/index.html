@@ -1,0 +1,95 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+<head>
+	<title>jQuery Accordion </title>
+	<script type="text/javascript" src="jquery.js"></script>
+
+	<script type="text/javascript">
+jQuery.fn.extend({
+	// the plugin method itself
+	Accordion: function() {
+		
+		function clickHandler(event) {
+			jQuery('<div>' + (event.target && event.target.tagName) + '</div>').appendTo('#log');
+			return false;
+		};
+		function activateHandler(event, index) {
+			clickHandler({ target: null });
+		};
+
+		return this.bind("click", clickHandler)
+			// comment the next line to "fix" the issue
+			.bind("activate", activateHandler);
+	}
+});
+	
+jQuery().ready(function(){
+	jQuery('#navigation').Accordion();
+	/*
+	function handler(event) {
+		jQuery('<div>' + (event.target && event.target.tagName) + '</div>').appendTo('#log');
+		return false;
+	}
+	function handler2() {
+		handler({target: null});
+	}
+	jQuery("ul").bind("click", handler).bind("activate", handler2);
+	*/
+});
+	</script>
+
+</head>
+<body>
+
+<div id="main">
+	
+	<fieldset>
+		<legend>The first click on each anchor yields two events.</legend>
+
+		<ul id="navigation">
+			<li>
+				<a class="head" href="?p=1.1.1">Guitar</a>
+				<ul>
+					<li><a href="?p=1.1.1.1">Electric</a></li>
+					<li><a href="?p=1.1.1.2">Acoustic</a></li>
+					<li><a href="?p=1.1.1.3">Amps</a></li>
+					<li><a href="?p=1.1.1.4">Effects</a></li>
+					<li><a href="?p=1.1.1.5">Accessories</a></li>
+				</ul> 
+			</li>
+			<li>
+				<a class="head" href="?p=1.1.2">Bass</a>
+				<ul>
+					<li><a href="?p=1.1.2.1">Electric</a></li>
+					<li><a href="?p=1.1.2.2">Acoustic</a></li>
+					<li><a href="?p=1.1.2.3">Amps</a></li>
+					<li><a href="?p=1.1.2.4">Effects</a></li>
+					<li><a href="?p=1.1.2.5">Accessories</a></li>
+				</ul> 
+			</li>
+			<li>
+				<a class="head" href="?p=1.1.3">Drums</a>
+				<ul>
+					<li><a href="?p=1.1.3.2">Acoustic Drums</a></li>
+					<li><a href="?p=1.1.3.3">Electronic Drums</a></li>
+					<li><a href="?p=1.1.3.4">Cymbals</a></li>
+					<li><a href="?p=1.1.3.5">Hardware</a></li>
+					<li><a href="?p=1.1.3.6">Accessories</a></li>
+				</ul> 
+			</li>
+		</ul>
+		
+		<h3>Code</h3>
+		<pre><code class="mix">jQuery('#navigation').Accordion({
+	active: false,
+	header: '.head',
+	alwaysOpen: false,
+	navigation: true
+});</code></pre>
+	</fieldset>
+
+		<div id="log"><div><strong>Log</strong></div></div>
+</div>
+	</body>
+</html>

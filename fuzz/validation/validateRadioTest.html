@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+<title>Test for jQuery validate() plugin</title>
+
+<link rel="stylesheet" type="text/css" media="screen" href="css/screen.css" />
+<script src="js/jquery.js" type="text/javascript"></script>
+<script src="js/cmxforms.js" type="text/javascript"></script>
+<script src="js/metadata.js" type="text/javascript"></script>
+<script src="js/validate.js" type="text/javascript"></script>
+
+</head>
+<body>
+<form class="cmxform" id="form1" method="get" action="">
+	<fieldset>
+		<legend>Validating a simple form with a radio select</legend>
+		<p>
+			<label for="name">Email</label>
+			<input  id="name" name="name" validate="required:true" />
+		</p>
+		<fieldset>
+			<legend>Gender</legend>
+			<label for="gender_male">
+				<input  type="radio" id="gender_male" value="m" name="gender" validate="required:true" />
+				Male
+			</label>
+			<label for="gender_female">
+				<input  type="radio" id="gender_female" value="f" name="gender"/>
+				Female
+			</label>
+			<label for="gender" class="error">Please select your gender</label>
+		</fieldset>
+		<fieldset>
+			<legend>Family</legend>
+			<label for="family_single">
+				<input  type="radio" id="family_single" value="s" name="family" validate="required:true" />
+				Single
+			</label>
+			<label for="family_married">
+				<input  type="radio" id="family_married" value="m" name="family" />
+				Married
+			</label>
+			<label for="family_divorced">
+				<input  type="radio" id="family_divorced" value="d" name="family" />
+				Divorced
+			</label>
+			<label for="family_weird">
+				<input  type="radio" id="family_weird" value="w" name="family" />
+				Something weird
+			</label>
+			<label for="family" class="error">Please select your family status.</label>
+		</fieldset>
+		<p>
+			<input class="submit" type="submit" value="Submit"/>
+		</p>
+	</fieldset>
+</form>
+
+<h2>Another form to verify that there is no conflict</h2>
+<form>
+	<fieldset>
+		<legend>Gender</legend>
+		<label for="fu1">
+			<input type="radio" checked="checked" id="fu1" value="m" name="gender" validate="required:true" />
+			Male
+		</label>
+		<label for="fu2">
+			<input type="radio" id="fu2" value="f" name="gender" validate="required" />
+			Female
+		</label>
+	</fieldset>
+</form>
+
+<script type="text/javascript">
+	$.meta.setType("attr", "validate");
+	$(document).ready(function() {
+		// validate the form when it is submitted
+		var options = {
+			debug: true
+		}
+		$("#form1").validate(options);
+	});
+</script>
+
+<a href="validateTest.html">Back to main page</a>
+
+</body>
+</html>

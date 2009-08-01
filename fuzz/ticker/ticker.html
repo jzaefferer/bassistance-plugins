@@ -1,0 +1,43 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+<title>jQuery Examples</title>
+
+<link rel="stylesheet" type="text/css" media="screen" href="css/screen.css" />
+<script src="../jquery.js" type="text/javascript"></script>
+<script src="../pause.js" type="text/javascript"></script>
+<script type="text/javascript">
+$.fn.typewriter = function(delay) {
+	return this.each(function() {
+		delay = delay || 50;
+		var self = $(this);
+		var text = self.text();
+		self.empty();
+		var position = 0, result = "";
+		var loop = function() {
+			result += text.charAt(position++);
+			self.html(result);
+			if(position < text.length)
+				setTimeout(loop, delay);
+		}
+		loop();
+	});
+};
+$(document).ready(function() {
+	$("p:first").typewriter(15);
+	$("p:eq(1)").typewriter();
+	$("p:last").typewriter(150);
+});
+</script>
+
+</head>
+<body>
+<h1>Typewriter Ticker</h1>
+<p>Here we go way faster!</p>
+<p>This text should be typewritten. It would be nice if <i>italic</i> and <b>bold</b> text would
+be ok, too.</p>
+<p>Here we go way sloooooowwweeerrr...</p>
+
+</body>
+</html>

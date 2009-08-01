@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+<title>Test for jQuery validate() plugin</title>
+
+<link rel="stylesheet" type="text/css" media="screen" href="css/screen.css" />
+<script src="js/jquery.js" type="text/javascript"></script>
+<script src="js/cmxforms.js" type="text/javascript"></script>
+<script src="js/metadata.js" type="text/javascript"></script>
+<script src="js/validate.js" type="text/javascript"></script>
+
+</head>
+<body>
+
+<form method="get" class="cmxform" id="form2" action="">
+	<fieldset>
+		<legend>Login Form</legend>
+		<p>
+			<label>Username</label>
+			<input name="user" title="Please enter your username (at least 3 characters)" validate="required:true,minLength:3" />
+		</p>
+		<p>
+			<label>Password</label>
+			<input type="password" maxlength="12" name="password" title="Please enter your password, between 5 and 12 characters" validate="required:true,minLength:5" />
+		</p>
+		<div class="error">
+		</div>
+		<p>
+			<input class="submit" type="submit" value="Login"/>
+		</p>
+	</fieldset>
+</form>
+
+<script type="text/javascript">
+$.meta.setType("attr", "validate");
+$(document).ready(function() {
+	var errorContainer = $("#form2 div.error");
+	var options = {
+		debug: true,
+		errorContainer: errorContainer
+	}
+	$("#form2").validate(options);
+});
+</script>
+
+<a href="validateTest.html">Back to main page</a>
+
+</body>
+</html>

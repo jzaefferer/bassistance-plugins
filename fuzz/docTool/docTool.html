@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+<title>jQuery HTML Documentation Generator</title>
+
+<link rel="stylesheet" type="text/css" media="screen" href="screen.css" />
+<script src="../firebug/firebug.js" type="text/javascript"></script>
+<script src="js/sarissa.js" type="text/javascript"></script>
+<script src="js/jquery.pack.js" type="text/javascript"></script>
+<script src="js/jquery.tooltip.js" type="text/javascript"></script>
+<script src="js/parser.js" type="text/javascript"></script>
+<script src="js/jquery.xslTransform.js" type="text/javascript"></script>
+<script type="text/javascript">
+$(function() {
+	function transform() {
+		var json = parse( $("#codearea").val() );
+		var xml = format( json );
+		console.log("json: %o xml: %o", json[0], xml);
+		//$("#result").val(xml);
+		$("#result, #preview").getTransform("cat.xsl", xml);
+		$("#preview span.tooltip").Tooltip({ delay: 150 });
+	}
+	$("#example").hide();
+	$("#test").click(function() {
+		$("#codearea").val( $("#example").html() );
+		transform();
+	});
+	$("#codearea").focus(function() {
+		if( this.value == this.defaultValue ) {
+			this.value = "";
+		}
+	});
+	$("form").submit(function(event) {
+		event.preventDefault();
+		transform();
+	});
+});
+</script>
+
+</head>
+<body>
+<h1>jQuery HTML Documentation Generator</h1>
+<h2>Paste your plugin documentation to generate HTML for online docs. Works even with jQuery itself. Currently Firefox only. (<a href="docTool.zip">Download</a>)</h2>
+
+<form>
+<pre id="example">
+/**
+ * Activate a content part of the Accordion programmatically with the position zero-based index.
+ *
+ * If the index is not specified, it defaults to zero, if it is an invalid index, eg. a string,
+ * nothing happens.
+ *
+ * @example $('#accordion').activate(1);
+ * @desc Activate the second content of the Accordion contained in &lt;div id="accordion"&gt;.
+ * @example $('#nav').activate();
+ * @desc Activate the first content of the Accordion contained in &lt;ul id="nav"&gt;.
+ *
+ * @param Number index (optional) An Integer specifying the zero-based index of the content to be
+ *				 activated. Default: 0
+ * @type jQuery
+ *
+ * @name activate
+ * @cat Plugins/Accordion
+ * @author Jörn Zaefferer (http://bassistance.de)
+ */
+</pre>
+<textarea id="codearea" name="code">Paste your jQuery inline documentation here</textarea>
+<input type="submit" value="Generate" /><input id="test" type="button" value="Test with example" /><br/>
+<label>HTML:</label>
+<textarea id="result"></textarea>
+<label>Preview:</label>
+<div id="preview"></div>
+</form>
+
+</body>
+</html>

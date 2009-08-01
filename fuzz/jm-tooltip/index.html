@@ -1,0 +1,58 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+<title>Tooltips</title>
+
+<style type="text/css">
+#tooltip {
+	position: absolute;
+	z-index: 3000;
+	top: 60px;
+	left: 80px;
+	border: 1px solid black;
+	background-color: #dde7f5;
+	padding: 5px;
+	font-size: .7em;
+	font-family: verdana;
+}
+#tooltip h3, #tooltip p {
+	margin: 0;
+}
+#tooltip h3 {
+	font-size: 1.1em;
+	margin-bottom: .5em;
+}
+</style>
+
+<script type="text/javascript" src="jquery.js""></script>
+<script type="text/javascript">
+$(document).ready(function() {
+	var tooltip = $("#tooltip").hide();
+	var title;
+	function over(event) {
+		var current = $(this);
+		title = current.attr("title");
+		current.attr("title", "");
+		tooltip.find("h3").html( current.text() );
+		tooltip.find("p").html( title );
+		tooltip.css({
+			left: event.pageX + 15,
+			top: event.pageY + 15
+		}).show();
+	}
+	function out() {
+		$(this).attr("title", title);
+		tooltip.hide();
+	}
+	$("a[@title]").hover( over, out );
+});
+</script>
+
+</head>
+<body>
+<a title="Alles Lesenswerte anzeigen" href="lesenswertes.html">Lesenswertes</a>
+<br/>
+<a title="Alles Langweilige anzeigen" href="langweilig.html">Langweiliges</a>
+</body>
+</html>

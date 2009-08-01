@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+<title>Test for jQuery validate() plugin</title>
+
+<link rel="stylesheet" type="text/css" media="screen" href="css/screen.css" />
+<script src="js/jquery.js" type="text/javascript"></script>
+<script src="js/cmxforms.js" type="text/javascript"></script>
+<script src="js/metadata.js" type="text/javascript"></script>
+<script src="js/validate.js" type="text/javascript"></script>
+
+</head>
+<body>
+
+<form action="foo.html" id="texttests">
+
+	<h2>Some more tests with text and textarea and validating on blur</h2>
+	<p>All error labels are nested inside additional markup (might be necessary for presentation).
+	This markup is shown and hidden when neccessary by providing the selectErrorNests option.
+	Have a look at the source and the javascript below for details.</p>
+	
+	<div>
+		textarea
+		<textarea id="textarea" cols="25" rows="5"
+			title="Please enter a number with at least 3 and max 15 characters!"
+			test="required:true, minLength:3, maxLength:15, number:true"></textarea>
+		<br/>
+	</div>
+	
+	<div>
+		Text<input test="buga:true" id="text" /><br/>
+	</div>
+	
+	<div>
+	7 + 4 = <input id="text2" title="Please enter the correct result!" test="equal:13" />
+	</div>
+	
+	<div>
+		Select one of us
+		<label for="family_single">
+			<input type="radio" id="family_single" value="s" name="family" test="required:true" />
+			Single
+		</label>
+		<label for="family_married">
+			<input type="radio" id="family_married" value="m" name="family" test="required:true" />
+			Married
+		</label>
+		<label for="family_divorced">
+			<input type="radio" id="family_divorced" value="d" name="family" test="required:true" />
+			Divorced
+		</label>
+		<label for="family_weird">
+			<input type="radio" id="family_weird" value="w" name="family" test="required:true" />
+			Something weird
+		</label>
+		<label for="family" class="error">Please select your family status.</label>
+	</div>
+	<input type="submit" />
+</form>
+
+<script type="text/javascript">
+	
+	/*
+	 * extend the current rules with new groovy ones
+	 */
+	
+	// this one requires the text "buga", we define a default message, too
+	$.validator.addMethod("buga", function(value) {
+		return value == "buga";
+	}, 'Please enter "buga"!');
+	
+	// this one requires the value to be the same as the first parameter
+	$.validator.methods.equal = function(value, element, param) {
+		return value == param;
+	};
+	
+	$.meta.setType("attr", "test");
+
+	$(document).ready(function() {
+		$.validator.defaults.debug = true;
+		
+		$("#texttests").validate({
+			// important: combining focus with validation on blur can crash browsers
+			focusInvalid: false,
+			event: "blur",
+			onsbumit: false
+		});
+		
+	});
+</script>
+
+<a href="validateTest.html">Back to main page</a>
+
+</body>
+</html>

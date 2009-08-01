@@ -1,0 +1,349 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>MarketoTest-step1</title>
+</head>
+<body>
+<table cellpadding="1" cellspacing="1" border="1">
+<thead>
+<tr><td rowspan="1" colspan="3">MarketoTest-step1</td></tr>
+</thead><tbody>
+<tr>
+	<td>open</td>
+	<td>/plugins/validate/demo/marketo/</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertElementNotPresent</td>
+	<td>css=label.error</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=input[type=submit]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>You missed 12 fields. They have been highlighted below.</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertElementPresent</td>
+	<td>css=#co_name.error</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>co_name</td>
+	<td>CompanyName</td>
+</tr>
+<tr>
+	<td>fireEvent</td>
+	<td>co_name</td>
+	<td>blur</td>
+</tr>
+<tr>
+	<td>assertElementNotPresent</td>
+	<td>css=#co_name.error</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>co_url</td>
+	<td>http://blabla1</td>
+</tr>
+<tr>
+	<td>fireEvent</td>
+	<td>co_url</td>
+	<td>blur</td>
+</tr>
+<tr>
+	<td>assertElementPresent</td>
+	<td>css=#co_url.error</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>Please enter a valid URL.</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>co_url</td>
+	<td>http://blabla.com</td>
+</tr>
+<tr>
+	<td>fireEvent</td>
+	<td>co_url</td>
+	<td>blur</td>
+</tr>
+<tr>
+	<td>assertElementNotPresent</td>
+	<td>css=#co_url.error</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=input[type=submit]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>You missed 10 fields. They have been highlighted below.</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>first_name</td>
+	<td>Peter</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>last_name</td>
+	<td>Pan</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>address1</td>
+	<td>Marketo Street</td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>state</td>
+	<td>label=Georgia</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=input[type=submit]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>You missed 6 fields. They have been highlighted below.</td>
+	<td></td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>state</td>
+	<td>label=Choose State:</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=input[type=submit]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>You missed 7 fields. They have been highlighted below.</td>
+	<td></td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>state</td>
+	<td>label=California</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>city</td>
+	<td>Market Town</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>phone</td>
+	<td>1231231234</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>zip</td>
+	<td>123</td>
+</tr>
+<tr>
+	<td>fireEvent</td>
+	<td>zip</td>
+	<td>blur</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=input[type=submit]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>You missed 4 fields. They have been highlighted below.</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>zip</td>
+	<td>12345</td>
+</tr>
+<tr>
+	<td>fireEvent</td>
+	<td>zip</td>
+	<td>blur</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=input[type=submit]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>You missed 3 fields. They have been highlighted below.</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>email</td>
+	<td>glen@marketo.com</td>
+</tr>
+<tr>
+	<td>fireEvent</td>
+	<td>email</td>
+	<td>blur</td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>css=label.error[for=email]</td>
+	<td>glen@marketo.com is already taken, please enter a different address.</td>
+</tr>
+<tr>
+	<td>assertElementPresent</td>
+	<td>css=input.error[name=email]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>glen@marketo.com is already taken, please enter a different address.</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>email</td>
+	<td>glen@market#</td>
+</tr>
+<tr>
+	<td>fireEvent</td>
+	<td>email</td>
+	<td>blur</td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>Please enter a valid email address, example: you@yourdomain.com</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>email</td>
+	<td>peter@pan.com</td>
+</tr>
+<tr>
+	<td>fireEvent</td>
+	<td>email</td>
+	<td>blur</td>
+</tr>
+<tr>
+	<td>assertElementNotPresent</td>
+	<td>css=input.error[name=email]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>password1</td>
+	<td>abc</td>
+</tr>
+<tr>
+	<td>fireEvent</td>
+	<td>password1</td>
+	<td>blur</td>
+</tr>
+<tr>
+	<td>assertElementPresent</td>
+	<td>css=input.error[name=password1]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextNotPresent</td>
+	<td>abc</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>password1</td>
+	<td>abc123</td>
+</tr>
+<tr>
+	<td>fireEvent</td>
+	<td>password1</td>
+	<td>blur</td>
+</tr>
+<tr>
+	<td>assertElementNotPresent</td>
+	<td>css=input.error[name=password1]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=input[type=submit]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>You missed 1 field. It has been highlighted below.</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>password2</td>
+	<td>abc</td>
+</tr>
+<tr>
+	<td>fireEvent</td>
+	<td>password2</td>
+	<td>blur</td>
+</tr>
+<tr>
+	<td>assertElementPresent</td>
+	<td>css=input.error[name=password2]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>Please enter the same password as above</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>password2</td>
+	<td>abc123</td>
+</tr>
+<tr>
+	<td>fireEvent</td>
+	<td>password2</td>
+	<td>blur</td>
+</tr>
+<tr>
+	<td>assertElementNotPresent</td>
+	<td>css=input.error[name=password2]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=input[type=submit]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertAlert</td>
+	<td>submit! use link below to go to the other step</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertElementPresent</td>
+	<td>css=div.error[style="display: none;"]</td>
+	<td></td>
+</tr>
+
+</tbody></table>
+</body>
+</html>

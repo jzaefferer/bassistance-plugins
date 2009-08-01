@@ -1,0 +1,31 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+<title>jQuery Examples</title>
+
+<link rel="stylesheet" type="text/css" media="screen" href="css/screen.css" />
+<script src="lib/jquery.js" type="text/javascript"></script>
+<script type="text/javascript">
+$(document).ready(function() {
+	$("div[@id*='supplier_']").each(function(i) {
+		alert((i+1) + ". Portlet: " + $(this).id());
+	});
+});
+</script>
+
+</head>
+<body>
+<h1>jQuery - Portlets checken</h1>
+<p>Sucht nach allen Elementen, deren ID einen bestimmten Teil enthält</p>
+
+<div id="supplier_PC_07_0_5">Portlet 1, ID "supplier_PC_07_0_5"</div>
+
+<div id="supplier_PC_08_0_5">Portlet 2, ID "supplier_PC_08_0_5"</div>
+
+<div id="PC_09_0_5">Portlet 3, ID "PC_09_0_5"</div>
+
+<div id="supplier">anderes Element, ID "supplier"</div>
+
+</body>
+</html>

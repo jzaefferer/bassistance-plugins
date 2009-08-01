@@ -1,0 +1,124 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>MarketoTest-step2</title>
+</head>
+<body>
+<table cellpadding="1" cellspacing="1" border="1">
+<thead>
+<tr><td rowspan="1" colspan="3">MarketoTest-step2</td></tr>
+</thead><tbody>
+<tr>
+	<td>open</td>
+	<td>/plugins/validate/demo/marketo/step2.htm</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=input[type=submit]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>You missed 3 fields. They have been highlighted below.</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>creditcard</td>
+	<td>1234123412341234</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>bill_to_co</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=input[type=submit]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>You missed 10 fields. They have been highlighted below.</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>bill_to_co</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=input[type=submit]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>You missed 2 fields. They have been highlighted below.</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertElementPresent</td>
+	<td>css=select.error[name=cc_type]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>cc_type</td>
+	<td>label=Discover</td>
+</tr>
+<tr>
+	<td>fireEvent</td>
+	<td>cc_type</td>
+	<td>blur</td>
+</tr>
+<tr>
+	<td>assertElementNotPresent</td>
+	<td>select.error[name=cc_type]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertElementPresent</td>
+	<td>css=input.error[name=cc_cvv]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>ccNumber</td>
+	<td>12</td>
+</tr>
+<tr>
+	<td>fireEvent</td>
+	<td>ccNumber</td>
+	<td>blur</td>
+</tr>
+<tr>
+	<td>assertElementNotPresent</td>
+	<td>css=input.error[name=ccNumber]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertElementNotPresent</td>
+	<td>css=div.error[style="display: none;"]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=input[type=submit]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertAlert</td>
+	<td>submit! use link below to go to the other step</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertElementPresent</td>
+	<td>css=div.error[style="display: none;"]</td>
+	<td></td>
+</tr>
+
+</tbody></table>
+</body>
+</html>

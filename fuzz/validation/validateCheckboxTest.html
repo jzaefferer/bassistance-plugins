@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+<title>Test for jQuery validate() plugin</title>
+
+<link rel="stylesheet" type="text/css" media="screen" href="css/screen.css" />
+<script src="js/jquery.js" type="text/javascript"></script>
+<script src="js/cmxforms.js" type="text/javascript"></script>
+<script src="js/metadata.js" type="text/javascript"></script>
+<script src="js/validate.js" type="text/javascript"></script>
+
+</head>
+<body>
+<form class="cmxform" id="form1" method="get" action="">
+	<fieldset>
+		<legend>Validating a simple form with a radio select</legend>
+		<p>
+			<label for="name">Email</label>
+			<input id="name" name="name" validate="required:true,email:true" />
+		</p>
+		<p>
+			<label for="agree">Please agree to our policy</label>
+			<input type="checkbox" id="agree" title="Please agree to our policy!" name="agree" validate="required:true" />
+		</p>
+		<fieldset>
+			<legend>Spam</legend>
+			<label for="spam_email">
+				<input type="checkbox" id="spam_email" value="email" name="spam" validate="minLength:2" />
+				Spam via E-Mail
+			</label>
+			<label for="spam_phone">
+				<input type="checkbox" id="spam_phone" value="phone" name="spam" />
+				Spam via Phone
+			</label>
+			<label for="spam_mail">
+				<input type="checkbox" id="spam_mail" value="mail" name="spam" />
+				Spam via Mail
+			</label>
+			<label for="spam" class="error">Please select at least two types of spam.</label>
+		</fieldset>
+		<p>
+			<input class="submit" type="submit" value="Submit"/>
+		</p>
+	</fieldset>
+</form>
+
+<h2>Another form to verify that there is no conflict</h2>
+<form>
+	<fieldset>
+		<legend>Spam</legend>
+		<label for="spam_email2">
+			<input type="checkbox" checked="checked" id="spam_email2" value="m" name="spam" validate="required" />
+			Spam via E-Mail
+		</label>
+		<label for="spam_phone2">
+			<input type="checkbox" id="spam_phone2" value="f" name="spam" validate="required" />
+			Spam via Phone
+		</label>
+	</fieldset>
+</form>
+
+<script type="text/javascript">
+	$.meta.setType("attr", "validate");
+	$(document).ready(function() {
+		// validate the form when it is submitted
+		var options = {
+			debug: true
+		}
+		$("#form1").validate(options);
+	});
+</script>
+
+<a href="validateTest.html">Back to main page</a>
+
+</body>
+</html>

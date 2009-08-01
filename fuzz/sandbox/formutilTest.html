@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+<title>Tests for String-Extensions</title>
+
+<link rel="stylesheet" type="text/css" media="screen" href="css/screen.css" />
+<script src="jquery.pack.js" type="text/javascript"></script>
+<script src="ilogger.js" type="text/javascript"></script>
+<script src="testCase.js" type="text/javascript"></script>
+<script src="formutil.js" type="text/javascript"></script>
+<script type="text/javascript">
+$(function() {
+	$.iLogger.build();
+	
+	test(":text", function() {
+		assertSelection( ["text1", "text2", "hidden2", "name"], $(":text") );
+	});
+	test(":radio", function() {
+		assertSelection( ["radio1", "radio2"], $(":radio") );
+	});
+	test(":checkbox", function() {
+		assertSelection( ["check1", "check2"], $(":checkbox") );
+	});
+	test(":file", function() {
+		assertSelection( ["file1", "file2"], $(":file") );
+	});
+	test(":password", function() {
+		assertSelection( ["pass1", "pass2"], $(":password") );
+	});
+	test(":submit", function() {
+		assertSelection( ["submit2", "submit1"], $(":submit") );
+	});
+	test(":image", function() {
+		assertSelection( ["image1", "image2"], $(":image") );
+	});
+	test(":reset", function() {
+		assertSelection( ["reset2", "reset1"], $(":reset") );
+	});
+	test(":button", function() {
+		assertSelection( ["button1", "button2"], $(":button") );
+	});
+	test(":hidden", function() {
+		assertSelection( ["hidden1"], $(":hidden") );
+	});
+	
+	test(":input", function() {
+		assertSelection( ["text1", "text2", "radio1", "pass1", "radio2",
+		 "check1", "check2", "image1", "hidden1", "hidden2", "name", 
+		 "file1", "file2", "button1", "pass2", "submit2", "image2", 
+		 "reset2", "button2", "reset1", "area1", "area2", "select1", 
+		 "submit1", "select2", "select3"], $(":input") );
+	});
+	
+	fix("form");
+	
+	var checkables = $(":radio");
+	console.debug(checkables);
+	test("check()", function() {
+		console.debug($(":radio:checked"));
+		assertEquals( 2, $(":radio:checked").size() );
+		checkables.check();
+		console.debug($(":radio:checked"));
+		assertEquals( 4, $(":radio:checked").size() );
+	});
+	
+	test("uncheck()", function() {
+		
+	});
+	
+	test("toggleCheck()", function() {
+		
+	});
+});
+</script>
+
+</head>
+<body>
+File to be tested: <a href="formutil.js">formutil.js</a>
+
+<form style="display: none" id="form" action="formaction">
+	<input type="text" value="Test" name="action" id="text1"/>
+	<input type="text" value="Test" id="text2" disabled="disabled"/>
+	<input type="radio" name="radio1" id="radio1"/>
+
+	<input type="password" id="pass1" />
+	<input type="radio" name="radio2" id="radio2" checked/>
+	<input type="checkbox" name="check" id="check1" checked/>
+	<input type="checkbox" name="check" id="check2"/>
+	<input type="image" id="image1" />
+
+	<input type="hidden" name="hidden" id="hidden1"/>
+	<input type="text" style="display:none;" name="foo[bar]" id="hidden2"/>
+	
+	<input id="name" name="name" value="name" />
+	
+	<input type="file" id="file1" />
+	<input type="file" id="file2" />
+	
+	<input type="button" id="button1" />
+	<input type="password" id="pass2" />
+	
+	<input type="submit" id="submit2" />
+	
+	<input type="image" id="image2" />
+	
+	<input type="reset" id="reset2" />
+	
+	<input type="button" id="button2" />
+	
+	<input type="reset" id="reset1" />
+	
+	<textarea id="area1">Buga</textarea>
+	<textarea id="area2"></textarea>
+	
+	<select name="select1" id="select1">
+		<option id="option1a" value="">Nothing</option>
+		<option id="option1b" value="1">1</option>
+		<option id="option1c" value="2">2</option>
+		<option id="option1d" value="3">3</option>
+	</select>
+	<input type="submit" id="submit1" />
+	<select name="select1" id="select2">
+		<option id="option2a" value="">Nothing</option>
+		<option id="option2b" value="1">1</option>
+		<option id="option2c" value="2">2</option>
+		<option id="option2d" selected value="3">3</option>
+	</select>
+	<select name="select3" id="select3" multiple="multiple">
+		<option id="option3a" value="">Nothing</option>
+		<option id="option3b" selected="selected" value="1">1</option>
+		<option id="option3c" selected value="2">2</option>
+		<option id="option3d" value="3">3</option>
+	</select>
+</form>
+</body>
+</html>

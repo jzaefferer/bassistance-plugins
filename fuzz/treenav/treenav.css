@@ -1,0 +1,111 @@
+* {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+body {
+	font-family: Verdana, Arial, Sans-Serif;
+	font-size: .9em;
+	background: url(bonzai.jpg) 96% 40px no-repeat #fff;
+	border: 20px solid #ccc;
+}
+
+#nav.dyn li {
+	padding-left: 20px;
+	min-height: 19px;
+	height: 19px;
+}
+
+html>body #nav.dyn li {
+	height: auto;
+}
+
+#nav.dyn li a {
+	display: block;
+	margin-left: -20px;
+	padding-left: 20px;
+	color: #000;
+	text-decoration: none;
+}
+
+#nav .parent {
+	font-weight: bold;
+}
+
+#nav.dyn .parent {
+	font-weight: normal;
+	background: url(closed.gif) 2px 4px no-repeat #fff;
+}
+
+#nav.dyn .open {
+	background: url(open.gif) 2px 2px no-repeat #fff;
+}
+
+#nav.dyn ul {
+	display: none;
+}
+
+#nav {
+	text-align: left;
+	width: 10em;
+	padding: .5em 2em;
+	border: 1px solid #ccc;
+	background: #fff;
+}
+
+#nav h3 {
+	text-align: center;
+	width: 17em;
+	color: #393;
+	position: absolute;
+	top: 0;
+	left: .5em;
+	font-size: 1em;
+}
+
+#fame {
+	text-align: left;
+	font-size: .9em;
+	padding: .5em 0;
+	padding-left: 2em;
+	list-style: square;
+	color: #696;
+}
+
+#fame li a {
+	color: #666;
+}
+
+#fame li {
+	list-style: square;
+	padding: 0 0 .2em 0;
+}
+
+#content ul {
+	padding-left: 1em;
+}
+
+p#footer {
+	background: #393;
+	padding: .5em 1em;
+	font-size: .8em;
+}
+
+p#footer a {
+	color: #ffc
+}
+
+#content li {
+	list-style: square;
+	line-height: 1.3em;
+	padding: .2em 0 .2em 0;
+	margin-left: 1em;
+}
+
+h1 {
+	font-family: "Century Gothic", Verdana, Sans-Serif;
+	font-size: 1.5em;
+	padding: .5em 1em 0 1em;
+	color: #393;
+}

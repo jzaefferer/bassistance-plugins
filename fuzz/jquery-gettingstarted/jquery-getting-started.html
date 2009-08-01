@@ -1,0 +1,569 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+<title>Getting Started with jQuery</title>
+<link rel="stylesheet" type="text/css" media="screen" href="css/screen.css" />
+</head>
+<body>
+<h1>Getting Started with jQuery</h1>
+
+<div>
+	<h4>This guide is an introduction to the jQuery library. Knowledge of javascript and the
+	document object model (DOM) is required. It starts from ground up and tries to explain details where
+	necessary. It covers a simple hello world example, selector and event basics, AJAX, FX and usage and
+	authoring of plugins.</h4>
+	<h4>This guide contains no "click me" examples. The intention of providing only "copy me" code
+	is to invite you to try it for yourself. Copy an example, see what it does, and modify it.</h4>
+
+<h2>Table of contents</h2>
+	<ol>
+		<li><a href="#setup">Setup</a></li>
+		<li><a href="#hello">Hello jQuery</a></li>
+		<li><a href="#find">Find me: Using selectors and events</a></li>
+		<li><a href="#rate">Rate me: Using AJAX</a></li>
+		<li><a href="#animate">Animate me: Using FX</a></li>
+		<li><a href="#sort">Sort me: Using tablesorter plugin</a></li>
+		<li><a href="#plug">Plug me: Writing your own plugins</a></li>
+		<li><a href="#next">Next steps</a></li>
+	</ol>
+</div>
+
+<div>
+	<h2 id="setup">Setup</h2>
+	<p>To start, we need a copy of the jQuery library. While the most recent version can be found <a
+		href="http://jquery.com/src/">here</a>, this guide provides a basic package you can
+	download.</p>
+	<p><a class="download" href="jquery-starterkit.zip">jQuery Starterkit</a></p>
+	<p class="instruction">Download this file and extract it contents. Open
+	starterkit.html and custom.js with your favorite editor and starterkit.html with a browser.</p>
+	<p>Now we have everything to start with the notorious "Hello world" example.</p>
+	
+	<h4>Interesting links for this chapter:</h4>
+	<ul>
+		<li><a href="jquery-starterkit.zip">Starterkit</a></li>
+		<li><a href="http://jquery.com/src/">jQuery Downloads</a></li>
+	</ul>
+</div>
+
+<div>
+	<h2 id="hello">Hello jQuery</h2>
+	<p>As almost everything we do when using jQuery reads or manipulates the document object model
+	(DOM), we need to make sure that we start adding events etc. as soon as the DOM is ready.</p>
+	<p>To do this, we register a ready event for the document.</p>
+	<pre>
+$(document).ready(function() {
+	// do stuff when DOM is ready
+});</pre>
+
+	<p>Putting an alert into that function does not make much sense, as an alert does not require
+	the DOM to be loaded. So lets try something a little more sophisticated: Show an alert when clicking
+	the link.</p>
+	<pre>
+$(document).ready(function() {
+	$("a").click(function() {
+		alert("Hello world!");
+	});
+});</pre>
+
+	<p>This should show the alert as soon as you click on the link.</p>
+	<p>Lets have a look at what we are doing: <code>$("a")</code> is a jQuery selector, in this
+	case, it selects all a elements. <code>$</code> itself is an alias for the jQuery "class", therefore
+	<code>$()</code> constructs a new jQuery object. The <code>click()</code> function we call next is a
+	method of the jQuery object. It binds a click event to all selected elements (in this case, a single
+	anchor element) and executes the provided function when the event occurs.<br />
+	This is similar to the following code:</p>
+	<pre>
+&lt;a href="#" onclick="alert('Hello world')"&gt;Link&lt;/a&gt;</pre>
+
+	<p>The difference is quite obvious: We don't need to write an onclick for every single element. We
+	have a clean seperation of structure (HTML) and behaviour (JS), just as we seperate structure and
+	behaviour by using CSS.</p>
+	<p>With this in mind, we explore selectors and events a little further.</p>
+	
+	<h4>Interesting links for this chapter:</h4>
+	<ul>
+		<li><a href="http://jquery.com/docs/Base/">jQuery Base</a></li>
+		<li><a href="http://jquery.com/docs/Base/Expression/">jQuery Expressions</a></li>
+		<li><a href="http://jquery.com/docs/Base/Events/">jQuery Basic Events</a></li>
+	</ul>
+</div>
+	
+<div>
+	<h2 id="find">Find me: Using selectors and events</h2>
+	<p>jQuery provides two approaches to select elements. The first uses a combination of CSS and XPath
+	selectors passed as a string to the jQuery constructor (eg. <code>$("div &gt; ul a")</code>). The second
+	uses several methods of the jQuery object. Both approaches can be combined.</p>
+	<p>To try some of these selectors, we select and modify the first ordered list in our starterkit.</p>
+	<p>To get started, we want to select the list itself. The list has an ID "orderedlist". In classic
+	javascript, you could select it by using <code>document.getElementById("orderedlist")</code>.
+	With jQuery, we do it like this:</p>
+	<pre>
+$(document).ready(function() {
+	$("#orderedlist").addClass("red");
+});</pre>
+	<p>The starterkit provides a stylesheet with a class "red" that simply adds a red background.
+	Therefore, when you reload the page in your browser, you should see that the first ordered list has a red
+	background. The second list is not modified.</p>
+	<p>Now lets add some more classes to the child elements of this list.</p>
+	<pre>
+$(document).ready(function() {
+	$("#orderedlist &gt; li").addClass("blue");
+});</pre>
+	<p>This selects all child <code>li</code>s of the element with the id orderedlist and adds the
+	class "blue".</p>
+	<p>Now for something a little more sophisticated: We want to add and remove the class when the user
+	hovers the li element, but only on the last element in the list.</p>
+	<pre>
+$(document).ready(function() {
+	$("#orderedlist li:last").hover(function() {
+		$(this).addClass("green");
+	}, function() {
+		$(this).removeClass("green");
+	});
+});</pre>
+	<p>There a lots of other selectors similar to <a class="doc" href="http://jquery.com/docs/Base/Expression/CSS/"
+		title="Documentation for CSS selectors">CSS</a> and <a class="doc"
+		href="http://jquery.com/docs/Base/Expression/XPath/" title="Documentation for XPath selectors">XPath</a> syntax.
+	More examples and a list of all available expressions can be found <a class="doc"
+		href="http://jquery.com/docs/Base/Expression/" title="Documentation for base selectors">here</a>.</p>
+	<p>For every onxxx event available, like onclick, onchange, onsubmit, there is an jQuery
+	equivalent. <a class="doc" href="http://jquery.com/docs/EventModule/"
+		title="Documentation for advanced events">Some other events</a>, like ready and hover, are provided
+	as convienent methods for certains tasks.</p>
+	<p>You can find a complete list of all events at <a href="http://visualjquery.com/">Visual
+	jQuery</a>, filed under Events.</p>
+	<p>With those selectors and events you can already do alot of things, but there is more.</p>
+	<pre>
+$(document).ready(function() {
+	$("#orderedlist").find("li").each(function(i) {
+		$(this).html( $(this).html() + " BAM! " + i );
+	});
+});</pre>
+	<p><code>find()</code> allows you to further search the descendants of the already selected
+	elements, therefore <code>$("#orderedlist).find("li")</code> is mostly the same as <code>$("#orderedlist
+	li")</code>. <code>each()</code> iterates over every element and allows further processing. Most methods,
+	like <code>addClass()</code>, use <code>each()</code> themselve. In this example, <code>html()</code>
+	is used to get the text of each li element, append some text to it and set it as text of the
+	element.</p>
+	<p>Another task you often face is to call methods on DOM elements that are not covered by
+	jQuery. Think of a form you like to reset after you submitted it successfully via AJAX.</p>
+	<pre>
+$(document).ready(function() {
+	// use this to reset a single form
+	$("#reset").click(function() {
+		$("#form")[0].reset();
+	});
+});</pre>
+	<p>This code selects the element with the ID "form" and calls <code>reset()</code> on the first
+	element selected. In case you had more than one form, you could also do this:</p>
+	<pre>
+$(document).ready(function() {
+	// use this to reset several forms at once
+	$("#reset").click(function() {
+		$("form").each(function() {
+			this.reset();
+		});
+	});
+});</pre>
+	<p>This would select all forms within your document, iterate over them and call <code>reset()</code>
+	for each.</p>
+	<p>Another problem you might face is to not select certain elements. jQuery provides <code>filter()</code>
+	and <code>not()</code> for this. While <code>filter()</code> reduces the selection to the
+	elements that fit the filter expression, <code>not()</code> does the contrary and removes all
+	elements that fit the expression. Think of an unordered list where you want to select all li
+	elements, that have no ul child themselve.</p>
+	<pre>
+$(document).ready(function() {
+	$("li").not("[ul]").css("border", "1px solid black");
+});</pre>
+	<p>This selects all li elements and removes all elements from the selection, that have an ul
+	element as a child. Therefore all li elements get a border, except the one that has a child ul. The
+	<code>[expression]</code> syntax is taken from XPath and can be used to filter by child elements and
+	attributes. Maybe you want to select all anchors that have a name attribute:</p>
+	<pre>
+$(document).ready(function() {
+	$("a[@name]").background("#eee");
+});</pre>
+	<p>This adds a background color to all anchor elements with a name attribute.</p>
+	<p>More often then selecting anchors by name, you might need to selected anchors by their "href"
+	attribute. This can be a problem as browsers behave quite inconsistently when returning what they
+	think the "href" value is. To match only a part of the value, we can use the contains select "*="
+	instead of an equals ("="):</p>
+	<pre>
+$(document).ready(function() {
+	$("a[@href*=/content/gallery]").click(function() {
+		// do something with all links that point somewhere to /content/gallery
+	});
+});</pre>
+	<p>Until now, all selectors were used to select childs or filter the current selection. There
+	are situations where you need to select the previous or next elements, known as siblings. Think of a
+	FAQ page, where all answers are hidden first, and shown, when the question is clicked. The jQuery
+	code for this:</p>
+	<pre>
+$(document).ready(function() {
+	$('#faq').find('dd').hide().end().find('dt').click(function() {
+         var answer = $(this).next();
+         if (answer.is(':visible')) {
+             answer.slideUp();
+         } else {
+             answer.slideDown();
+         }
+     });
+});</pre>
+	<p>Here we use some chaining to reduce the code size and gain better performance, as '#faq' is
+	only selected once. By using <code>end()</code>, the first <code>find()</code> is undone, so we can
+	start search with the next <code>find()</code> at our #faq element, instead of the dd children.</p>
+	<p>Within the click handler, the function passed to the <code>click()</code> method, we use
+	$(this).next() to find the next sibling starting from the current dt. This allows us to quickly
+	select the answer following the clicked question.</p>
+	<p>In addition to siblings, you can also select parent elements (also known as ancestors for
+	those more familiar with XPath). Maybe you want to highlight the paragraph that is the parent of the
+	link the user hovers. Try this:</p>
+	<pre>
+$(document).ready(function() {
+	$("a").hover(function() {
+		$(this).parents("p").addClass("highlight");
+	}, function() {
+		$(this).parents("p").removeClass("highlight");
+	});
+});</pre>
+	<p>For all hovered anchor elements, the parent paragraph is searched
+	and a class "highlight" added and removed.</p>
+	<p>Lets go one step back before continuing: jQuery is alot about
+	making code shorter and therefore easier to read and maintain. The
+	following is a shortcut for the $(document).ready(callback) notation:</p>
+	<pre>
+$(function() {
+	// code to execute when the DOM is ready
+});</pre>
+	<p>Applied to the Hello world! example, we end with this:</p>
+	<pre>
+$(function() {
+	$("a").click(function() {
+		alert("Hello world!");
+	});
+});</pre>
+	<p>Now, with the basics at hand, we want to explore some other aspects, starting with AJAX.</p>
+	
+	<h4>Interesting links for this chapter:</h4>
+	<ul>
+		<li><a href="http://jquery.com/api/">jQuery API documentation</a></li>
+		<li><a href="http://visualjquery.com/">Visual jQuery - A categorized browsable API documentation</a></li>
+		<li><a href="http://jquery.com/docs/Base/Expression/CSS/">jQuery Expressions: CSS</a></li>
+		<li><a href="http://jquery.com/docs/Base/Expression/XPath/">jQuery Expressions: XPath</a></li>
+		<li><a href="http://jquery.com/docs/Base/Expression/Custom/">jQuery Expressions: Custom</a></li>
+		<li><a href="http://jquery.com/docs/EventModule/">jQuery Special Events</a></li>
+		<li><a href="http://jquery.com/docs/Base/Traverse/">jQuery DOM Traversing</a></li>
+	</ul>
+</div>
+
+
+
+<div>
+	<h2 id="rate">Rate me: Using AJAX</h2>
+	<p>In this part we write a small AJAX application, that allows the user to rate something, just
+	like it is done on youtube.com.</p>
+	<p>We need some server code for this. My example uses a php file that reads the "rating"
+	parameter and returns the number of ratings and the average rating. Have a look at <a
+		href="rate.phps">rate.php</a> for the server-side code.</p>
+	<p>We don't want this example to work without AJAX, although it may be possible, we therefore
+	generate the necessary markup with jQuery and append it to a container div with an ID of "rating".</p>
+	<pre>
+$(document).ready(function() {
+	// generate markup
+	var ratingMarkup = ["Please rate: "];
+	for(var i=1; i &lt;= 5; i++) {
+		ratingMarkup[ratingMarkup.length] = "&lt;a href='#'&gt;" + i + "&lt;/a&gt;&nbsp;";
+	}
+	// add markup to container and applier click handlers to anchors
+	$("#rating").append( ratingMarkup.join('') ).container.find("a").click(function(e) {
+		e.preventDefault();
+		// send requests
+		$.post("rate.php", {rating: $(this).html()}, function(xml) {
+			// format result
+			var result = [
+				"Thanks for rating, current average: ",
+				$("average", xml).text(),
+				", number of votes: ",
+				$("count", xml).text()
+			];
+			// output result
+			$("#rating").html(result.join(''));
+		} );
+	});
+});</pre>
+	<p>This snippet generates five anchor elements and appends them to the container element with
+	the id "rating". Afterwards, for every anchor inside the container, a click handler is added. When
+	the anchor is clicked, a post request is send to rate.php with the content of the anchor as a
+	parameter. The result returned as a XML is then added to the container,	replacing the anchors.</p>
+	<p>If you don't have a webserver with PHP installed at hand, you can look at an <a
+		href="example-rateme.html">online example</a>.</p>
+	<p>For a very nice example of a rating system that even works without javascript, visit <a
+		href="http://www.softonic.de/ie/51494">softonic.de</a> and click on "Kurz bewerten!"</p>
+	<p>More documentation of the AJAX methods of jQuery can be found <a class="doc"
+		href="http://jquery.com/docs/AJAXModule/" title="Documentation for AJAX methods">here</a> or on <a
+		href="http://visualjquery.com/">Visual jQuery</a> filed under AJAX.</p>
+	<p>A very common problem encountered when loading content by AJAX is this: When adding event handlers
+	to your document that should also apply to the loaded content, you have to apply these handlers after
+	the content is loaded. To prevent code duplication, you can delegate to a function. Example:</p>
+	<pre>
+// lets use the shortcut
+$(function() {
+	var addClickHandlers = function() {
+		$("a.clickMeToLoadContent").click(function() {
+			$("#target").load(this.href, addClickHandlers);
+		});
+	};
+	addClickHandlers();
+});</pre>
+	<p>Now addClickHandlers is applied once when the DOM is ready and then everytime when a user clicked
+	a link with the class <code>clickMeToLoadContent</code> and the content has finished loading.</p>
+	<p>Please note that the function "addClickHandlers" is defined as a local variable, instead of a
+	global function (like <code>function addClickHandlers() {...}</code>). Stick to this to prevent
+	conflicts with other global variables or functions.</p>
+	<p>With AJAX this simple we can cover quite a lot "Web 2.0". But until now, we lack fancy effects.</p>
+	
+	<h4>Interesting links for this chapter:</h4>
+	<ul>
+		<li><a href="http://jquery.com/docs/AJAXModule/">jQuery AJAX Module</a></li>
+		<li><a href="http://jquery.com/api/">jQuery API: Contains description and examples for append and all other jQuery methods</a></li>
+		<li><a href="http://jquery.com/demo/thickbox/">ThickBox: A jQuery plugin that uses jQuery to enhance the famous lightbox</a></li>
+	</ul>
+</div>
+
+
+
+<div>
+	<h2 id="animate">Animate me: Using FX</h2>
+	<p>Simple animations with jQuery can be achieved with <code>show()</code> and <code>hide()</code></p>
+	<pre>
+$(document).ready(function() {
+	$("a").toggle(function() {
+		$(".stuff").hide('slow');
+	}, function() {
+		$(".stuff").show('fast');
+	});
+});</pre>
+	<p>You can create any combination of animations with <code>animate()</code>, eg. a slide with a fade:</p>
+	<pre>
+$(document).ready(function() {
+	$("a").toggle(function() {
+		$(".stuff").animate({
+			height: 'hide',
+			opacity: 'hide',
+		}, 'slow');
+	}, function() {
+		$(".stuff").animate({
+			height: 'show',
+			opacity: 'show'
+		}, 'slow');
+	});
+});</pre>
+	<p>Much fancier effects can be achieved with the <a href="http://interface.eyecon.ro/">interface
+	plugin collection</a>. The site provides demos and documentation</p>
+	<p>While Interface is at the top of jQuerys plugin list, there are lots of others. The next part
+	shows how to use the tablesorter plugin.</p>
+	
+	<h4>Interesting links for this chapter:</h4>
+	<ul>
+		<li><a href="http://jquery.com/docs/FxModule/">jQuery FX Module</a></li>
+		<li><a href="http://interface.eyecon.ro/">Interface plugin</a></li>
+	</ul>
+</div>
+
+
+
+<div>
+	<h2 id="sort">Sort me: Using the tablesorter plugin</h2>
+	<p>The tablesorter plugin allows sorting of tables on the client side. You include jQuery and
+	the plugin and tell the plugin which tables you want to sort.</p>
+	<p>To try this example, add this line to starterkit.html (below the jquery include):</p>
+<pre>
+&lt;script src="lib/jquery.tablesorter.js" type="text/javascript"&gt;&lt;/script&gt;</pre>
+	<p>After including the plugin, you can call it like this:</p>
+	<pre>
+$(document).ready(function() {
+	$("#large").tableSorter();
+});</pre>
+	<p>Try clicking the headers of the table and see how it is sorted
+	ascending on first click and descending on second.</p>
+	<p>The table could use some row highlighting, we can add those by passing some options:</p>
+	<pre>
+$(document).ready(function() {
+	$("#large").tableSorter({
+		stripingRowClass: ['odd','even'],	// Class names for striping supplyed as a array.
+		stripRowsOnStartUp: true		// Strip rows on tableSorter init.
+	});
+});</pre>
+	<p>There are more examples and documentation about the available options at the <a
+		href="http://motherrussia.polyester.se/jquery-plugins/tablesorter/">tablesorter hompage</a>.</p>
+	<p>Most plugins can be used like this: Include the plugin file and call the plugin method on
+	some elements, passing some optional settings to customize the plugin.</p>
+	<p>A up-to-date list of available plugins can be found <a
+		href="http://jquery.com/plugins/" title="Plugins for jQuery">on the jQuery site</a>.</p>
+	<p>When you are using jQury more often, you may find it useful to package your own code as a
+	plugin, either to reuse it for yourself or your company, or to share it with the community. The next
+	chapter gives some hints on how to structure a plugin.</p>
+	
+	<h4>Interesting links for this chapter:</h4>
+	<ul>
+		<li><a href="http://jquery.com/plugins/">Plugins for jQuery</a></li>
+		<li><a href="http://motherrussia.polyester.se/jquery-plugins/tablesorter/">Tablesorter Plugin</a></li>
+	</ul>
+</div>
+
+
+
+<div>	
+	<h2 id="plug">Plug me: Writing your own plugins</h2>
+	<p>Writing your own plugins for jQuery is quite easy. If you stick to the following rules, it is
+	easy for others to integrate your plugin, too.</p>
+	<ol>
+		<li>Find a name for your plugin, lets call our example "foobar".</li>
+		<li>Create a file named jquery.[yourpluginname].js, eg. jquery.foobar.js</li>
+		<li>Create one or more plugin methods by extending the jQuery object, eg.:
+			<pre>
+jQuery.fn.foobar = function() {
+	// do something
+};</pre>
+		</li>
+		<li>Optional: Create an object with helper functions, eg.:
+			<pre>
+jQuery.fooBar = {
+	height: 5,
+	calculateBar = function() { ... },
+	checkDependencies = function() { ... }
+};</pre>
+			<p>You can then call these helper function from within your plugin:</p>
+			<pre>
+jQuery.fn.foobar = function() {
+	// do something
+	jQuery.foobar.checkDependencies(value);
+	// do something else
+};</pre>
+		</li>
+		<li>Optional: Create default settings that can be changed by the user, eg.:
+			<pre>
+jQuery.fn.foobar = function(options) {
+	var settings = {
+		value: 5,
+		name: "pete",
+		bar: 655
+	};
+	if(options) {
+		jQuery.extend(settings, options);
+	}
+};</pre>
+		<p>You can then call the plugin without options, using the defaults:</p>
+			<pre>
+$("...").foobar();</pre>
+		<p>Or with some options:</p>
+			<pre>
+$("...").foobar({
+	value: 123,
+	bar: 9
+});</pre>
+		</li>
+	</ol>
+	<p>If you release your plugin, you should provide some examples and documentation, too. There
+	are lots of plugins available as a great reference.</p>
+	<p>Now you should have the basic idea of plugin writing. Lets use this knowledge and write
+	our own plugin.</p>
+	<p>Something lots of people, trying to manipulate forms with jQuery, ask for, is checking and unchecking of
+	radio buttons or checkboxes. They end up with code like this:</p>
+<pre>
+$("input[@type='checkbox']").each(function() {
+	this.checked = true;
+	// or, to uncheck
+	this.checked = false;
+	// or, to toggle
+	this.checked = !this.checked;
+});</pre>
+	<p>Whenever you have an each in your code, you might want to rewrite that as a plugin, pretty straightforward:</p>
+	<pre>
+$.fn.check = function() {
+	return this.each(function() {
+		this.checked = true;
+	});
+};</pre>
+	<p>This plugin can now be used:</p>
+	<pre>
+$("input[@type='checkbox']").check();</pre>
+	<p>Now you could write plugins for both uncheck() and toggleCheck(), too. But instead we extend our plugin to accept some options.</p>
+	<pre>
+$.fn.check = function(mode) {
+	var mode = mode || 'on'; // if mode is undefined, use 'on' as default
+	return this.each(function() {
+		switch(mode) {
+		case 'on':
+			this.checked = true;
+			break;
+		case 'off':
+			this.checked = false;
+			break;
+		case 'toggle':
+			this.checked = !this.checked;
+			break;
+		}
+	});
+};</pre>
+	<p>By providing a default for the option, the user can omit the option or pass one of "on",
+	"off", and "toggle", eg.:</p>
+<pre>
+$("input[@type='checkbox']").check();
+$("input[@type='checkbox']").check('on');
+$("input[@type='checkbox']").check('off');
+$("input[@type='checkbox']").check('toggle');</pre>
+	<p>With more than one optional setting, this approach gets complicated, because the user must
+	pass null values if he wants to omit the first parameter and only use the second.</p>
+	<p>The use of the tablesorter in the last chapter demonstrates the use of an object literal to
+	solve this problem. The user can omit all paramters or pass an object with a key/value pair for
+	every setting he wants to override.</p>
+	<p>For an exercise, you could try to rewrite the code from the <a href="#rate">fourth
+	chapter</a> as a plugin. The plugin skeleton should look like this:</p>
+	<pre>
+$.fn.rateMe = function(options) {
+	var container = this; // instead of selecting a static container with $("#rating"), we now use the jQuery context
+	
+	var settings = {
+		url: "rate.php"
+		// put more defaults here
+		// remember to put a comma (",") after each pair, but not after the last one!
+	};
+	
+	if(options) { // check if options are present before extending the settings
+		$.extend(settings, options);
+	}
+	
+	// ...
+	// rest of the code
+	// ...
+	
+	return this; // if possible, return "this" to not break the chain
+});</pre>
+</div>
+
+<div>
+	<h2 id="next">Next steps</h2>
+	<p>If you plan to develop more javascript, you should consider the Firefox extension called <a
+		href="http://www.joehewitt.com/software/firebug/">FireBug</a>. It provides a console (nice to
+	replace alerts), a debugger and other useful stuff for the daily javascript development.</p>
+	<p>If you have problems you can't solve, ideas you want to share or just the need to express
+	your opinion on jQuery, feel free to post to the <a href="jquery.com/discuss">jQuery mailing
+	list</a>.</p>
+	<p>For anything related to this guide, send me a <a href="mailto:enchos [at] gmx [dot] net">mail</a> or
+	post a comment on my <a href="http://bassistance.de/index.php/2006/09/12/jquery-getting-started-guide/">blog</a>.</p>
+</div>
+
+
+<div>
+	<h3>Whats left...</h3>
+	<p>Thanks a lot to John Resig for this great library! Thanks to the jQuery community for
+	providing John with enough coffee and everything else!</p>
+</div>
+
+<h4><a href="http://bassistance.de">&copy; 2006, Jörn Zaefferer</a> - last update: 2006-09-12</h4>
+
+</body>
+</html>

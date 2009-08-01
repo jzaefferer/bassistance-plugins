@@ -1,0 +1,92 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+<title>Test for jQuery validate() plugin</title>
+
+<link rel="stylesheet" type="text/css" media="screen" href="css/screen.css" />
+<script src="js/jquery.js" type="text/javascript"></script>
+<script src="js/cmxforms.js" type="text/javascript"></script>
+<script src="js/metadata.js" type="text/javascript"></script>
+<script src="js/validate.js" type="text/javascript"></script>
+
+</head>
+<body>
+<form class="cmxform" id="form1" method="get" action="">
+	<fieldset>
+		<legend>Validating a complete form</legend>
+		<p>
+			<label for="email">Email (optional)</label>
+			<input id="email" name="email" class="{email:true}" />
+		</p>
+		<p>
+			<label for="email2">Email (again)</label>
+			<input id="email2" name="email2" title="Please enter the same Email address as above" class="{equalTo:'#email'}" />
+		</p>
+		<p>
+			<label for="phone">Phone</label>
+			<input id="phone" name="phone" title="Please enter your phone number (between 2 and 8 characters)" class="some styles {required:true,number:true,length:[2,8]}" />
+		</p>
+		<p>
+			<label for="address">Address</label>
+			<input id="address" name="address" title="Please enter your address (at least 3 characters)" class="some other styles {minLength:3,required:true}" />
+		</p>
+		<p>
+			<label for="birthdate">Birthdate</label>
+			<input id="birthdate" name="birthdate" title="Please enter your correct birthdate" class="{required:true,date:true}" />
+		</p>
+		<p>
+			<label for="birthdateDE">Ihr Geburtstag?</label>
+			<input id="birthdateDE" name="birthdateDE" title="Bitte geben Sie ihr korrektes Geburtsdatum ein." class="{required:true,dateDE:true}" />
+		</p>
+		<p>
+			<label for="agree">Please agree to our policy</label>
+			<input type="checkbox" id="agree" name="agree" title="Please agree to our policy!" class="{required:true}" />
+		</p>
+		<p>
+			<label for="vitae">Please provide your curriculum vitae</label>
+			<input type="file" id="vitae" title="We really need your curri vuri! Tink of dem puppies!" size="14" class="{required:true}" />
+		</p>
+		<p>
+			<label for="url">Where art though come' from?</label>
+			<input id="url" class="{url:true}" title="Please provide a valid URL (we tease you with RFC links otherwise)" value="http://" />
+		</p>
+		<p>
+			<label for="password">Please enter your password (optional)</label>
+			<input type="password" id="password" title="You have to provide a password with a least 5 characters, or none" class="{minLength:5}" />
+		</p>
+		<p>
+			<input class="submit" type="submit" value="Submit"/>
+		</p>
+	</fieldset>
+</form>
+
+<script type="text/javascript">
+	$(document).ready(function() {
+		// validate the form when it is submitted
+		$("#form1").validate({ debug: true });
+	});
+</script>
+
+<h3>More examples and tests</h3>
+<ul>
+	<li><a href="validateCustomTest.html">Some text inputs with validate on blur and custom rules.</a></li>
+	<li><a href="validateSelectTest.html">Some tests with selects</a></li>
+	<li><a href="validateContainerTest.html">A test with a container for error labels</a></li>
+	<li><a href="validateComplexContainerTest.html">A more complex test with a container for error labels</a></li>
+	<li><a href="validateRadioTest.html">A very simple test to validate radio buttons</a></li>
+	<li><a href="validateCheckboxTest.html">A very simple test to validate checkbox buttons</a></li>
+	<li><a href="validatKeypressTest.html">Validation on keypress and submit</a></li>
+	<li><a href="formPluginIntegration.html">Integration with Form Plugin (AJAX submit)</a></li>
+</ul>
+
+<h3>Javascript files used</h3>
+<ul>
+	<li><a href="js/jquery.js">jquery.js</a></li>
+	<li><a href="js/cmxforms.js">cmxforms.js</a> - <a href="http://alistapart.com/articles/prettyaccessibleforms">see article by Kevin Cornell</a></li>
+	<li><a href="js/metadata.js">metadata.js</a> - Metadata plugin</li>
+	<li><a href="js/validate.js">validate.js</a> - the validate plugin itself</li>
+</ul>
+
+</body>
+</html>

@@ -1,0 +1,10 @@
+use funny interface animations:
+
+open: transfer/grow
+close: puff
+next/prev: drop left/right (toggle)
+
+create standalone overlay plugin
+add bgiframe fix to overlay
+
+package everything as one plugin

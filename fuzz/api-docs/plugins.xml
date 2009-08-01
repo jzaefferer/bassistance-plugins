@@ -1,0 +1,1022 @@
+<?xml version='1.0' encoding='ISO-8859-1'?>
+<?xml-stylesheet type='text/xsl' href='style/cat.xsl'?>
+<docs>
+<cat value='Plugins'>
+<cat value='Accordion'>
+<method cat='Plugins/Accordion' type='jQuery' see='activate(Number)' short='Make the selected elements Accordion widgets.' name='Accordion'>
+<options type='String|Element|jQuery|Boolean' name='active'>
+<desc>Selector for the active element, default is the first child, set to false to display none at start</desc>
+</options>
+<options type='String|Element|jQuery' name='header'>
+<desc>Selector for the header element, eg. div.title, a.head, default is the first child's tagname</desc>
+</options>
+<options type='String|Number' name='showSpeed'>
+<desc>Speed for the slideIn, default is 'slow' (for numbers: smaller = faster)</desc>
+</options>
+<options type='String|Number' name='hideSpeed'>
+<desc>Speed for the slideOut, default is 'fast' (for numbers: smaller = faster)</desc>
+</options>
+<options type='String' name='selectedClass'>
+<desc>Class for active header elements, default is 'selected'</desc>
+</options>
+<options type='Boolean' name='alwaysOpen'>
+<desc>Whether there must be one content element open, default is true.</desc>
+</options>
+<options type='Boolean' name='animated'>
+<desc>Set to false to disable animations. Default: true</desc>
+</options>
+<options type='String' name='event'>
+<desc>The event on which to trigger the accordion, eg. "mouseover". Default: "click"</desc>
+</options>
+<desc>Make the selected elements Accordion widgets.
+
+Semantic requirements:
+
+If the structure of your container is flat with unique
+tags for header and content elements, eg. a definition list
+(dl &gt; dt + dd), you don't have to specify any options at
+all.
+
+If your structure uses the same elements for header and
+content or uses some kind of nested structure, you have to
+specify the header elements, eg. via class, see the second example.
+
+Use activate(Number) to change the active content programmatically.
+
+A change event is triggered everytime the accordion changes. Apart from
+the event object, all arguments are jQuery objects.
+Arguments: event, newHeader, oldHeader, newContent, oldContent</desc>
+<params type='Map' name='options'>
+<desc>key/value pairs of optional settings.</desc>
+</params>
+<examples>
+<desc>Creates an Accordion from the given definition list</desc>
+<code>jQuery('#nav').Accordion();</code>
+<before>&lt;dl id="nav"&gt;
+  &lt;dt&gt;Header 1&lt;/dt&gt;
+  &lt;dd&gt;Content 1&lt;/dd&gt;
+  &lt;dt&gt;Header 2&lt;/dt&gt;
+  &lt;dd&gt;Content 2&lt;/dd&gt;
+&lt;/dl&gt;</before>
+</examples>
+<examples>
+<desc>Creates an Accordion from the given div structure</desc>
+<code>jQuery('#nav').Accordion({
+  header: 'div.title'
+});</code>
+<before>&lt;div id="nav"&gt;
+ &lt;div&gt;
+   &lt;div class="title"&gt;Header 1&lt;/div&gt;
+   &lt;div&gt;Content 1&lt;/div&gt;
+ &lt;/div&gt;
+ &lt;div&gt;
+   &lt;div class="title"&gt;Header 2&lt;/div&gt;
+   &lt;div&gt;Content 2&lt;/div&gt;
+ &lt;/div&gt;
+&lt;/div&gt;</before>
+</examples>
+<examples>
+<desc>Creates an Accordion from the given navigation list</desc>
+<code>jQuery('#nav').Accordion({
+  header: 'a.head'
+});</code>
+<before>&lt;ul id="nav"&gt;
+  &lt;li&gt;
+    &lt;a class="head"&gt;Header 1&lt;/a&gt;
+    &lt;ul&gt;
+      &lt;li&gt;&lt;a href="#"&gt;Link 1&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href="#"&gt;Link 2&gt;&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;a class="head"&gt;Header 2&lt;/a&gt;
+    &lt;ul&gt;
+      &lt;li&gt;&lt;a href="#"&gt;Link 3&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href="#"&gt;Link 4&gt;&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;</before>
+</examples>
+<examples>
+<desc>Updates the element with id status with the text of the selected header every time the accordion changes</desc>
+<code>jQuery('#accordion').Accordion().change(function(event, newHeader, oldHeader, newContent, oldContent) {
+  jQuery('#status').html(newHeader.text());
+});</code>
+</examples>
+</method>
+<method cat='Plugins/Accordion' type='jQuery' short='Activate a content part of the Accordion programmatically at the given zero-based index.' name='activate'>
+<desc>Activate a content part of the Accordion programmatically at the given zero-based index.
+
+If the index is not specified, it defaults to zero, if it is an invalid index, eg. a string,
+nothing happens.</desc>
+<params type='Number' name='index'>
+<desc>(optional) An Integer specifying the zero-based index of the content to be activated. Default: 0</desc>
+</params>
+<examples>
+<desc>Activate the second content of the Accordion contained in &lt;div id="accordion"&gt;.</desc>
+<code>jQuery('#accordion').activate(1);</code>
+</examples>
+<examples>
+<desc>Activate the first content of the Accordion contained in &lt;ul id="nav"&gt;.</desc>
+<code>jQuery('#nav').activate();</code>
+</examples>
+</method>
+<method cat='Plugins/Accordion' type='jQuery' short='Override the default settings of the Accordion.' name='setDefaults'>
+<desc>Override the default settings of the Accordion. Affects only following plugin calls.</desc>
+<params type='Map' name='options'>
+<desc>key/value pairs of optional settings, see Accordion() for details</desc>
+</params>
+<examples>
+<code>jQuery.Accordion.setDefaults({
+	showSpeed: 1000,
+	hideSpeed: 150
+});</code>
+</examples>
+</method>
+</cat>
+<cat value='Tooltip'>
+<method cat='Plugins/Tooltip' type='jQuery' author='Jörn Zaefferer (http://bassistance.de)' short='Display a customized tooltip instead of the default one
+for every selected element.' name='Tooltip'>
+<options type='Number' name='delay'>
+<desc>The number of milliseconds before a tooltip is display, default is 250</desc>
+</options>
+<options type='String' name='event'>
+<desc>The event on which the tooltip is displayed, default is "mouseover", "click" works fine, too</desc>
+</options>
+<options type='Boolean' name='track'>
+<desc>If true, let the tooltip track the mousemovement, default is false</desc>
+</options>
+<options type='Boolean' name='showURL'>
+<desc>If true, shows the href or src attribute within p.url, default is true</desc>
+</options>
+<options type='String' name='showBody'>
+<desc>If specified, uses the String to split the title, displaying the first part in the h3 tag, all following in the p.body tag, separated with &lt;br/&gt;s, default is null</desc>
+</options>
+<options type='String' name='extraClass'>
+<desc>If specified, adds the class to the tooltip helper, default is null</desc>
+</options>
+<options type='Boolean' name='fixPNG'>
+<desc>If true, fixes transparent PNGs in IE, default is false</desc>
+</options>
+<desc>Display a customized tooltip instead of the default one
+for every selected element. The tooltip behaviour mimics
+the default one, but lets you style the tooltip and
+specify the delay before displaying it.
+
+In addition, it displays the href value, if it is available.
+
+To style the tooltip, use these selectors in your stylesheet:
+
+#tooltip - The tooltip container
+
+#tooltip h3 - The tooltip title
+
+#tooltip p.body - The tooltip body, shown when using showBody
+
+#tooltip p.url - The tooltip url, shown when using showURL</desc>
+<params type='Object' name='settings'>
+<desc>(optional) Customize your Tooltips</desc>
+</params>
+<examples>
+<desc>Shows tooltips for anchors, inputs and images, if they have a title</desc>
+<code>$('a, input, img').Tooltip();</code>
+</examples>
+<examples>
+<desc>Shows tooltips for labels with no delay, tracking mousemovement, displaying the tooltip when the label is clicked.</desc>
+<code>$('label').Tooltip({
+  delay: 0,
+  track: true,
+  event: "click"
+});</code>
+</examples>
+<examples>
+<desc>This example starts with modifying the global settings, applying them to all following Tooltips; Afterwards, Tooltips for anchors with class pretty are created with an extra class for the Tooltip: "fancy" for anchors, "fancy-img" for images</desc>
+<code>// modify global settings
+$.extend($.fn.Tooltip.defaults, {
+	track: true,
+	delay: 0,
+	showURL: false,
+	showBody: " - ",
+ fixPNG: true
+});
+// setup fancy tooltips
+$('a.pretty').Tooltip({
+	 extraClass: "fancy"
+});
+ $('img.pretty').Tooltip({
+	 extraClass: "fancy-img",
+});</code>
+</examples>
+</method>
+</cat>
+<cat value='Treeview'>
+<method cat='Plugins/Treeview' type='jQuery' short='Takes an unordered list and makes all branches collapsable.' name='Treeview'>
+<options type='String|Number' name='speed'>
+<desc>Speed of animation, see animate() for details. Default: none, no animation</desc>
+</options>
+<options type='Boolean' name='collapsed'>
+<desc>Start with all branches collapsed. Default: none, all expanded</desc>
+</options>
+<options type='&lt;Content&gt;' name='control'>
+<desc>Container for a treecontrol, see last example.</desc>
+</options>
+<options type='Boolean' name='unique'>
+<desc>Set to allow only one branch on one level to be open (closing siblings which opening). Default: none</desc>
+</options>
+<options type='Function' name='toggle'>
+<desc>Callback when toggling a branch. Arguments: "this" refers to the UL that was shown or hidden. Works only with speed option set (set speed: 1 to enable callback without animations). Default: none</desc>
+</options>
+<options type='Boolean|Object' name='store'>
+<desc>When set, stores the tree-state in a cookie when leaving/reloading the page, and restoring that state when loading the page. By default, no state is stored. Only one tree-per-page can be stored. When specifying the option as a boolean-true, the default setting for cookie-storage is used, saving the state for the browser session. To set a different expiration, set the option to an object with a "expiration" property. Refer to the cookie plugin for details about possible values of that object.</desc>
+</options>
+<desc>Takes an unordered list and makes all branches collapsable.
+
+The "treeview" class is added if not already present.
+
+To hide branches on first display, mark their li elements with
+the class "closed". If the "collapsed" option is used, mark intially open
+branches with class "open".</desc>
+<params type='Map' name='options'>
+<desc>Optional settings to configure treeview</desc>
+</params>
+<examples>
+<desc>The following styles are necessary in your stylesheet. There is are alternative sets of images available.</desc>
+<code>.treeview, .treeview ul { 
+	padding: 0;
+	margin: 0;
+	list-style: none;
+}	
+
+.treeview li { 
+	margin: 0;
+	padding: 4px 0 3px 20px;
+}
+
+.treeview li { background: url(images/tv-item.gif) 0 0 no-repeat; }
+.treeview .collapsable { background-image: url(images/tv-collapsable.gif); }
+.treeview .expandable { background-image: url(images/tv-expandable.gif); }
+.treeview .last { background-image: url(images/tv-item-last.gif); }
+.treeview .lastCollapsable { background-image: url(images/tv-collapsable-last.gif); }
+.treeview .lastExpandable { background-image: url(images/tv-expandable-last.gif); }</code>
+</examples>
+<examples>
+<desc>Basic usage example</desc>
+<code>$("ul").Treeview();</code>
+<before>&lt;ul&gt;
+  &lt;li&gt;Item 1
+    &lt;ul&gt;
+      &lt;li&gt;Item 1.1&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li class="closed"&gt;Item 2 (starts closed)
+    &lt;ul&gt;
+      &lt;li&gt;Item 2.1
+        &lt;ul&gt;
+          &lt;li&gt;Item 2.1.1&lt;/li&gt;
+          &lt;li&gt;Item 2.1.2&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;Item 2.2&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Item 3&lt;/li&gt;
+&lt;/ul&gt;</before>
+</examples>
+<examples>
+<desc>Create a treeview that starts collapsed. Toggling branches is animated.</desc>
+<code>$("ul").Treeview({ speed: "fast", collapsed: true});</code>
+<before>&lt;ul&gt;
+  &lt;li class="open"&gt;Item 1 (starts open)
+    &lt;ul&gt;
+      &lt;li&gt;Item 1.1&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Item 2
+    &lt;ul&gt;
+      &lt;li&gt;Item 2.1&lt;/li&gt;
+      &lt;li&gt;Item 2.2&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;</before>
+</examples>
+<examples>
+<desc>Creates a treeview that can be controlled with a few links.
+Very likely to be changed/improved in future versions.</desc>
+<code>$("ul").Treeview({ control: #treecontrol });</code>
+<before>&lt;div id="treecontrol"&gt;
+  &lt;a href="#"&gt;Collapse All&lt;/a&gt;
+  &lt;a href="#"&gt;Expand All&lt;/a&gt;
+  &lt;a href="#"&gt;Toggle All&lt;/a&gt;
+&lt;/div&gt;</before>
+</examples>
+</method>
+</cat>
+<cat value='Validate'>
+<cat value='Methods'>
+<method property='1' cat='Plugins/Validate/Methods' type='Object&lt;String, Function(String,Element,Object):Boolean&gt;' short='Defines a standard set of useful validation methods.' name='jQuery.validator.methods'>
+<desc>Defines a standard set of useful validation methods.
+
+Use jQuery.validator.addMethod() to add your own methods.
+
+If "all kind of text inputs" is mentioned for any if the methods defined here,
+it refers to input elements of type text, password and file and textareas.</desc>
+<params type='String' name='value'>
+<desc>The trimmed value of the element, eg. the text of a text input (trimmed: whitespace removed at start and end)</desc>
+</params>
+<params type='Element' name='element'>
+<desc>the input element itself, to check for content of attributes other then value</desc>
+</params>
+<params type='Object' name='paramater'>
+<desc>Some parameter, like a number for min/max rules</desc>
+</params>
+</method>
+<method cat='Plugins/Validate/Methods' type='Boolean' short='Return false if the element is empty.' name='jQuery.validator.methods.required'>
+<desc>Return false if the element is empty.
+
+Works with all kind of text inputs, selects, checkboxes and radio buttons.
+
+To force a user to select an option from a select box, provide
+an empty options like &lt;option value=""&gt;Choose...&lt;/option&gt;</desc>
+<params type='String' name='value'>
+<desc>The value of the element to check</desc>
+</params>
+<params type='Element' name='element'>
+<desc>The element to check</desc>
+</params>
+<params type='Boolean|String|Function' name='param'>
+<desc>A boolean "true" makes a field always required; An expression (String) is evaluated in the context of the element's form, making the field required only if the expression returns more then one element. The function is executed with the element as it's only argument: If it returns true, the element is required.</desc>
+</params>
+<examples>
+<desc>Declares an input element that is required.</desc>
+<code>&lt;input name="firstname" class="{required:true}" /&gt;</code>
+</examples>
+<examples>
+<desc>Declares an input element required, but only if a radio button with id "other" is checked.
+In other words: As long the "#other" isn't checked, the details field is valid.</desc>
+<code>&lt;input id="other" type="radio" /&gt;
+&lt;input name="details" class="{required:'#other:checked'}" /&gt;</code>
+</examples>
+<examples>
+<desc>Declares an input element "details", required, but only if two other fields
+are checked.</desc>
+<code>jQuery("#myform").validate({
+	rules: {
+		details: {
+			required: function(element) {
+				return jQuery("#other").is(":checked") &amp;&amp; jQuery("#other2").is(":checked");
+			}
+		}
+	}
+});</code>
+<before>&lt;form id="myform"&gt;
+	&lt;input id="other" type="checkbox" /&gt;
+	&lt;input id="other2" type="checkbox" /&gt;
+	&lt;input name="details" /&gt;
+&lt;/form&gt;</before>
+</examples>
+<examples>
+<desc>Specifies a group of radio elements. The validation rule is specified only for the first
+element of the group.</desc>
+<code>&lt;fieldset&gt;
+	&lt;legend&gt;Family&lt;/legend&gt;
+	&lt;label for="family_single"&gt;
+		&lt;input  type="radio" id="family_single" value="s" name="family" validate="required:true" /&gt;
+		Single
+	&lt;/label&gt;
+	&lt;label for="family_married"&gt;
+		&lt;input  type="radio" id="family_married" value="m" name="family" /&gt;
+		Married
+	&lt;/label&gt;
+	&lt;label for="family_divorced"&gt;
+		&lt;input  type="radio" id="family_divorced" value="d" name="family" /&gt;
+		Divorced
+	&lt;/label&gt;
+	&lt;label for="family" class="error"&gt;Please select your family status.&lt;/label&gt;
+&lt;/fieldset&gt;</code>
+</examples>
+</method>
+<method cat='Plugins/Validate/Methods' type='Boolean' short='Return false, if the element is
+
+- some kind of text input and its value is too short
+
+- a set of checkboxes has not enough boxes checked
+
+- a select and has not enough options selected
+
+Works with all kind of text inputs, checkboxes and select.' name='jQuery.validator.methods.min'>
+<desc>Return false, if the element is
+
+- some kind of text input and its value is too short
+
+- a set of checkboxes has not enough boxes checked
+
+- a select and has not enough options selected
+
+Works with all kind of text inputs, checkboxes and select.</desc>
+<params type='Number' name='min'>
+<desc></desc>
+</params>
+<examples>
+<desc>Declares an optional input element with at least 5 characters (or none at all).</desc>
+<code>&lt;input name="firstname" class="{minLength:5}" /&gt;</code>
+</examples>
+<examples>
+<desc>Declares an input element that must have at least 5 characters.</desc>
+<code>&lt;input name="firstname" class="{required:true,minLength:5}" /&gt;</code>
+</examples>
+<examples>
+<desc>Specifies a group of checkboxes. To validate, at least two checkboxes must be selected.</desc>
+<code>&lt;fieldset&gt;
+	&lt;legend&gt;Spam&lt;/legend&gt;
+	&lt;label for="spam_email"&gt;
+		&lt;input type="checkbox" id="spam_email" value="email" name="spam" validate="required:true,minLength:2" /&gt;
+		Spam via E-Mail
+	&lt;/label&gt;
+	&lt;label for="spam_phone"&gt;
+		&lt;input type="checkbox" id="spam_phone" value="phone" name="spam" /&gt;
+		Spam via Phone
+	&lt;/label&gt;
+	&lt;label for="spam_mail"&gt;
+		&lt;input type="checkbox" id="spam_mail" value="mail" name="spam" /&gt;
+		Spam via Mail
+	&lt;/label&gt;
+	&lt;label for="spam" class="error"&gt;Please select at least two types of spam.&lt;/label&gt;
+&lt;/fieldset&gt;</code>
+</examples>
+</method>
+<method cat='Plugins/Validate/Methods' type='Boolean' short='Return false, if the element is
+
+- some kind of text input and its value is too big
+
+- a set of checkboxes has too many boxes checked
+
+- a select and has too many options selected
+
+Works with all kind of text inputs, checkboxes and selects.' name='jQuery.validator.methods.max'>
+<desc>Return false, if the element is
+
+- some kind of text input and its value is too big
+
+- a set of checkboxes has too many boxes checked
+
+- a select and has too many options selected
+
+Works with all kind of text inputs, checkboxes and selects.</desc>
+<params type='Number' name='max'>
+<desc></desc>
+</params>
+<examples>
+<desc>Declares an input element with at most 5 characters.</desc>
+<code>&lt;input name="firstname" class="{maxLength:5}" /&gt;</code>
+</examples>
+<examples>
+<desc>Declares an input element that must have at least one and at most 5 characters.</desc>
+<code>&lt;input name="firstname" class="{required:true,maxLength:5}" /&gt;</code>
+</examples>
+</method>
+<method cat='Plugins/Validate/Methods' type='Boolean' short='Return false, if the element is
+
+- some kind of text input and its value is too short or too long
+
+- a set of checkboxes has not enough or too many boxes checked
+
+- a select and has not enough or too many options selected
+
+Works with all kind of text inputs, checkboxes and selects.' name='jQuery.validator.methods.rangeLength'>
+<desc>Return false, if the element is
+
+- some kind of text input and its value is too short or too long
+
+- a set of checkboxes has not enough or too many boxes checked
+
+- a select and has not enough or too many options selected
+
+Works with all kind of text inputs, checkboxes and selects.</desc>
+<params type='Array&lt;Number&gt;' name='min/max'>
+<desc></desc>
+</params>
+<examples>
+<desc>Declares an optional input element with at least 3 and at most 5 characters (or none at all).</desc>
+<code>&lt;input name="firstname" class="{rangeLength:[3,5]}" /&gt;</code>
+</examples>
+<examples>
+<desc>Declares an input element that must have at least 3 and at most 5 characters.</desc>
+<code>&lt;input name="firstname" class="{required:true,rangeLength:[3,5]}" /&gt;</code>
+</examples>
+<examples>
+<desc>Specifies a select that must have at least two but no more then three options selected.</desc>
+<code>&lt;select id="cars" class="{required:true,rangeLength:[2,3]}" multiple="multiple"&gt;
+	&lt;option value="m_sl"&gt;Mercedes SL&lt;/option&gt;
+	&lt;option value="o_c"&gt;Opel Corsa&lt;/option&gt;
+	&lt;option value="vw_p"&gt;VW Polo&lt;/option&gt;
+	&lt;option value="t_s"&gt;Titanic Skoda&lt;/option&gt;
+&lt;/select&gt;</code>
+</examples>
+</method>
+<method cat='Plugins/Validate/Methods' type='Boolean' short='Return true, if the value is greater than or equal to the specified minimum.' name='jQuery.validator.methods.minValue'>
+<desc>Return true, if the value is greater than or equal to the specified minimum.
+
+Works with all kind of text inputs.</desc>
+<params type='Number' name='min'>
+<desc></desc>
+</params>
+<examples>
+<desc>Declares an optional input element whose value must be at least 16 (or none at all).</desc>
+<code>&lt;input name="age" class="{minValue:16}" /&gt;</code>
+</examples>
+<examples>
+<desc>Declares an input element whose value must be at least 16.</desc>
+<code>&lt;input name="age" class="{required:true,minValue:16}" /&gt;</code>
+</examples>
+</method>
+<method cat='Plugins/Validate/Methods' type='Boolean' short='Return true, if the value is less than or equal to the specified maximum.' name='jQuery.validator.methods.maxValue'>
+<desc>Return true, if the value is less than or equal to the specified maximum.
+
+Works with all kind of text inputs.</desc>
+<params type='Number' name='max'>
+<desc></desc>
+</params>
+<examples>
+<desc>Declares an optional input element whose value must be at most 16 (or none at all).</desc>
+<code>&lt;input name="age" class="{maxValue:16}" /&gt;</code>
+</examples>
+<examples>
+<desc>Declares an input element whose required value must be at most 16.</desc>
+<code>&lt;input name="age" class="{required:true,maxValue:16}" /&gt;</code>
+</examples>
+</method>
+<method cat='Plugins/Validate/Methods' type='Boolean' short='Return true, if the value is in the specified range.' name='jQuery.validator.methods.rangeValue'>
+<desc>Return true, if the value is in the specified range.
+
+Works with all kind of text inputs.</desc>
+<params type='Array&lt;Number&gt;' name='min/max'>
+<desc></desc>
+</params>
+<examples>
+<desc>Declares an optional input element whose value must be at least 4 and at most 12 (or none at all).</desc>
+<code>&lt;input name="age" class="{rangeValue:[4,12]}" /&gt;</code>
+</examples>
+<examples>
+<desc>Declares an input element whose required value must be at least 4 and at most 12.</desc>
+<code>&lt;input name="age" class="{required:true,rangeValue:[4,12]}" /&gt;</code>
+</examples>
+</method>
+<method cat='Plugins/Validate/Methods' type='Boolean' short='Return true, if the value is not a valid email address.' name='jQuery.validator.methods.email'>
+<desc>Return true, if the value is not a valid email address.
+
+Works with all kind of text inputs.</desc>
+<examples>
+<desc>Declares an optional input element whose value must be a valid email address (or none at all).</desc>
+<code>&lt;input name="email1" class="{email:true}" /&gt;</code>
+</examples>
+<examples>
+<desc>Declares an input element whose value must be a valid email address.</desc>
+<code>&lt;input name="email1" class="{required:true,email:true}" /&gt;</code>
+</examples>
+</method>
+<method cat='Plugins/Validate/Methods' type='Boolean' short='Return true, if the value is a valid url.' name='jQuery.validator.methods.url'>
+<desc>Return true, if the value is a valid url.
+
+Works with all kind of text inputs.
+
+See http://www.w3.org/Addressing/rfc1738.txt for URL specification.</desc>
+<examples>
+<desc>Declares an optional input element whose value must be a valid URL (or none at all).</desc>
+<code>&lt;input name="homepage" class="{url:true}" /&gt;</code>
+</examples>
+<examples>
+<desc>Declares an input element whose value must be a valid URL.</desc>
+<code>&lt;input name="homepage" class="{required:true,url:true}" /&gt;</code>
+</examples>
+</method>
+<method cat='Plugins/Validate/Methods' type='Boolean' short='Return true, if the value is a valid date.' name='jQuery.validator.methods.date'>
+<desc>Return true, if the value is a valid date. Uses JavaScripts built-in
+Date to test if the date is valid, and is therefore very limited.
+
+Works with all kind of text inputs.</desc>
+<examples>
+<desc>Declares an optional input element whose value must be a valid date (or none at all).</desc>
+<code>&lt;input name="birthdate" class="{date:true}" /&gt;</code>
+</examples>
+<examples>
+<desc>Declares an input element whose value must be a valid date.</desc>
+<code>&lt;input name="birthdate" class="{required:true,date:true}" /&gt;</code>
+</examples>
+</method>
+<method cat='Plugins/Validate/Methods' type='Boolean' short='Return true, if the value is a valid date, according to ISO date standard.' name='jQuery.validator.methods.date'>
+<desc>Return true, if the value is a valid date, according to ISO date standard.
+
+Works with all kind of text inputs.</desc>
+<examples>
+<code>jQuery.validator.methods.date("1990/01/01")</code>
+<result>true</result>
+</examples>
+<examples>
+<code>jQuery.validator.methods.date("1990-01-01")</code>
+<result>true</result>
+</examples>
+<examples>
+<code>jQuery.validator.methods.date("01.01.1990")</code>
+<result>false</result>
+</examples>
+<examples>
+<desc>Declares an optional input element whose value must be a valid ISO date (or none at all).</desc>
+<code>&lt;input name="birthdate" class="{dateISO:true}" /&gt;</code>
+</examples>
+</method>
+<method cat='Plugins/Validate/Methods' type='Boolean' short='Return true, if the value is a valid date.' name='jQuery.validator.methods.dateDE'>
+<desc>Return true, if the value is a valid date. Supports german
+dates (29.04.1994 or 1.1.2006). Doesn't make any sanity checks.
+
+Works with all kind of text inputs.</desc>
+<examples>
+<code>jQuery.validator.methods.date("1990/01/01")</code>
+<result>false</result>
+</examples>
+<examples>
+<code>jQuery.validator.methods.date("01.01.1990")</code>
+<result>true</result>
+</examples>
+<examples>
+<code>jQuery.validator.methods.date("0.1.2345")</code>
+<result>true</result>
+</examples>
+<examples>
+<desc>Declares an optional input element whose value must be a valid german date (or none at all).</desc>
+<code>&lt;input name="geburtstag" class="{dateDE:true}" /&gt;</code>
+</examples>
+</method>
+<method cat='Plugins/Validate/Methods' type='Boolean' short='Return true, if the value is a valid number.' name='jQuery.validator.methods.number'>
+<desc>Return true, if the value is a valid number. Checks for
+international number format, eg. 100,000.59
+
+Works with all kind of text inputs.</desc>
+<examples>
+<desc>Declares an optional input element whose value must be a valid number (or none at all).</desc>
+<code>&lt;input name="amount" class="{number:true}" /&gt;</code>
+</examples>
+</method>
+<method cat='Plugins/Validate/Methods' type='Boolean' short='Return true, if the value is a valid number.' name='jQuery.validator.methods.numberDE'>
+<desc>Return true, if the value is a valid number.
+
+Works with all kind of text inputs.
+
+Checks for german numbers (100.000,59)</desc>
+<examples>
+<desc>Declares an optional input element whose value must be a valid german number (or none at all).</desc>
+<code>&lt;input name="menge" class="{numberDE:true}" /&gt;</code>
+</examples>
+</method>
+<method cat='Plugins/Validate/Methods' type='Boolean' short='Returns true if the value contains only digits.' name='jQuery.validator.methods.digits'>
+<desc>Returns true if the value contains only digits.
+
+Works with all kind of text inputs.</desc>
+<examples>
+<desc>Declares an optional input element whose value must contain only digits (or none at all).</desc>
+<code>&lt;input name="serialnumber" class="{digits:true}" /&gt;</code>
+</examples>
+</method>
+<method cat='Plugins/Validate/Methods' type='Boolean' short='Returns true if the value has the same value
+as the element specified by the first parameter.' name='jQuery.validator.methods.digits'>
+<desc>Returns true if the value has the same value
+as the element specified by the first parameter.
+
+Keep the expression simple to avoid spaces when using metadata.
+
+Works with all kind of text inputs.</desc>
+<params type='String' name='selection'>
+<desc>A jQuery expression</desc>
+</params>
+<examples>
+<desc>Declares two input elements: The first must contain a valid email address,
+the second must contain the same adress, enter once more. The paramter is a
+expression used via jQuery to select the element.</desc>
+<code>&lt;input name="email" id="email" class="{required:true,email:true'}" /&gt;
+&lt;input name="emailAgain" class="{equalTo:'#email'}" /&gt;</code>
+</examples>
+</method>
+</cat>
+<method cat='Plugins/Validate' type='$.validator' short='Validates either a single form on submit or a list of elements on a user-defined event.' name='validate'>
+<options type='String' name='errorClass'>
+<desc>Use this class to look for existing error labels and add it to invalid elements. Default: "error"</desc>
+</options>
+<options type='String' name='wrapper'>
+<desc>Wrap error labels with the specified element, eg "li". Default: none</desc>
+</options>
+<options type='Boolean' name='debug'>
+<desc>If true, the form is not submitted and certain errors are display on the console (requires Firebug or Firebug lite). Default: none</desc>
+</options>
+<options type='Boolean' name='focusInvalid'>
+<desc>Focus the last active or first invalid element. Disable for blur-validation, crashes IE otherwise. Default: true</desc>
+</options>
+<options type='Function' name='submitHandler'>
+<desc>Callback for handling the actual submit when the form is valid. Gets the form as the only argmument. Default: normal form submit</desc>
+</options>
+<options type='Map' name='messages'>
+<desc>Key/value pairs defining custom messages. Key is the ID or name (for radio/checkbox inputs) of an element, value the message to display for that element. Instead of a plain message another map with specific messages for each rule can be used. Can be specified for one or more elements. Can be overriden by specifying the title attribute on the element. Default: none, the default message for the method is used.</desc>
+</options>
+<options type='Map' name='rules'>
+<desc>Key/value pairs defining custom rules. Key is the ID or name (for radio/checkbox inputs) of an element, value is an object consisting of rule/parameter pairs, eg. {required: true, min: 3} Default: none, rules are read from metadata via metadata plugin</desc>
+</options>
+<options type='String' name='event'>
+<desc>The event on which to validate. If anything is specified, like blur or keyup, each element is validated on that event. Default: none</desc>
+</options>
+<options type='Boolean' name='onsubmit'>
+<desc>Validate the form on submit. Set to false to use only other events for validation (option event). Default: true</desc>
+</options>
+<options type='String' name='meta'>
+<desc>In case you use metadata for other plugins, too, you want to wrap your validation rules into their own object that can be specified via this option. Default: none</desc>
+</options>
+<options type='jQuery' name='errorContainer'>
+<desc>Hide and show this container when validating. Default: none</desc>
+</options>
+<options type='jQuery' name='errorLabelContainer'>
+<desc>Search and append error labels to this container, and show and hide it accordingly. Default: none</desc>
+</options>
+<options type='Function' name='showErrors'>
+<desc>A custom message display handler. Gets the map of errors as the first argument and a refernce to the validator object as the second. You can trigger (in addition to your own messages) the default behaviour by calling the defaultShowErrors() method of the validator. Default: none, uses built-in message disply.</desc>
+</options>
+<options type='Function' name='errorPlacement'>
+<desc>Used to customize placement of created error labels. First argument: jQuery object containing the created error label Second argument: jQuery object containing the invalid element Default: Places the error label after the invalid element</desc>
+</options>
+<desc>Validates either a single form on submit or a list of elements on a user-defined event.
+
+The normal behaviour is to validate a form when a submit button is clicked or
+the user presses enter when an input of that form is focused.
+
+It is also possible to validate each individual element of that form, eg. on blur or keyup.</desc>
+<params type='Map' name='options'>
+<desc>Optional settings to configure validation</desc>
+</params>
+<examples>
+<desc>Validates a form on submit. Rules are read from metadata.</desc>
+<code>$("#myform").validate();</code>
+<before>&lt;form id="myform"&gt;
+  &lt;input name="firstname" class="{required:true}" /&gt;
+&lt;/form&gt;</before>
+</examples>
+<examples>
+<desc>Validates all input elements on blur event (when the element looses focus).
+Deactivates focus of invalid elements.</desc>
+<code>$("input").validate({
+		focusInvalid: false,
+		event: "blur"
+});</code>
+</examples>
+<examples>
+<desc>Uses form plugin's ajaxSubmit method to handle the form submit, while preventing
+the default submit.</desc>
+<code>$("#myform").validate({
+  submitHandler: function(form) {
+  	$(form).ajaxSubmit();
+  }
+});</code>
+</examples>
+<examples>
+<desc>Validate a form on submit and each element on keyup. Rules are specified
+for three elements, and a message is customized for the "password" and the
+"age" elements. Inline rules are ignored. The password is only required when the age is lower
+then 18. The age is only required when the firstname is blank.</desc>
+<code>$("#myform").validate({
+ event: "keyup"
+	rules: {
+		firstname: { required: true },
+		age: {
+			required: "#firstname:blank",
+			number: true,
+			minValue: 3
+		},
+		password: {
+			required: function() {
+				return $("#age").val() &lt; 18;
+			},
+			minLength: 5,
+			maxLength: 32
+		}
+	},
+ messages {
+		password: {
+			required: "Your password is required because you are not yet 18 years or older."
+			minLength: "Please enter a password at least 5 characters long.",
+			maxLength: "Please enter a password no longer then 32 characters long."
+		},
+		age: "Please specify your age as a number (at least 3)."
+	}
+});</code>
+</examples>
+<examples>
+<desc>Validates a form on submit. The class used to search, create and display
+error labels is changed to "invalid". This is also added to invalid elements.
+
+All error labels are displayed inside an unordered list with the ID "messageBox", as
+specified by the jQuery object passed as errorContainer option. All error elements
+are wrapped inside an li element, to create a list of messages.
+
+To ease the setup of the form, debug option is set to true, preventing a submit
+of the form no matter of being valid or not.</desc>
+<before>&lt;ul id="messageBox"&gt;&lt;/ul&gt;
+&lt;form id="myform" action="/login" method="post"&gt;
+  &lt;label&gt;Firstname&lt;/label&gt;
+  &lt;input name="fname" class="{required:true}" /&gt;
+  &lt;label&gt;Lastname&lt;/label&gt;
+  &lt;input name="lname" title="Your lastname, please!" class="{required:true}" /&gt;
+&lt;/form&gt;</before>
+<code>$("#myform").validate({
+  errorClass: "invalid",
+  errorLabelContainer: $("#messageBox"),
+  wrapper: "li"
+});</code>
+<result>&lt;ul id="messageBox"&gt;
+  &lt;li&gt;&lt;label for="fname" class="invalid"&gt;Please specify your firstname!&lt;/label&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;label for="lname" class="invalid"&gt;Your lastname, please!&lt;/label&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;form id="myform" action="/login" method="post"&gt;
+  &lt;label&gt;Firstname&lt;/label&gt;
+  &lt;input name="fname" class="{required:true} invalid" /&gt;
+  &lt;label&gt;Lastname&lt;/label&gt;
+  &lt;input name="lname" title="Your lastname, please!" class="{required:true} invalid" /&gt;
+&lt;/form&gt;</result>
+</examples>
+<examples>
+<desc>Validates a form on submit. Customizes the placement of the generated labels
+by appending them to the next table cell.</desc>
+<before>&lt;form id="myform" action="/login" method="post"&gt;
+	&lt;table&gt;
+		&lt;tr&gt;
+			&lt;td&gt;&lt;label&gt;Firstname&lt;/label&gt;
+			&lt;td&gt;&lt;input name="fname" class="{required:true}" /&gt;&lt;/td&gt;
+			&lt;td&gt;&lt;/td&gt;
+		&lt;/tr&gt;
+		&lt;tr&gt;
+			&lt;td&gt;&lt;label&gt;Lastname&lt;/label&gt;&lt;/td&gt;
+			&lt;td&gt;&lt;input name="lname" title="Your lastname, please!" class="{required:true}" /&gt;&lt;/td&gt;
+			&lt;td&gt;&lt;/td&gt;
+		&lt;/tr&gt;
+	&lt;/table&gt;
+&lt;/form&gt;</before>
+<code>$("#myform").validate({
+	errorPlacement: function(error, element) {
+		error.appendTo( element.parent("td").next("td") );
+	}
+});</code>
+<result>&lt;form id="myform" action="/login" method="post"&gt;
+	&lt;table&gt;
+		&lt;tr&gt;
+			&lt;td&gt;&lt;label&gt;Firstname&lt;/label&gt;
+			&lt;td&gt;&lt;input name="fname" class="{required:true}" /&gt;&lt;/td&gt;
+			&lt;td&gt;&lt;label for="fname" class="invalid"&gt;Please specify your firstname!&lt;/label&gt;&lt;/td&gt;
+		&lt;/tr&gt;
+		&lt;tr&gt;
+			&lt;td&gt;&lt;label&gt;Lastname&lt;/label&gt;&lt;/td&gt;
+			&lt;td&gt;&lt;input name="lname" title="Your lastname, please!" class="{required:true}" /&gt;&lt;/td&gt;
+			&lt;td&gt;&lt;label for="lname" class="invalid"&gt;Your lastname, please!&lt;/label&gt;&lt;/td&gt;
+		&lt;/tr&gt;
+	&lt;/table&gt;
+&lt;/form&gt;</result>
+</examples>
+<examples>
+<desc>Validates a form on submit. Similar to the above example, but with an additional
+container for error messages. The elements given as the errorContainer are all shown
+and hidden when errors occur. But the error labels themselve are added to the element(s)
+given as errorLabelContainer, here an unordered list. Therefore the error labels are
+also wrapped into li elements (wrapper option).</desc>
+<before>&lt;div id="messageBox1"&gt;
+  &lt;h3&gt;The are errors in your form!&lt;/h3&gt;
+  &lt;ul&gt;&lt;/ul&gt;
+&lt;/div&gt;
+&lt;form id="myform" action="/login" method="post"&gt;
+  &lt;label&gt;Firstname&lt;/label&gt;
+  &lt;input name="fname" class="{required:true}" /&gt;
+  &lt;label&gt;Lastname&lt;/label&gt;
+  &lt;input name="lname" title="Your lastname, please!" class="{required:true}" /&gt;
+&lt;/form&gt;
+&lt;div id="messageBox2"&gt;
+  &lt;h3&gt;The are errors in your form, see details above!&lt;/h3&gt;
+&lt;/div&gt;</before>
+<code>$("#myform").validate({
+  errorContainer: $("#messageBox1, #messageBox2"),
+  errorLabelContainer: $("#messageBox1 ul"),
+  wrapper: "li",
+});</code>
+<result>&lt;ul id="messageBox"&gt;
+  &lt;li&gt;&lt;label for="fname" class="error"&gt;Please specify your firstname!&lt;/label&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;label for="lname" class="error"&gt;Your lastname, please!&lt;/label&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;form id="myform" action="/login" method="post"&gt;
+  &lt;label&gt;Firstname&lt;/label&gt;
+  &lt;input name="fname" class="{required:true} error" /&gt;
+  &lt;label&gt;Lastname&lt;/label&gt;
+  &lt;input name="lname" title="Your lastname, please!" class="{required:true} error" /&gt;
+&lt;/form&gt;</result>
+</examples>
+</method>
+<method property='1' cat='Plugins/Validate' type='String' short='Custom expression to filter for blank fields.' name=':blank'>
+<desc>Custom expression to filter for blank fields.</desc>
+<examples>
+<code>jQuery("input:blank").length</code>
+<result>2</result>
+<before>&lt;input value="" /&gt;&lt;input value="  " /&gt;&lt;input value="abc" /&gt;</before>
+</examples>
+</method>
+<method property='1' cat='Plugins/Validate' type='String' short='Custom expression to filter for filled fields.' name=':filled'>
+<desc>Custom expression to filter for filled fields.</desc>
+<examples>
+<code>jQuery("input:filled").length</code>
+<result>1</result>
+<before>&lt;input value="" /&gt;&lt;input value="  " /&gt;&lt;input value="abc" /&gt;</before>
+</examples>
+</method>
+<method cat='Plugins/Validate' type='undefined' short='Modify default settings for validation.' name='jQuery.validator.setDefaults'>
+<desc>Modify default settings for validation.</desc>
+<params type='Object&lt;String,' name='Object&gt;'>
+<desc>settings</desc>
+</params>
+<examples>
+<desc>Sets the debug setting for all validation calls following.</desc>
+<code>jQuery.validator.setDefaults({
+	debug: true
+);</code>
+</examples>
+</method>
+<method property='1' cat='Plugins/Validate' type='String' short='Default messages for all default methods.' name='jQuery.validator.messages'>
+<desc>Default messages for all default methods.
+
+User addMethod() to add methods with messages.
+
+Replace these messages for localization.</desc>
+</method>
+<method cat='Plugins/Validate' type='Boolean True when the form is valid, otherwise false' short='Validate on instant the entire form.' name='jQuery.validator.protoype.form'>
+<desc>Validate on instant the entire form.</desc>
+<examples>
+<desc>Triggers form validation programmatcitally.</desc>
+<code>$("#myform").validate().form();</code>
+</examples>
+</method>
+<method cat='Plugins/Validate' type='Boolean True when the form is valid, otherwise false' short='Validate on instant a single element.' name='jQuery.validator.protoype.element'>
+<desc>Validate on instant a single element.</desc>
+<params type='String|Element' name='element'>
+<desc>A selector or an element to validate</desc>
+</params>
+<examples>
+<desc>Triggers validation on a single element programmatically.</desc>
+<code>$("#myform").validate().element( "#myselect" );</code>
+</examples>
+</method>
+<method short='Show the specified messages.' name='jQuery.validator.protoype.showErrors' cat='Plugins/Validate'>
+<params type='Map' name='errors'>
+<desc>One or more key/value pairs of identifiers (IDs or names) and messages</desc>
+</params>
+<desc>Show the specified messages.</desc>
+<examples>
+<desc>Adds and shows error message programmatically.</desc>
+<code>var validator = $("#myform").validate();
+validator.showErrors({"firstname": "I know that your firstname is Pete, Pete!"});</code>
+</examples>
+</method>
+<method short='Resets the controlled form, including resetting input fields
+to their original value (requires form plugin), removing classes
+indicating invalid elements and hiding error messages.' name='jQuery.validator.protoype.resetForm' cat='Plugins/Validate'>
+<desc>Resets the controlled form, including resetting input fields
+to their original value (requires form plugin), removing classes
+indicating invalid elements and hiding error messages.</desc>
+<examples>
+<desc>Reset the form controlled by this validator.</desc>
+<code>var validator = $("#myform").validate();
+validator.resetForm();</code>
+</examples>
+</method>
+<method cat='Plugins/Validate' type='undefined' see='jQuery.validator.methods' short='Add a new validation method.' name='jQuery.validator.addMethod'>
+<desc>Add a new validation method. It must consist of a name (must be a legal
+javascript identifier), a function and a default message.
+
+Please note: While the temptation is great to
+add a regex method that checks it's paramter against the value,
+it is much cleaner to encapsulate those regular expressions
+inside their own method. If you need lots of slightly different
+expressions, try to extract a common parameter.
+
+A library of regular expressions: http://regexlib.com/DisplayPatterns.aspx</desc>
+<params type='String' name='name'>
+<desc>The name of the method, used to identify and referencing it, must be a valid javascript identifier</desc>
+</params>
+<params type='Function' name='rule'>
+<desc>The actual method implementation, returning true if an element is valid</desc>
+</params>
+<params type='String' name='message'>
+<desc>The default message to display for this method</desc>
+</params>
+<examples>
+<desc>Adds a method that checks if the value starts with http://mycorporatedomain.com</desc>
+<code>jQuery.validator.addMethod("domain", function(value) {
+  return /^http://mycorporatedomain.com/.test(value);
+}, "Please specify the correct domain for your documents");</code>
+</examples>
+<examples>
+<code>jQuery.validator.addMethod("math", function(value, element, params) {
+ return value == params[0] + params[1];
+}, "Please enter the correct value for this simple question.");</code>
+</examples>
+</method>
+</cat>
+</cat>
+</docs>

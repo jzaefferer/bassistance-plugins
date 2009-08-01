@@ -1,0 +1,1421 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN""http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+<META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>bassistance.de Plugins API Browser</title>
+<link rel="stylesheet" href="style/screen.css" media="screen,projector">
+<link rel="stylesheet" href="style/print.css" media="print">
+<script type="text/javascript" src="js/browser.pack.js"></script><script type="text/javascript" src="js/doc.js"></script>
+</head>
+<body>
+<h1>
+<a href="http://jquery.com"><img src="style/images/jquery_logo.gif" alt="jQuery Logo"></a>
+</h1>
+<div id="header">bassistance.de Plugins API Browser
+</div>
+<div id="content">
+<div id="nav">
+<h2>Navigation</h2>
+<ul class="tabs-nav">
+<li>
+<a href="#navCat">Category</a>
+</li>
+<li>
+<a href="#navAlpha">Alphabetical</a>
+</li>
+</ul>
+<div class="navsub" id="navCat">
+<h3>Categorized</h3>
+<div class="treecontrol">
+<a href="#">Collapse All</a><a href="#">Expand All</a><a href="#">Toggle All</a>
+</div>
+<ul>
+<li>Plugins<ul></ul>
+<ul>
+<li>Accordion<ul>
+<li>
+<a href="#AccordionMap">Accordion(<span class="arg-type tooltip">Map</span>)</a>
+</li>
+<li>
+<a href="#activateNumber">activate(<span class="arg-type tooltip">Number</span>)</a>
+</li>
+<li>
+<a href="#setDefaultsMap">setDefaults(<span class="arg-type tooltip">Map</span>)</a>
+</li>
+</ul>
+</li>
+<li>Tooltip<ul>
+<li>
+<a href="#TooltipObject">Tooltip(<span class="arg-type tooltip">Object</span>)</a>
+</li>
+</ul>
+</li>
+<li>Treeview<ul>
+<li>
+<a href="#TreeviewMap">Treeview(<span class="arg-type tooltip">Map</span>)</a>
+</li>
+</ul>
+</li>
+<li>Validate<ul>
+<li>
+<a href="#:blank">:blank</a>
+</li>
+<li>
+<a href="#:filled">:filled</a>
+</li>
+<li>
+<a href="#jQueryvalidatoraddMethodStringFunctionString">jQuery.validator.addMethod(<span class="arg-type tooltip">String</span>, <span class="arg-type tooltip">Function</span>, <span class="arg-type tooltip">String</span>)</a>
+</li>
+<li>
+<a href="#jQueryvalidatormessages">jQuery.validator.messages</a>
+</li>
+<li>
+<a href="#jQueryvalidatorprotoypeelementStringElement">jQuery.validator.protoype.element(<span class="arg-type tooltip">String|Element</span>)</a>
+</li>
+<li>
+<a href="#jQueryvalidatorprotoypeform">jQuery.validator.protoype.form()</a>
+</li>
+<li>
+<a href="#jQueryvalidatorprotoyperesetForm">jQuery.validator.protoype.resetForm()</a>
+</li>
+<li>
+<a href="#jQueryvalidatorprotoypeshowErrorsMap">jQuery.validator.protoype.showErrors(<span class="arg-type tooltip">Map</span>)</a>
+</li>
+<li>
+<a href="#jQueryvalidatorsetDefaultsObjectString,">jQuery.validator.setDefaults(<span class="arg-type tooltip">Object&lt;String,</span>)</a>
+</li>
+<li>
+<a href="#validateMap">validate(<span class="arg-type tooltip">Map</span>)</a>
+</li>
+</ul>
+<ul>
+<li>Methods<ul>
+<li>
+<a href="#jQueryvalidatormethodsStringElementObject">jQuery.validator.methods</a>
+</li>
+<li>
+<a href="#jQueryvalidatormethodsdate">jQuery.validator.methods.date()</a>
+</li>
+<li>
+<a href="#jQueryvalidatormethodsdate">jQuery.validator.methods.date()</a>
+</li>
+<li>
+<a href="#jQueryvalidatormethodsdateDE">jQuery.validator.methods.dateDE()</a>
+</li>
+<li>
+<a href="#jQueryvalidatormethodsdigits">jQuery.validator.methods.digits()</a>
+</li>
+<li>
+<a href="#jQueryvalidatormethodsdigitsString">jQuery.validator.methods.digits(<span class="arg-type tooltip">String</span>)</a>
+</li>
+<li>
+<a href="#jQueryvalidatormethodsemail">jQuery.validator.methods.email()</a>
+</li>
+<li>
+<a href="#jQueryvalidatormethodsmaxNumber">jQuery.validator.methods.max(<span class="arg-type tooltip">Number</span>)</a>
+</li>
+<li>
+<a href="#jQueryvalidatormethodsmaxValueNumber">jQuery.validator.methods.maxValue(<span class="arg-type tooltip">Number</span>)</a>
+</li>
+<li>
+<a href="#jQueryvalidatormethodsminNumber">jQuery.validator.methods.min(<span class="arg-type tooltip">Number</span>)</a>
+</li>
+<li>
+<a href="#jQueryvalidatormethodsminValueNumber">jQuery.validator.methods.minValue(<span class="arg-type tooltip">Number</span>)</a>
+</li>
+<li>
+<a href="#jQueryvalidatormethodsnumber">jQuery.validator.methods.number()</a>
+</li>
+<li>
+<a href="#jQueryvalidatormethodsnumberDE">jQuery.validator.methods.numberDE()</a>
+</li>
+<li>
+<a href="#jQueryvalidatormethodsrangeLengthArrayNumber">jQuery.validator.methods.rangeLength(<span class="arg-type tooltip">Array&lt;Number&gt;</span>)</a>
+</li>
+<li>
+<a href="#jQueryvalidatormethodsrangeValueArrayNumber">jQuery.validator.methods.rangeValue(<span class="arg-type tooltip">Array&lt;Number&gt;</span>)</a>
+</li>
+<li>
+<a href="#jQueryvalidatormethodsrequiredStringElementBooleanStringFunction">jQuery.validator.methods.required(<span class="arg-type tooltip">String</span>, <span class="arg-type tooltip">Element</span>, <span class="arg-type tooltip">Boolean|String|Function</span>)</a>
+</li>
+<li>
+<a href="#jQueryvalidatormethodsurl">jQuery.validator.methods.url()</a>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="navsub" id="navAlpha">
+<h3>Alphabetic</h3>
+<div class="treecontrol">
+<a href="#">Collapse All</a><a href="#">Expand All</a><a href="#">Toggle All</a>
+</div>
+<ul>
+<li>
+<a href="#:blank">:blank</a>
+</li>
+<li>
+<a href="#:filled">:filled</a>
+</li>
+<li>
+<a href="#AccordionMap">Accordion(<span class="arg-type tooltip">Map</span>)</a>
+</li>
+<li>
+<a href="#activateNumber">activate(<span class="arg-type tooltip">Number</span>)</a>
+</li>
+<li>
+<a href="#jQueryvalidatoraddMethodStringFunctionString">jQuery.validator.addMethod(<span class="arg-type tooltip">String</span>, <span class="arg-type tooltip">Function</span>, <span class="arg-type tooltip">String</span>)</a>
+</li>
+<li>
+<a href="#jQueryvalidatormessages">jQuery.validator.messages</a>
+</li>
+<li>
+<a href="#jQueryvalidatormethodsStringElementObject">jQuery.validator.methods</a>
+</li>
+<li>
+<a href="#jQueryvalidatormethodsdate">jQuery.validator.methods.date()</a>
+</li>
+<li>
+<a href="#jQueryvalidatormethodsdate">jQuery.validator.methods.date()</a>
+</li>
+<li>
+<a href="#jQueryvalidatormethodsdateDE">jQuery.validator.methods.dateDE()</a>
+</li>
+<li>
+<a href="#jQueryvalidatormethodsdigits">jQuery.validator.methods.digits()</a>
+</li>
+<li>
+<a href="#jQueryvalidatormethodsdigitsString">jQuery.validator.methods.digits(<span class="arg-type tooltip">String</span>)</a>
+</li>
+<li>
+<a href="#jQueryvalidatormethodsemail">jQuery.validator.methods.email()</a>
+</li>
+<li>
+<a href="#jQueryvalidatormethodsmaxNumber">jQuery.validator.methods.max(<span class="arg-type tooltip">Number</span>)</a>
+</li>
+<li>
+<a href="#jQueryvalidatormethodsmaxValueNumber">jQuery.validator.methods.maxValue(<span class="arg-type tooltip">Number</span>)</a>
+</li>
+<li>
+<a href="#jQueryvalidatormethodsminNumber">jQuery.validator.methods.min(<span class="arg-type tooltip">Number</span>)</a>
+</li>
+<li>
+<a href="#jQueryvalidatormethodsminValueNumber">jQuery.validator.methods.minValue(<span class="arg-type tooltip">Number</span>)</a>
+</li>
+<li>
+<a href="#jQueryvalidatormethodsnumber">jQuery.validator.methods.number()</a>
+</li>
+<li>
+<a href="#jQueryvalidatormethodsnumberDE">jQuery.validator.methods.numberDE()</a>
+</li>
+<li>
+<a href="#jQueryvalidatormethodsrangeLengthArrayNumber">jQuery.validator.methods.rangeLength(<span class="arg-type tooltip">Array&lt;Number&gt;</span>)</a>
+</li>
+<li>
+<a href="#jQueryvalidatormethodsrangeValueArrayNumber">jQuery.validator.methods.rangeValue(<span class="arg-type tooltip">Array&lt;Number&gt;</span>)</a>
+</li>
+<li>
+<a href="#jQueryvalidatormethodsrequiredStringElementBooleanStringFunction">jQuery.validator.methods.required(<span class="arg-type tooltip">String</span>, <span class="arg-type tooltip">Element</span>, <span class="arg-type tooltip">Boolean|String|Function</span>)</a>
+</li>
+<li>
+<a href="#jQueryvalidatormethodsurl">jQuery.validator.methods.url()</a>
+</li>
+<li>
+<a href="#jQueryvalidatorprotoypeelementStringElement">jQuery.validator.protoype.element(<span class="arg-type tooltip">String|Element</span>)</a>
+</li>
+<li>
+<a href="#jQueryvalidatorprotoypeform">jQuery.validator.protoype.form()</a>
+</li>
+<li>
+<a href="#jQueryvalidatorprotoyperesetForm">jQuery.validator.protoype.resetForm()</a>
+</li>
+<li>
+<a href="#jQueryvalidatorprotoypeshowErrorsMap">jQuery.validator.protoype.showErrors(<span class="arg-type tooltip">Map</span>)</a>
+</li>
+<li>
+<a href="#jQueryvalidatorsetDefaultsObjectString,">jQuery.validator.setDefaults(<span class="arg-type tooltip">Object&lt;String,</span>)</a>
+</li>
+<li>
+<a href="#setDefaultsMap">setDefaults(<span class="arg-type tooltip">Map</span>)</a>
+</li>
+<li>
+<a href="#TooltipObject">Tooltip(<span class="arg-type tooltip">Object</span>)</a>
+</li>
+<li>
+<a href="#TreeviewMap">Treeview(<span class="arg-type tooltip">Map</span>)</a>
+</li>
+<li>
+<a href="#validateMap">validate(<span class="arg-type tooltip">Map</span>)</a>
+</li>
+</ul>
+</div>
+</div>
+<ul id="docs">
+<li id=":blank">
+<span class="fn"><a class="name" href="#:blank">:blank</a> returns <span class="type"><span class="tooltip" title="A string of characters.">String</span></span></span>
+<div class="more">
+<div class="desc">Custom expression to filter for blank fields.</div>
+<div class="example">
+<h3>Example:</h3>
+<pre>
+<code class="javascript">jQuery("input:blank").length</code>
+</pre>
+<h4>HTML:</h4>
+<pre>
+<code class="html">&lt;input value="" /&gt;&lt;input value="  " /&gt;&lt;input value="abc" /&gt;</code>
+</pre>
+<h4>Result:</h4>
+<pre>
+<code class="html">2</code>
+</pre>
+</div>
+</div>
+</li>
+<li id=":filled">
+<span class="fn"><a class="name" href="#:filled">:filled</a> returns <span class="type"><span class="tooltip" title="A string of characters.">String</span></span></span>
+<div class="more">
+<div class="desc">Custom expression to filter for filled fields.</div>
+<div class="example">
+<h3>Example:</h3>
+<pre>
+<code class="javascript">jQuery("input:filled").length</code>
+</pre>
+<h4>HTML:</h4>
+<pre>
+<code class="html">&lt;input value="" /&gt;&lt;input value="  " /&gt;&lt;input value="abc" /&gt;</code>
+</pre>
+<h4>Result:</h4>
+<pre>
+<code class="html">1</code>
+</pre>
+</div>
+</div>
+</li>
+<li id="AccordionMap">
+<span class="fn"><a class="name" href="#AccordionMap">Accordion</a>( <span class="arg-type tooltip" title="A Javascript object that contains key/value pairs in the form of properties and values.">Map</span> <span class="arg-name tooltip" title="key/value pairs of optional settings.">options</span> ) returns <span class="type"><span class="tooltip" title="A jQuery object.">jQuery</span></span></span>
+<div class="more">
+<div class="desc">Make the selected elements Accordion widgets.<br>
+<br>Semantic requirements:<br>
+<br>If the structure of your container is flat with unique
+tags for header and content elements, eg. a definition list
+(dl &gt; dt + dd), you don't have to specify any options at
+all.<br>
+<br>If your structure uses the same elements for header and
+content or uses some kind of nested structure, you have to
+specify the header elements, eg. via class, see the second example.<br>
+<br>Use activate(Number) to change the active content programmatically.<br>
+<br>A change event is triggered everytime the accordion changes. Apart from
+the event object, all arguments are jQuery objects.
+Arguments: event, newHeader, oldHeader, newContent, oldContent</div>
+<h3>Options</h3>
+<ul class="options">
+<li>active (<span class="arg-type tooltip" title="">String|Element|jQuery|Boolean</span>): Selector for the active element, default is the first child, set to false to display none at start</li>
+<li>header (<span class="arg-type tooltip" title="">String|Element|jQuery</span>): Selector for the header element, eg. div.title, a.head, default is the first child's tagname</li>
+<li>showSpeed (<span class="arg-type tooltip" title="A string of characters or a number.">String|Number</span>): Speed for the slideIn, default is 'slow' (for numbers: smaller = faster)</li>
+<li>hideSpeed (<span class="arg-type tooltip" title="A string of characters or a number.">String|Number</span>): Speed for the slideOut, default is 'fast' (for numbers: smaller = faster)</li>
+<li>selectedClass (<span class="arg-type tooltip" title="A string of characters.">String</span>): Class for active header elements, default is 'selected'</li>
+<li>alwaysOpen (<span class="arg-type tooltip" title="true or false.">Boolean</span>): Whether there must be one content element open, default is true.</li>
+<li>animated (<span class="arg-type tooltip" title="true or false.">Boolean</span>): Set to false to disable animations. Default: true</li>
+<li>event (<span class="arg-type tooltip" title="A string of characters.">String</span>): The event on which to trigger the accordion, eg. "mouseover". Default: "click"</li>
+</ul>
+<div class="example">
+<h3>Example:</h3>
+<p>Creates an Accordion from the given definition list</p>
+<pre>
+<code class="javascript">jQuery('#nav').Accordion();</code>
+</pre>
+<h4>HTML:</h4>
+<pre>
+<code class="html">&lt;dl id="nav"&gt;
+  &lt;dt&gt;Header 1&lt;/dt&gt;
+  &lt;dd&gt;Content 1&lt;/dd&gt;
+  &lt;dt&gt;Header 2&lt;/dt&gt;
+  &lt;dd&gt;Content 2&lt;/dd&gt;
+&lt;/dl&gt;</code>
+</pre>
+</div>
+<div class="example">
+<h3>Example:</h3>
+<p>Creates an Accordion from the given div structure</p>
+<pre>
+<code class="javascript">jQuery('#nav').Accordion({
+  header: 'div.title'
+});</code>
+</pre>
+<h4>HTML:</h4>
+<pre>
+<code class="html">&lt;div id="nav"&gt;
+ &lt;div&gt;
+   &lt;div class="title"&gt;Header 1&lt;/div&gt;
+   &lt;div&gt;Content 1&lt;/div&gt;
+ &lt;/div&gt;
+ &lt;div&gt;
+   &lt;div class="title"&gt;Header 2&lt;/div&gt;
+   &lt;div&gt;Content 2&lt;/div&gt;
+ &lt;/div&gt;
+&lt;/div&gt;</code>
+</pre>
+</div>
+<div class="example">
+<h3>Example:</h3>
+<p>Creates an Accordion from the given navigation list</p>
+<pre>
+<code class="javascript">jQuery('#nav').Accordion({
+  header: 'a.head'
+});</code>
+</pre>
+<h4>HTML:</h4>
+<pre>
+<code class="html">&lt;ul id="nav"&gt;
+  &lt;li&gt;
+    &lt;a class="head"&gt;Header 1&lt;/a&gt;
+    &lt;ul&gt;
+      &lt;li&gt;&lt;a href="#"&gt;Link 1&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href="#"&gt;Link 2&gt;&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;a class="head"&gt;Header 2&lt;/a&gt;
+    &lt;ul&gt;
+      &lt;li&gt;&lt;a href="#"&gt;Link 3&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href="#"&gt;Link 4&gt;&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;</code>
+</pre>
+</div>
+<div class="example">
+<h3>Example:</h3>
+<p>Updates the element with id status with the text of the selected header every time the accordion changes</p>
+<pre>
+<code class="javascript">jQuery('#accordion').Accordion().change(function(event, newHeader, oldHeader, newContent, oldContent) {
+  jQuery('#status').html(newHeader.text());
+});</code>
+</pre>
+</div>
+</div>
+</li>
+<li id="activateNumber">
+<span class="fn"><a class="name" href="#activateNumber">activate</a>( <span class="arg-type tooltip" title="A valid numeric.">Number</span> <span class="arg-name tooltip" title="(optional) An Integer specifying the zero-based index of the content to be activated. Default: 0">index</span> ) returns <span class="type"><span class="tooltip" title="A jQuery object.">jQuery</span></span></span>
+<div class="more">
+<div class="desc">Activate a content part of the Accordion programmatically at the given zero-based index.<br>
+<br>If the index is not specified, it defaults to zero, if it is an invalid index, eg. a string,
+nothing happens.</div>
+<div class="example">
+<h3>Example:</h3>
+<p>Activate the second content of the Accordion contained in &lt;div id="accordion"&gt;.</p>
+<pre>
+<code class="javascript">jQuery('#accordion').activate(1);</code>
+</pre>
+</div>
+<div class="example">
+<h3>Example:</h3>
+<p>Activate the first content of the Accordion contained in &lt;ul id="nav"&gt;.</p>
+<pre>
+<code class="javascript">jQuery('#nav').activate();</code>
+</pre>
+</div>
+</div>
+</li>
+<li id="jQueryvalidatoraddMethodStringFunctionString">
+<span class="fn"><a class="name" href="#jQueryvalidatoraddMethodStringFunctionString">jQuery.validator.addMethod</a>( <span class="arg-type tooltip" title="A string of characters.">String</span> <span class="arg-name tooltip" title="The name of the method, used to identify and referencing it, must be a valid javascript identifier">name</span>, <span class="arg-type tooltip" title="A reference to a Javascript function.">Function</span> <span class="arg-name tooltip" title="The actual method implementation, returning true if an element is valid">rule</span>, <span class="arg-type tooltip" title="A string of characters.">String</span> <span class="arg-name tooltip" title="The default message to display for this method">message</span> ) returns <span class="type"><span class="tooltip" title="">undefined</span></span></span>
+<div class="more">
+<div class="desc">Add a new validation method. It must consist of a name (must be a legal
+javascript identifier), a function and a default message.<br>
+<br>Please note: While the temptation is great to
+add a regex method that checks it's paramter against the value,
+it is much cleaner to encapsulate those regular expressions
+inside their own method. If you need lots of slightly different
+expressions, try to extract a common parameter.<br>
+<br>A library of regular expressions: http://regexlib.com/DisplayPatterns.aspx</div>
+<div class="example">
+<h3>Example:</h3>
+<p>Adds a method that checks if the value starts with http://mycorporatedomain.com</p>
+<pre>
+<code class="javascript">jQuery.validator.addMethod("domain", function(value) {
+  return /^http://mycorporatedomain.com/.test(value);
+}, "Please specify the correct domain for your documents");</code>
+</pre>
+</div>
+<div class="example">
+<h3>Example:</h3>
+<pre>
+<code class="javascript">jQuery.validator.addMethod("math", function(value, element, params) {
+ return value == params[0] + params[1];
+}, "Please enter the correct value for this simple question.");</code>
+</pre>
+</div>
+</div>
+</li>
+<li id="jQueryvalidatormessages">
+<span class="fn"><a class="name" href="#jQueryvalidatormessages">jQuery.validator.messages</a> returns <span class="type"><span class="tooltip" title="A string of characters.">String</span></span></span>
+<div class="more">
+<div class="desc">Default messages for all default methods.<br>
+<br>User addMethod() to add methods with messages.<br>
+<br>Replace these messages for localization.</div>
+</div>
+</li>
+<li id="jQueryvalidatormethodsStringElementObject">
+<span class="fn"><a class="name" href="#jQueryvalidatormethodsStringElementObject">jQuery.validator.methods</a> returns <span class="type"><span class="tooltip" title="">Object&lt;String, Function(String,Element,Object):Boolean&gt;</span></span></span>
+<div class="more">
+<div class="desc">Defines a standard set of useful validation methods.<br>
+<br>Use jQuery.validator.addMethod() to add your own methods.<br>
+<br>If "all kind of text inputs" is mentioned for any if the methods defined here,
+it refers to input elements of type text, password and file and textareas.</div>
+</div>
+</li>
+<li id="jQueryvalidatormethodsdate">
+<span class="fn"><a class="name" href="#jQueryvalidatormethodsdate">jQuery.validator.methods.date</a>(  ) returns <span class="type"><span class="tooltip" title="true or false.">Boolean</span></span></span>
+<div class="more">
+<div class="desc">Return true, if the value is a valid date. Uses JavaScripts built-in
+Date to test if the date is valid, and is therefore very limited.<br>
+<br>Works with all kind of text inputs.</div>
+<div class="example">
+<h3>Example:</h3>
+<p>Declares an optional input element whose value must be a valid date (or none at all).</p>
+<pre>
+<code class="javascript">&lt;input name="birthdate" class="{date:true}" /&gt;</code>
+</pre>
+</div>
+<div class="example">
+<h3>Example:</h3>
+<p>Declares an input element whose value must be a valid date.</p>
+<pre>
+<code class="javascript">&lt;input name="birthdate" class="{required:true,date:true}" /&gt;</code>
+</pre>
+</div>
+</div>
+</li>
+<li id="jQueryvalidatormethodsdate">
+<span class="fn"><a class="name" href="#jQueryvalidatormethodsdate">jQuery.validator.methods.date</a>(  ) returns <span class="type"><span class="tooltip" title="true or false.">Boolean</span></span></span>
+<div class="more">
+<div class="desc">Return true, if the value is a valid date, according to ISO date standard.<br>
+<br>Works with all kind of text inputs.</div>
+<div class="example">
+<h3>Example:</h3>
+<pre>
+<code class="javascript">jQuery.validator.methods.date("1990/01/01")</code>
+</pre>
+<h4>Result:</h4>
+<pre>
+<code class="html">true</code>
+</pre>
+</div>
+<div class="example">
+<h3>Example:</h3>
+<pre>
+<code class="javascript">jQuery.validator.methods.date("1990-01-01")</code>
+</pre>
+<h4>Result:</h4>
+<pre>
+<code class="html">true</code>
+</pre>
+</div>
+<div class="example">
+<h3>Example:</h3>
+<pre>
+<code class="javascript">jQuery.validator.methods.date("01.01.1990")</code>
+</pre>
+<h4>Result:</h4>
+<pre>
+<code class="html">false</code>
+</pre>
+</div>
+<div class="example">
+<h3>Example:</h3>
+<p>Declares an optional input element whose value must be a valid ISO date (or none at all).</p>
+<pre>
+<code class="javascript">&lt;input name="birthdate" class="{dateISO:true}" /&gt;</code>
+</pre>
+</div>
+</div>
+</li>
+<li id="jQueryvalidatormethodsdateDE">
+<span class="fn"><a class="name" href="#jQueryvalidatormethodsdateDE">jQuery.validator.methods.dateDE</a>(  ) returns <span class="type"><span class="tooltip" title="true or false.">Boolean</span></span></span>
+<div class="more">
+<div class="desc">Return true, if the value is a valid date. Supports german
+dates (29.04.1994 or 1.1.2006). Doesn't make any sanity checks.<br>
+<br>Works with all kind of text inputs.</div>
+<div class="example">
+<h3>Example:</h3>
+<pre>
+<code class="javascript">jQuery.validator.methods.date("1990/01/01")</code>
+</pre>
+<h4>Result:</h4>
+<pre>
+<code class="html">false</code>
+</pre>
+</div>
+<div class="example">
+<h3>Example:</h3>
+<pre>
+<code class="javascript">jQuery.validator.methods.date("01.01.1990")</code>
+</pre>
+<h4>Result:</h4>
+<pre>
+<code class="html">true</code>
+</pre>
+</div>
+<div class="example">
+<h3>Example:</h3>
+<pre>
+<code class="javascript">jQuery.validator.methods.date("0.1.2345")</code>
+</pre>
+<h4>Result:</h4>
+<pre>
+<code class="html">true</code>
+</pre>
+</div>
+<div class="example">
+<h3>Example:</h3>
+<p>Declares an optional input element whose value must be a valid german date (or none at all).</p>
+<pre>
+<code class="javascript">&lt;input name="geburtstag" class="{dateDE:true}" /&gt;</code>
+</pre>
+</div>
+</div>
+</li>
+<li id="jQueryvalidatormethodsdigits">
+<span class="fn"><a class="name" href="#jQueryvalidatormethodsdigits">jQuery.validator.methods.digits</a>(  ) returns <span class="type"><span class="tooltip" title="true or false.">Boolean</span></span></span>
+<div class="more">
+<div class="desc">Returns true if the value contains only digits.<br>
+<br>Works with all kind of text inputs.</div>
+<div class="example">
+<h3>Example:</h3>
+<p>Declares an optional input element whose value must contain only digits (or none at all).</p>
+<pre>
+<code class="javascript">&lt;input name="serialnumber" class="{digits:true}" /&gt;</code>
+</pre>
+</div>
+</div>
+</li>
+<li id="jQueryvalidatormethodsdigitsString">
+<span class="fn"><a class="name" href="#jQueryvalidatormethodsdigitsString">jQuery.validator.methods.digits</a>( <span class="arg-type tooltip" title="A string of characters.">String</span> <span class="arg-name tooltip" title="A jQuery expression">selection</span> ) returns <span class="type"><span class="tooltip" title="true or false.">Boolean</span></span></span>
+<div class="more">
+<div class="desc">Returns true if the value has the same value
+as the element specified by the first parameter.<br>
+<br>Keep the expression simple to avoid spaces when using metadata.<br>
+<br>Works with all kind of text inputs.</div>
+<div class="example">
+<h3>Example:</h3>
+<p>Declares two input elements: The first must contain a valid email address,
+the second must contain the same adress, enter once more. The paramter is a
+expression used via jQuery to select the element.</p>
+<pre>
+<code class="javascript">&lt;input name="email" id="email" class="{required:true,email:true'}" /&gt;
+&lt;input name="emailAgain" class="{equalTo:'#email'}" /&gt;</code>
+</pre>
+</div>
+</div>
+</li>
+<li id="jQueryvalidatormethodsemail">
+<span class="fn"><a class="name" href="#jQueryvalidatormethodsemail">jQuery.validator.methods.email</a>(  ) returns <span class="type"><span class="tooltip" title="true or false.">Boolean</span></span></span>
+<div class="more">
+<div class="desc">Return true, if the value is not a valid email address.<br>
+<br>Works with all kind of text inputs.</div>
+<div class="example">
+<h3>Example:</h3>
+<p>Declares an optional input element whose value must be a valid email address (or none at all).</p>
+<pre>
+<code class="javascript">&lt;input name="email1" class="{email:true}" /&gt;</code>
+</pre>
+</div>
+<div class="example">
+<h3>Example:</h3>
+<p>Declares an input element whose value must be a valid email address.</p>
+<pre>
+<code class="javascript">&lt;input name="email1" class="{required:true,email:true}" /&gt;</code>
+</pre>
+</div>
+</div>
+</li>
+<li id="jQueryvalidatormethodsmaxNumber">
+<span class="fn"><a class="name" href="#jQueryvalidatormethodsmaxNumber">jQuery.validator.methods.max</a>( <span class="arg-type tooltip" title="A valid numeric.">Number</span> <span class="arg-name tooltip" title="">max</span> ) returns <span class="type"><span class="tooltip" title="true or false.">Boolean</span></span></span>
+<div class="more">
+<div class="desc">Return false, if the element is<br>
+<br>- some kind of text input and its value is too big<br>
+<br>- a set of checkboxes has too many boxes checked<br>
+<br>- a select and has too many options selected<br>
+<br>Works with all kind of text inputs, checkboxes and selects.</div>
+<div class="example">
+<h3>Example:</h3>
+<p>Declares an input element with at most 5 characters.</p>
+<pre>
+<code class="javascript">&lt;input name="firstname" class="{maxLength:5}" /&gt;</code>
+</pre>
+</div>
+<div class="example">
+<h3>Example:</h3>
+<p>Declares an input element that must have at least one and at most 5 characters.</p>
+<pre>
+<code class="javascript">&lt;input name="firstname" class="{required:true,maxLength:5}" /&gt;</code>
+</pre>
+</div>
+</div>
+</li>
+<li id="jQueryvalidatormethodsmaxValueNumber">
+<span class="fn"><a class="name" href="#jQueryvalidatormethodsmaxValueNumber">jQuery.validator.methods.maxValue</a>( <span class="arg-type tooltip" title="A valid numeric.">Number</span> <span class="arg-name tooltip" title="">max</span> ) returns <span class="type"><span class="tooltip" title="true or false.">Boolean</span></span></span>
+<div class="more">
+<div class="desc">Return true, if the value is less than or equal to the specified maximum.<br>
+<br>Works with all kind of text inputs.</div>
+<div class="example">
+<h3>Example:</h3>
+<p>Declares an optional input element whose value must be at most 16 (or none at all).</p>
+<pre>
+<code class="javascript">&lt;input name="age" class="{maxValue:16}" /&gt;</code>
+</pre>
+</div>
+<div class="example">
+<h3>Example:</h3>
+<p>Declares an input element whose required value must be at most 16.</p>
+<pre>
+<code class="javascript">&lt;input name="age" class="{required:true,maxValue:16}" /&gt;</code>
+</pre>
+</div>
+</div>
+</li>
+<li id="jQueryvalidatormethodsminNumber">
+<span class="fn"><a class="name" href="#jQueryvalidatormethodsminNumber">jQuery.validator.methods.min</a>( <span class="arg-type tooltip" title="A valid numeric.">Number</span> <span class="arg-name tooltip" title="">min</span> ) returns <span class="type"><span class="tooltip" title="true or false.">Boolean</span></span></span>
+<div class="more">
+<div class="desc">Return false, if the element is<br>
+<br>- some kind of text input and its value is too short<br>
+<br>- a set of checkboxes has not enough boxes checked<br>
+<br>- a select and has not enough options selected<br>
+<br>Works with all kind of text inputs, checkboxes and select.</div>
+<div class="example">
+<h3>Example:</h3>
+<p>Declares an optional input element with at least 5 characters (or none at all).</p>
+<pre>
+<code class="javascript">&lt;input name="firstname" class="{minLength:5}" /&gt;</code>
+</pre>
+</div>
+<div class="example">
+<h3>Example:</h3>
+<p>Declares an input element that must have at least 5 characters.</p>
+<pre>
+<code class="javascript">&lt;input name="firstname" class="{required:true,minLength:5}" /&gt;</code>
+</pre>
+</div>
+<div class="example">
+<h3>Example:</h3>
+<p>Specifies a group of checkboxes. To validate, at least two checkboxes must be selected.</p>
+<pre>
+<code class="javascript">&lt;fieldset&gt;
+	&lt;legend&gt;Spam&lt;/legend&gt;
+	&lt;label for="spam_email"&gt;
+		&lt;input type="checkbox" id="spam_email" value="email" name="spam" validate="required:true,minLength:2" /&gt;
+		Spam via E-Mail
+	&lt;/label&gt;
+	&lt;label for="spam_phone"&gt;
+		&lt;input type="checkbox" id="spam_phone" value="phone" name="spam" /&gt;
+		Spam via Phone
+	&lt;/label&gt;
+	&lt;label for="spam_mail"&gt;
+		&lt;input type="checkbox" id="spam_mail" value="mail" name="spam" /&gt;
+		Spam via Mail
+	&lt;/label&gt;
+	&lt;label for="spam" class="error"&gt;Please select at least two types of spam.&lt;/label&gt;
+&lt;/fieldset&gt;</code>
+</pre>
+</div>
+</div>
+</li>
+<li id="jQueryvalidatormethodsminValueNumber">
+<span class="fn"><a class="name" href="#jQueryvalidatormethodsminValueNumber">jQuery.validator.methods.minValue</a>( <span class="arg-type tooltip" title="A valid numeric.">Number</span> <span class="arg-name tooltip" title="">min</span> ) returns <span class="type"><span class="tooltip" title="true or false.">Boolean</span></span></span>
+<div class="more">
+<div class="desc">Return true, if the value is greater than or equal to the specified minimum.<br>
+<br>Works with all kind of text inputs.</div>
+<div class="example">
+<h3>Example:</h3>
+<p>Declares an optional input element whose value must be at least 16 (or none at all).</p>
+<pre>
+<code class="javascript">&lt;input name="age" class="{minValue:16}" /&gt;</code>
+</pre>
+</div>
+<div class="example">
+<h3>Example:</h3>
+<p>Declares an input element whose value must be at least 16.</p>
+<pre>
+<code class="javascript">&lt;input name="age" class="{required:true,minValue:16}" /&gt;</code>
+</pre>
+</div>
+</div>
+</li>
+<li id="jQueryvalidatormethodsnumber">
+<span class="fn"><a class="name" href="#jQueryvalidatormethodsnumber">jQuery.validator.methods.number</a>(  ) returns <span class="type"><span class="tooltip" title="true or false.">Boolean</span></span></span>
+<div class="more">
+<div class="desc">Return true, if the value is a valid number. Checks for
+international number format, eg. 100,000.59<br>
+<br>Works with all kind of text inputs.</div>
+<div class="example">
+<h3>Example:</h3>
+<p>Declares an optional input element whose value must be a valid number (or none at all).</p>
+<pre>
+<code class="javascript">&lt;input name="amount" class="{number:true}" /&gt;</code>
+</pre>
+</div>
+</div>
+</li>
+<li id="jQueryvalidatormethodsnumberDE">
+<span class="fn"><a class="name" href="#jQueryvalidatormethodsnumberDE">jQuery.validator.methods.numberDE</a>(  ) returns <span class="type"><span class="tooltip" title="true or false.">Boolean</span></span></span>
+<div class="more">
+<div class="desc">Return true, if the value is a valid number.<br>
+<br>Works with all kind of text inputs.<br>
+<br>Checks for german numbers (100.000,59)</div>
+<div class="example">
+<h3>Example:</h3>
+<p>Declares an optional input element whose value must be a valid german number (or none at all).</p>
+<pre>
+<code class="javascript">&lt;input name="menge" class="{numberDE:true}" /&gt;</code>
+</pre>
+</div>
+</div>
+</li>
+<li id="jQueryvalidatormethodsrangeLengthArrayNumber">
+<span class="fn"><a class="name" href="#jQueryvalidatormethodsrangeLengthArrayNumber">jQuery.validator.methods.rangeLength</a>( <span class="arg-type tooltip" title="">Array&lt;Number&gt;</span> <span class="arg-name tooltip" title="">min/max</span> ) returns <span class="type"><span class="tooltip" title="true or false.">Boolean</span></span></span>
+<div class="more">
+<div class="desc">Return false, if the element is<br>
+<br>- some kind of text input and its value is too short or too long<br>
+<br>- a set of checkboxes has not enough or too many boxes checked<br>
+<br>- a select and has not enough or too many options selected<br>
+<br>Works with all kind of text inputs, checkboxes and selects.</div>
+<div class="example">
+<h3>Example:</h3>
+<p>Declares an optional input element with at least 3 and at most 5 characters (or none at all).</p>
+<pre>
+<code class="javascript">&lt;input name="firstname" class="{rangeLength:[3,5]}" /&gt;</code>
+</pre>
+</div>
+<div class="example">
+<h3>Example:</h3>
+<p>Declares an input element that must have at least 3 and at most 5 characters.</p>
+<pre>
+<code class="javascript">&lt;input name="firstname" class="{required:true,rangeLength:[3,5]}" /&gt;</code>
+</pre>
+</div>
+<div class="example">
+<h3>Example:</h3>
+<p>Specifies a select that must have at least two but no more then three options selected.</p>
+<pre>
+<code class="javascript">&lt;select id="cars" class="{required:true,rangeLength:[2,3]}" multiple="multiple"&gt;
+	&lt;option value="m_sl"&gt;Mercedes SL&lt;/option&gt;
+	&lt;option value="o_c"&gt;Opel Corsa&lt;/option&gt;
+	&lt;option value="vw_p"&gt;VW Polo&lt;/option&gt;
+	&lt;option value="t_s"&gt;Titanic Skoda&lt;/option&gt;
+&lt;/select&gt;</code>
+</pre>
+</div>
+</div>
+</li>
+<li id="jQueryvalidatormethodsrangeValueArrayNumber">
+<span class="fn"><a class="name" href="#jQueryvalidatormethodsrangeValueArrayNumber">jQuery.validator.methods.rangeValue</a>( <span class="arg-type tooltip" title="">Array&lt;Number&gt;</span> <span class="arg-name tooltip" title="">min/max</span> ) returns <span class="type"><span class="tooltip" title="true or false.">Boolean</span></span></span>
+<div class="more">
+<div class="desc">Return true, if the value is in the specified range.<br>
+<br>Works with all kind of text inputs.</div>
+<div class="example">
+<h3>Example:</h3>
+<p>Declares an optional input element whose value must be at least 4 and at most 12 (or none at all).</p>
+<pre>
+<code class="javascript">&lt;input name="age" class="{rangeValue:[4,12]}" /&gt;</code>
+</pre>
+</div>
+<div class="example">
+<h3>Example:</h3>
+<p>Declares an input element whose required value must be at least 4 and at most 12.</p>
+<pre>
+<code class="javascript">&lt;input name="age" class="{required:true,rangeValue:[4,12]}" /&gt;</code>
+</pre>
+</div>
+</div>
+</li>
+<li id="jQueryvalidatormethodsrequiredStringElementBooleanStringFunction">
+<span class="fn"><a class="name" href="#jQueryvalidatormethodsrequiredStringElementBooleanStringFunction">jQuery.validator.methods.required</a>( <span class="arg-type tooltip" title="A string of characters.">String</span> <span class="arg-name tooltip" title="The value of the element to check">value</span>, <span class="arg-type tooltip" title="The Javascript object representation of a DOM Element.">Element</span> <span class="arg-name tooltip" title="The element to check">element</span>, <span class="arg-type tooltip" title="">Boolean|String|Function</span> <span class="arg-name tooltip" title="A boolean &quot;true&quot; makes a field always required; An expression (String) is evaluated in the context of the element's form, making the field required only if the expression returns more then one element. The function is executed with the element as it's only argument: If it returns true, the element is required.">param</span> ) returns <span class="type"><span class="tooltip" title="true or false.">Boolean</span></span></span>
+<div class="more">
+<div class="desc">Return false if the element is empty.<br>
+<br>Works with all kind of text inputs, selects, checkboxes and radio buttons.<br>
+<br>To force a user to select an option from a select box, provide
+an empty options like &lt;option value=""&gt;Choose...&lt;/option&gt;</div>
+<div class="example">
+<h3>Example:</h3>
+<p>Declares an input element that is required.</p>
+<pre>
+<code class="javascript">&lt;input name="firstname" class="{required:true}" /&gt;</code>
+</pre>
+</div>
+<div class="example">
+<h3>Example:</h3>
+<p>Declares an input element required, but only if a radio button with id "other" is checked.
+In other words: As long the "#other" isn't checked, the details field is valid.</p>
+<pre>
+<code class="javascript">&lt;input id="other" type="radio" /&gt;
+&lt;input name="details" class="{required:'#other:checked'}" /&gt;</code>
+</pre>
+</div>
+<div class="example">
+<h3>Example:</h3>
+<p>Declares an input element "details", required, but only if two other fields
+are checked.</p>
+<pre>
+<code class="javascript">jQuery("#myform").validate({
+	rules: {
+		details: {
+			required: function(element) {
+				return jQuery("#other").is(":checked") &amp;&amp; jQuery("#other2").is(":checked");
+			}
+		}
+	}
+});</code>
+</pre>
+<h4>HTML:</h4>
+<pre>
+<code class="html">&lt;form id="myform"&gt;
+	&lt;input id="other" type="checkbox" /&gt;
+	&lt;input id="other2" type="checkbox" /&gt;
+	&lt;input name="details" /&gt;
+&lt;/form&gt;</code>
+</pre>
+</div>
+<div class="example">
+<h3>Example:</h3>
+<p>Specifies a group of radio elements. The validation rule is specified only for the first
+element of the group.</p>
+<pre>
+<code class="javascript">&lt;fieldset&gt;
+	&lt;legend&gt;Family&lt;/legend&gt;
+	&lt;label for="family_single"&gt;
+		&lt;input  type="radio" id="family_single" value="s" name="family" validate="required:true" /&gt;
+		Single
+	&lt;/label&gt;
+	&lt;label for="family_married"&gt;
+		&lt;input  type="radio" id="family_married" value="m" name="family" /&gt;
+		Married
+	&lt;/label&gt;
+	&lt;label for="family_divorced"&gt;
+		&lt;input  type="radio" id="family_divorced" value="d" name="family" /&gt;
+		Divorced
+	&lt;/label&gt;
+	&lt;label for="family" class="error"&gt;Please select your family status.&lt;/label&gt;
+&lt;/fieldset&gt;</code>
+</pre>
+</div>
+</div>
+</li>
+<li id="jQueryvalidatormethodsurl">
+<span class="fn"><a class="name" href="#jQueryvalidatormethodsurl">jQuery.validator.methods.url</a>(  ) returns <span class="type"><span class="tooltip" title="true or false.">Boolean</span></span></span>
+<div class="more">
+<div class="desc">Return true, if the value is a valid url.<br>
+<br>Works with all kind of text inputs.<br>
+<br>See http://www.w3.org/Addressing/rfc1738.txt for URL specification.</div>
+<div class="example">
+<h3>Example:</h3>
+<p>Declares an optional input element whose value must be a valid URL (or none at all).</p>
+<pre>
+<code class="javascript">&lt;input name="homepage" class="{url:true}" /&gt;</code>
+</pre>
+</div>
+<div class="example">
+<h3>Example:</h3>
+<p>Declares an input element whose value must be a valid URL.</p>
+<pre>
+<code class="javascript">&lt;input name="homepage" class="{required:true,url:true}" /&gt;</code>
+</pre>
+</div>
+</div>
+</li>
+<li id="jQueryvalidatorprotoypeelementStringElement">
+<span class="fn"><a class="name" href="#jQueryvalidatorprotoypeelementStringElement">jQuery.validator.protoype.element</a>( <span class="arg-type tooltip" title="">String|Element</span> <span class="arg-name tooltip" title="A selector or an element to validate">element</span> ) returns <span class="type"><span class="tooltip" title="">Boolean True when the form is valid, otherwise false</span></span></span>
+<div class="more">
+<div class="desc">Validate on instant a single element.</div>
+<div class="example">
+<h3>Example:</h3>
+<p>Triggers validation on a single element programmatically.</p>
+<pre>
+<code class="javascript">$("#myform").validate().element( "#myselect" );</code>
+</pre>
+</div>
+</div>
+</li>
+<li id="jQueryvalidatorprotoypeform">
+<span class="fn"><a class="name" href="#jQueryvalidatorprotoypeform">jQuery.validator.protoype.form</a>(  ) returns <span class="type"><span class="tooltip" title="">Boolean True when the form is valid, otherwise false</span></span></span>
+<div class="more">
+<div class="desc">Validate on instant the entire form.</div>
+<div class="example">
+<h3>Example:</h3>
+<p>Triggers form validation programmatcitally.</p>
+<pre>
+<code class="javascript">$("#myform").validate().form();</code>
+</pre>
+</div>
+</div>
+</li>
+<li id="jQueryvalidatorprotoyperesetForm">
+<span class="fn"><a class="name" href="#jQueryvalidatorprotoyperesetForm">jQuery.validator.protoype.resetForm</a>(  ) returns <span class="type"><span class="tooltip" title=""></span></span></span>
+<div class="more">
+<div class="desc">Resets the controlled form, including resetting input fields
+to their original value (requires form plugin), removing classes
+indicating invalid elements and hiding error messages.</div>
+<div class="example">
+<h3>Example:</h3>
+<p>Reset the form controlled by this validator.</p>
+<pre>
+<code class="javascript">var validator = $("#myform").validate();
+validator.resetForm();</code>
+</pre>
+</div>
+</div>
+</li>
+<li id="jQueryvalidatorprotoypeshowErrorsMap">
+<span class="fn"><a class="name" href="#jQueryvalidatorprotoypeshowErrorsMap">jQuery.validator.protoype.showErrors</a>( <span class="arg-type tooltip" title="A Javascript object that contains key/value pairs in the form of properties and values.">Map</span> <span class="arg-name tooltip" title="One or more key/value pairs of identifiers (IDs or names) and messages">errors</span> ) returns <span class="type"><span class="tooltip" title=""></span></span></span>
+<div class="more">
+<div class="desc">Show the specified messages.</div>
+<div class="example">
+<h3>Example:</h3>
+<p>Adds and shows error message programmatically.</p>
+<pre>
+<code class="javascript">var validator = $("#myform").validate();
+validator.showErrors({"firstname": "I know that your firstname is Pete, Pete!"});</code>
+</pre>
+</div>
+</div>
+</li>
+<li id="jQueryvalidatorsetDefaultsObjectString,">
+<span class="fn"><a class="name" href="#jQueryvalidatorsetDefaultsObjectString,">jQuery.validator.setDefaults</a>( <span class="arg-type tooltip" title="">Object&lt;String,</span> <span class="arg-name tooltip" title="settings">Object&gt;</span> ) returns <span class="type"><span class="tooltip" title="">undefined</span></span></span>
+<div class="more">
+<div class="desc">Modify default settings for validation.</div>
+<div class="example">
+<h3>Example:</h3>
+<p>Sets the debug setting for all validation calls following.</p>
+<pre>
+<code class="javascript">jQuery.validator.setDefaults({
+	debug: true
+);</code>
+</pre>
+</div>
+</div>
+</li>
+<li id="setDefaultsMap">
+<span class="fn"><a class="name" href="#setDefaultsMap">setDefaults</a>( <span class="arg-type tooltip" title="A Javascript object that contains key/value pairs in the form of properties and values.">Map</span> <span class="arg-name tooltip" title="key/value pairs of optional settings, see Accordion() for details">options</span> ) returns <span class="type"><span class="tooltip" title="A jQuery object.">jQuery</span></span></span>
+<div class="more">
+<div class="desc">Override the default settings of the Accordion. Affects only following plugin calls.</div>
+<div class="example">
+<h3>Example:</h3>
+<pre>
+<code class="javascript">jQuery.Accordion.setDefaults({
+	showSpeed: 1000,
+	hideSpeed: 150
+});</code>
+</pre>
+</div>
+</div>
+</li>
+<li id="TooltipObject">
+<span class="fn"><a class="name" href="#TooltipObject">Tooltip</a>( <span class="arg-type tooltip" title="A simple Javascript object..">Object</span> <span class="arg-name tooltip" title="(optional) Customize your Tooltips">settings</span> ) returns <span class="type"><span class="tooltip" title="A jQuery object.">jQuery</span></span></span>
+<div class="more">
+<div class="desc">Display a customized tooltip instead of the default one
+for every selected element. The tooltip behaviour mimics
+the default one, but lets you style the tooltip and
+specify the delay before displaying it.<br>
+<br>In addition, it displays the href value, if it is available.<br>
+<br>To style the tooltip, use these selectors in your stylesheet:<br>
+<br>#tooltip - The tooltip container<br>
+<br>#tooltip h3 - The tooltip title<br>
+<br>#tooltip p.body - The tooltip body, shown when using showBody<br>
+<br>#tooltip p.url - The tooltip url, shown when using showURL</div>
+<h3>Options</h3>
+<ul class="options">
+<li>delay (<span class="arg-type tooltip" title="A valid numeric.">Number</span>): The number of milliseconds before a tooltip is display, default is 250</li>
+<li>event (<span class="arg-type tooltip" title="A string of characters.">String</span>): The event on which the tooltip is displayed, default is "mouseover", "click" works fine, too</li>
+<li>track (<span class="arg-type tooltip" title="true or false.">Boolean</span>): If true, let the tooltip track the mousemovement, default is false</li>
+<li>showURL (<span class="arg-type tooltip" title="true or false.">Boolean</span>): If true, shows the href or src attribute within p.url, default is true</li>
+<li>showBody (<span class="arg-type tooltip" title="A string of characters.">String</span>): If specified, uses the String to split the title, displaying the first part in the h3 tag, all following in the p.body tag, separated with &lt;br/&gt;s, default is null</li>
+<li>extraClass (<span class="arg-type tooltip" title="A string of characters.">String</span>): If specified, adds the class to the tooltip helper, default is null</li>
+<li>fixPNG (<span class="arg-type tooltip" title="true or false.">Boolean</span>): If true, fixes transparent PNGs in IE, default is false</li>
+</ul>
+<div class="example">
+<h3>Example:</h3>
+<p>Shows tooltips for anchors, inputs and images, if they have a title</p>
+<pre>
+<code class="javascript">$('a, input, img').Tooltip();</code>
+</pre>
+</div>
+<div class="example">
+<h3>Example:</h3>
+<p>Shows tooltips for labels with no delay, tracking mousemovement, displaying the tooltip when the label is clicked.</p>
+<pre>
+<code class="javascript">$('label').Tooltip({
+  delay: 0,
+  track: true,
+  event: "click"
+});</code>
+</pre>
+</div>
+<div class="example">
+<h3>Example:</h3>
+<p>This example starts with modifying the global settings, applying them to all following Tooltips; Afterwards, Tooltips for anchors with class pretty are created with an extra class for the Tooltip: "fancy" for anchors, "fancy-img" for images</p>
+<pre>
+<code class="javascript">// modify global settings
+$.extend($.fn.Tooltip.defaults, {
+	track: true,
+	delay: 0,
+	showURL: false,
+	showBody: " - ",
+ fixPNG: true
+});
+// setup fancy tooltips
+$('a.pretty').Tooltip({
+	 extraClass: "fancy"
+});
+ $('img.pretty').Tooltip({
+	 extraClass: "fancy-img",
+});</code>
+</pre>
+</div>
+</div>
+</li>
+<li id="TreeviewMap">
+<span class="fn"><a class="name" href="#TreeviewMap">Treeview</a>( <span class="arg-type tooltip" title="A Javascript object that contains key/value pairs in the form of properties and values.">Map</span> <span class="arg-name tooltip" title="Optional settings to configure treeview">options</span> ) returns <span class="type"><span class="tooltip" title="A jQuery object.">jQuery</span></span></span>
+<div class="more">
+<div class="desc">Takes an unordered list and makes all branches collapsable.<br>
+<br>The "treeview" class is added if not already present.<br>
+<br>To hide branches on first display, mark their li elements with
+the class "closed". If the "collapsed" option is used, mark intially open
+branches with class "open".</div>
+<h3>Options</h3>
+<ul class="options">
+<li>speed (<span class="arg-type tooltip" title="A string of characters or a number.">String|Number</span>): Speed of animation, see animate() for details. Default: none, no animation</li>
+<li>collapsed (<span class="arg-type tooltip" title="true or false.">Boolean</span>): Start with all branches collapsed. Default: none, all expanded</li>
+<li>control (<span class="arg-type tooltip" title="A String (to generate HTML on-the-fly), a DOM Element, an Array of DOM Elements or a jQuery object.">&lt;Content&gt;</span>): Container for a treecontrol, see last example.</li>
+<li>unique (<span class="arg-type tooltip" title="true or false.">Boolean</span>): Set to allow only one branch on one level to be open (closing siblings which opening). Default: none</li>
+<li>toggle (<span class="arg-type tooltip" title="A reference to a Javascript function.">Function</span>): Callback when toggling a branch. Arguments: "this" refers to the UL that was shown or hidden. Works only with speed option set (set speed: 1 to enable callback without animations). Default: none</li>
+<li>store (<span class="arg-type tooltip" title="">Boolean|Object</span>): When set, stores the tree-state in a cookie when leaving/reloading the page, and restoring that state when loading the page. By default, no state is stored. Only one tree-per-page can be stored. When specifying the option as a boolean-true, the default setting for cookie-storage is used, saving the state for the browser session. To set a different expiration, set the option to an object with a "expiration" property. Refer to the cookie plugin for details about possible values of that object.</li>
+</ul>
+<div class="example">
+<h3>Example:</h3>
+<p>The following styles are necessary in your stylesheet. There is are alternative sets of images available.</p>
+<pre>
+<code class="javascript">.treeview, .treeview ul { 
+	padding: 0;
+	margin: 0;
+	list-style: none;
+}	
+
+.treeview li { 
+	margin: 0;
+	padding: 4px 0 3px 20px;
+}
+
+.treeview li { background: url(images/tv-item.gif) 0 0 no-repeat; }
+.treeview .collapsable { background-image: url(images/tv-collapsable.gif); }
+.treeview .expandable { background-image: url(images/tv-expandable.gif); }
+.treeview .last { background-image: url(images/tv-item-last.gif); }
+.treeview .lastCollapsable { background-image: url(images/tv-collapsable-last.gif); }
+.treeview .lastExpandable { background-image: url(images/tv-expandable-last.gif); }</code>
+</pre>
+</div>
+<div class="example">
+<h3>Example:</h3>
+<p>Basic usage example</p>
+<pre>
+<code class="javascript">$("ul").Treeview();</code>
+</pre>
+<h4>HTML:</h4>
+<pre>
+<code class="html">&lt;ul&gt;
+  &lt;li&gt;Item 1
+    &lt;ul&gt;
+      &lt;li&gt;Item 1.1&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li class="closed"&gt;Item 2 (starts closed)
+    &lt;ul&gt;
+      &lt;li&gt;Item 2.1
+        &lt;ul&gt;
+          &lt;li&gt;Item 2.1.1&lt;/li&gt;
+          &lt;li&gt;Item 2.1.2&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;Item 2.2&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Item 3&lt;/li&gt;
+&lt;/ul&gt;</code>
+</pre>
+</div>
+<div class="example">
+<h3>Example:</h3>
+<p>Create a treeview that starts collapsed. Toggling branches is animated.</p>
+<pre>
+<code class="javascript">$("ul").Treeview({ speed: "fast", collapsed: true});</code>
+</pre>
+<h4>HTML:</h4>
+<pre>
+<code class="html">&lt;ul&gt;
+  &lt;li class="open"&gt;Item 1 (starts open)
+    &lt;ul&gt;
+      &lt;li&gt;Item 1.1&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Item 2
+    &lt;ul&gt;
+      &lt;li&gt;Item 2.1&lt;/li&gt;
+      &lt;li&gt;Item 2.2&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;</code>
+</pre>
+</div>
+<div class="example">
+<h3>Example:</h3>
+<p>Creates a treeview that can be controlled with a few links.
+Very likely to be changed/improved in future versions.</p>
+<pre>
+<code class="javascript">$("ul").Treeview({ control: #treecontrol });</code>
+</pre>
+<h4>HTML:</h4>
+<pre>
+<code class="html">&lt;div id="treecontrol"&gt;
+  &lt;a href="#"&gt;Collapse All&lt;/a&gt;
+  &lt;a href="#"&gt;Expand All&lt;/a&gt;
+  &lt;a href="#"&gt;Toggle All&lt;/a&gt;
+&lt;/div&gt;</code>
+</pre>
+</div>
+</div>
+</li>
+<li id="validateMap">
+<span class="fn"><a class="name" href="#validateMap">validate</a>( <span class="arg-type tooltip" title="A Javascript object that contains key/value pairs in the form of properties and values.">Map</span> <span class="arg-name tooltip" title="Optional settings to configure validation">options</span> ) returns <span class="type"><span class="tooltip" title="">$.validator</span></span></span>
+<div class="more">
+<div class="desc">Validates either a single form on submit or a list of elements on a user-defined event.<br>
+<br>The normal behaviour is to validate a form when a submit button is clicked or
+the user presses enter when an input of that form is focused.<br>
+<br>It is also possible to validate each individual element of that form, eg. on blur or keyup.</div>
+<h3>Options</h3>
+<ul class="options">
+<li>errorClass (<span class="arg-type tooltip" title="A string of characters.">String</span>): Use this class to look for existing error labels and add it to invalid elements. Default: "error"</li>
+<li>wrapper (<span class="arg-type tooltip" title="A string of characters.">String</span>): Wrap error labels with the specified element, eg "li". Default: none</li>
+<li>debug (<span class="arg-type tooltip" title="true or false.">Boolean</span>): If true, the form is not submitted and certain errors are display on the console (requires Firebug or Firebug lite). Default: none</li>
+<li>focusInvalid (<span class="arg-type tooltip" title="true or false.">Boolean</span>): Focus the last active or first invalid element. Disable for blur-validation, crashes IE otherwise. Default: true</li>
+<li>submitHandler (<span class="arg-type tooltip" title="A reference to a Javascript function.">Function</span>): Callback for handling the actual submit when the form is valid. Gets the form as the only argmument. Default: normal form submit</li>
+<li>messages (<span class="arg-type tooltip" title="A Javascript object that contains key/value pairs in the form of properties and values.">Map</span>): Key/value pairs defining custom messages. Key is the ID or name (for radio/checkbox inputs) of an element, value the message to display for that element. Instead of a plain message another map with specific messages for each rule can be used. Can be specified for one or more elements. Can be overriden by specifying the title attribute on the element. Default: none, the default message for the method is used.</li>
+<li>rules (<span class="arg-type tooltip" title="A Javascript object that contains key/value pairs in the form of properties and values.">Map</span>): Key/value pairs defining custom rules. Key is the ID or name (for radio/checkbox inputs) of an element, value is an object consisting of rule/parameter pairs, eg. {required: true, min: 3} Default: none, rules are read from metadata via metadata plugin</li>
+<li>event (<span class="arg-type tooltip" title="A string of characters.">String</span>): The event on which to validate. If anything is specified, like blur or keyup, each element is validated on that event. Default: none</li>
+<li>onsubmit (<span class="arg-type tooltip" title="true or false.">Boolean</span>): Validate the form on submit. Set to false to use only other events for validation (option event). Default: true</li>
+<li>meta (<span class="arg-type tooltip" title="A string of characters.">String</span>): In case you use metadata for other plugins, too, you want to wrap your validation rules into their own object that can be specified via this option. Default: none</li>
+<li>errorContainer (<span class="arg-type tooltip" title="A jQuery object.">jQuery</span>): Hide and show this container when validating. Default: none</li>
+<li>errorLabelContainer (<span class="arg-type tooltip" title="A jQuery object.">jQuery</span>): Search and append error labels to this container, and show and hide it accordingly. Default: none</li>
+<li>showErrors (<span class="arg-type tooltip" title="A reference to a Javascript function.">Function</span>): A custom message display handler. Gets the map of errors as the first argument and a refernce to the validator object as the second. You can trigger (in addition to your own messages) the default behaviour by calling the defaultShowErrors() method of the validator. Default: none, uses built-in message disply.</li>
+<li>errorPlacement (<span class="arg-type tooltip" title="A reference to a Javascript function.">Function</span>): Used to customize placement of created error labels. First argument: jQuery object containing the created error label Second argument: jQuery object containing the invalid element Default: Places the error label after the invalid element</li>
+</ul>
+<div class="example">
+<h3>Example:</h3>
+<p>Validates a form on submit. Rules are read from metadata.</p>
+<pre>
+<code class="javascript">$("#myform").validate();</code>
+</pre>
+<h4>HTML:</h4>
+<pre>
+<code class="html">&lt;form id="myform"&gt;
+  &lt;input name="firstname" class="{required:true}" /&gt;
+&lt;/form&gt;</code>
+</pre>
+</div>
+<div class="example">
+<h3>Example:</h3>
+<p>Validates all input elements on blur event (when the element looses focus).
+Deactivates focus of invalid elements.</p>
+<pre>
+<code class="javascript">$("input").validate({
+		focusInvalid: false,
+		event: "blur"
+});</code>
+</pre>
+</div>
+<div class="example">
+<h3>Example:</h3>
+<p>Uses form plugin's ajaxSubmit method to handle the form submit, while preventing
+the default submit.</p>
+<pre>
+<code class="javascript">$("#myform").validate({
+  submitHandler: function(form) {
+  	$(form).ajaxSubmit();
+  }
+});</code>
+</pre>
+</div>
+<div class="example">
+<h3>Example:</h3>
+<p>Validate a form on submit and each element on keyup. Rules are specified
+for three elements, and a message is customized for the "password" and the
+"age" elements. Inline rules are ignored. The password is only required when the age is lower
+then 18. The age is only required when the firstname is blank.</p>
+<pre>
+<code class="javascript">$("#myform").validate({
+ event: "keyup"
+	rules: {
+		firstname: { required: true },
+		age: {
+			required: "#firstname:blank",
+			number: true,
+			minValue: 3
+		},
+		password: {
+			required: function() {
+				return $("#age").val() &lt; 18;
+			},
+			minLength: 5,
+			maxLength: 32
+		}
+	},
+ messages {
+		password: {
+			required: "Your password is required because you are not yet 18 years or older."
+			minLength: "Please enter a password at least 5 characters long.",
+			maxLength: "Please enter a password no longer then 32 characters long."
+		},
+		age: "Please specify your age as a number (at least 3)."
+	}
+});</code>
+</pre>
+</div>
+<div class="example">
+<h3>Example:</h3>
+<p>Validates a form on submit. The class used to search, create and display
+error labels is changed to "invalid". This is also added to invalid elements.
+
+All error labels are displayed inside an unordered list with the ID "messageBox", as
+specified by the jQuery object passed as errorContainer option. All error elements
+are wrapped inside an li element, to create a list of messages.
+
+To ease the setup of the form, debug option is set to true, preventing a submit
+of the form no matter of being valid or not.</p>
+<pre>
+<code class="javascript">$("#myform").validate({
+  errorClass: "invalid",
+  errorLabelContainer: $("#messageBox"),
+  wrapper: "li"
+});</code>
+</pre>
+<h4>HTML:</h4>
+<pre>
+<code class="html">&lt;ul id="messageBox"&gt;&lt;/ul&gt;
+&lt;form id="myform" action="/login" method="post"&gt;
+  &lt;label&gt;Firstname&lt;/label&gt;
+  &lt;input name="fname" class="{required:true}" /&gt;
+  &lt;label&gt;Lastname&lt;/label&gt;
+  &lt;input name="lname" title="Your lastname, please!" class="{required:true}" /&gt;
+&lt;/form&gt;</code>
+</pre>
+<h4>Result:</h4>
+<pre>
+<code class="html">&lt;ul id="messageBox"&gt;
+  &lt;li&gt;&lt;label for="fname" class="invalid"&gt;Please specify your firstname!&lt;/label&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;label for="lname" class="invalid"&gt;Your lastname, please!&lt;/label&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;form id="myform" action="/login" method="post"&gt;
+  &lt;label&gt;Firstname&lt;/label&gt;
+  &lt;input name="fname" class="{required:true} invalid" /&gt;
+  &lt;label&gt;Lastname&lt;/label&gt;
+  &lt;input name="lname" title="Your lastname, please!" class="{required:true} invalid" /&gt;
+&lt;/form&gt;</code>
+</pre>
+</div>
+<div class="example">
+<h3>Example:</h3>
+<p>Validates a form on submit. Customizes the placement of the generated labels
+by appending them to the next table cell.</p>
+<pre>
+<code class="javascript">$("#myform").validate({
+	errorPlacement: function(error, element) {
+		error.appendTo( element.parent("td").next("td") );
+	}
+});</code>
+</pre>
+<h4>HTML:</h4>
+<pre>
+<code class="html">&lt;form id="myform" action="/login" method="post"&gt;
+	&lt;table&gt;
+		&lt;tr&gt;
+			&lt;td&gt;&lt;label&gt;Firstname&lt;/label&gt;
+			&lt;td&gt;&lt;input name="fname" class="{required:true}" /&gt;&lt;/td&gt;
+			&lt;td&gt;&lt;/td&gt;
+		&lt;/tr&gt;
+		&lt;tr&gt;
+			&lt;td&gt;&lt;label&gt;Lastname&lt;/label&gt;&lt;/td&gt;
+			&lt;td&gt;&lt;input name="lname" title="Your lastname, please!" class="{required:true}" /&gt;&lt;/td&gt;
+			&lt;td&gt;&lt;/td&gt;
+		&lt;/tr&gt;
+	&lt;/table&gt;
+&lt;/form&gt;</code>
+</pre>
+<h4>Result:</h4>
+<pre>
+<code class="html">&lt;form id="myform" action="/login" method="post"&gt;
+	&lt;table&gt;
+		&lt;tr&gt;
+			&lt;td&gt;&lt;label&gt;Firstname&lt;/label&gt;
+			&lt;td&gt;&lt;input name="fname" class="{required:true}" /&gt;&lt;/td&gt;
+			&lt;td&gt;&lt;label for="fname" class="invalid"&gt;Please specify your firstname!&lt;/label&gt;&lt;/td&gt;
+		&lt;/tr&gt;
+		&lt;tr&gt;
+			&lt;td&gt;&lt;label&gt;Lastname&lt;/label&gt;&lt;/td&gt;
+			&lt;td&gt;&lt;input name="lname" title="Your lastname, please!" class="{required:true}" /&gt;&lt;/td&gt;
+			&lt;td&gt;&lt;label for="lname" class="invalid"&gt;Your lastname, please!&lt;/label&gt;&lt;/td&gt;
+		&lt;/tr&gt;
+	&lt;/table&gt;
+&lt;/form&gt;</code>
+</pre>
+</div>
+<div class="example">
+<h3>Example:</h3>
+<p>Validates a form on submit. Similar to the above example, but with an additional
+container for error messages. The elements given as the errorContainer are all shown
+and hidden when errors occur. But the error labels themselve are added to the element(s)
+given as errorLabelContainer, here an unordered list. Therefore the error labels are
+also wrapped into li elements (wrapper option).</p>
+<pre>
+<code class="javascript">$("#myform").validate({
+  errorContainer: $("#messageBox1, #messageBox2"),
+  errorLabelContainer: $("#messageBox1 ul"),
+  wrapper: "li",
+});</code>
+</pre>
+<h4>HTML:</h4>
+<pre>
+<code class="html">&lt;div id="messageBox1"&gt;
+  &lt;h3&gt;The are errors in your form!&lt;/h3&gt;
+  &lt;ul&gt;&lt;/ul&gt;
+&lt;/div&gt;
+&lt;form id="myform" action="/login" method="post"&gt;
+  &lt;label&gt;Firstname&lt;/label&gt;
+  &lt;input name="fname" class="{required:true}" /&gt;
+  &lt;label&gt;Lastname&lt;/label&gt;
+  &lt;input name="lname" title="Your lastname, please!" class="{required:true}" /&gt;
+&lt;/form&gt;
+&lt;div id="messageBox2"&gt;
+  &lt;h3&gt;The are errors in your form, see details above!&lt;/h3&gt;
+&lt;/div&gt;</code>
+</pre>
+<h4>Result:</h4>
+<pre>
+<code class="html">&lt;ul id="messageBox"&gt;
+  &lt;li&gt;&lt;label for="fname" class="error"&gt;Please specify your firstname!&lt;/label&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;label for="lname" class="error"&gt;Your lastname, please!&lt;/label&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;form id="myform" action="/login" method="post"&gt;
+  &lt;label&gt;Firstname&lt;/label&gt;
+  &lt;input name="fname" class="{required:true} error" /&gt;
+  &lt;label&gt;Lastname&lt;/label&gt;
+  &lt;input name="lname" title="Your lastname, please!" class="{required:true} error" /&gt;
+&lt;/form&gt;</code>
+</pre>
+</div>
+</div>
+</li>
+</ul>
+</div>
+</body>
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+<title>jQuery Examples</title>
+
+<link rel="stylesheet" type="text/css" media="screen" href="css/screen.css" />
+<script src="lib/jquery.js" type="text/javascript"></script>
+<script type="text/javascript">
+$(document).ready(function() {
+	$('#faq').find('dd').hide();
+	$('#faq').find('dt').click(function() {
+		var answer = $(this).find('+dd');
+		if (answer.is(':visible')) {
+			answer.slideUp();
+		} else {
+			answer.slideDown();
+		}
+	});
+});
+</script>
+
+</head>
+<body>
+<h1>jQuery FAQ</h1>
+<p>Blendet erstmal alle Antworten aus, werden angezeigt, wenn die Fragen angeklickt werden.</p>
+
+<h3>Bird FAQ - click the questions to show the answers</h3>
+	<dl id="faq">
+		<dt>What shouldn't I do to the bird?</dt>
+		<dd>Never use oils or lotions which contain oils on your bird. They gunk up the feathers,
+		and ruin their insulating properties. This means a chilled bird. Never wait out a cat bite--those
+		require immediate veterinary attention--a bird can die within two days because a cat's mouth is so
+		filthy and full of bacteria. Don't bother with over-the-counter medication. It really doesn't work,
+		and in some cases, may upset the delicate bacterial balance in the bird's body, or even worsen the
+		situation. Never try to treat a fracture at home.</dd>
+
+		<dt>My bird is healthy. I don't need to go to a vet, do I?</dt>
+		<dd>Schedule a "well-bird" checkup. Prevention is the best medicine. Even though the bird might appear outwardly healthy, it may have a low-grade infection or something not so readily apparent. Your bird's health and your peace of mind will be worth it.</dd>
+		
+		<dt>My bird's leg is being rubbed raw by the leg band. Can I take it off?</dt>
+		<dd>No. Don't attempt this, especially if the leg is broken or swollen. The vet will be able
+		to remove the band, and deal with whatever injury maybe lurking under the banded area.</dd>
+	
+		<dt>How do I pull a broken blood feather?</dt>
+		<dd>This is probably the most common mishap. The remedy is simple--yank! It's most easily done
+		with two people. One to restrain the bird and the other to pull the feather. Use pliers, or a
+		hemostat. Tweezers won't work on primaries. Make certain that the wing bones are firmly supported
+		or you can break the wing. Clamp onto the feather and give a sharp tug in the direction of the
+		feather. The feather will come out. Next, apply gentle, direct pressure to the follicle where the
+		feather was to stop the bleeding. Dab some styptic powder on it, as it will help stop the bleeding
+		as well. Let the bird rest. Ask your vet or breeder to demonstrate exactly how to pull a blood
+		feather if you're apprehensive about doing it.</dd>
+	</dl>
+
+
+<a style="font-size: 50%" href="http://proj.jquery.com/dev/bugs/bug/133/">Slide Bug</a>
+</body>
+</html>

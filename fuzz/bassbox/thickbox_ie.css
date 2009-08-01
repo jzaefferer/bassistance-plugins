@@ -1,0 +1,4 @@
+* html #TB_window, * html #TB_load {
+     position: absolute;
+     margin-top: expression(0 - parseInt(this.offsetHeight / 2) + (TBWindowMargin = document.documentElement && document.documentElement.scrollTop || document.body.scrollTop) + 'px');
+}

@@ -1,0 +1,130 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+<title>Test for jQuery validate() plugin</title>
+
+<link rel="stylesheet" type="text/css" media="screen" href="css/screen.css" />
+<script src="js/jquery.js" type="text/javascript"></script>
+<script src="js/cmxforms.js" type="text/javascript"></script>
+<script src="js/metadata.js" type="text/javascript"></script>
+<script src="js/validate.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+	$().ready(function() {
+		$.validator.defaults.debug = true;
+		// validate the form when it is submitted
+		var options = {
+			rules: {
+				firstname: { required: true },
+				lastname: { required: true },
+				username: {
+					required: true,
+					minLength: 2
+				},
+				password: {
+					required: true,
+					minLength: 5
+				},
+				confirm_password: {
+					required: true,
+					minLength: 5,
+					equalTo: "#password"
+				},
+				email: {
+					required: true,
+					email: true
+				},
+				agree: { required: true	}
+			},
+			messages: {
+				firstname: "Please enter your firstname",
+				lastname: "Please enter your lastname",
+				username: {
+					required: "Please enter a username",
+					minLength: "Your username must consist of at least 2 characters"
+				},
+				password: {
+					required: "Please provide a password",
+					minLength: "Your password must be at least 5 characters long"
+				},
+				confirm_password: {
+					required: "Please provide a password",
+					minLength: "Your password must be at least 5 characters long",
+					equalTo: "Please enter the same password as above"
+				},
+				email: "Please enter a valid email address",
+				agree: "Please accept our policy"
+			}
+		}
+		$("#form1").validate(options);
+		$("#form1").validate($.extend({
+			event: "keyup"
+		}, options));
+		
+		// propose username by combining first- and lastname
+		// TODO strip/check illegal characters
+		$("#username").focus(function() {
+			var firstname = $("#firstname").val();
+			var lastname = $("#lastname").val();
+			if(firstname && lastname && !this.value) {
+				this.value = firstname + "." + lastname;
+			}
+		});
+	});
+</script>
+
+<style type="text/css">
+#form1 { width: 670px; }
+form.cmxform label.error {
+	margin-left: 10px;
+	width: auto;
+	display: inline;
+}
+</style>
+
+</head>
+<body>
+<form class="cmxform" id="form1" method="get" action="">
+	<fieldset>
+		<legend>Validating a complete form</legend>
+		<p>
+			<label for="firstname">Firstname</label>
+			<input id="firstname" name="firstname" />
+		</p>
+		<p>
+			<label for="lastname">Lastname</label>
+			<input id="lastname" name="lastname" />
+		</p>
+		<p>
+			<label for="username">Username</label>
+			<input id="username" name="username" />
+		</p>
+		<p>
+			<label for="password">Password</label>
+			<input id="password" name="password" type="password" />
+		</p>
+		<p>
+			<label for="password">Confirm password</label>
+			<input id="confirm_password" name="confirm_password" type="password" />
+		</p>
+		<p>
+			<label for="email">Email</label>
+			<input id="email" name="email" />
+		</p>
+		<p>
+			<label for="agree">Please agree to our policy</label>
+			<input type="checkbox" id="agree" name="agree" />
+		</p>
+		<p>
+			<input class="submit" type="submit" value="Submit"/>
+		</p>
+	</fieldset>
+</form>
+
+<a href="validateTest.html">Back to main page</a>
+<br/>
+<a href="http://www.rememberthemilk.com/signup/">Inspired by rememberthemilk</a>
+
+</body>
+</html>

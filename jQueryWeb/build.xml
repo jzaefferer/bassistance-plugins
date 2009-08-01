@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<project name="jQuery Web Framework" basedir="." default="build">
+	
+	<property name="target-dir" value="" />
+	<property name="target" value="${target-dir}jquery-web.jar" />
+
+    <!-- ================================= 
+          target: build              
+         ================================= -->
+    <target name="build" depends="clear">
+        <jar destfile="${target}" compress="true">
+        	<fileset dir="../jQueryWeb/WebContent/WEB-INF/classes" includes="com/**" excludes="**/*Test*.class, **/AllTests.class,**/Mock*.class" />
+        </jar>
+    </target>
+
+    <!-- - - - - - - - - - - - - - - - - - 
+          target: clear                      
+         - - - - - - - - - - - - - - - - - -->
+    <target name="clear">
+    	<delete file="${target}" />
+    </target>
+
+</project>
