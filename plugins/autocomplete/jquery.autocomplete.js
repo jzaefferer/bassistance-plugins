@@ -1,7 +1,7 @@
 /*
  * Autocomplete - jQuery plugin 1.1pre
  *
- * Copyright (c) 2007 Dylan Verheul, Dan G. Switzer, Anjesh Tuladhar, Jörn Zaefferer
+ * Copyright (c) 2009 Jörn Zaefferer
  *
  * Dual licensed under the MIT and GPL licenses:
  *   http://www.opensource.org/licenses/mit-license.php
@@ -209,7 +209,21 @@ $.Autocompleter = function(input, options) {
 		if ( options.multiple ) {
 			var words = trimWords($input.val());
 			if ( words.length > 1 ) {
-				v = words.slice(0, words.length - 1).join( options.multipleSeparator ) + options.multipleSeparator + v;
+				var seperator = options.multipleSeparator.length;
+				var cursorAt = $.Autocompleter.Selection(input).start;
+				var wordAt, progress = 0;
+				$.each(words, function(i, word) {
+					progress += word.length;
+					if (cursorAt <= progress) {
+						wordAt = i;
+						return false;
+					}
+					progress += seperator;
+				});
+				words[wordAt] = v;
+				// TODO this should set the cursor to the right position, but it gets overriden somewhere
+				//$.Autocompleter.Selection(input, progress + seperator, progress + seperator);
+				v = words.join( options.multipleSeparator );
 			}
 			v += options.multipleSeparator;
 		}
@@ -262,6 +276,14 @@ $.Autocompleter = function(input, options) {
 		if ( !options.multiple )
 			return value;
 		var words = trimWords(value);
+		if (words.length == 1) 
+			return words[0];
+		var cursorAt = $.Autocompleter.Selection(input).start;
+		if (cursorAt == value.length) {
+			words = trimWords(value)
+		} else {
+			words = trimWords(value.replace(value.substring(cursorAt), ""));
+		}
 		return words[words.length - 1];
 	}
 	
@@ -305,9 +327,10 @@ $.Autocompleter = function(input, options) {
 				}
 			);
 		}
-		if (wasVisible)
+		
+		//if (wasVisible)
 			// position cursor at end of input field
-			$.Autocompleter.Selection(input, input.value.length, input.value.length);
+			//$.Autocompleter.Selection(input, input.value.length, input.value.length);
 	};
 
 	function receiveData(q, data) {
@@ -742,6 +765,20 @@ $.Autocompleter.Select = function (options, input, select, config) {
 };
 
 $.Autocompleter.Selection = function(field, start, end) {
+	if (start === undefined) {
+		if( field.createTextRange ){
+			// TODO read range
+			return {
+				start: 0,
+				end: field.length
+			}
+		} else if( field.selectionStart !== undefined ){
+			return {
+				start: field.selectionStart,
+				end: field.selectionEnd
+			}
+		}
+	}
 	if( field.createTextRange ){
 		var selRange = field.createTextRange();
 		selRange.collapse(true);
@@ -750,11 +787,9 @@ $.Autocompleter.Selection = function(field, start, end) {
 		selRange.select();
 	} else if( field.setSelectionRange ){
 		field.setSelectionRange(start, end);
-	} else {
-		if( field.selectionStart ){
-			field.selectionStart = start;
-			field.selectionEnd = end;
-		}
+	} else if( field.selectionStart ){
+		field.selectionStart = start;
+		field.selectionEnd = end;
 	}
 	field.focus();
 };
