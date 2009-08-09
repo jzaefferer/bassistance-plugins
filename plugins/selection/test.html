@@ -1,0 +1,21 @@
+<html>
+	<head>
+		<title>selection test</title>
+	</head>
+	<body>
+		<div>
+			Input: <textarea id="test"></textarea>
+		</div>
+		<div>
+			Output: <span id="output">xxx</span>
+		</div>
+		
+		<script src="jquery-1.3.2.js"></script>
+		<script src="selection.js"></script>
+		<script>
+			$("#test").bind("keyup keypress click", function() {
+				$("#output").text($(this).selection().start);
+			});
+		</script>
+	</body>
+</html>
