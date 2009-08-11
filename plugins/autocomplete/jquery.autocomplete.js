@@ -210,7 +210,7 @@ $.Autocompleter = function(input, options) {
 			var words = trimWords($input.val());
 			if ( words.length > 1 ) {
 				var seperator = options.multipleSeparator.length;
-				var cursorAt = $.Autocompleter.Selection(input).start;
+				var cursorAt = $(input).selection().start;
 				var wordAt, progress = 0;
 				$.each(words, function(i, word) {
 					progress += word.length;
@@ -278,7 +278,7 @@ $.Autocompleter = function(input, options) {
 		var words = trimWords(value);
 		if (words.length == 1) 
 			return words[0];
-		var cursorAt = $.Autocompleter.Selection(input).start;
+		var cursorAt = $(input).selection().start;
 		if (cursorAt == value.length) {
 			words = trimWords(value)
 		} else {
@@ -297,7 +297,7 @@ $.Autocompleter = function(input, options) {
 			// fill in the value (keep the case the user has typed)
 			$input.val($input.val() + sValue.substring(lastWord(previousValue).length));
 			// select the portion of the value not typed by the user (so the next character will erase)
-			$.Autocompleter.Selection(input, previousValue.length, previousValue.length + sValue.length);
+			$(input).selection(previousValue.length, previousValue.length + sValue.length);
 		}
 	};
 
@@ -327,10 +327,6 @@ $.Autocompleter = function(input, options) {
 				}
 			);
 		}
-		
-		//if (wasVisible)
-			// position cursor at end of input field
-			//$.Autocompleter.Selection(input, input.value.length, input.value.length);
 	};
 
 	function receiveData(q, data) {
@@ -764,34 +760,48 @@ $.Autocompleter.Select = function (options, input, select, config) {
 	};
 };
 
-$.Autocompleter.Selection = function(field, start, end) {
-	if (start === undefined) {
-		if( field.createTextRange ){
-			// TODO read range
-			return {
-				start: 0,
-				end: field.length
+$.fn.selection = function(start, end) {
+	if (start !== undefined) {
+		return this.each(function() {
+			if( this.createTextRange ){
+				var selRange = this.createTextRange();
+				if (end === undefined || start == end) {
+					selRange.move("character", start);
+					selRange.select();
+				} else {
+					selRange.collapse(true);
+					selRange.moveStart("character", start);
+					selRange.moveEnd("character", end);
+					selRange.select();
+				}
+			} else if( this.setSelectionRange ){
+				this.setSelectionRange(start, end);
+			} else if( this.selectionStart ){
+				this.selectionStart = start;
+				this.selectionEnd = end;
 			}
-		} else if( field.selectionStart !== undefined ){
-			return {
-				start: field.selectionStart,
-				end: field.selectionEnd
-			}
+		});
+	}
+	var field = this[0];
+	if ( field.createTextRange ) {
+		var range = document.selection.createRange(),
+			orig = field.value,
+			teststring = "<->",
+			textLength = range.text.length;
+		range.text = teststring;
+		var caretAt = field.value.indexOf(teststring);
+		field.value = orig;
+		this.selection(caretAt, caretAt + textLength);
+		return {
+			start: caretAt,
+			end: caretAt + textLength
+		}
+	} else if( field.selectionStart !== undefined ){
+		return {
+			start: field.selectionStart,
+			end: field.selectionEnd
 		}
 	}
-	if( field.createTextRange ){
-		var selRange = field.createTextRange();
-		selRange.collapse(true);
-		selRange.moveStart("character", start);
-		selRange.moveEnd("character", end);
-		selRange.select();
-	} else if( field.setSelectionRange ){
-		field.setSelectionRange(start, end);
-	} else if( field.selectionStart ){
-		field.selectionStart = start;
-		field.selectionEnd = end;
-	}
-	field.focus();
 };
 
 })(jQuery);
