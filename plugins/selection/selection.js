@@ -4,7 +4,7 @@
 			return this.each(function() {
 				if( this.createTextRange ){
 					var selRange = this.createTextRange();
-					if (end === undefined) {
+					if (end === undefined || start == end) {
 						selRange.move("character", start);
 						selRange.select();
 					} else {
@@ -22,17 +22,18 @@
 			});
 		}
 		var field = this[0];
-		if( field.createTextRange ){
-			var range = document.selection.createRange();
-			var orig = field.value;
-			var teststring = "<->";
+		if ( field.createTextRange ) {
+			var range = document.selection.createRange(),
+				orig = field.value,
+				teststring = "<->",
+				textLength = range.text.length;
 			range.text = teststring;
 			var caretAt = field.value.indexOf(teststring);
 			field.value = orig;
-			this.selection(caretAt);
+			this.selection(caretAt, caretAt + textLength);
 			return {
 				start: caretAt,
-				end: caretAt
+				end: caretAt + textLength
 			}
 		} else if( field.selectionStart !== undefined ){
 			return {

@@ -14,7 +14,8 @@
 		<script src="selection.js"></script>
 		<script>
 			$("#test").bind("keyup keypress click", function() {
-				$("#output").text($(this).selection().start);
+				var selection = $(this).selection();
+				$("#output").text(selection.start + " - " + selection.end);
 			});
 		</script>
 	</body>
