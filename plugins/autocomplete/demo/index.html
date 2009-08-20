@@ -27,7 +27,7 @@ $().ready(function() {
 		return row[0].replace(/(<.+?>)/gi, '');
 	}
 	
-	$("#suggest1").autocomplete(cities);
+	$("#suggest1").focus().autocomplete(cities);
 	$("#month").autocomplete(months, {
 		minChars: 0,
 		max: 12,
