@@ -16,7 +16,7 @@
 <script type="text/javascript">
 $().ready(function() {
 
-	function findValueCallback(event, data, formatted) {
+	function log(event, data, formatted) {
 		$("<li>").html( !data ? "No match!" : "Selected: " + formatted).appendTo("#result");
 	}
 	
@@ -101,7 +101,7 @@ $().ready(function() {
 	});
 	
 	
-	$(":text, textarea").result(findValueCallback).next().click(function() {
+	$(":text, textarea").result(log).next().click(function() {
 		$(this).prev().search();
 	});
 	$("#singleBirdRemote").result(function(event, data, formatted) {

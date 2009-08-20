@@ -260,16 +260,13 @@ $.Autocompleter = function(input, options) {
 	};
 	
 	function trimWords(value) {
-		if ( !value ) {
+		if (!value)
 			return [""];
-		}
-		var words = value.split( options.multipleSeparator );
-		var result = [];
-		$.each(words, function(i, value) {
-			if ( $.trim(value) )
-				result[i] = $.trim(value);
+		if (!options.multiple)
+			return [$.trim(value)];
+		return $.map(value.split(options.multipleSeparator), function(word) {
+			return $.trim(value).length ? $.trim(word) : null;
 		});
-		return result;
 	}
 	
 	function lastWord(value) {
@@ -321,8 +318,10 @@ $.Autocompleter = function(input, options) {
 							var words = trimWords($input.val()).slice(0, -1);
 							$input.val( words.join(options.multipleSeparator) + (words.length ? options.multipleSeparator : "") );
 						}
-						else
+						else {
 							$input.val( "" );
+							$input.trigger("result", null);
+						}
 					}
 				}
 			);
