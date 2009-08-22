@@ -1,5 +1,5 @@
 /*
- * Autocomplete - jQuery plugin 1.1pre
+ * jQuery Autocomplete plugin 1.1pre
  *
  * Copyright (c) 2009 Jörn Zaefferer
  *
@@ -8,7 +8,6 @@
  *   http://www.gnu.org/licenses/gpl.html
  *
  * Revision: $Id: jquery.autocomplete.js 5785 2008-07-12 10:37:33Z joern.zaefferer $
- *
  */
 
 ;(function($) {
