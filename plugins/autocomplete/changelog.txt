@@ -1,6 +1,9 @@
 1.1
 ---
 * Added matchContains: "word" option, match only the start of words instead of everywhere
+* Fixed mustMatch to trigger result event when no match was found
+* Fixed the issue where an autocomplete was applied after the field had focus
+* Extended multiple complete to enable editing words not at the end of the field (doesn't work in Opera)
 
 1.0.2
 -----
