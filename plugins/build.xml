@@ -1,4 +1,4 @@
-<project name="jQuery plugins" basedir="../jquery/jquery">
+<project name="jQuery plugins">
 
     <!--
       - Use this build to test compressed plugins and build distributions.
@@ -9,8 +9,8 @@
 
     <!-- SETUP -->
 
-    <property description="Source Folder" name="SRC_DIR" value="../../jquery-plugins/" />
-    <property description="Files for parsing etc." name="BUILD_DIR" value="../jquery/build" />
+    <property description="Source Folder" name="SRC_DIR" value="" />
+    <property description="Files for parsing etc." name="BUILD_DIR" value="build" />
     <property description="Rhino JS Engine" name="JAR" value="${BUILD_DIR}/js.jar" />
     <property name="prefix" value="/jquery." />
 
