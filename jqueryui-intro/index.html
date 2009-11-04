@@ -4,16 +4,20 @@
     	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
         <title>Systems Ltd. Webshop r1</title>
 		<link rel="stylesheet" href="screen.css" />
+		<link rel="stylesheet" href="smoothness/jquery-ui-1.7.2.custom.css" />
+		<script src="jquery-1.3.2.js"></script>
+		<script src="jquery-ui-1.7.2.custom.min.js"></script>
+		<script src="app.js"></script>
     </head>
     <body>
     	<div id="header">
-	        <h1><a href=".">Systems Ltd. Webshop Logo</a></h1>
+	        <h1><a href=".">Systems Ltd. Webshop</a></h1>
 			<div id="searchbox">
 				<label for="search">Search</label>
 				<input id="search" />
 			</div>
     	</div>
-		<div>
+		<div id="content">
 			<ul>
 				<li><a href="#products">Products</a></li>
 				<li><a href="#contact">Contact</a></li>
@@ -22,18 +26,18 @@
 			<div id="products">
 				<div class="context">
 					<form id="filtering">
-						<div>
+						<div class="field">
 							<label for="minprice">Min. Price</label>
 							<input id="minprice" />
 						</div>
-						<div>
+						<div class="field">
 							<label for="maxprice">Max. Price</label>
 							<input id="maxprice" />
 						</div>
 					</form>
 				</div>
 				<div class="content">
-					<ul>
+					<ul id="productlist">
 						<li>
 							<a href="#">Product 1</a>
 							<span class="price">€ 150,-</span>
@@ -57,7 +61,10 @@
 			</div>
 			<div id="contact">
 				<div class="context">
-					address
+					Systems Ltd.<br/>
+					Chatham St. 501<br/>
+					123 London<br/>
+					UK
 				</div>
 				<div class="content">
 					<img src="imgs/contact-map.png" />

@@ -1,15 +1,20 @@
-body { width: 960px; margin: 0 auto; border: 1px solid black; border-top: none; border-bottom: none; font-family: Arial; padding: 0 1em; }
+body { font-size: 10pt; width: 960px; margin: 0 auto; border: 1px solid black; -moz-border-radius: 10px; font-family: Arial; padding: 0 1em; }
 
 h1 { margin: 0; padding-top: 1em; }
 h1 a { color: black; text-decoration: none; }
 
-#searchbox { float: right; }
+#content { clear: both; }
 
-.context { float: left; width: 260px; margin-right: 1em; }
-.content { margin-left: 260px; }
+#searchbox { float: right; margin-bottom: 1em; }
+
+.context { float: left; width: 280px; margin-right: 1em; }
+.content { margin-left: 280px; }
 #products, #contact, #about { clear: both; }
 
-#products label { display: inline-block; width: 5.5em; }
+#products label { float: left; width: 5.5em; }
+#products input, #products .ui-slider { display: block; margin-left: 5.5em; }
+#products .field { clear: both; margin-bottom: 1em; }
+
 #products ul { list-style: none; padding: 0; } 
 #products li { border: 1px solid black; padding: 1em; margin-bottom: 1em;  }
 
@@ -17,3 +22,4 @@ h1 a { color: black; text-decoration: none; }
 #cart a img { border: none; }
 
 #footer { font-size: .7em; color: gray; margin-top: 3em; padding-bottom: 2em; text-align: center; }
+
