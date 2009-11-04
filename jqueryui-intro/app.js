@@ -1,20 +1,18 @@
-jQuery(function($) {
-	
+$(function() {
 	$("#content").tabs();
 	
-	$("#filtering input").each(function() {
-		var input = $(this);
-		$("<div/>").insertAfter(this).slider({
-			max: 250,
-			value: input.val(),
-			slide: function(event, ui) {
-				input.val(ui.value);
-				$("#productlist li").show().filter(function() {
-					var price = parseFloat($(".price", this).text().replace(/[^\d]/, ""));
-					return price > ui.value;
-				}).hide();
-			}
-		});
+	var max = $("#maxprice");
+	$("<div/>").insertAfter(max).slider({
+		range: "min",
+		value: max.val(),
+		max: 250,
+		slide: function(event, ui) {
+			max.val(ui.value);
+			$("#productlist li").show().filter(function() {
+				var price = parseInt($(".price", this).text().replace(/[^\d]/, ""));
+				return price > ui.value;
+			}).hide();
+		}
 	});
 	
 	$("#productlist li").draggable({
@@ -25,7 +23,7 @@ jQuery(function($) {
 		hoverClass: 'ui-state-active',
 		drop: function(event, ui) {
 			$(this).find(".placeholder").remove();
-			$("<li/>").text(ui.helper.text()).appendTo($(this).find("ul"));
+			ui.draggable.clone().appendTo($("ul", this));
 		}
 	});
 });
