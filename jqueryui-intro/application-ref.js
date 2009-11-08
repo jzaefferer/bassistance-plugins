@@ -1,13 +1,14 @@
 $(function() {
 	$("#content").tabs();
 	
-	var max = $("#maxprice");
-	$("<div/>").insertAfter(max).slider({
+	var maxprice = $("#maxprice");
+	$("<div/>").insertAfter(maxprice).slider({
 		range: "min",
-		value: max.val(),
-		max: 250,
+		value: maxprice.val(),
+		min: 1,
+		max: 700,
 		slide: function(event, ui) {
-			max.val(ui.value);
+			maxprice.val(ui.value);
 			$("#productlist li").show().filter(function() {
 				var price = parseInt($(".price", this).text().replace(/[^\d]/, ""));
 				return price > ui.value;
@@ -19,10 +20,8 @@ $(function() {
 		helper: "clone"
 	});
 	$("#cart").droppable({
-		activeClass: 'ui-state-hover',
-		hoverClass: 'ui-state-active',
 		drop: function(event, ui) {
-			$(this).find(".placeholder").remove();
+			$(".placeholder", this).remove();
 			ui.draggable.clone().appendTo($("ul", this));
 		}
 	});
