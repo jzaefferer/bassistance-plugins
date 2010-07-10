@@ -25,4 +25,10 @@ $(function() {
 			ui.draggable.clone().appendTo($("ul", this));
 		}
 	});
+	
+	$("#search").autocomplete({
+		source: $("#productlist a").map(function() {
+			return $(this).text();
+		}).get()
+	});
 });
